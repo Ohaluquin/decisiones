@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selecciona Personaje</title>
+    <link rel="stylesheet" href="css/my_css.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <h1>Elige tu personaje:</h1>
+    <div class="nav botones" name="botones">
+      <button class="key" onclick="leftBtn()">Mujer</button>
+      <button class="key" onclick="centerBtn()">Hombre</button>
+      <button class="key" onclick="rightBtn()">Estadisticas</button>
+    </div>
+    <hr />
+    <div class="container">
+      <div id="left" class="part left">
+        <table>
+          <tr>
+            <td>
+              <img
+                src="img/personajes/danfer/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('danfer')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/yeye/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('yeye')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/jmora/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('jmora')"
+                class="personaje"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="img/personajes/danilara/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('danilara')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/bonnelv/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('bonnelv')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/jazzbeltran/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('jazzbeltran')"
+                class="personaje"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="img/personajes/kzenteno/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('kzenteno')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/mferis/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('mferis')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/shanik/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('shanik')"
+                class="personaje"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="center" class="part center">
+        <table>
+          <tr>
+            <td>
+              <img
+                src="img/personajes/adrianflores/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('adrianflores')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/chokiskater/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('chokiskater')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/chrizdiaz/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('chrizdiaz')"
+                class="personaje"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="img/personajes/geresco/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('geresco')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/goguin/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('goguin')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/layun/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('layun')"
+                class="personaje"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="img/personajes/omarap/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('omarap')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/pedroleon/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('pedroleon')"
+                class="personaje"
+              />
+            </td>
+            <td>
+              <img
+                src="img/personajes/willuri/medium_average.png"
+                alt="Botón"
+                onclick="cambiarPersonaje('willuri')"
+                class="personaje"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="right" class="part right centrado">
+        <div class="perfil centrado">
+          <input type="text" id="nombreInput" placeholder="Ingresa un nombre">
+          <button onclick="editarNombre()">Guardar Nombre</button>
+          <h1 class="centrado" id="nombre">Nombre</h1>
+          <img id="foto-personaje" src="img/personajes/bonnelv/medium_average.png" alt="Foto del personaje" />
+          <hr />
+          <table class="centrado">
+            <tr>
+              <td>Determinación:</td>
+              <td><progress value="8" max="20" id="determinacion"></progress></td>
+            </tr>
+            <tr>
+              <td>Alegría:</td>
+              <td><progress value="10" max="20" id="alegria"></progress></td>
+            </tr>
+            <tr>
+              <td>Apoyo:</td>
+              <td><progress value="8" max="20" id="apoyo"></progress></td>
+            </tr>
+            <tr>
+              <td>Salud:</td>
+              <td><progress value="15" max="20" id="salud"></progress></td>
+            </tr>
+            <tr>
+              <td>Dinero:</td>
+              <td><progress value="3" max="20" id="dinero"></progress></td>
+            </tr>
+            <tr>
+              <td>Tiempo:</td>
+              <td><progress value="20" max="20" id="tiempo"></progress></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <button class="key centrado" onclick=guardar()>Aceptar</button>
+    <script src="database/personajes.js"></script>
+    <script src="js/select_player.js"></script>
+    <script src="js/select_column.js"></script>
+  </body>
+</html>

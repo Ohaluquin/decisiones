@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Principal</title>
+    <link rel="stylesheet" href="css/my_css.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <div class="nav botones" name="botones">
+        <button class="key" onclick="leftBtn()">Perfil</button>
+        <button class="key" onclick="centerBtn()">Pregunta</button>
+        <button class="key" onclick="rightBtn()">Mapa</button>
+    </div>
+    <hr>
+    <div class="container">
+      <div id="left" class="part left" name="atributos">
+        <div class="perfil centrado">        
+          <h1 id="nombre">Nombre</h1>
+          <div id="contenedor_personaje">
+            <img id="fotoPersonaje" src="" class="transition" style="position:absolute; opacity:1; width: 100%; height: 100%;">
+            <img id="fotoPersonaje-nueva" src="" class="transition" style="position:absolute; opacity:0; width: 100%; height: 100%;">
+          </div>
+          <hr>
+          <table>
+            <tr>
+              <td>Determinación:</td>
+              <td><progress value="8" max="20" id="determinacion"></progress></td>
+              <td><span id="determinacion-value"></span></td>
+            </tr>
+            <tr>
+              <td>Alegría:</td>
+              <td><progress value="10" max="20" id="alegria"></progress></td>
+              <td><span id="alegria-value"></span></td>
+            </tr>
+            <tr>
+              <td>Apoyo:</td>
+              <td><progress value="8" max="20" id="apoyo"></progress></td>
+              <td><span id="apoyo-value"></span></td>
+            </tr>
+            <tr>
+              <td>Salud:</td>
+              <td><progress value="15" max="20" id="salud"></progress></td>
+              <td><span id="salud-value"></span></td>
+            </tr>
+            <tr>
+              <td>Dinero:</td>
+              <td><progress value="3" max="20" id="dinero"></progress></td>
+              <td><span id="dinero-value"></span></td>
+            </tr>
+            <tr>
+              <td>Tiempo:</td>
+              <td><progress value="18" max="20" id="tiempo"></progress></td>
+              <td><span id="tiempo-value"></span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="center" class="part center">
+        <div class="card">
+          <h3 id="pregunta"></h3>
+          <img src="img/inicio.png" alt="Presiona el dado para iniciar" id="foto-pregunta"/>
+          <br />
+
+          <div class="options">
+            <input type="radio" id="option1" name="option" value="1" />
+            <label for="option1" id="option1_text"></label><br />
+
+            <input type="radio" id="option2" name="option" value="2" />
+            <label for="option2" id="option2_text"></label><br />
+
+            <input type="radio" id="option3" name="option" value="3" />
+            <label for="option3" id="option3_text"></label><br />
+
+            <input type="radio" id="option4" name="option" value="4" />
+            <label for="option4" id="option4_text"></label><br />
+            <hr>
+            <p id="explicacion"></p>
+            <button class="key centrado" id="siguiente" onclick="siguiente()">Siguiente</button>
+          </div>
+        </div>
+      </div>
+      <div id="right" class="part right">
+        <div class="contextos" id="contenedor">
+          <img src="img/tablero.png" alt="tablero" id="tablero"/>
+          <img src="img/ficha.png" alt="ficha" id="ficha"/>
+          <img src="img/dado-animado.gif" alt="contextos" id="dado"/>
+        </div>
+      </div>
+    </div>
+    <script src="database/questions.js"></script>
+    <script src="database/personajes.js"></script>
+    <script src="js/principal.js"></script>
+    <script src="js/select_column.js"></script>
+  </body>
+</html>

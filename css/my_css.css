@@ -1,0 +1,363 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: blue;
+  text-align: center;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  color: #ebdcdc;
+}
+
+.container-background { /* Para la imagen de fondo */
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  align-content: center;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(72, 72, 213);
+}
+
+.over_image { /* Para el contenedor arriba de la imagen*/
+  position: absolute;  
+  width: 40rem;   
+  background: rgba(220, 215, 206, 0.65);  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  color: rgb(0, 0, 0); 
+  font-size: medium;  
+  font-weight: bold;  
+}
+ 
+.card_over_image { /* Para el contenedor arriba de la imagen*/
+  position: absolute;  
+  width: 40rem;     
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%, -55%);
+  color: rgb(0, 0, 0); 
+  font-size: medium;  
+  font-weight: bold;  
+}
+
+.bg-gradient-primary {    /*color de fondo del menú */
+  background-color: #0c69f3;
+  background-image: linear-gradient(180deg, #1b4886 10%, #085bff 100%);
+  background-size: cover;  
+}
+
+.height-fixed {
+  height: 33rem;
+  overflow: scroll;
+}
+  
+.scrollbar {
+  overflow: scroll;
+}
+
+.pointed {
+  cursor: pointer;
+}
+
+.maxSize {
+  width: max-content;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+#preloader {
+  background:#000; 
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-register-image {
+  background: url("../img/register.png");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+.bg-login-image {
+  background: url("../img/login.png");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+.bg-fondo-image {  
+  height: 100%;      
+  background-position: top;
+  background-size:cover;  
+}
+
+.card70 {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.mensaje {
+  color: #dbc6c6;
+}
+
+.part {
+  width: 33%;
+}
+
+.card {
+  width: 90%;
+  margin: 0 auto;
+  border: 1rem solid rgb(42, 119, 80);
+  padding: 5px;
+  border-radius: 2rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  font-size: small;
+}
+
+.card.red {
+  background-color: #eb3232;
+}
+
+.card.blue {
+  background-color: #3782f3;
+}
+
+.card.green {
+  background-color: #34f076;
+}
+
+.card.yellow {
+  background-color: #f4cc3b;
+}
+
+.card img {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 0.1rem solid rgb(111, 202, 209);
+}
+
+.perfil {
+  width: 60%;
+  margin: 0 auto;
+  border: 0.3rem solid rgb(172, 105, 50);
+  background-color: rgb(229, 151, 77);
+  padding: 5px;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.perfil img {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 0.1rem solid rgb(242, 207, 124);
+}
+
+.contextos {
+  width: 70%;
+  height: 80%;
+  margin: 0 auto;
+  border: 0.5rem solid rgb(162, 46, 17);
+  background-color: rgb(215, 118, 0);
+  padding: 3px;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.contextos img {
+  width: 95%;
+  height: 49%;
+  padding: 3px;
+  display: block;
+  margin: 0 auto;
+}
+
+#tablero {
+  position: relative;
+}
+
+#ficha {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  left: 0;
+  top: 0;
+}
+
+.centrado {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.key {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.key:hover {
+  background-color: #ea8282;
+}
+
+.key:active {
+  background-color: #de1414;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.personaje {
+  width: 85%;
+  height: 85%;
+  margin: 0 auto;
+  border: 0.1rem solid rgb(162, 46, 17);
+  background-color: rgb(215, 118, 0);
+  padding: 1px;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#contenedor_personaje {
+  position: relative;
+  width: 90%; /*235px;*/
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border: 0.1rem solid rgb(162, 46, 17);
+  background-color: rgb(215, 118, 0);
+  padding: 1px;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#fotoPersonaje, #fotoPersonaje-nueva {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+#logo {
+  width: 90%;
+  height: 50%;
+  margin: 0 auto;
+  border: 0.1rem solid rgb(162, 46, 17);
+  background-color: rgb(215, 118, 0);
+  padding: 1px;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .part {
+    width: 100%;
+  }
+
+  .left,
+  .right {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+progress {
+  width: 50%;
+  block-size: 0.6em;
+  inline-size: 5em;
+  vertical-align: -0.1em;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+}
+
+progress-bar {
+  background-color: rgb(105, 116, 250);
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: rgb(105, 116, 250);
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: rgb(105, 116, 250);
+}
+
+progress.red::-webkit-progress-value {
+  background-color: red;
+}
+
+progress.red::-moz-progress-bar {
+  background-color: red;
+}
+
+progress.yellow::-webkit-progress-value {
+  background-color: yellow;
+}
+
+progress.yellow::-moz-progress-bar {
+  background-color: yellow;
+}
+
+progress.green::-webkit-progress-value {
+  background-color: green;
+}
+
+progress.green::-moz-progress-bar {
+  background-color: green;
+}
+
+.transition {
+  transition: opacity 1s ease;
+}
