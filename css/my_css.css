@@ -142,8 +142,8 @@
   border-radius: 1rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   font-size: small;
-  min-height: 80%;
-  max-height: 80%;
+  min-height: 98vh;
+  max-height: 98vh;
   overflow: auto;
 }
 
@@ -172,7 +172,8 @@
 }
 
 .perfil {
-  width: 60%;
+  width: 70%;
+  height: 98vh;
   margin: 0 auto;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
@@ -190,8 +191,8 @@
 }
 
 .contextos {
-  width: 70%;
-  height: 80%;
+  width: 80%;
+  height: 98vh;
   margin: 0 auto;
   border: 0.5rem solid rgb(162, 46, 17);
   background-color: rgb(215, 118, 0);
