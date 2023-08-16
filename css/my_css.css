@@ -132,18 +132,19 @@
 
 .part {
   width: 33%;
+  height: 98vh;
 }
 
 .card {
-  width: 100%;
+  width: 98%;
   margin: 0 auto;
   border: 0.5rem solid rgb(42, 119, 80);
   padding: 3px;
   border-radius: 1rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   font-size: small;
-  min-height: 98vh;
-  max-height: 98vh;
+  min-height: 90%;
+  max-height: 90%;
   overflow: auto;
 }
 
@@ -173,8 +174,6 @@
 
 .perfil {
   width: 70%;
-  height: 98vh;
-  margin: 0 auto;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
   padding: 5px;
@@ -192,7 +191,7 @@
 
 .contextos {
   width: 80%;
-  height: 98vh;
+  height: 90%;
   margin: 0 auto;
   border: 0.5rem solid rgb(162, 46, 17);
   background-color: rgb(215, 118, 0);
