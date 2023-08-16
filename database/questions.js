@@ -6157,18 +6157,6 @@ let preguntas = [
         dinero: 0,
         tiempo: -1,
       },
-      {
-        optionID: 433,
-        text: "Te enfrentas a un ambiente de clase difícil.",
-        explicacion:
-          "Un profesor intolerante puede crear un ambiente de clase difícil y estresante, lo que puede afectar tu bienestar y aprendizaje.",
-        determinacion: 0,
-        alegria: -2,
-        apoyo: -1,
-        salud: -1,
-        dinero: 0,
-        tiempo: -1,
-      },
     ],
   },
   {
@@ -6189,18 +6177,6 @@ let preguntas = [
         dinero: 0,
         tiempo: -2,
       },
-      {
-        optionID: 434,
-        text: "Tienes que dedicar más tiempo al estudio.",
-        explicacion:
-          "Los temas difíciles pueden requerir más de tu tiempo y esfuerzo, pero también pueden brindarte la oportunidad de aprender y crecer.",
-        determinacion: 2,
-        alegria: -1,
-        apoyo: 0,
-        salud: 0,
-        dinero: 0,
-        tiempo: -2,
-      },
     ],
   },
   {
@@ -6209,18 +6185,6 @@ let preguntas = [
     text: "Te ha gustado mucho un tema nuevo en la escuela.",
     imageName: "interesting_subject",
     options: [
-      {
-        optionID: 435,
-        text: "Te sientes motivado para aprender más.",
-        explicacion:
-          "Un tema interesante puede aumentar tu motivación y alegría por aprender, aunque también puede requerir más de tu tiempo.",
-        determinacion: 2,
-        alegria: 2,
-        apoyo: 0,
-        salud: 0,
-        dinero: 0,
-        tiempo: -1,
-      },
       {
         optionID: 435,
         text: "Te sientes motivado para aprender más.",

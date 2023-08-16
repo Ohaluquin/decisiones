@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Principal</title>
-    <link rel="stylesheet" href="css/my_css.css" />
-    <link rel="icon" href="data:," />
-  </head>
-  <body>
-    <div class="nav botones" name="botones">
-        <button class="key" onclick="leftBtn()">Perfil</button>
-        <button class="key" onclick="centerBtn()">Pregunta</button>
-        <button class="key" onclick="rightBtn()">Mapa</button>
-    </div>
-    <hr>
-    <div class="container">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Principal</title>
+  <link rel="stylesheet" href="css/my_css.css" />
+  <link rel="icon" href="data:," />
+</head>
+
+<body>
+  <div class="nav botones" name="botones">
+    <button class="key" onclick="leftBtn()">Perfil</button>
+    <button class="key" onclick="centerBtn()">Pregunta</button>
+    <button class="key" onclick="rightBtn()">Mapa</button>
+  </div>
+  <hr>
+  <div class="container-background">
+    <div class="body-container">
       <div id="left" class="part left" name="atributos">
-        <div class="perfil centrado">        
+        <div class="perfil centrado">
           <h1 id="nombre">Nombre</h1>
           <div id="contenedor_personaje">
-            <img id="fotoPersonaje" src="" class="transition" style="position:absolute; opacity:1; width: 100%; height: 100%;">
-            <img id="fotoPersonaje-nueva" src="" class="transition" style="position:absolute; opacity:0; width: 100%; height: 100%;">
+            <img id="fotoPersonaje" src="" class="transition"
+              style="position:absolute; opacity:1; width: 100%; height: 100%;">
+            <img id="fotoPersonaje-nueva" src="" class="transition"
+              style="position:absolute; opacity:0; width: 100%; height: 100%;">
           </div>
           <hr>
           <table>
@@ -61,7 +66,7 @@
       <div id="center" class="part center">
         <div class="card">
           <h3 id="pregunta"></h3>
-          <img src="img/inicio.png" alt="Presiona el dado para iniciar" id="foto-pregunta"/>
+          <img src="" alt="Presiona el dado para iniciar" id="foto-pregunta" />
           <br />
 
           <div class="options">
@@ -84,15 +89,17 @@
       </div>
       <div id="right" class="part right">
         <div class="contextos" id="contenedor">
-          <img src="img/tablero.png" alt="tablero" id="tablero"/>
-          <img src="img/ficha.png" alt="ficha" id="ficha"/>
-          <img src="img/dado-animado.gif" alt="contextos" id="dado"/>
+          <img src="img/inicio.png" alt="tablero" id="tablero" />
+          <img src="img/ficha.gif" alt="ficha" id="ficha" />
+          <img src="img/dado-animado.gif" alt="contextos" id="dado" />
         </div>
       </div>
     </div>
-    <script src="database/questions.js"></script>
-    <script src="database/personajes.js"></script>
-    <script src="js/principal.js"></script>
-    <script src="js/select_column.js"></script>
-  </body>
+  </div>
+  <script src="database/questions.js"></script>
+  <script src="database/personajes.js"></script>
+  <script src="js/principal.js"></script>
+  <script src="js/select_column.js"></script>
+</body>
+
 </html>

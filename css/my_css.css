@@ -1,27 +1,37 @@
-.container {
+.container { /* select_player */
   display: flex;
   justify-content: space-between;
 }
 
-.center_container {
+.body-container { /* principal */
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto !important;
+  position: absolute;    
+  background: rgba(220, 215, 206, 0.65);
+  padding: 15px;
+}
+
+.center_container {
+  display: block;
   flex-direction: column;
   justify-content: center;
   background-color: blue;
   text-align: center;
   width: auto;
-  display: block;
   margin: 0 auto;
-  height: 100%;
+  height: 80%;
   color: #ebdcdc;
 }
 
-.container-background { /* Para la imagen de fondo */
+.container-background { /* Para la imagen de fondo de principal */
   position: relative;
-  width: 100%;
-  display: inline-block;
-  text-align: left;
-  align-content: center;
+  background-image: url("../img/login.png");
+  height: 600px;
+  background-size: cover;
+  background-repeat: repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Opción para que la imagen permanezca fija al desplazarse */
 }
 
 .body {
@@ -127,11 +137,11 @@
 }
 
 .card {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  border: 1rem solid rgb(42, 119, 80);
-  padding: 5px;
-  border-radius: 2rem;
+  border: 0.5rem solid rgb(42, 119, 80);
+  padding: 3px;
+  border-radius: 1rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   font-size: small;
 }
@@ -153,7 +163,7 @@
 }
 
 .card img {
-  width: 60%;
+  width: 40%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -203,8 +213,8 @@
 
 #ficha {
   position: absolute;
-  width: 1rem;
-  height: 1rem;
+  width: 5rem;
+  height: 5rem;
   left: 0;
   top: 0;
 }
@@ -298,7 +308,7 @@
   }
 
   .left,
-  .right {
+  .center {
     display: none;
   }
 }

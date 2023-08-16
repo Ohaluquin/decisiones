@@ -154,7 +154,6 @@ function cargarPlayer() {
       }
     }
     if(personajeElegido === null) return;
-    console.log("personaje "+ personajeElegido.rutaImagen);
     player = { // Crear el objeto player con los datos necesarios
       id: personajeElegido.personajeID,
       imageName: "animated.gif",
@@ -164,7 +163,8 @@ function cargarPlayer() {
       salud: personajeElegido.salud,
       dinero: personajeElegido.dinero,
       tiempo: personajeElegido.tiempo,
-      rutaImagen: personajeElegido.rutaImagen
+      rutaImagen: personajeElegido.rutaImagen,
+      nickname: localStorage.getItem("nombrePersonaje")
     };
     animatedGif = getImagePath();
     actualizarPlayerCard();
@@ -322,9 +322,13 @@ function siguiente() {
     dado_activo=true;
     document.getElementById("explicacion").innerHTML = "";
     diceImage.src = "img/dado-animado.gif";
+    if (window.innerWidth <= 768) {
+      rightBtn();
+    }
   } else {
     alert("Fin del juego");
   }
+  nextButton.style.display = "none";
 }
 
 let contenedor = document.getElementById("contenedor");
@@ -333,8 +337,8 @@ let ficha = document.getElementById("ficha");
 
 function colocarFichaEnCasilla(casillaIndex) {
   var coordenadas = casillas[casillaIndex]; // Obtener las coordenadas de la casilla seleccionada
-  var offsetX = contenedor.offsetWidth * 0.5 - 13; // Centrar la ficha horizontalmente en el contenedor
-  var offsetY = contenedor.offsetHeight * 0.25 - 6; // Centrar la ficha verticalmente en el contenedor
+  var offsetX = contenedor.offsetWidth * 0.5 - 53; // Centrar la ficha horizontalmente en el contenedor
+  var offsetY = contenedor.offsetHeight * 0.25 - 70; // Centrar la ficha verticalmente en el contenedor
   // Ajustar la posición del contenedor si es necesario
   var contenedorLeft = contenedor.offsetLeft;
   var contenedorTop = contenedor.offsetTop;
@@ -354,6 +358,7 @@ colocarFichaEnCasilla(0);
 
 diceImage.addEventListener("click", function () {
   if(dado_activo) {
+    document.getElementById('tablero').src = 'img/tablero.png';
     habilitarBotones();
     let diceRoll = Math.floor(Math.random() * 4) + 1;
     diceImage.src = "img/dado" + diceRoll + ".png";
@@ -362,7 +367,12 @@ diceImage.addEventListener("click", function () {
       setTimeout(() => {
         contador++;
         colocarFichaEnCasilla(contador);
-        if(i==diceRoll) actualizarQuestionCard();
+        if(i==diceRoll) {
+          actualizarQuestionCard();
+          if (window.innerWidth <= 768) {
+             setTimeout(() => {centerBtn();}, 1500); // 2000 milliseconds = 2 seconds
+          }
+        }
       }, i * 500);
     }
   dado_activo=false;
