@@ -173,7 +173,7 @@
 }
 
 .perfil {
-  width: 70%;
+  width: 80%;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
   padding: 5px;
@@ -182,7 +182,7 @@
 }
 
 .perfil img {
-  width: 70%;
+  width: 90%;
   height: auto;
   display: block;
   margin: 0 auto;
