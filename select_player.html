@@ -16,7 +16,7 @@
       <button class="key" onclick="rightBtn()">Estadisticas</button>
     </div>
     <hr />
-    <div class="container">
+    <div class="sp_container">
       <div id="left" class="part left">
         <table>
           <tr>
@@ -188,9 +188,10 @@
           <h1 class="centrado" id="nombre">Nombre</h1>
           <img id="foto-personaje" src="img/personajes/bonnelv/medium_average.png" alt="Foto del personaje" />
           <hr />
-          <table class="centrado">
+          <table>
+            <tbody class="tabla_barras">
             <tr>
-              <td>Determinación:</td>
+              <td class="atributo">Determinación:</td>
               <td><progress value="8" max="20" id="determinacion"></progress></td>
             </tr>
             <tr>
@@ -213,6 +214,7 @@
               <td>Tiempo:</td>
               <td><progress value="20" max="20" id="tiempo"></progress></td>
             </tr>
+            </tbody>
           </table>
         </div>
       </div>

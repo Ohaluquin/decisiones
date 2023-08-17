@@ -3583,7 +3583,7 @@ let preguntas = [
     questionID: 65,
     kind: "personal",
     text: "Te enteras de que un amigo tuyo está sufriendo de acoso por parte de un grupo de personas que se burlan de él por su orientación sexual",
-    imageName: "bullyng",
+    imageName: "bullying",
     options: [
       {
         optionID: 257,

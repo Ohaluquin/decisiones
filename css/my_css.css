@@ -1,4 +1,30 @@
-.container { /* select_player */
+.index_body { /* Index */
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+  margin: 0;
+  background-color: rgb(72, 72, 213);
+}
+
+.index_container { /* Index */
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  background-color: blue;
+  text-align: center;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  color: #ebdcdc;
+}
+
+.instrucciones_container { /*instructions*/
+  width: 70%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.sp_container { /* select_player */
   display: flex;
   justify-content: space-between;
 }
@@ -7,21 +33,10 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 98vh;
   position: absolute;    
   background: rgba(220, 215, 206, 0.65);
-  padding: 15px;
-}
-
-.center_container {
-  display: block;
-  flex-direction: column;
-  justify-content: center;
-  background-color: blue;
-  text-align: center;
-  width: auto;
-  margin: 0 auto;
-  height: 80%;
-  color: #ebdcdc;
+  padding: 10px;
 }
 
 .container-background { /* Para la imagen de fondo de principal */
@@ -30,14 +45,6 @@
   background-size: cover;
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-attachment: fixed; /* Opción para que la imagen permanezca fija al desplazarse */
-}
-
-.body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  background-color: rgb(72, 72, 213);
 }
 
 .over_image { /* Para el contenedor arriba de la imagen*/
@@ -136,7 +143,7 @@
 }
 
 .card {
-  width: 98%;
+  width: 95%;
   margin: 0 auto;
   border: 0.5rem solid rgb(42, 119, 80);
   padding: 3px;
@@ -176,8 +183,8 @@
   width: 80%;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
-  padding: 5px;
-  border-radius: 1rem;
+  padding: 3px;
+  border-radius: 0.5rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -186,11 +193,12 @@
   height: auto;
   display: block;
   margin: 0 auto;
+  border-radius: 0.5rem;
   border: 0.1rem solid rgb(242, 207, 124);
 }
 
 .contextos {
-  width: 80%;
+  width: 75%;
   height: 90%;
   margin: 0 auto;
   border: 0.5rem solid rgb(162, 46, 17);
@@ -320,8 +328,23 @@
   }
 }
 
+.tabla_barras {
+  width: 100%;
+}
+
+.tabla_barras td {
+  width: 65%; /* Asegura que la celda ocupa todo el ancho disponible */
+}
+
+.tabla_barras progress {
+  width: 100%; /* Ajusta al 80% del ancho de la celda */
+  max-width: 300px; /* Establece un ancho máximo */
+  min-width: 100px; /* Establece un ancho mínimo */
+}
+
+
 progress {
-  width: 50%;
+  width: 100%;
   block-size: 0.6em;
   inline-size: 5em;
   vertical-align: -0.1em;
