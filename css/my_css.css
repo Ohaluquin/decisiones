@@ -405,7 +405,7 @@ progress.green::-moz-progress-bar {
 }
 
 .modal {
-  display: block;
+  display: none;
   color: #ddd;
   position: fixed;
   background-color: #0c69f3;
