@@ -6,6 +6,12 @@ let player = 0;
 let pregunta_actual = 0;
 let pregunta = 0;
 let animatedGif;
+let initialDetermination=0;
+let initialAlegria=0;
+let initialApoyo=0;
+let initialSalud=0;
+let initialTiempo=0;
+let initialDinero=0;
 
 // Suponiendo que tienes un arreglo de coordenadas en JavaScript
 let casillas = [
@@ -49,6 +55,12 @@ let casillas = [
 
 async function inicio() {
   await cargarPlayer();
+  initialDetermination = player.determinacion;
+  initialAlegria = player.alegria;
+  initialApoyo = player.apoyo;
+  initialSalud = player.salud;
+  initialTiempo = player.tiempo;
+  initialDinero = player.dinero; 
 }
 
 function actualizarPlayerCard() {
@@ -66,7 +78,7 @@ function actualizarPlayerCard() {
   newImgElement.style.opacity = 1;
   // After 1 second (the duration of the transition), set the source of the original image element
   // to the new image, make it visible, and hide the new image element.
-  setTimeout(function() {
+  setTimeout(function () {
     imgElement.src = animatedGif;
     imgElement.style.opacity = 1;
     newImgElement.style.opacity = 0;
@@ -121,14 +133,19 @@ function actualizarQuestionCard() {
     document.getElementById("option2").classList.remove("hidden");
     document.getElementById("option3").classList.remove("hidden");
     document.getElementById("option4").classList.remove("hidden");
-    document.getElementById("option1_text").innerHTML = pregunta.options[0].text;
-    document.getElementById("option2_text").innerHTML = pregunta.options[1].text;
-    document.getElementById("option3_text").innerHTML = pregunta.options[2].text;
-    document.getElementById("option4_text").innerHTML = pregunta.options[3].text;
+    document.getElementById("option1_text").innerHTML =
+      pregunta.options[0].text;
+    document.getElementById("option2_text").innerHTML =
+      pregunta.options[1].text;
+    document.getElementById("option3_text").innerHTML =
+      pregunta.options[2].text;
+    document.getElementById("option4_text").innerHTML =
+      pregunta.options[3].text;
   }
   document.getElementById("foto-pregunta").src =
     "img/Preguntas/" + pregunta.imageName + ".png";
-  document.getElementById("foto-pregunta").alt = "img/Preguntas/" + pregunta.imageName + ".png";
+  document.getElementById("foto-pregunta").alt =
+    "img/Preguntas/" + pregunta.imageName + ".png";
   const card = document.querySelector(".card");
   card.classList.remove("red", "blue", "green", "yellow");
   if (pregunta.kind === "personal") {
@@ -144,17 +161,19 @@ function actualizarQuestionCard() {
 }
 
 function cargarPlayer() {
-  const ID = localStorage.getItem('personaje_index'); // Obtener el índice del personaje elegido desde localStorage
+  const ID = localStorage.getItem("personaje_index"); // Obtener el índice del personaje elegido desde localStorage
   let personajeElegido = null;
-  if (ID !== null) {  // Verificar si el índice existe
-    for(i=0; i<personajes.length; i++) {
+  if (ID !== null) {
+    // Verificar si el índice existe
+    for (i = 0; i < personajes.length; i++) {
       if (personajes[i].personajeID == ID) {
         personajeElegido = personajes[i];
         break;
       }
     }
-    if(personajeElegido === null) return;
-    player = { // Crear el objeto player con los datos necesarios
+    if (personajeElegido === null) return;
+    player = {
+      // Crear el objeto player con los datos necesarios
       id: personajeElegido.personajeID,
       imageName: "animated.gif",
       determinacion: personajeElegido.determinacion,
@@ -164,21 +183,23 @@ function cargarPlayer() {
       dinero: personajeElegido.dinero,
       tiempo: personajeElegido.tiempo,
       rutaImagen: personajeElegido.rutaImagen,
-      nickname: localStorage.getItem("nombrePersonaje")
+      nickname: localStorage.getItem("nombrePersonaje"),
     };
     animatedGif = getImagePath();
     actualizarPlayerCard();
   }
 }
 
-function actualizarPlayer(option) { // Actualizar los atributos del jugador
+function actualizarPlayer(option) {
+  // Actualizar los atributos del jugador
   player.determinacion += option.determinacion;
   player.alegria += option.alegria;
   player.apoyo += option.apoyo;
   player.salud += option.salud;
   player.dinero += option.dinero;
   player.tiempo += option.tiempo;
-  player.imageName = getImageName( // Obtener el nuevo nombre de la imagen
+  player.imageName = getImageName(
+    // Obtener el nuevo nombre de la imagen
     player.determinacion,
     player.alegria,
     player.apoyo,
@@ -188,53 +209,74 @@ function actualizarPlayer(option) { // Actualizar los atributos del jugador
   );
 }
 
-function getImageName(atributo1, atributo2, atributo3, atributo4, atributo5, atributo6) {
- // Encuentra el atributo con el valor más bajo
- let minimo = Math.min(Math.min(Math.min(Math.min(Math.min(atributo1, atributo2), atributo3), atributo4), atributo5), atributo6);
- // Si el valor mínimo es menor que 7, devuelve el nombre correspondiente al atributo
- if (minimo < 7) {
-     if (minimo == atributo1) {
-         return "low_determinacion.png";
-     } else if (minimo == atributo2) {
-         return "low_alegria.png";
-     } else if (minimo == atributo3) {
-         return "low_apoyo.png";
-     } else if (minimo == atributo4) {
-         return "low_salud.png";
-     } else if (minimo == atributo5) {
-         return "low_dinero.png";
-     } else {
-         return "low_tiempo.png";
-     }
- }
- // Encuentra el atributo con el valor más alto
- let maximo = Math.max(Math.max(Math.max(Math.max(Math.max(atributo1, atributo2), atributo3), atributo4), atributo5), atributo6);
- // Si el valor máximo es mayor que 20, devuelve el nombre correspondiente al atributo con un prefijo de "high_"
- if (maximo > 12) {
-     if (maximo == atributo1) {
-         return "high_determinacion.png";
-     } else if (maximo == atributo2) {
-         return "high_alegria.png";
-     } else if (maximo == atributo3) {
-         return "high_apoyo.png";
-     } else if (maximo == atributo4) {
-         return "high_salud.png";
-     } else if (maximo == atributo5) {
-         return "high_dinero.png";
-     } else {
-         return "high_tiempo.png";
-     }
- }
- // Calcula el valor promedio de los atributos
- let promedio = (atributo1 + atributo2 + atributo3 + atributo4 + atributo5 + atributo6) / 6.0;
- // Si el valor promedio es mayor o igual a cierto umbral, devuelve un nombre específico. De lo contrario, devuelve otro nombre.
- if (promedio >= 10) {
-     return "good_average.png";
- } else if(promedio >= 8) {
-     return "medium_average.png";
- } else {
-     return "low_average.png";
- }
+function getImageName(
+  atributo1,
+  atributo2,
+  atributo3,
+  atributo4,
+  atributo5,
+  atributo6
+) {
+  // Encuentra el atributo con el valor más bajo
+  let minimo = Math.min(
+    Math.min(
+      Math.min(Math.min(Math.min(atributo1, atributo2), atributo3), atributo4),
+      atributo5
+    ),
+    atributo6
+  );
+  // Si el valor mínimo es menor que 7, devuelve el nombre correspondiente al atributo
+  if (minimo < 7) {
+    if (minimo == atributo1) {
+      return "low_determinacion.png";
+    } else if (minimo == atributo2) {
+      return "low_alegria.png";
+    } else if (minimo == atributo3) {
+      return "low_apoyo.png";
+    } else if (minimo == atributo4) {
+      return "low_salud.png";
+    } else if (minimo == atributo5) {
+      return "low_dinero.png";
+    } else {
+      return "low_tiempo.png";
+    }
+  }
+  // Encuentra el atributo con el valor más alto
+  let maximo = Math.max(
+    Math.max(
+      Math.max(Math.max(Math.max(atributo1, atributo2), atributo3), atributo4),
+      atributo5
+    ),
+    atributo6
+  );
+  // Si el valor máximo es mayor que 20, devuelve el nombre correspondiente al atributo con un prefijo de "high_"
+  if (maximo > 12) {
+    if (maximo == atributo1) {
+      return "high_determinacion.png";
+    } else if (maximo == atributo2) {
+      return "high_alegria.png";
+    } else if (maximo == atributo3) {
+      return "high_apoyo.png";
+    } else if (maximo == atributo4) {
+      return "high_salud.png";
+    } else if (maximo == atributo5) {
+      return "high_dinero.png";
+    } else {
+      return "high_tiempo.png";
+    }
+  }
+  // Calcula el valor promedio de los atributos
+  let promedio =
+    (atributo1 + atributo2 + atributo3 + atributo4 + atributo5 + atributo6) /
+    6.0;
+  // Si el valor promedio es mayor o igual a cierto umbral, devuelve un nombre específico. De lo contrario, devuelve otro nombre.
+  if (promedio >= 10) {
+    return "high_average.png";
+  } else if (promedio >= 8) {
+    return "medium_average.png";
+  } else {
+    return "low_average.png";
+  }
 }
 
 function getImagePath() {
@@ -287,12 +329,12 @@ function showExplanation() {
     option.tiempo;
   actualizarPlayer(option);
   actualizarPlayerCard();
-  if(option.determinacion) mostrarValor("determinacion", option.determinacion);
-  if(option.alegria) mostrarValor("alegria", option.alegria);
-  if(option.apoyo) mostrarValor("apoyo", option.apoyo);
-  if(option.salud) mostrarValor("salud", option.salud);
-  if(option.dinero) mostrarValor("dinero", option.dinero);
-  if(option.tiempo) mostrarValor("tiempo", option.tiempo);
+  if (option.determinacion) mostrarValor("determinacion", option.determinacion);
+  if (option.alegria) mostrarValor("alegria", option.alegria);
+  if (option.apoyo) mostrarValor("apoyo", option.apoyo);
+  if (option.salud) mostrarValor("salud", option.salud);
+  if (option.dinero) mostrarValor("dinero", option.dinero);
+  if (option.tiempo) mostrarValor("tiempo", option.tiempo);
 }
 
 function deshabilitarBotones() {
@@ -319,14 +361,14 @@ function habilitarBotones() {
 
 function siguiente() {
   if (preguntas.length > 0) {
-    dado_activo=true;
+    dado_activo = true;
     document.getElementById("explicacion").innerHTML = "";
     diceImage.src = "img/dado-animado.gif";
     if (window.innerWidth <= 768) {
       rightBtn();
     }
   } else {
-    alert("Fin del juego");
+    alert("Se terminaron las preguntas.");
   }
   nextButton.style.display = "none";
 }
@@ -336,19 +378,24 @@ let tablero = document.getElementById("tablero");
 let ficha = document.getElementById("ficha");
 
 function colocarFichaEnCasilla(casillaIndex) {
-  var coordenadas = casillas[casillaIndex]; // Obtener las coordenadas de la casilla seleccionada
-  var offsetX = contenedor.offsetWidth * 0.5 - 53; // Centrar la ficha horizontalmente en el contenedor
-  var offsetY = contenedor.offsetHeight * 0.25 - 70; // Centrar la ficha verticalmente en el contenedor
-  // Ajustar la posición del contenedor si es necesario
-  var contenedorLeft = contenedor.offsetLeft;
-  var contenedorTop = contenedor.offsetTop;
-  var factorX = 1.55*contenedor.offsetWidth / 256; // anchoReferencia es el ancho del contenedor en tu ventana de referencia
-  var factorY = 1.38*contenedor.offsetHeight / 405; // altoReferencia es el alto del contenedor en tu ventana de referencia
-  var posicionX = factorX * coordenadas[0] + offsetX + contenedorLeft;
-  var posicionY = -factorY * coordenadas[1] + offsetY + contenedorTop;
-  // Establecer la posición de la ficha
-  ficha.style.left = posicionX + "px";
-  ficha.style.top = posicionY + "px";
+  if (casillaIndex >= casillas.length) { // Fin del juego
+    getFeedback();
+    document.getElementById("summaryModal").style.display = "block";
+  } else {
+    var coordenadas = casillas[casillaIndex]; // Obtener las coordenadas de la casilla seleccionada
+    var offsetX = contenedor.offsetWidth * 0.5 - 53; // Centrar la ficha horizontalmente en el contenedor
+    var offsetY = contenedor.offsetHeight * 0.25 - 70; // Centrar la ficha verticalmente en el contenedor
+    // Ajustar la posición del contenedor si es necesario
+    var contenedorLeft = contenedor.offsetLeft;
+    var contenedorTop = contenedor.offsetTop;
+    var factorX = (1.55 * contenedor.offsetWidth) / 256; // anchoReferencia es el ancho del contenedor en tu ventana de referencia
+    var factorY = (1.38 * contenedor.offsetHeight) / 405; // altoReferencia es el alto del contenedor en tu ventana de referencia
+    var posicionX = factorX * coordenadas[0] + offsetX + contenedorLeft;
+    var posicionY = -factorY * coordenadas[1] + offsetY + contenedorTop;
+    // Establecer la posición de la ficha
+    ficha.style.left = posicionX + "px";
+    ficha.style.top = posicionY + "px";
+  }
 }
 
 let diceImage = document.getElementById("dado");
@@ -357,8 +404,8 @@ let dado_activo = true;
 colocarFichaEnCasilla(0);
 
 diceImage.addEventListener("click", function () {
-  if(dado_activo) {
-    document.getElementById('tablero').src = 'img/tablero.png';
+  if (dado_activo) {
+    document.getElementById("tablero").src = "img/tablero.png";
     habilitarBotones();
     let diceRoll = Math.floor(Math.random() * 4) + 1;
     diceImage.src = "img/dado" + diceRoll + ".png";
@@ -367,21 +414,22 @@ diceImage.addEventListener("click", function () {
       setTimeout(() => {
         contador++;
         colocarFichaEnCasilla(contador);
-        if(i==diceRoll) {
+        if (i == diceRoll) {
           actualizarQuestionCard();
           if (window.innerWidth <= 768) {
-             setTimeout(() => {centerBtn();}, 1500); // 2000 milliseconds = 2 seconds
+            setTimeout(() => {
+              centerBtn();
+            }, 1500); // 2000 milliseconds = 2 seconds
           }
         }
       }, i * 500);
     }
-  dado_activo=false;
+    dado_activo = false;
   }
 });
 
 diceImage.addEventListener("mouseover", function () {
-  if(dado_activo)
-     diceImage.src = "img/dado-animado.gif";
+  if (dado_activo) diceImage.src = "img/dado-animado.gif";
 });
 
 // Muestra el valor en el elemento span de las barras de progreso
@@ -389,12 +437,42 @@ function mostrarValor(atributo, valor) {
   var span = document.getElementById(atributo + "-value");
   if (valor > 0) {
     span.textContent = "+" + valor;
-  } else if(valor ==0) {
+  } else if (valor == 0) {
     span.textContent = " ";
   } else {
     span.textContent = valor;
   }
-  setTimeout(function() { // Después de 2 segundos, borra el contenido del elemento span
+  setTimeout(function () {
+    // Después de 2 segundos, borra el contenido del elemento span
     span.textContent = "";
   }, 5000);
+}
+
+function getFeedbackAC(atributo, change) {
+  if (change >= 6) return "¡Excelente! Tu " + atributo + " ha aumentado significativamente.";
+  if (change >= 3) return "Bien hecho. Tu " + atributo + " ha mejorado.";
+  if (change >= 0) return "Tu " + atributo + " se mantuvo constante.";
+  if (change >= -3) return "Tu " + atributo + " ha disminuido ligeramente. Considera tus elecciones.";
+  return "Cuidado, tu " + atributo +  " ha disminuido. ¿Qué decisiones crees que contribuyeron a esto? ¿Cómo podrías mejorar tu " + atributo + " en el futuro?";
+}
+
+function getFeedback() {
+  var determinationChange = player.determinacion - initialDetermination;
+  var determinationFeedback = getFeedbackAC("Determinación", determinationChange);
+  var alegriaChange = player.alegria - initialAlegria;
+  var alegriaFeedback = getFeedbackAC("Alegria", alegriaChange);
+  var apoyoChange = player.apoyo - initialApoyo;
+  var apoyoFeedback = getFeedbackAC("Apoyo", apoyoChange);
+  var saludChange = player.salud - initialSalud;
+  var saludFeedback = getFeedbackAC("Salud", saludChange);
+  var tiempoChange = player.tiempo - initialTiempo;
+  var tiempoFeedback = getFeedbackAC("Tiempo", tiempoChange);
+  var dineroChange = player.dinero - initialDinero;
+  var dineroFeedback = getFeedbackAC("Dinero", dineroChange);
+  document.getElementById("determinacionFeedback").innerText = determinationFeedback;
+  document.getElementById("alegriaFeedback").innerText = alegriaFeedback;
+  document.getElementById("apoyoFeedback").innerText = apoyoFeedback;
+  document.getElementById("saludFeedback").innerText = saludFeedback;
+  document.getElementById("tiempoFeedback").innerText = tiempoFeedback;
+  document.getElementById("dineroFeedback").innerText = dineroFeedback;
 }

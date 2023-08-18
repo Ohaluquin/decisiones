@@ -326,6 +326,14 @@
   .nav {
     display: none;
   }
+
+  .part {
+    width: 33%;
+  }
+
+  .left, .right, .center {
+    display: block;
+  }
 }
 
 .tabla_barras {
@@ -339,7 +347,7 @@
 .tabla_barras progress {
   width: 100%; /* Ajusta al 80% del ancho de la celda */
   max-width: 300px; /* Establece un ancho máximo */
-  min-width: 100px; /* Establece un ancho mínimo */
+  min-width: 80px; /* Establece un ancho mínimo */
 }
 
 
@@ -395,3 +403,19 @@ progress.green::-moz-progress-bar {
 .transition {
   transition: opacity 1s ease;
 }
+
+.modal {
+  display: block;
+  color: #ddd;
+  position: fixed;
+  background-color: #0c69f3;
+  padding: 3px;
+  border-radius: 1rem;
+  width: 50%; /* Puedes ajustar este valor según tus necesidades */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
