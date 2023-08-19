@@ -15,3 +15,12 @@ function leftBtn() {
     document.getElementById("center").style.display = "none";
     document.getElementById("right").style.display = "block";
   }
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth >= 768) {
+    // Restablecer la propiedad display de las columnas a su valor original
+    document.getElementById("left").style.display = "";
+    document.getElementById("center").style.display = "";
+    document.getElementById("right").style.display = "";
+  }
+});

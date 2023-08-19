@@ -183,7 +183,7 @@
   width: 70%;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
-  padding: 3px;
+  padding: 1px;
   border-radius: 0.5rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
@@ -419,3 +419,9 @@ progress.green::-moz-progress-bar {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+.nombre {
+  font-size: 2rem;
+  font-style: bold;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}

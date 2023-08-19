@@ -327,26 +327,19 @@ function showExplanation() {
     ).value;
     option = pregunta.options[option_index - 1];
   }
-  document.getElementById("explicacion").innerHTML =
-    option.explicacion +
-    " Evaluación: " +
-    "determinación: " +
-    option.determinacion +
-    ", " +
-    "alegria: " +
-    option.alegria +
-    ", " +
-    "apoyo: " +
-    option.apoyo +
-    ", " +
-    "salud: " +
-    option.salud +
-    ", " +
-    "dinero: " +
-    option.dinero +
-    ", " +
-    "tiempo: " +
-    option.tiempo;
+
+    let evaluacion = `
+      <ul>
+        <li>Determinación: ${option.determinacion}</li>
+        <li>Alegría: ${option.alegria}</li>
+        <li>Apoyo: ${option.apoyo}</li>
+        <li>Salud: ${option.salud}</li>
+        <li>Dinero: ${option.dinero}</li>
+        <li>Tiempo: ${option.tiempo}</li>
+      </ul>
+    `;
+    document.getElementById("explicacion").innerHTML =
+      option.explicacion + " Evaluación: " + evaluacion;
   actualizarPlayer(option);
   actualizarPlayerCard();
   if (option.determinacion) mostrarValor("determinacion", option.determinacion);
@@ -496,3 +489,4 @@ function getFeedback() {
   document.getElementById("tiempoFeedback").innerText = tiempoFeedback;
   document.getElementById("dineroFeedback").innerText = dineroFeedback;
 }
+
