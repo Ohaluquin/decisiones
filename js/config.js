@@ -96,5 +96,5 @@ let dado_activo = true;
 
 //Definicion de variables para el manejo de las situaciones de "dios"
 let turno=0;
-let god_factor = 3;
+let god_factor = 2;
 let necesity = "determinacion";
