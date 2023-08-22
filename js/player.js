@@ -14,13 +14,14 @@ function actualizarPlayerCard() {
   // Set the source of the new image element to the new image, and make it visible.
   newImgElement.src = getImagePath();
   newImgElement.style.opacity = 1;
+  document.getElementById("letreroImagen").innerHTML = letreroImagen;
   // After 1 second (the duration of the transition), set the source of the original image element
   // to the new image, make it visible, and hide the new image element.
   setTimeout(function () {
     imgElement.src = animatedGif;
     imgElement.style.opacity = 1;
     newImgElement.style.opacity = 0;
-  }, 5000);
+  }, 6000);
 }
 
 // Función que cambia de color las barras de atributos del personaje
@@ -109,21 +110,27 @@ function getImageName(
   if (minimo < 7) {
     if (minimo == atributo1) {
       necesity = "determinacion";
+      letreroImagen = "Indecis@"
       return "low_determinacion.png";
     } else if (minimo == atributo2) {
       necesity = "alegria";
+      letreroImagen = "Triste";
       return "low_alegria.png";
     } else if (minimo == atributo3) {
       necesity = "apoyo";
+      letreroImagen = "Aislad@";
       return "low_apoyo.png";
     } else if (minimo == atributo4) {
       necesity = "salud";
+      letreroImagen = "Enferm@";
       return "low_salud.png";
     } else if (minimo == atributo5) {
       necesity = "dinero";
+      letreroImagen = "Pobre";
       return "low_dinero.png";
     } else {
       necesity = "tiempo";
+      letreroImagen = "Apurad@";
       return "low_tiempo.png";
     }
   }
@@ -138,16 +145,22 @@ function getImageName(
   // Si el valor máximo es mayor que 12, devuelve el nombre correspondiente al atributo con un prefijo de "high_"
   if (maximo > 12) {
     if (maximo == atributo1) {
+      letreroImagen = "Determinad@";
       return "high_determinacion.png";
     } else if (maximo == atributo2) {
+      letreroImagen = "Alegre";
       return "high_alegria.png";
     } else if (maximo == atributo3) {
+      letreroImagen = "Apoyad@";
       return "high_apoyo.png";
     } else if (maximo == atributo4) {
+      letreroImagen = "Saludable";
       return "high_salud.png";
     } else if (maximo == atributo5) {
+      letreroImagen = "Adinerad@";
       return "high_dinero.png";
     } else {
+      letreroImagen = "Libre";
       return "high_tiempo.png";
     }
   }
@@ -157,10 +170,13 @@ function getImageName(
     6.0;
   // Si el valor promedio es mayor o igual a cierto umbral, devuelve un nombre específico. De lo contrario, devuelve otro nombre.
   if (promedio >= 10) {
+    letreroImagen = "Bien";
     return "high_average.png";
   } else if (promedio >= 8) {
+    letreroImagen = "Regular";
     return "medium_average.png";
   } else {
+    letreroImagen = "Mal";
     return "low_average.png";
   }
 }

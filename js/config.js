@@ -98,3 +98,5 @@ let dado_activo = true;
 let turno=0;
 let god_factor = 2;
 let necesity = "determinacion";
+
+let letreroImagen = "";

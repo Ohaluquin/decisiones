@@ -64,7 +64,7 @@ function actualizarQuestionCard() {
     card.classList.add("yellow");
   } else {
     card.classList.add("green");
-    showExplanation();
+    mostrarOpcionTirarDado();
   }
 }
 
@@ -240,4 +240,19 @@ function getFeedback() {
   document.getElementById("saludFeedback").innerText = saludFeedback;
   document.getElementById("tiempoFeedback").innerText = tiempoFeedback;
   document.getElementById("dineroFeedback").innerText = dineroFeedback;
+}
+
+function tirarDados() {
+  let resultadoDado = Math.floor(Math.random() * 6) + 1; // Genera un número entre 1 y 6
+  if (resultadoDado % 2 === 0) { // Si el resultado es par
+    showExplanation(); // Se aplica la carta de azar
+  } else {
+    deshabilitarBotones();
+    document.getElementById("explicacion").innerHTML = "La suerte decidió: No aplicar la carta";
+  }
+  document.getElementById("diceModal").style.display = "none"; // Cierra el modal  
+}
+
+function mostrarOpcionTirarDado() {
+  document.getElementById("diceModal").style.display = "block";
 }

@@ -22,6 +22,7 @@
         <div class="perfil centrado">
           <div class="nombre" id="nombre">Nombre</div>
           <div id="contenedor_personaje">
+            <span id="letreroImagen">p</span>
             <img id="fotoPersonaje" src="" class="transition"
               style="position:absolute; opacity:1; width: 100%; height: 100%;">
             <img id="fotoPersonaje-nueva" src="" class="transition"
@@ -111,6 +112,12 @@
         <a href="select_player.html">Jugar de nuevo</a>
       </div>
     </div>
+    <div id="diceModal" class="modal dice">
+      <div class="modal-content">
+        <p>¡Has caído en una casilla de azar! Toca el dado para ver si se te aplica la carta:</p>
+        <button onclick="tirarDados()"><img src="img/dice.jpg" alt="Tirar dado" class="dado"></button>
+      </div>
+    </div>    
   </div>
   <script src="database/questions.js"></script>
   <script src="database/personajes.js"></script>

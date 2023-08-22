@@ -425,3 +425,27 @@ progress.green::-moz-progress-bar {
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
 }
+
+#diceModal {
+  width: 20rem;
+  height: 20rem;
+}
+
+.dado {
+  width: 10rem;
+  height: 10rem;
+}
+
+#contenedor_personaje {
+  position: relative; /* Contenedor relativo para posicionar el letrero */
+}
+
+#letreroImagen {
+  position: absolute; /* Posicionamiento absoluto dentro del contenedor relativo */
+  top: 10px; /* Posición desde la parte superior del contenedor (ajústalo según necesites) */
+  left: 10px; /* Posición desde la izquierda del contenedor (ajústalo según necesites) */
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente (opcional) */
+  padding: 5px; /* Espaciado interno (opcional) */
+  font-size: 1rem; /* Tamaño de fuente (ajústalo según necesites) */
+  z-index: 2; /* Asegura que el letrero aparezca sobre las imágenes */
+}
