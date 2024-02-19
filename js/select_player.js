@@ -11,7 +11,7 @@ async function inicio() {
 
 function cambiarPersonaje(src) {
   personaje = personajes.find((p) => p.rutaImagen == src);
-  document.getElementById("foto-personaje").src = "img/personajes/" + src + "/medium_average.png";
+  document.getElementById("sel_personaje").src = "img/personajes/" + src + "/medium_average.png";
   document.getElementById("determinacion").value = personaje.determinacion;
   document.getElementById("alegria").value = personaje.alegria;
   document.getElementById("apoyo").value = personaje.apoyo;

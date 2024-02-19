@@ -26,7 +26,7 @@
 
 .sp_container { /* select_player */
   display: flex;
-  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .body-container { /* principal */
@@ -137,9 +137,18 @@
   color: #dbc6c6;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .part {
-  width: 33%;
+  width: 70%;
   height: 98vh;
+}
+
+#center {
+  display: none;
 }
 
 .card {
@@ -172,15 +181,16 @@
 }
 
 .card img {
-  width: 40%;
-  height: auto;
+  width: 45%;
+  height: 45%;
   display: block;
   margin: 0 auto;
   border: 0.1rem solid rgb(111, 202, 209);
 }
 
 .perfil {
-  width: 70%;
+  width: 95%;
+  height: 95%;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
   padding: 1px;
@@ -189,8 +199,6 @@
 }
 
 .perfil img {
-  width: 90%;
-  height: auto;
   display: block;
   margin: 0 auto;
   border-radius: 0.5rem;
@@ -198,7 +206,7 @@
 }
 
 .contextos {
-  width: 75%;
+  width: 90%;
   height: 90%;
   margin: 0 auto;
   border: 0.5rem solid rgb(162, 46, 17);
@@ -210,7 +218,6 @@
 
 .contextos img {
   width: 95%;
-  height: 49%;
   padding: 3px;
   display: block;
   margin: 0 auto;
@@ -218,6 +225,12 @@
 
 #tablero {
   position: relative;
+  height: 80%;
+}
+
+#dado {
+  width: 20%;
+  height: 15%;
 }
 
 #ficha {
@@ -258,13 +271,13 @@
 }
 
 .nav {
-  display: flex;
+  display: none; /*flex*/
   justify-content: space-between;
 }
 
 .personaje {
-  width: 85%;
-  height: 85%;
+  width: 80%;
+  height: 80%;
   margin: 0 auto;
   border: 0.1rem solid rgb(162, 46, 17);
   background-color: rgb(215, 118, 0);
@@ -275,7 +288,7 @@
 
 #contenedor_personaje {
   position: relative;
-  width: 90%; /*235px;*/
+  height: 55%;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   border: 0.1rem solid rgb(162, 46, 17);
@@ -289,8 +302,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+}
+
+#select_player {
+  width: 50%;
+  height: 90vh;
+}
+
+#sel_personaje {
+  height: 55%;
 }
 
 
@@ -303,37 +323,6 @@
   padding: 1px;
   border-radius: 1rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-
-@media (max-width: 768px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .part {
-    width: 100%;
-  }
-
-  .left,
-  .center {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .nav {
-    display: none;
-  }
-
-  .part {
-    width: 33%;
-  }
-
-  .left, .right, .center {
-    display: block;
-  }
 }
 
 .tabla_barras {
@@ -436,16 +425,21 @@ progress.green::-moz-progress-bar {
   height: 10rem;
 }
 
-#contenedor_personaje {
-  position: relative; /* Contenedor relativo para posicionar el letrero */
-}
-
 #letreroImagen {
   position: absolute; /* Posicionamiento absoluto dentro del contenedor relativo */
   top: 10px; /* Posición desde la parte superior del contenedor (ajústalo según necesites) */
   left: 10px; /* Posición desde la izquierda del contenedor (ajústalo según necesites) */
   background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente (opcional) */
+  color: #0c69f3;
   padding: 5px; /* Espaciado interno (opcional) */
   font-size: 1rem; /* Tamaño de fuente (ajústalo según necesites) */
   z-index: 2; /* Asegura que el letrero aparezca sobre las imágenes */
+}
+
+#user_stats {
+  position: absolute;
+  padding: 5px;
+  height: 85vh;
+  width: 45%;
+  z-index: 1;
 }

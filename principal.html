@@ -11,14 +11,9 @@
 </head>
 
 <body>
-  <div class="nav botones" name="botones">
-    <button class="key" onclick="leftBtn()">Perfil</button>
-    <button class="key" onclick="centerBtn()">Pregunta</button>
-    <button class="key" onclick="rightBtn()">Mapa</button>
-  </div>
   <div class="container-background">
     <div class="body-container">
-      <div id="left" class="part left" name="atributos">
+      <div id="user_stats" class="part centrado modal" name="atributos">
         <div class="perfil centrado">
           <div class="nombre" id="nombre">Nombre</div>
           <div id="contenedor_personaje">
@@ -65,7 +60,7 @@
           </table>
         </div>
       </div>
-      <div id="center" class="part center">
+      <div id="center" class="part centrado">
         <div class="card">
           <h3 id="pregunta"></h3>
           <img src="img/inicio.png" alt="Presiona el dado para iniciar" id="foto-pregunta" />
@@ -89,7 +84,7 @@
           </div>
         </div>
       </div>
-      <div id="right" class="part right">
+      <div id="right" class="part centrado">
         <div class="contextos" id="contenedor">
           <img src="img/inicio.png" alt="tablero" id="tablero" />
           <img src="img/ficha.gif" alt="ficha" id="ficha" />
@@ -115,7 +110,7 @@
     <div id="diceModal" class="modal dice">
       <div class="modal-content">
         <p>¡Has caído en una casilla de azar! Toca el dado para ver si se te aplica la carta:</p>
-        <button onclick="tirarDados()"><img src="img/dice.jpg" alt="Tirar dado" class="dado"></button>
+        <button onclick="tirarDados()"><img src="img/dado-animado.gif" alt="Tirar dado" class="dado"></button>
       </div>
     </div>    
   </div>
@@ -124,8 +119,7 @@
   <script src="js/config.js"></script>
   <script src="js/player.js"></script>
   <script src="js/game.js"></script>
-  <script src="js/principal.js"></script>
   <script src="js/select_column.js"></script>
+  <script src="js/principal.js"></script>
 </body>
-
 </html>

@@ -16,9 +16,7 @@ function actualizarQuestionCard() {
   let filteredQuestions = preguntas.filter(
     (pregunta) => pregunta.kind === category
   );
-  //console.log("Turno " + turno + " " + category + " " + necesity);
   if (category === "personal" && turno % god_factor === 0) {
-    //console.log("New filtro");
     filteredQuestions = filteredQuestions.filter((pregunta) =>
       pregunta.options.some((option) => option[necesity] >= 1)
     );
@@ -26,7 +24,7 @@ function actualizarQuestionCard() {
   pregunta_actual = Math.floor(Math.random() * filteredQuestions.length);
   pregunta = filteredQuestions[pregunta_actual];
   preguntas.splice(preguntas.indexOf(pregunta), 1);
-  document.getElementById("pregunta").innerHTML = pregunta.text;
+  document.getElementById("pregunta").innerHTML = "Contexto "+category+":<br><br>"+pregunta.text;
   if (pregunta.kind === "azar") {
     document.getElementById("option1").classList.add("hidden");
     document.getElementById("option2").classList.add("hidden");
@@ -94,6 +92,8 @@ function showExplanation() {
     option.explicacion + " Evaluación: " + evaluacion;
   actualizarPlayer(option);
   actualizarPlayerCard();
+  document.getElementById("foto-pregunta").src = "img/consecuencias.png";
+  mostrarPerfil();
   if (option.determinacion) mostrarValor("determinacion", option.determinacion);
   if (option.alegria) mostrarValor("alegria", option.alegria);
   if (option.apoyo) mostrarValor("apoyo", option.apoyo);
@@ -131,10 +131,8 @@ function siguiente() {
   if (preguntas.length > 0) {
     dado_activo = true;
     document.getElementById("explicacion").innerHTML = "";
-    diceImage.src = "img/dado-animado.gif";
-    if (window.innerWidth <= 768) {
-      rightBtn();
-    }
+    diceImage.src = "img/dado-animado.gif";    
+    rightBtn();    
   } else {
     alert("Se terminaron las preguntas.");
   }
@@ -149,8 +147,8 @@ function colocarFichaEnCasilla(casillaIndex) {
     document.getElementById("summaryModal").style.display = "block";
   } else {
     var coordenadas = casillas[casillaIndex]; // Obtener las coordenadas de la casilla seleccionada
-    var offsetX = contenedor.offsetWidth * 0.5 - 53; // Centrar la ficha horizontalmente en el contenedor
-    var offsetY = contenedor.offsetHeight * 0.25 - 70; // Centrar la ficha verticalmente en el contenedor
+    var offsetX = contenedor.offsetWidth * 0.5 - 60; // Centrar la ficha horizontalmente en el contenedor
+    var offsetY = contenedor.offsetHeight * 0.25 - 40; // Centrar la ficha verticalmente en el contenedor
     // Ajustar la posición del contenedor si es necesario
     var contenedorLeft = contenedor.offsetLeft;
     var contenedorTop = contenedor.offsetTop;
@@ -179,11 +177,7 @@ diceImage.addEventListener("click", function () {
         colocarFichaEnCasilla(contador);
         if (i == diceRoll) {
           actualizarQuestionCard();
-          if (window.innerWidth <= 768) {
-            setTimeout(() => {
-              centerBtn();
-            }, 1500); // 2000 milliseconds = 2 seconds
-          }
+          setTimeout(() => {centerBtn();}, 1500); // 2000 milliseconds = 2 seconds          
         }
       }, i * 500);
     }
@@ -255,4 +249,11 @@ function tirarDados() {
 
 function mostrarOpcionTirarDado() {
   document.getElementById("diceModal").style.display = "block";
+}
+
+function mostrarPerfil() {
+  document.getElementById("user_stats").style.display = "block";
+  setTimeout(() => {
+    document.getElementById("user_stats").style.display = "none";  
+  }, 3500);  
 }

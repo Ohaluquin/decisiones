@@ -13,5 +13,7 @@ async function inicio() {
   initialSalud = player.salud;
   initialTiempo = player.tiempo;
   initialDinero = player.dinero;
+  document.getElementById("ficha").src = getFicha();
   colocarFichaEnCasilla(0);
+  mostrarPerfil();
 }

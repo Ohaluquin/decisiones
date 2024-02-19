@@ -14,7 +14,7 @@ function actualizarPlayerCard() {
   // Set the source of the new image element to the new image, and make it visible.
   newImgElement.src = getImagePath();
   newImgElement.style.opacity = 1;
-  document.getElementById("letreroImagen").innerHTML = letreroImagen;
+  document.getElementById("letreroImagen").innerHTML = "Sentimiento: " + letreroImagen;
   // After 1 second (the duration of the transition), set the source of the original image element
   // to the new image, make it visible, and hide the new image element.
   setTimeout(function () {
@@ -184,6 +184,11 @@ function getImageName(
 // Función que regresa el nombre de la imagen uniendo ruta + nombre_personaje + estado_atributos_jugador
  function getImagePath() {
   return "img/personajes/" + player.rutaImagen + "/" + player.imageName;
+}
+
+// Función que regresa el nombre de la imagen uniendo ruta + nombre_personaje + estado_atributos_jugador
+function getFicha() {
+  return "img/personajes/" + player.rutaImagen + "/ficha.gif";
 }
 
 // Muestra momentaneamente el valor de la evaluacion del elemento en la barra de progreso del atributo
