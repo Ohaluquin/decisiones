@@ -181,8 +181,8 @@
 }
 
 .card img {
-  width: 45%;
-  height: 45%;
+  width: 40%;
+  max-width: 50vh;
   display: block;
   margin: 0 auto;
   border: 0.1rem solid rgb(111, 202, 209);
@@ -270,11 +270,6 @@
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.nav {
-  display: none; /*flex*/
-  justify-content: space-between;
-}
-
 .personaje {
   width: 80%;
   height: 80%;
@@ -305,12 +300,13 @@
 }
 
 #select_player {
-  width: 50%;
+  width: 30%;
   height: 90vh;
 }
 
 #sel_personaje {
-  height: 55%;
+  width: 85%;  
+  max-width: 45vh;
 }
 
 
@@ -325,18 +321,22 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+#tabla_barras {
+  width: 90%;
+}
+
 .tabla_barras {
   width: 100%;
 }
 
 .tabla_barras td {
-  width: 65%; /* Asegura que la celda ocupa todo el ancho disponible */
+  width: 45%; /* Asegura que la celda ocupa todo el ancho disponible */
 }
 
 .tabla_barras progress {
   width: 100%; /* Ajusta al 80% del ancho de la celda */
-  max-width: 300px; /* Establece un ancho máximo */
-  min-width: 80px; /* Establece un ancho mínimo */
+  max-width: 600px; /* Establece un ancho máximo */
+  min-width: 25px; /* Establece un ancho mínimo */
 }
 
 
@@ -442,4 +442,40 @@ progress.green::-moz-progress-bar {
   height: 85vh;
   width: 45%;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .part {
+    width: 100%;
+  }
+
+  .sp_container {
+    display: block;
+    margin: 0 auto;
+  }
+
+  #select_player {
+    width: 80%;
+    height: 40vh;
+  }
+
+  #sel_personaje {    
+    width: 85%;  
+    max-width: 20vh;
+  }
+
+  #user_stats {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .part {
+    width: 70%;
+  }
 }
