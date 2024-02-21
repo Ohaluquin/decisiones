@@ -189,7 +189,7 @@
 }
 
 .perfil {
-  width: 95%;
+  height: 95%;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
   padding: 1px;
@@ -197,7 +197,7 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.perfil img {
+.perfil img {  
   display: block;
   margin: 0 auto;
   border-radius: 0.5rem;
@@ -470,6 +470,11 @@ progress.green::-moz-progress-bar {
 
   #user_stats {
     width: 80%;
+    height: 65vh;
+  }
+
+  .perfil {
+    width: 95%;
   }
 }
 
