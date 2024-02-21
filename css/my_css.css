@@ -190,7 +190,6 @@
 
 .perfil {
   width: 95%;
-  height: 95%;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
   padding: 1px;
@@ -461,7 +460,7 @@ progress.green::-moz-progress-bar {
 
   #select_player {
     width: 80%;
-    height: 40vh;
+    height: 60vh;
   }
 
   #sel_personaje {    
