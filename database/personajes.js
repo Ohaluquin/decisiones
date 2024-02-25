@@ -7,7 +7,7 @@ let personajes = [
     apoyo: 10,
     salud: 13,
     dinero: 7,
-    tiempo: 15,
+    tiempo: 8,
   },
   {
     personajeID: 2,
@@ -27,7 +27,7 @@ let personajes = [
     apoyo: 8,
     salud: 13,
     dinero: 5,
-    tiempo: 12,
+    tiempo: 10,
   },
   {
     personajeID: 4,
@@ -47,7 +47,7 @@ let personajes = [
     apoyo: 12,
     salud: 12,
     dinero: 7,
-    tiempo: 13,
+    tiempo: 10,
   },
   {
     personajeID: 6,
@@ -57,7 +57,7 @@ let personajes = [
     apoyo: 6,
     salud: 13,
     dinero: 5,
-    tiempo: 13,
+    tiempo: 10,
   },
   {
     personajeID: 7,
@@ -67,7 +67,7 @@ let personajes = [
     apoyo: 6,
     salud: 15,
     dinero: 5,
-    tiempo: 15,
+    tiempo: 10,
   },
   {
     personajeID: 8,
@@ -87,7 +87,7 @@ let personajes = [
     apoyo: 12,
     salud: 12,
     dinero: 12,
-    tiempo: 15,
+    tiempo: 10,
   },
   {
     personajeID: 11,
@@ -107,7 +107,7 @@ let personajes = [
     apoyo: 6,
     salud: 12,
     dinero: 7,
-    tiempo: 12,
+    tiempo: 9,
   },
   {
     personajeID: 13,
@@ -117,7 +117,7 @@ let personajes = [
     apoyo: 5,
     salud: 12,
     dinero: 5,
-    tiempo: 15,
+    tiempo: 10,
   },
   {
     personajeID: 14,
@@ -147,7 +147,7 @@ let personajes = [
     apoyo: 8,
     salud: 12,
     dinero: 7,
-    tiempo: 5,
+    tiempo: 8,
   },
   {
     personajeID: 17,
@@ -157,7 +157,7 @@ let personajes = [
     apoyo: 5,
     salud: 9,
     dinero: 5,
-    tiempo: 12,
+    tiempo: 9,
   },
   {
     personajeID: 18,
@@ -167,16 +167,16 @@ let personajes = [
     apoyo: 10,
     salud: 12,
     dinero: 10,
-    tiempo: 12,
+    tiempo: 10,
   },
   {
     personajeID: 19,
     rutaImagen: "willuri",
     determinacion: 8,
     alegria: 13,
-    apoyo: 5,
+    apoyo: 8,
     salud: 5,
     dinero: 5,
-    tiempo: 15,
+    tiempo: 8,
   },
 ];
