@@ -21,7 +21,7 @@ function actualizarPlayerCard() {
     imgElement.src = animatedGif;
     imgElement.style.opacity = 1;
     newImgElement.style.opacity = 0;
-  }, 6000);
+  }, 3000);
 }
 
 // Función que cambia de color las barras de atributos del personaje

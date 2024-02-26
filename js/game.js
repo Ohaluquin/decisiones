@@ -1,4 +1,8 @@
 // Funciones relacionadas con la lógica de juego.
+const timerSound = new Audio("sounds/tick.mp3");
+const incorrectSound = new Audio("sounds/error_sound.mp3");
+const pageSound = new Audio("sounds/change_page.mp3");
+const diceSound = new Audio("sounds/dice.mp3");
 
 // Función que cambia la carta de pregunta que se muestra, de acuerdo a la casilla del tablero en que
 // se encuentre la ficha
@@ -64,6 +68,7 @@ function actualizarQuestionCard() {
     card.classList.add("green");
     mostrarOpcionTirarDado();
   }
+  pageSound.play();
 }
 
 // Función que muestra una explicación a la opción elegida
@@ -141,6 +146,7 @@ function siguiente() {
 
 // Función coloca el gif de la ficha en la casilla correspondiente
 function colocarFichaEnCasilla(casillaIndex) {
+  timerSound.play();
   if (casillaIndex >= casillas.length) {
     // Fin del juego
     getFeedback();
@@ -165,6 +171,7 @@ function colocarFichaEnCasilla(casillaIndex) {
 // Función que se activa al darle click al dado
 diceImage.addEventListener("click", function () {
   if (dado_activo) {
+    diceSound.play();
     document.getElementById("tablero").src = "img/tablero.png";
     habilitarBotones();
     turno++;
@@ -237,6 +244,7 @@ function getFeedback() {
 }
 
 function tirarDados() {
+  diceSound.play();
   let resultadoDado = Math.floor(Math.random() * 6) + 1; // Genera un número entre 1 y 6
   if (resultadoDado % 2 === 0) { // Si el resultado es par
     showExplanation(); // Se aplica la carta de azar
@@ -252,8 +260,9 @@ function mostrarOpcionTirarDado() {
 }
 
 function mostrarPerfil() {
+  pageSound.play();
   document.getElementById("user_stats").style.display = "block";
   setTimeout(() => {
     document.getElementById("user_stats").style.display = "none";  
-  }, 5000);
+  }, 6000);
 }
