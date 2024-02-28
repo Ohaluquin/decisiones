@@ -1,5 +1,7 @@
 // Funciones relacionadas con la lógica de juego.
 const timerSound = new Audio("sounds/tick.mp3");
+const stepsSound = new Audio("sounds/steps.mp3");
+const winSound = new Audio("sounds/win.mp3");
 const incorrectSound = new Audio("sounds/error_sound.mp3");
 const pageSound = new Audio("sounds/change_page.mp3");
 const diceSound = new Audio("sounds/dice.mp3");
@@ -82,6 +84,9 @@ function showExplanation() {
       'input[type="radio"]:checked'
     ).value;
     option = pregunta.options[option_index - 1];
+    let evaluacion = evalua(option);
+    if(evaluacion>1) winSound.play();
+    else if(evaluacion<-1) incorrectSound.play();
   }
   let evaluacion = `
         <ul>
@@ -146,7 +151,7 @@ function siguiente() {
 
 // Función coloca el gif de la ficha en la casilla correspondiente
 function colocarFichaEnCasilla(casillaIndex) {
-  timerSound.play();
+  stepsSound.play();
   if (casillaIndex >= casillas.length) {
     // Fin del juego
     getFeedback();
@@ -220,10 +225,7 @@ function getFeedbackAC(atributo, change) {
 // Función que solicita el feedback de los atributos del player
 function getFeedback() {
   var determinationChange = player.determinacion - initialDetermination;
-  var determinationFeedback = getFeedbackAC(
-    "Determinación",
-    determinationChange
-  );
+  var determinationFeedback = getFeedbackAC("Determinación", determinationChange);
   var alegriaChange = player.alegria - initialAlegria;
   var alegriaFeedback = getFeedbackAC("Alegria", alegriaChange);
   var apoyoChange = player.apoyo - initialApoyo;
@@ -234,8 +236,7 @@ function getFeedback() {
   var tiempoFeedback = getFeedbackAC("Tiempo", tiempoChange);
   var dineroChange = player.dinero - initialDinero;
   var dineroFeedback = getFeedbackAC("Dinero", dineroChange);
-  document.getElementById("determinacionFeedback").innerText =
-    determinationFeedback;
+  document.getElementById("determinacionFeedback").innerText = determinationFeedback;
   document.getElementById("alegriaFeedback").innerText = alegriaFeedback;
   document.getElementById("apoyoFeedback").innerText = apoyoFeedback;
   document.getElementById("saludFeedback").innerText = saludFeedback;

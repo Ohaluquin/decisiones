@@ -70,6 +70,10 @@ function cargarPlayer() {
   }
 }
 
+function evalua(option) {
+  return option.determinacion + option.alegria + option.apoyo + option.salud + option.dinero + option.tiempo;
+}
+
   // Función que actualiza los atributos del jugador después de responder una pregunta
 function actualizarPlayer(option) {
   // Actualizar los atributos del jugador
