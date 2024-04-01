@@ -4403,32 +4403,29 @@ let preguntas = [
       {
         optionID: 321,
         text: "Gastas mucho dinero en alcohol, pero sientes que vale la pena",
-        explicacion:
-          "Esta opción podría aumentar tu alegría y apoyo al disfrutar de los convivios con tus amigos. Sin embargo, también podría disminuir significativamente tu salud y dinero al gastar mucho en alcohol.",
-        determinacion: 0,
+        explicacion: "Participar en los convivios puede reforzar tus lazos sociales y aportar momentos de alegría. Sin embargo, es importante equilibrar el disfrute con una gestión financiera prudente, especialmente considerando el compromiso que conlleva una beca. Reflexiona sobre maneras de disfrutar sin comprometer tu salud financiera y física.",          
+        determinacion: -2,
         alegria: 1,
         apoyo: 1,
         salud: -2,
         dinero: -2,
-        tiempo: 0,
+        tiempo: -1,
       },
       {
         optionID: 322,
-        text: "Sientes que estás bebiendo de más y gastando demasiado, así que reduces tu consumo",
-        explicacion:
-          "Esta opción podría aumentar tu determinación, salud y dinero al reducir tu consumo de alcohol. Sin embargo, también podría afectar tu alegría y apoyo al no disfrutar tanto de los convivios con tus amigos.",
-        determinacion: 1,
-        alegria: 0,
-        apoyo: 0,
-        salud: 1,
-        dinero: 1,
-        tiempo: 0,
+        text: "Decides disfrutar de los convivios con moderación, siendo consciente de tu consumo y gasto.", 
+        explicacion:"Tomar la decisión de moderar tu consumo de alcohol y gastos refleja una actitud responsable hacia tu bienestar y finanzas. Este enfoque balanceado te permite disfrutar de la compañía de tus amigos de manera saludable, sin renunciar completamente a la diversión social.",          
+        determinacion: 0,
+        alegria: 1,
+        apoyo: 1,
+        salud: -1,
+        dinero: -1,
+        tiempo: -1,
       },
       {
         optionID: 323,
         text: "Aunque no siempre tomes, te gusta ir para formar parte del grupo",
-        explicacion:
-          "Esta opción podría aumentar tu alegría y apoyo al disfrutar de los convivios con tus amigos. Sin embargo, también podría disminuir tu dinero al gastar en los convivios y requerir más tiempo para asistir a ellos.",
+        explicacion: "Estar presente en los convivios sin ceder a la presión de consumir puede mantener tu participación social activa y tu inclusión en el grupo. Esta opción subraya la importancia de la compañía sobre la actividad, permitiéndote mantener tus principios personales mientras disfrutas del tiempo con amigos.",          
         determinacion: 0,
         alegria: 1,
         apoyo: 1,
@@ -4439,14 +4436,13 @@ let preguntas = [
       {
         optionID: 324,
         text: "Dejo de asistir porque no me gusta ese ambiente",
-        explicacion:
-          "Esta opción podría aumentar tu determinación, salud y dinero al alejarte de un ambiente que no te gusta. Sin embargo, también podría disminuir significativamente tu alegría y apoyo al alejarte de tus amigos.",
+        explicacion:"Elegir alejarte de un ambiente que no te resulta cómodo o acorde a tus valores demuestra respeto por ti mismo y tus prioridades. Si bien esta decisión puede afectar temporalmente tus relaciones sociales, también abre la oportunidad de buscar actividades más alineadas con tus intereses y valores.",          
         determinacion: 1,
-        alegria: -2,
-        apoyo: -2,
+        alegria: 0,
+        apoyo: -1,
         salud: 1,
         dinero: 1,
-        tiempo: 0,
+        tiempo: 1,
       },
     ],
   },
@@ -4459,9 +4455,8 @@ let preguntas = [
       {
         optionID: 325,
         text: "Lo buscas para desquitarte físicamente",
-        explicacion:
-          "Esta opción podría disminuir significativamente tu alegría, apoyo y salud al buscar venganza física. También podría afectar negativamente tu determinación.",
-        determinacion: -1,
+        explicacion: "Optar por la confrontación física puede llevar a consecuencias graves para tu bienestar y relaciones. Esta acción no solo es perjudicial para la salud, sino que también puede deteriorar tu imagen y llevar a problemas legales. Considera las repercusiones a largo plazo antes de tomar una decisión impulsiva.",          
+        determinacion: -2,
         alegria: -2,
         apoyo: -1,
         salud: -2,
@@ -4471,8 +4466,7 @@ let preguntas = [
       {
         optionID: 326,
         text: "Tú también publicas cosas que hablen mal de él",
-        explicacion:
-          "Esta opción podría disminuir significativamente tu alegría y apoyo al generar un ciclo de violencia verbal. También podría afectar negativamente tu determinación y salud.",
+        explicacion: "Responder con agresividad en redes sociales puede intensificar el conflicto y afectar tu reputación. Este enfoque puede alejarte de amigos y conocidos, y tener un impacto negativo en tu bienestar emocional. Buscar maneras constructivas de abordar el conflicto puede ofrecer soluciones más saludables y duraderas.",          
         determinacion: -1,
         alegria: -2,
         apoyo: -2,
@@ -4483,8 +4477,7 @@ let preguntas = [
       {
         optionID: 327,
         text: "Lo ignoras porque no te importa",
-        explicacion:
-          "Esta opción podría aumentar tu determinación y salud al no permitir que las acciones de la otra persona te afecten.",
+        explicacion: "Mantener la distancia y no dejar que las acciones negativas de otros te afecten refleja fortaleza y madurez. Esta opción puede ayudarte a mantener tu paz interior y bienestar, evitando caer en ciclos de negatividad.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -4495,8 +4488,7 @@ let preguntas = [
       {
         optionID: 328,
         text: "Intentas hablar con él para resolver las diferencias",
-        explicacion:
-          "Esta opción podría aumentar tu determinación y apoyo al buscar una solución pacífica. Sin embargo, también podría requerir más tiempo para resolver el problema.",
+        explicacion:"Buscar un diálogo constructivo para resolver diferencias muestra una gran determinación y un enfoque proactivo hacia la resolución de conflictos. Esta actitud puede no solo mejorar tu relación con la otra persona, sino también reforzar tu red de apoyo al mostrar tu compromiso con la paz y el entendimiento.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -4515,8 +4507,7 @@ let preguntas = [
       {
         optionID: 329,
         text: "Hablas con otro familiar, en quien confías, para contarle el problema",
-        explicacion:
-          "Esta opción podría aumentar tu determinación, apoyo y salud al buscar ayuda de un familiar en quien confías. Sin embargo, también podría requerir más tiempo para resolver el problema.",
+        explicacion:"Buscar apoyo en un familiar de confianza puede proporcionarte un refugio emocional y consejos valiosos sobre cómo manejar la situación. Esta acción refleja tu determinación por buscar una solución segura, manteniendo el apoyo dentro de tu red familiar.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -4527,8 +4518,7 @@ let preguntas = [
       {
         optionID: 330,
         text: "Buscas consejo/apoyo con tus amigos cercanos",
-        explicacion:
-          "Esta opción podría aumentar tu determinación, apoyo y salud al buscar ayuda de tus amigos cercanos. Sin embargo, también podría requerir más tiempo para resolver el problema.",
+        explicacion: "Compartir tus experiencias con amigos cercanos puede brindarte apoyo emocional y perspectivas externas sobre posibles soluciones. El valor de una red de apoyo empática es incalculable, y confiar en tus amigos puede fortalecer tu resiliencia ante situaciones difíciles.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -4539,20 +4529,18 @@ let preguntas = [
       {
         optionID: 331,
         text: "Enfrentas a tu familiar aunque se genere un problema mayor",
-        explicacion:
-          "Esta opción podría disminuir significativamente tu alegría y salud al generar un conflicto con tu familiar, pero también puede mostrar determinación al afrontar un problema de frente y buscar una solución y podría considerarse que se está brindando apoyo a uno mismo al no permitir ser tratado injustamente, incluso si es por un miembro de la familia.",
+        explicacion:"Confrontar directamente al familiar puede ser una decisión valiente, pero también riesgosa. Es vital considerar las posibles consecuencias de tal enfrentamiento y buscar maneras seguras de abordar el conflicto. La seguridad personal debe ser siempre la prioridad.",          
         determinacion: 1,
         alegria: -2,
-        apoyo: 1,
-        salud: -1,
+        apoyo: 0,
+        salud: -2,
         dinero: 0,
         tiempo: -1,
       },
       {
         optionID: 332,
         text: "Buscas alternativas de otro lugar donde puedas vivir",
-        explicacion:
-          "Esta opción podría aumentar tu determinación y salud al buscar una solución drástica para protegerte. Sin embargo, también podría disminuir significativamente tu dinero y requerir más tiempo para llevar a cabo. También podría afectar negativamente tu apoyo y alegría al alejarte de tu familia.",
+        explicacion:"Buscar un nuevo entorno seguro es una medida proactiva importante cuando el hogar deja de ser un lugar seguro. Aunque esta decisión puede ser difícil y conllevar desafíos emocionales y financieros, prioriza tu bienestar y seguridad, abriendo el camino hacia un entorno más saludable.",          
         determinacion: 1,
         alegria: -1,
         apoyo: -1,
@@ -4571,8 +4559,7 @@ let preguntas = [
       {
         optionID: 333,
         text: "Lo platicas con el tutor para que hable con el grupo",
-        explicacion:
-          "Esta opción podría aumentar tu determinación y apoyo al buscar ayuda de una figura de autoridad. Sin embargo, también podría requerir más tiempo para resolver el problema.",
+        explicacion:"Dirigirte a un tutor o figura de autoridad puede proporcionar una vía formal para abordar el problema y buscar una solución. Este enfoque demuestra tu deseo de resolver la situación de manera constructiva, promoviendo un ambiente de respeto y comprensión en el aula.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -4583,32 +4570,29 @@ let preguntas = [
       {
         optionID: 334,
         text: "Evitas hablar con tus compañeros de clase e intentas cambiar de grupo el próximo Semestre",
-        explicacion:
-          "Esta opción podría disminuir significativamente tu apoyo y también podría afectar negativamente tu determinación y alegría al alejarte de tus compañeros de clase. También podría requerir más tiempo para llevar a cabo.",
+        explicacion:"Aunque evitar el conflicto puede parecer una solución temporal, es importante considerar las oportunidades de enfrentar y resolver el problema directamente. Cambiar de grupo puede ofrecer un nuevo comienzo, pero también es vital desarrollar estrategias para manejar situaciones similares en el futuro.",          
         determinacion: -1,
         alegria: -1,
-        apoyo: -2,
+        apoyo: -1,
         salud: 0,
         dinero: 0,
-        tiempo: -1,
+        tiempo: 0,
       },
       {
         optionID: 335,
         text: "Dejas de entrar a clase para no ver a tus compañeros",
-        explicacion:
-          "Esta opción podría disminuir significativamente tu determinación, alegría y apoyo al dejar de asistir a clase y alejarte de tus compañeros.",
+        explicacion:"Evitar la clase puede tener un impacto negativo en tu educación y bienestar social. Es esencial buscar apoyo y considerar maneras de abordar el problema que no comprometan tu aprendizaje o tus relaciones con otros compañeros que podrían ser aliados.",          
         determinacion: -2,
         alegria: -1,
         apoyo: -1,
-        salud: -1,
+        salud: 0,
         dinero: 0,
         tiempo: 0,
       },
       {
         optionID: 336,
         text: "Investigas quién lo hizo para desquitarte",
-        explicacion:
-          "Esta opción podría disminuir significativamente tu alegría y apoyo al buscar venganza. También podría afectar negativamente tu determinación, salud y requerir más tiempo para llevar a cabo.",
+        explicacion:"Buscar represalias puede intensificar el conflicto y tener consecuencias negativas duraderas. Es importante buscar soluciones que fomenten el entendimiento y la resolución pacífica, manteniendo tu integridad y promoviendo un ambiente escolar positivo.",          
         determinacion: -2,
         alegria: -1,
         apoyo: -1,
@@ -4627,11 +4611,10 @@ let preguntas = [
       {
         optionID: 337,
         text: "Evitas hacer cosas que le molesten",
-        explicacion:
-          "Esta opción podría disminuir tu determinación, alegría, apoyo y salud al ceder ante las demandas de tu pareja y limitar tu libertad.",
+        explicacion:"Evitar ciertos comportamientos para prevenir la agresión puede parecer una solución a corto plazo, pero puede limitar tu libertad personal y contribuir a un ciclo de abuso. Es importante reconocer que el abuso nunca es justificable y buscar apoyo para abordar la situación de manera segura.",          
         determinacion: -1,
-        alegria: -1,
-        apoyo: -1,
+        alegria: -2,
+        apoyo: -2,
         salud: -1,
         dinero: 0,
         tiempo: 0,
@@ -4639,8 +4622,7 @@ let preguntas = [
       {
         optionID: 338,
         text: "Terminas con él",
-        explicacion:
-          "Esta opción podría aumentar tu determinación y salud al tomar una decisión drástica para protegerte. Sin embargo, también podría disminuir significativamente tu apoyo y alegría al terminar la relación.",
+        explicacion: "Decidir terminar una relación abusiva es un paso importante hacia la protección de tu bienestar. Aunque esta decisión puede ser emocionalmente desafiante, prioriza tu seguridad y salud. Buscar apoyo de amigos, familiares o profesionales puede proporcionar la fuerza y los recursos necesarios durante este proceso.",          
         determinacion: 1,
         alegria: -1,
         apoyo: -1,
@@ -4651,20 +4633,18 @@ let preguntas = [
       {
         optionID: 339,
         text: "Hablas con él y le adviertes que no seguirás soportando la situación",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al enfrentar el problema directamente. Sin embargo, también podría disminuir tu apoyo al generar un conflicto con tu pareja y requerir más tiempo para resolverlo.",
+        explicacion:"Enfrentar a tu pareja y comunicar tus límites es un acto de autoafirmación. Sin embargo, es crucial hacerlo de manera segura, especialmente en contextos de abuso. Considera buscar el consejo de un profesional para asegurar una comunicación efectiva y proteger tu bienestar.",
         determinacion: 1,
         alegria: 0,
-        apoyo: -1,
-        salud: 0,
+        apoyo: 0,
+        salud: 1,
         dinero: 0,
         tiempo: -1,
       },
       {
         optionID: 340,
-        text: "También lo agredes para que se le quite",
-        explicacion:
-          "Esta opción podría disminuir significativamente tu alegría, apoyo y salud al generar un ciclo de violencia. También podría afectar negativamente tu determinación.",
+        text: "También lo agredes o amenazas para que deje de hacerlo",
+        explicacion:"Responder al abuso con agresión o amenazas puede parecer una forma de recuperar el control, pero en realidad puede aumentar el riesgo y la gravedad del conflicto. Es crucial abordar la situación de manera que priorice tu seguridad y bienestar, evitando acciones que puedan escalar la violencia. Buscar ayuda de profesionales y servicios de apoyo puede proporcionar opciones más seguras y efectivas para abordar el abuso.",        
         determinacion: -1,
         alegria: -2,
         apoyo: -1,
@@ -4683,8 +4663,7 @@ let preguntas = [
       {
         optionID: 341,
         text: "Hablas con otro familiar, en quien confías, para contarle el problema",
-        explicacion:
-          "Esta opción podría aumentar tu determinación y apoyo al buscar ayuda de un familiar en quien confías. Sin embargo, también podría requerir más tiempo para resolver el problema.",
+        explicacion: "Buscar el consejo y el apoyo de un familiar de confianza puede ofrecerte una perspectiva valiosa y posibles soluciones al problema. Esta acción demuestra tu disposición para resolver el conflicto de manera pacífica y constructiva, fortaleciendo tus lazos familiares.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -4695,8 +4674,7 @@ let preguntas = [
       {
         optionID: 342,
         text: "Buscas consejo/apoyo con tus amigos cercanos",
-        explicacion:
-          "Esta opción podría aumentar tu determinación y apoyo al buscar ayuda de tus amigos cercanos. Sin embargo, también podría requerir más tiempo para resolver el problema.",
+        explicacion:"Compartir tus inquietudes con amigos cercanos puede brindarte apoyo emocional y consejos prácticos sobre cómo manejar la situación. Esta red de apoyo externa puede ofrecerte una visión objetiva y estrategias para abordar el conflicto de manera efectiva.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -4707,11 +4685,10 @@ let preguntas = [
       {
         optionID: 343,
         text: "Enfrentas a tu familiar aunque se genere un problema mayor",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al enfrentar el problema directamente. Sin embargo, también podría disminuir tu apoyo y alegría al generar un conflicto con tu familiar.",
+        explicacion: "Confrontar directamente al familiar puede ser necesario para establecer límites claros y comunicar tus necesidades. Sin embargo, es importante abordar la conversación de manera calmada y constructiva para evitar escalar el conflicto y buscar una resolución que beneficie a ambas partes.",          
         determinacion: 1,
-        alegria: -1,
-        apoyo: -1,
+        alegria: 0,
+        apoyo: 0,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -4719,10 +4696,9 @@ let preguntas = [
       {
         optionID: 344,
         text: "Buscas alternativas de otro lugar donde puedas vivir",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al buscar una solución drástica. Sin embargo, también podría disminuir significativamente tu dinero y requerir más tiempo para llevar a cabo. También podría afectar negativamente tu apoyo y alegría al alejarte de tu familia.",
+        explicacion: "Considerar mudarte a otro lugar puede ser una solución radical a las tensiones familiares, y aunque puede ofrecer un nuevo comienzo, también implica desafíos significativos. Es crucial evaluar todas tus opciones y buscar asesoramiento para tomar una decisión informada que priorice tu bienestar.",          
         determinacion: 1,
-        alegria: -1,
+        alegria: 0,
         apoyo: -1,
         salud: 0,
         dinero: -2,
@@ -4739,9 +4715,8 @@ let preguntas = [
       {
         optionID: 345,
         text: "Ignoras la situación por el momento para luego vengarte",
-        explicacion:
-          "Esta opción podría disminuir significativamente tu alegría y también podría afectar negativamente tu determinación, apoyo y salud al ignorar el problema y buscar venganza.",
-        determinacion: -1,
+        explicacion:"Aunque ignorar la situación temporalmente puede ofrecer un breve respiro, buscar venganza no resolverá el problema y podría agravar el daño emocional para todos los involucrados. Es importante considerar maneras más saludables de procesar tus emociones y abordar la situación.",          
+        determinacion: -2,
         alegria: -2,
         apoyo: -1,
         salud: -1,
@@ -4751,11 +4726,10 @@ let preguntas = [
       {
         optionID: 346,
         text: "Terminas la relación",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al tomar una decisión drástica. Sin embargo, también podría disminuir significativamente tu apoyo y alegría al terminar la relación.",
+        explicacion:"Terminar la relación es una decisión válida frente a la infidelidad, que refleja una fuerte determinación de no tolerar un comportamiento que consideras inaceptable. Aunque puede ser emocionalmente doloroso, también puede ser un paso hacia la curación y encontrar relaciones más respetuosas en el futuro.",          
         determinacion: 2,
         alegria: -1,
-        apoyo: -1,
+        apoyo: -2,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -4763,8 +4737,7 @@ let preguntas = [
       {
         optionID: 347,
         text: "Hablas con él para saber las razones y ver si le das otra oportunidad",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al enfrentar el problema directamente. Sin embargo, también podría requerir más tiempo para resolverlo.",
+        explicacion:"Optar por el diálogo puede ofrecer claridad y la posibilidad de entender mejor la situación. Esta decisión muestra una voluntad de enfrentar el problema de manera constructiva, aunque es esencial asegurar que esta conversación se realice en un espacio seguro y respetuoso.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -4775,9 +4748,8 @@ let preguntas = [
       {
         optionID: 348,
         text: "Buscas la manera de sorprenderlos y enfrentarlos a ambos",
-        explicacion:
-          "Esta opción podría disminuir significativamente tu alegría y apoyo al generar un conflicto con tu pareja y la otra persona. También podría afectar negativamente tu salud y requerir más tiempo para llevar a cabo.",
-        determinacion: 0,
+        explicacion:"Confrontar a tu pareja y a la otra persona de manera sorpresiva puede parecer una forma de obtener cierre, pero a menudo resulta en más dolor y conflicto. Es fundamental buscar enfoques que prioricen tu salud emocional y bienestar sobre la confrontación dramática.",          
+        determinacion: -1,
         alegria: -2,
         apoyo: -2,
         salud: -1,
@@ -4795,11 +4767,10 @@ let preguntas = [
       {
         optionID: 349,
         text: "Dejas de hablar con tu amig@ para evitar problemas con tu pareja",
-        explicacion:
-          "Esta opción podría disminuir tu determinación, apoyo y alegría al ceder ante las demandas de tu pareja y alejarte de tu amigo.",
+        explicacion: "Ceder a esta demanda puede parecer una forma de mantener la paz, pero puede erosionar tu autonomía y tus relaciones importantes. Es vital comunicar tus sentimientos y necesidades a tu pareja, buscando un equilibrio entre la relación y tus amistades valiosas.",          
         determinacion: -1,
-        alegria: -1,
-        apoyo: -1,
+        alegria: -2,
+        apoyo: -2,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -4807,9 +4778,8 @@ let preguntas = [
       {
         optionID: 350,
         text: "Le pides a tu pareja que también deje de hablar con quién te cae mal",
-        explicacion:
-          "Esta opción podría disminuir tu apoyo y alegría al generar un conflicto con tu pareja y posiblemente limitar su libertad.",
-        determinacion: 0,
+        explicacion:"Responder con una demanda similar puede llevar a una espiral de restricciones que dañen la confianza y la comunicación en la relación. Abordar la causa subyacente de los celos y trabajar juntos hacia la confianza puede ser una forma más constructiva de manejar la situación.",          
+        determinacion: -1,
         alegria: -1,
         apoyo: -1,
         salud: 0,
@@ -4819,8 +4789,7 @@ let preguntas = [
       {
         optionID: 351,
         text: "Le dices a tu pareja que no permitirás que te prohíba hacer cosas que tú consideras que no son malas",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al defender tus límites personales. Sin embargo, también podría disminuir tu apoyo al generar un conflicto con tu pareja.",
+        explicacion:"Defender tu derecho a mantener amistades y establecer límites claros en la relación es crucial para tu bienestar personal. Es importante tener esta conversación de manera respetuosa y abierta, buscando un entendimiento mutuo y respeto por la independencia del otro.",          
         determinacion: 1,
         alegria: 0,
         apoyo: -1,
@@ -4831,11 +4800,10 @@ let preguntas = [
       {
         optionID: 352,
         text: "Cortas con tu pareja porque no toleras sus prohibiciones",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al tomar una decisión drástica. Sin embargo, también podría disminuir significativamente tu apoyo y alegría al terminar la relación.",
+        explicacion: "Terminar la relación puede ser una decisión difícil pero necesaria si sientes que tus valores fundamentales y tu libertad están comprometidos. Aunque puede ser doloroso, priorizar tu bienestar y respeto propio es esencial.",          
         determinacion: 1,
-        alegria: -2,
-        apoyo: -2,
+        alegria: -1,
+        apoyo: -1,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -4851,8 +4819,7 @@ let preguntas = [
       {
         optionID: 353,
         text: "Le reclamas y adviertes que no aceptarás la falta de confianza",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al defender tus límites personales. Sin embargo, también podría disminuir tu apoyo y alegría al generar un conflicto con tu pareja.",
+        explicacion:"Reclamar y establecer límites claros sobre tu privacidad es una respuesta válida que refleja tu determinación por mantener el respeto en la relación. Es importante abordar este problema directamente, aunque sea desafiante, para fomentar una base de confianza y entendimiento mutuo.",          
         determinacion: 1,
         alegria: -1,
         apoyo: -1,
@@ -4863,11 +4830,10 @@ let preguntas = [
       {
         optionID: 354,
         text: "Terminas la relación",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al tomar una decisión drástica. Sin embargo, también podría disminuir significativamente tu apoyo y alegría al terminar la relación.",
+        explicacion:"Decidir terminar la relación debido a la violación de tu privacidad muestra una firme determinación de no tolerar comportamientos que consideras inaceptables. Aunque esta decisión puede ser emocionalmente difícil, enfatiza la importancia que das al respeto y la confianza en tus relaciones personales.",          
         determinacion: 1,
-        alegria: -2,
-        apoyo: -2,
+        alegria: -1,
+        apoyo: -1,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -4875,11 +4841,10 @@ let preguntas = [
       {
         optionID: 355,
         text: "Hablas con él para compartir contraseñas sin que sepa que le descubriste",
-        explicacion:
-          "Esta opción podría aumentar tu apoyo al buscar una solución pacífica. Sin embargo, también podría disminuir tu determinación al no enfrentar el problema directamente y requerir más tiempo para resolverlo.",
-        determinacion: -1,
+        explicacion: "Ofrecer compartir contraseñas puede parecer una manera de fortalecer la confianza, pero es esencial que ambos socios estén de acuerdo y cómodos con esta decisión. La comunicación abierta sobre las expectativas de privacidad y confianza es clave para evitar malentendidos y asegurar que ambas partes se sientan respetadas.",          
+        determinacion: 0,
         alegria: 0,
-        apoyo: 1,
+        apoyo: 0,
         salud: 0,
         dinero: 0,
         tiempo: -1,
@@ -4887,8 +4852,7 @@ let preguntas = [
       {
         optionID: 356,
         text: "Tienes más cuidado con la información que tenga tu teléfono y buscas mejores maneras de protegerla",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al tomar medidas para proteger tu privacidad. Sin embargo, también podría requerir más tiempo para implementar estas medidas.",
+        explicacion: "Tomar medidas adicionales para proteger tu privacidad es un enfoque proactivo que refleja tu determinación por asegurar tus límites personales. Sin embargo, también es importante abordar la causa subyacente de la invasión de la privacidad con tu pareja para tratar los problemas de confianza que puedan existir.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -4907,8 +4871,7 @@ let preguntas = [
       {
         optionID: 357,
         text: "Intentas convencerlos de que se integren o te acompañen",
-        explicacion:
-          "Esta opción podría aumentar tu apoyo y alegría al compartir una nueva actividad con tus amigos. Sin embargo, también podría requerir más tiempo y determinación para convencerlos.",
+        explicacion:"Compartir nuevas experiencias con tus amigos puede fortalecer vuestro vínculo y enriquecer vuestra relación. Mostrar entusiasmo por la actividad y cómo podría beneficiar al grupo puede ser persuasivo, aunque respetar sus preferencias también es crucial para mantener una amistad saludable.",          
         determinacion: 1,
         alegria: 1,
         apoyo: 1,
@@ -4919,10 +4882,9 @@ let preguntas = [
       {
         optionID: 358,
         text: "Te vas a la otra actividad sin que te importe tu grupo de amigos",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al seguir tus intereses personales. Sin embargo, también podría disminuir tu apoyo y alegría al alejarte de tus amigos.",
+        explicacion:"Seguir tus intereses personales es importante para tu crecimiento y felicidad. Si bien es esencial mantener tus relaciones, también lo es no limitar tus experiencias basadas únicamente en los intereses del grupo. Encontrar un equilibrio puede permitirte disfrutar de ambas esferas de tu vida.",          
         determinacion: 1,
-        alegria: -1,
+        alegria: 0,
         apoyo: -1,
         salud: 0,
         dinero: 0,
@@ -4931,10 +4893,9 @@ let preguntas = [
       {
         optionID: 359,
         text: "Pruebas la otra actividad, pero regresas con tu antiguo grupo de amigos",
-        explicacion:
-          "Esta opción podría aumentar tu determinación al probar algo nuevo y mantener tus relaciones sociales. Sin embargo, también podría requerir más tiempo y podría disminuir tu alegría si no disfrutas la nueva actividad.",
+        explicacion:"Explorar nuevas actividades sin abandonar tus relaciones actuales muestra una apertura a nuevas experiencias mientras valoras las conexiones establecidas. Esta flexibilidad te permite crecer personalmente sin sacrificar importantes lazos sociales.",          
         determinacion: 1,
-        alegria: 0,
+        alegria: 1,
         apoyo: 0,
         salud: 0,
         dinero: 0,
@@ -4943,11 +4904,10 @@ let preguntas = [
       {
         optionID: 360,
         text: "Como a tus amigos no les interesa, abandonas la actividad que te interesaba",
-        explicacion:
-          "Esta opción podría mantener tu apoyo y alegría al seguir compartiendo actividades con tus amigos. Sin embargo, también podría disminuir tu determinación al no seguir tus intereses personales.",
+        explicacion:"Decidir no seguir una actividad por el desinterés de tus amigos puede reflejar un alto valor en las relaciones sociales. Sin embargo, es importante considerar también tus intereses personales y encontrar maneras de perseguirlos, incluso si eso significa explorar solo algunas veces.",          
         determinacion: -1,
         alegria: 0,
-        apoyo: 0,
+        apoyo: 1,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -4963,11 +4923,10 @@ let preguntas = [
       {
         optionID: 361,
         text: "Lo dejo pasar pensando que se va a resolver",
-        explicacion:
-          "Esta opción podría aumentar la alegría y el apoyo al mantener la amistad, pero podría disminuir la determinación al no enfrentar el problema directamente.",
+        explicacion:"Mantener la esperanza de que la situación mejore por sí sola puede preservar la relación en el corto plazo. Sin embargo, abordar activamente los desequilibrios puede ser más efectivo para asegurar una amistad sana y equitativa. Considera compartir tus sentimientos y expectativas con tu amigo de manera abierta.",          
         determinacion: -1,
-        alegria: 1,
-        apoyo: 1,
+        alegria: 0,
+        apoyo: 0,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -4975,8 +4934,7 @@ let preguntas = [
       {
         optionID: 362,
         text: "Lo dejo de buscar",
-        explicacion:
-          "Esta opción podría disminuir la alegría y el apoyo al perder una amistad, pero podría aumentar la determinación al tomar una decisión firme.",
+        explicacion:"Alejarte puede ser una forma de proteger tu bienestar emocional si sientes que la relación es perjudicial. No obstante, reflexiona sobre si una conversación honesta podría resolver los desequilibrios antes de decidir distanciarte.",          
         determinacion: 1,
         alegria: -1,
         apoyo: -1,
@@ -4987,11 +4945,10 @@ let preguntas = [
       {
         optionID: 363,
         text: "Le dejo mostrar mi descontento de manera indirecta",
-        explicacion:
-          "Esta opción podría aumentar la determinación al expresar el descontento, pero podría disminuir el apoyo y la alegría al no enfrentar el problema directamente.",
+        explicacion:"Expresar tu descontento de forma indirecta puede señalar tu malestar, pero podría no resolver la raíz del problema. La comunicación directa y honesta suele ser más efectiva para abordar los desequilibrios y fortalecer la amistad.",          
         determinacion: 1,
-        alegria: -1,
-        apoyo: -1,
+        alegria: 0,
+        apoyo: 0,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -4999,9 +4956,8 @@ let preguntas = [
       {
         optionID: 364,
         text: "Buscas otro amigo",
-        explicacion:
-          "Esta opción podría aumentar la alegría y el apoyo al encontrar una nueva amistad, pero podría disminuir la determinación al no enfrentar el problema con el amigo actual.",
-        determinacion: -1,
+        explicacion: "Ampliar tu círculo social es positivo, pero considera también la importancia de abordar los problemas en tus amistades existentes. La diversificación de tus relaciones no debe ser una evasión de los problemas, sino una forma de enriquecer tu vida social.",          
+        determinacion: 0,
         alegria: 1,
         apoyo: 1,
         salud: 0,
@@ -5019,8 +4975,7 @@ let preguntas = [
       {
         optionID: 365,
         text: "Vas al cine con tu pareja y ves la película que él/ella quiere",
-        explicacion:
-          "Esta opción muestra apoyo al priorizar los deseos de tu pareja, pero podría disminuir la determinación al no comunicar tus necesidades. Podría disminuir el dinero y el tiempo al gastar recursos en una actividad que no disfrutas plenamente.",
+        explicacion: "Elegir ver la película preferida de tu pareja demuestra tu voluntad de compromiso y apoyo a sus intereses. Si bien es importante ser considerado, también es esencial comunicar tus propias preferencias para que ambos puedan disfrutar de actividades compartidas.",          
         determinacion: -1,
         alegria: 0,
         apoyo: 1,
@@ -5031,11 +4986,10 @@ let preguntas = [
       {
         optionID: 366,
         text: "No vas al cine con tu pareja y le explicas por qué",
-        explicacion:
-          "Esta opción muestra determinación al comunicar tus necesidades y apoyo al intentar mantener una buena relación con tu pareja. Podría aumentar la alegría si se llega a un acuerdo que funcione para ambos.",
+        explicacion:"Optar por no acompañar a tu pareja y explicar tus razones muestra respeto por tus preferencias personales y fomenta la comunicación en la relación. Este enfoque puede abrir la puerta a encontrar alternativas que satisfagan a ambos.",          
         determinacion: 1,
         alegria: 0,
-        apoyo: 1,
+        apoyo: 0,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -5043,8 +4997,7 @@ let preguntas = [
       {
         optionID: 367,
         text: "Intentas convencer a tu pareja de que vea la película que tú quieres",
-        explicacion:
-          "Esta opción muestra determinación al intentar encontrar una solución que funcione para ambos y apoyo al intentar mantener una buena relación con tu pareja. Podría aumentar la alegría si tu pareja acepta ver la película que tú quieres, pero podría disminuir el dinero y el tiempo al gastar recursos en una actividad.",
+        explicacion:"Intentar persuadir a tu pareja para ver tu película preferida refleja tu deseo de compartir tus intereses con ella. Sin embargo, es importante buscar un compromiso que respete los gustos de ambos para asegurar una experiencia disfrutable para los dos.",
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -5055,8 +5008,7 @@ let preguntas = [
       {
         optionID: 368,
         text: "Negocias con tu pareja para ver la película que quieres, pero también otra que él/ella quiere",
-        explicacion:
-          "Esta opción muestra determinación al buscar una solución que funcione para ambos y apoyo al intentar encontrar un equilibrio en la relación. Podría aumentar la alegría al hacer actividades que ambos disfruten, pero podría disminuir el dinero y el tiempo al gastar más recursos en dos actividades.",
+        explicacion: "Negociar para ver ambas películas es una excelente manera de demostrar flexibilidad y consideración mutua. Este enfoque equitativo permite que ambos compartan sus intereses, fortaleciendo la relación mediante el compromiso y la comprensión.",        
         determinacion: 1,
         alegria: 1,
         apoyo: 1,
@@ -5075,8 +5027,7 @@ let preguntas = [
       {
         optionID: 369,
         text: "Haces la actividad recreativa que te gusta y le explicas a tu pareja que es importante para ti",
-        explicacion:
-          "Esta opción muestra determinación al tomar una decisión y comunicar tus necesidades a tu pareja. También muestra apoyo al intentar mantener una buena relación con tu pareja. Podría aumentar la alegría y la salud al hacer una actividad recreativa que te gusta.",
+        explicacion:"Participar en actividades que te apasionan y comunicar abiertamente su importancia para ti refleja un enfoque equilibrado entre el autocuidado y la consideración por los sentimientos de tu pareja. Este diálogo puede fortalecer la relación al fomentar la comprensión y el respeto mutuo.",          
         determinacion: 1,
         alegria: 1,
         apoyo: 1,
@@ -5087,10 +5038,9 @@ let preguntas = [
       {
         optionID: 370,
         text: "No haces la actividad recreativa que te gusta y te quedas con tu pareja",
-        explicacion:
-          "Esta opción muestra apoyo al priorizar la relación con tu pareja, pero podría disminuir la determinación al no comunicar tus necesidades y la alegría y la salud al no hacer una actividad recreativa que te gusta.",
-        determinacion: -1,
-        alegria: -1,
+        explicacion:"Priorizar el tiempo con tu pareja puede demostrar compromiso con la relación, pero es vital reconocer y comunicar tus propios intereses y necesidades. Encontrar un equilibrio que permita a ambos socios disfrutar de actividades individuales puede enriquecer la relación.",          
+        determinacion: 0,
+        alegria: 0,
         apoyo: 1,
         salud: -1,
         dinero: 0,
@@ -5099,8 +5049,7 @@ let preguntas = [
       {
         optionID: 371,
         text: "Intentas convencer a tu pareja de que te deje hacer la actividad que te gusta",
-        explicacion:
-          "Esta opción muestra determinación al intentar encontrar una solución que funcione para ambos y apoyo al intentar mantener una buena relación con tu pareja. Podría aumentar la alegría y la salud si tu pareja te permite hacer la actividad recreativa que te gusta.",
+        explicacion:"Negociar con tu pareja para participar en tus actividades favoritas muestra tu deseo de integrar tus intereses personales con la vida en pareja. Es importante asegurarse de que ambos socios se sientan escuchados y valorados en este proceso de negociación.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -5111,9 +5060,8 @@ let preguntas = [
       {
         optionID: 372,
         text: "Haces la actividad recreativa que te gusta sin decirle nada a tu pareja",
-        explicacion:
-          "Esta opción podría aumentar la alegría y la salud al hacer una actividad recreativa que te gusta, pero podría disminuir el apoyo al no comunicar tus planes a tu pareja. No muestra determinación al no abordar el problema directamente.",
-        determinacion: 0,
+        explicacion:"Buscar tiempo para tus intereses personales es esencial para tu bienestar, pero la falta de comunicación puede llevar a malentendidos y desconfianza en la relación. Considera la importancia de la honestidad y la transparencia con tu pareja para mantener una relación saludable.",          
+        determinacion: -1,
         alegria: 1,
         apoyo: -1,
         salud: 1,
@@ -5131,9 +5079,8 @@ let preguntas = [
       {
         optionID: 373,
         text: "Lo dejas pasar pensando que se va a resolver",
-        explicacion:
-          "Esta opción podría aumentar la alegría a corto plazo al evitar un conflicto inmediato, pero podría disminuir la determinación y el apoyo a largo plazo si el problema no se resuelve por sí solo.",
-        determinacion: 0,
+        explicacion:"Esperar que los desequilibrios se resuelvan por sí solos puede ofrecer paz temporal, pero es importante abordar los problemas activamente para fomentar una relación saludable. Comunicar tus sentimientos y necesidades puede ayudar a crear un diálogo que fortalezca la relación.",          
+        determinacion: -1,
         alegria: 1,
         apoyo: -1,
         salud: 0,
@@ -5143,11 +5090,10 @@ let preguntas = [
       {
         optionID: 374,
         text: "Le intento mostrar mi descontento de manera indirecta",
-        explicacion:
-          "Esta opción podría aumentar la determinación al intentar abordar el problema, pero podría disminuir el apoyo y la alegría si la comunicación indirecta no es efectiva y el problema persiste.",
+        explicacion: "Mostrar descontento de forma indirecta puede no ser suficiente para abordar las raíces del problema. La comunicación clara y directa suele ser más efectiva para resolver desequilibrios y mejorar el entendimiento y el apoyo mutuo en la relación.",          
         determinacion: 1,
-        alegria: -1,
-        apoyo: -1,
+        alegria: 0,
+        apoyo: 0,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -5155,8 +5101,7 @@ let preguntas = [
       {
         optionID: 375,
         text: "Trato de hablar con él, para que la relación mejore",
-        explicacion:
-          "Esta opción podría aumentar el apoyo y la determinación al abordar el problema directamente y buscar una solución. También podría aumentar la alegría si la conversación es efectiva y la relación mejora.",
+        explicacion: "Iniciar una conversación honesta sobre tus percepciones y deseos para la relación muestra un compromiso con su mejora y crecimiento. Este enfoque puede reforzar el apoyo mutuo, aumentar la alegría y promover una relación más equitativa y satisfactoria para ambos.",          
         determinacion: 1,
         alegria: 1,
         apoyo: 1,
@@ -5167,10 +5112,9 @@ let preguntas = [
       {
         optionID: 376,
         text: "Termino con mi pareja",
-        explicacion:
-          "Esta opción podría aumentar la determinación al tomar una decisión difícil, pero podría disminuir la alegría y el apoyo a corto plazo debido a la ruptura de la relación. A largo plazo, sin embargo, podría aumentar la alegría si la relación no era saludable.",
+        explicacion:"Tomar la decisión de terminar la relación puede ser difícil, pero a veces es necesario para tu bienestar personal si sientes que la relación no puede ser equitativa. Esta decisión puede llevar a una tristeza inicial, pero también puede abrir el camino hacia futuras relaciones más saludables y equilibradas.",          
         determinacion: 1,
-        alegria: -1,
+        alegria: 0,
         apoyo: -1,
         salud: 0,
         dinero: 0,
@@ -5187,32 +5131,29 @@ let preguntas = [
       {
         optionID: 377,
         text: "Le pides que lo deje",
-        explicacion:
-          "Esta opción muestra determinación al abordar el problema y preocupación por la salud y el bienestar de tu pareja. También muestra apoyo al intentar ayudarlo a dejar una actividad peligrosa.",
+        explicacion:"Pedirle a tu pareja que deje de participar en actividades ilegales muestra tu preocupación por su bienestar y el tuyo. Es importante comunicar claramente los riesgos y las consecuencias de sus acciones, fomentando un cambio hacia comportamientos más seguros y legales.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
-        salud: 1,
+        salud: 0,
         dinero: 0,
         tiempo: 0,
       },
       {
         optionID: 378,
         text: "Como me trata bien y me compra cosas no me importa",
-        explicacion:
-          "Esta opción muestra una falta de determinación al no abordar el problema y una falta de apoyo al ignorar una actividad peligrosa. Podría aumentar la alegría y el dinero a corto plazo, pero podría tener consecuencias negativas para la salud y el bienestar a largo plazo.",
-        determinacion: -1,
+        explicacion:"Ignorar las actividades ilegales de tu pareja debido a beneficios personales a corto plazo puede tener graves consecuencias legales y morales a largo plazo. Es crucial reflexionar sobre los valores y principios que consideras importantes en tu vida y en tus relaciones.",          
+        determinacion: -2,
         alegria: 1,
-        apoyo: -1,
-        salud: -1,
+        apoyo: 0,
+        salud: -2,
         dinero: 1,
         tiempo: 0,
       },
       {
         optionID: 379,
         text: "Rompes con él",
-        explicacion:
-          "Esta opción muestra determinación al tomar una decisión difícil. Podría aumentar la salud al alejarte de una actividad peligrosa, pero podría disminuir la alegría y el apoyo debido a la ruptura de la relación.",
+        explicacion: "Decidir terminar la relación debido a la participación de tu pareja en actividades ilegales refleja una firme posición contra la ilegalidad y el compromiso con tus propios valores éticos. Aunque puede ser emocionalmente difícil, priorizar tu seguridad y principios es esencial.",          
         determinacion: 1,
         alegria: -1,
         apoyo: -1,
@@ -5223,12 +5164,11 @@ let preguntas = [
       {
         optionID: 380,
         text: "No te gusta, pero lo apoyas cuando se necesita",
-        explicacion:
-          "Esta opción muestra apoyo al estar ahí para tu pareja cuando se necesita, pero podría tener consecuencias negativas para la salud al estar cerca de una actividad peligrosa. No muestra determinación al no abordar directamente el problema.",
-        determinacion: 0,
+        explicacion: "Apoyar a tu pareja a pesar de desaprobar sus acciones ilegales es una decisión complicada que puede poner en riesgo tu bienestar y seguridad. Es importante considerar las implicaciones de este apoyo y buscar maneras de incentivar cambios positivos en su comportamiento.",          
+        determinacion: -1,
         alegria: 0,
         apoyo: 1,
-        salud: -1,
+        salud: -2,
         dinero: 0,
         tiempo: 0,
       },
@@ -5243,8 +5183,7 @@ let preguntas = [
       {
         optionID: 381,
         text: "Vas solo(a) a convivir con tus amigos(as) y le explicas a tu pareja que es importante para ti",
-        explicacion:
-          "Esta opción muestra determinación al tomar una decisión y comunicar tus necesidades a tu pareja. También muestra apoyo al intentar mantener una buena relación con tu pareja y tus amigos(as). Podría aumentar la alegría al pasar tiempo con tus amigos(as).",
+        explicacion:"Elegir pasar tiempo con tus amigos y comunicar abiertamente la importancia de esta actividad para ti demuestra tu compromiso tanto con tu vida social como con tu relación. Este enfoque equilibrado fomenta la comprensión y el respeto mutuo, permitiendo que ambos miembros de la pareja disfruten de su individualidad.",          
         determinacion: 1,
         alegria: 1,
         apoyo: 1,
@@ -5255,10 +5194,9 @@ let preguntas = [
       {
         optionID: 382,
         text: "No vas a convivir con tus amigos(as) y te quedas con tu pareja",
-        explicacion:
-          "Esta opción muestra apoyo al priorizar la relación con tu pareja, pero podría disminuir la determinación al no comunicar tus necesidades y la alegría al no pasar tiempo con tus amigos(as).",
-        determinacion: -1,
-        alegria: -1,
+        explicacion:"Decidir quedarte con tu pareja y omitir la reunión con tus amigos puede mostrar consideración hacia sus sentimientos, pero es crucial comunicar tus propias necesidades y deseos. Encontrar un equilibrio entre tu vida social y tu relación es clave para el bienestar de ambos.",          
+        determinacion: 0,
+        alegria: 0,
         apoyo: 1,
         salud: 0,
         dinero: 0,
@@ -5267,8 +5205,7 @@ let preguntas = [
       {
         optionID: 383,
         text: "Intentas convencer a tu pareja de que te acompañe",
-        explicacion:
-          "Esta opción muestra determinación al intentar encontrar una solución que funcione para ambos y apoyo al intentar incluir a tu pareja en tus planes. Podría aumentar la alegría si tu pareja decide acompañarte.",
+        explicacion: "Persuadir a tu pareja para que se una a la reunión con tus amigos puede ser una oportunidad para fortalecer vuestros lazos compartiendo experiencias. Sin embargo, es importante respetar sus decisiones y encontrar maneras de disfrutar juntos sin imponer tus preferencias.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -5279,9 +5216,8 @@ let preguntas = [
       {
         optionID: 384,
         text: "Vas solo(a) a convivir con tus amigos(as) sin explicarle nada a tu pareja",
-        explicacion:
-          "Esta opción podría aumentar la alegría al pasar tiempo con tus amigos(as), pero podría disminuir el apoyo al no comunicar tus planes a tu pareja. No muestra determinación al no abordar el problema directamente.",
-        determinacion: 0,
+        explicacion:"Asistir a eventos sociales por tu cuenta es natural en cualquier relación, pero la comunicación sobre tus planes puede evitar malentendidos y fomentar la confianza. Compartir tus experiencias posteriormente puede ser una manera de conectar con tu pareja, incluso si ella no asistió.",          
+        determinacion: -1,
         alegria: 1,
         apoyo: -1,
         salud: 0,
@@ -5299,10 +5235,9 @@ let preguntas = [
       {
         optionID: 385,
         text: "Aceptas hacer la actividad con tu pareja aunque no te guste",
-        explicacion:
-          "Esta opción muestra apoyo al priorizar los deseos de tu pareja, pero podría disminuir la determinación al no comunicar tus necesidades y la alegría al hacer algo que no te gusta.",
-        determinacion: -1,
-        alegria: -1,
+        explicacion: "Participar en la actividad preferida de tu pareja puede fortalecer la relación al demostrar tu voluntad de compromiso. Sin embargo, también es valioso comunicar tus propios intereses para que las actividades conjuntas sean disfrutables para ambos.",          
+        determinacion: 0,
+        alegria: 0,
         apoyo: 1,
         salud: 0,
         dinero: 0,
@@ -5311,8 +5246,7 @@ let preguntas = [
       {
         optionID: 386,
         text: "Rechazas hacer la actividad con tu pareja y le explicas por qué",
-        explicacion:
-          "Esta opción muestra determinación al comunicar tus necesidades y apoyo al intentar mantener una buena relación con tu pareja. Podría aumentar la alegría si se llega a un acuerdo que funcione para ambos.",
+        explicacion: "Expresar tus sentimientos y razones para no participar en la actividad muestra honestidad y fomenta una comunicación abierta en la relación. Trabajar juntos para encontrar alternativas puede fortalecer el vínculo y asegurar que ambos se sientan escuchados y valorados.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -5323,9 +5257,8 @@ let preguntas = [
       {
         optionID: 387,
         text: "Rechazas hacer la actividad con tu pareja sin darle ninguna explicación",
-        explicacion:
-          "Esta opción podría disminuir la alegría y el apoyo al no comunicar tus necesidades a tu pareja. No muestra determinación al no abordar el problema directamente.",
-        determinacion: 0,
+        explicacion:"Decidir no participar sin ofrecer una explicación puede crear malentendidos y tensiones en la relación. La comunicación clara sobre tus sentimientos y preferencias es esencial para mantener una relación saludable y comprensiva.",          
+        determinacion: -1,
         alegria: -1,
         apoyo: -1,
         salud: 0,
@@ -5335,8 +5268,7 @@ let preguntas = [
       {
         optionID: 388,
         text: "Negocias con tu pareja para hacer la actividad que quiere, pero también otra que tú quieres",
-        explicacion:
-          "Esta opción muestra determinación al buscar una solución que funcione para ambos y apoyo al intentar encontrar un equilibrio en la relación. Podría aumentar la alegría al hacer actividades que ambos disfruten.",
+        explicacion:"Negociar para incluir actividades que ambos disfruten refleja un compromiso mutuo y un enfoque equitativo para pasar tiempo juntos. Este enfoque puede mejorar la satisfacción de ambos y enriquecer la relación con experiencias compartidas variadas.",          
         determinacion: 1,
         alegria: 1,
         apoyo: 1,
@@ -5355,9 +5287,8 @@ let preguntas = [
       {
         optionID: 389,
         text: "Insistes en hacer la actividad con tu pareja aunque no le guste",
-        explicacion:
-          "Esta opción muestra determinación al insistir en hacer la actividad, pero podría disminuir la alegría y el apoyo al no respetar los deseos de tu pareja.",
-        determinacion: 1,
+        explicacion: "Insistir en hacer una actividad que a tu pareja no le agrada puede generar tensión y malestar. Es fundamental encontrar un balance entre compartir experiencias juntos y respetar las preferencias individuales. La comunicación y la comprensión mutua pueden abrir camino a alternativas satisfactorias para ambos.",          
+        determinacion: -1,
         alegria: -1,
         apoyo: -1,
         salud: 0,
@@ -5367,8 +5298,7 @@ let preguntas = [
       {
         optionID: 390,
         text: "Desistes de hacer la actividad con tu pareja y le explicas por qué",
-        explicacion:
-          "Esta opción muestra determinación al comunicar tus necesidades y apoyo al respetar los deseos de tu pareja. Podría aumentar la alegría si se llega a un acuerdo que funcione para ambos.",
+        explicacion: "Optar por no realizar la actividad y explicar tus razones demuestra consideración por los sentimientos de tu pareja y tu disposición para encontrar un terreno común. Esta actitud promueve el respeto mutuo y fortalece la relación al priorizar la comunicación y el entendimiento.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -5378,12 +5308,11 @@ let preguntas = [
       },
       {
         optionID: 391,
-        text: "Haces la actividad con tu pareja sin darle ninguna explicación",
-        explicacion:
-          "Esta opción muestra determinación al hacer la actividad, pero podría disminuir la alegría y el apoyo al no respetar los deseos de tu pareja y no comunicar tus necesidades.",
+        text: "Haces la actividad sin tu pareja",
+        explicacion: "Optar por participar en la actividad por tu cuenta demuestra respeto por las preferencias de tu pareja y subraya la importancia de la independencia y el autocuidado en una relación saludable. Esta decisión puede fortalecer el entendimiento mutuo y la apreciación por los espacios personales, alentando a ambos a disfrutar de sus intereses individuales sin resentimientos.",
         determinacion: 1,
-        alegria: -1,
-        apoyo: -1,
+        alegria: 1,
+        apoyo: 0,
         salud: 0,
         dinero: 0,
         tiempo: 0,
@@ -5391,8 +5320,7 @@ let preguntas = [
       {
         optionID: 392,
         text: "Negocias con tu pareja para hacer la actividad que quieres, pero también otra que él/ella quiere",
-        explicacion:
-          "Esta opción muestra determinación al buscar una solución que funcione para ambos y apoyo al intentar encontrar un equilibrio en la relación. Podría aumentar la alegría al hacer actividades que ambos disfruten.",
+        explicacion: "Negociar para incluir actividades de interés para ambos es una excelente manera de demostrar compromiso y flexibilidad en la relación. Este enfoque no solo respeta las preferencias individuales, sino que también enriquece la experiencia compartida, contribuyendo a una mayor conexión y disfrute mutuo.",          
         determinacion: 1,
         alegria: 1,
         apoyo: 1,
@@ -5405,14 +5333,13 @@ let preguntas = [
   {
     questionID: 99,
     kind: "azar",
-    text: "¿Tienes que cuidar a un familiar?",
+    text: "Tienes que cuidar a un familiar",
     imageName: "sick_father",
     options: [
       {
         optionID: 393,
         text: "si",
-        explicacion:
-          "Apoyas a tu familia cuidando a un familiar, aunque deberás ponerte al corriente con la escuela.",
+        explicacion:"Ante la situación inesperada de tener que cuidar a un familiar, te encuentras brindando apoyo esencial a pesar de los desafíos que esto pueda implicar. Aunque esta responsabilidad puede afectar tu rutina diaria, especialmente en términos académicos, también refuerza los lazos familiares y demuestra tu compromiso con el bienestar de tus seres queridos. La adaptación a estas circunstancias puede requerir una reorganización de tu tiempo y prioridades.",          
         determinacion: 0,
         alegria: 0,
         apoyo: 1,
@@ -5425,15 +5352,14 @@ let preguntas = [
   {
     questionID: 100,
     kind: "personal",
-    text: "Te das cuenta de que uno de tus amigos está siendo intimidado en la escuela. ¿Qué haces?",
+    text: "Te das cuenta de que uno de tus amigos está siendo intimidado en la escuela.",
     imageName: "bullying2",
     options: [
       {
         optionID: 394,
         text: "No hago nada. No es mi problema.",
-        explicacion:
-          "Ignorar el problema no ayuda a tu amigo y no demuestra empatía o valentía.",
-        determinacion: -1,
+        explicacion:"Optar por no intervenir puede parecer una forma de evitar conflictos, pero pasar por alto el acoso puede contribuir a un ambiente en el que el comportamiento negativo continúa sin consecuencias. Mostrar empatía y ofrecer apoyo a los que enfrentan dificultades refuerza una comunidad más compasiva y segura.",          
+        determinacion: -2,
         alegria: 0,
         apoyo: -1,
         salud: 0,
@@ -5443,8 +5369,7 @@ let preguntas = [
       {
         optionID: 395,
         text: "Trato de consolar a mi amigo, pero no hago nada más.",
-        explicacion:
-          "Consolar a tu amigo es un primer paso, pero puede que no sea suficiente para cambiar la situación.",
+        explicacion:"Ofrecer consuelo a tu amigo demuestra empatía y apoyo, pero enfrentar el acoso puede requerir acciones adicionales para asegurar un cambio duradero. Animar a tu amigo a buscar ayuda o tomar medidas para involucrar a los adultos responsables puede ser más efectivo para resolver la situación.",          
         determinacion: 0,
         alegria: 0,
         apoyo: 1,
@@ -5455,24 +5380,22 @@ let preguntas = [
       {
         optionID: 396,
         text: "Hablo con el intimidador e intento resolver la situación pacíficamente.",
-        explicacion:
-          "Enfrentar al intimidador puede ser peligroso, pero muestra valentía y un deseo de cambiar la situación.",
-        determinacion: 2,
+        explicacion:"Intentar resolver la situación directamente con el intimidador muestra coraje y la voluntad de buscar una solución pacífica. Sin embargo, es crucial evaluar la seguridad de esta acción y considerar involucrar a los adultos como mediadores para asegurar una resolución efectiva y segura.",          
+        determinacion: 1,
         alegria: 0,
         apoyo: 1,
-        salud: -1,
+        salud: 0,
         dinero: 0,
         tiempo: -1,
       },
       {
         optionID: 397,
         text: "Informo de la situación a un profesor o a un consejero de la escuela.",
-        explicacion:
-          "Informar a un adulto es la mejor opción, ya que es más probable que pueda manejar la situación de manera efectiva y segura.",
+        explicacion:"Buscar la intervención de un adulto responsable en la escuela es una medida proactiva que puede asegurar que el problema se aborde de manera adecuada y segura. Al hacerlo, demuestras responsabilidad y un compromiso con el bienestar de tu amigo y la comunidad escolar.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 2,
-        salud: 0,
+        salud: 1,
         dinero: 0,
         tiempo: -1,
       },
@@ -5487,9 +5410,8 @@ let preguntas = [
       {
         optionID: 398,
         text: "Ignoro el problema y espero que mejore por sí solo.",
-        explicacion:
-          "Ignorar el problema puede empeorar las cosas a largo plazo.",
-        determinacion: -1,
+        explicacion:"Esperar que las dificultades académicas se resuelvan solas sin tomar medidas puede llevar a un aumento del estrés y afectar negativamente tu rendimiento. Abordar proactivamente los desafíos educativos es clave para el éxito académico.",          
+        determinacion: -2,
         alegria: 0,
         apoyo: -1,
         salud: 0,
@@ -5499,8 +5421,7 @@ let preguntas = [
       {
         optionID: 399,
         text: "Estudio más por mi cuenta para tratar de entender mejor el material.",
-        explicacion:
-          "Estudiar por tu cuenta demuestra determinación, pero puede que no sea tan efectivo si el material es realmente difícil.",
+        explicacion:"Tomar la iniciativa para estudiar de forma independiente demuestra un compromiso con tu aprendizaje. Sin embargo, si el material sigue siendo desafiante, considera complementar tu estudio autónomo con recursos adicionales, como grupos de estudio o tutorías.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -5511,22 +5432,20 @@ let preguntas = [
       {
         optionID: 400,
         text: "Busco ayuda de un compañero de clase o de un amigo.",
-        explicacion:
-          "Pedir ayuda a un amigo o compañero de clase puede ser efectivo y también puede fortalecer tus relaciones.",
+        explicacion:"Colaborar con compañeros o amigos para entender mejor el material no solo puede mejorar tu comprensión del tema, sino que también ofrece una oportunidad para fortalecer lazos y desarrollar habilidades de trabajo en equipo. La interacción y el apoyo mutuo pueden ser recursos valiosos en el proceso de aprendizaje.",          
         determinacion: 1,
-        alegria: 1,
+        alegria: 0,
         apoyo: 1,
         salud: 0,
         dinero: 0,
-        tiempo: -2,
+        tiempo: -1,
       },
       {
         optionID: 401,
         text: "Solicito ayuda adicional del profesor o contrato a un tutor.",
-        explicacion:
-          "Solicitar ayuda adicional muestra que estás dispuesto a utilizar todos los recursos disponibles para superar las dificultades.",
+        explicacion:"Buscar orientación de un profesor o la asistencia de un tutor especializado son excelentes estrategias para abordar las dificultades académicas. Esta proactividad no solo puede aclarar tus dudas, sino que también muestra tu dedicación a superar los obstáculos en tu educación.",          
         determinacion: 2,
-        alegria: 1,
+        alegria: 0,
         apoyo: 2,
         salud: 0,
         dinero: -1,
@@ -5543,8 +5462,7 @@ let preguntas = [
       {
         optionID: 402,
         text: "Le sugieres buscar ayuda profesional",
-        explicacion:
-          "Esta opción muestra apoyo y consideración por la salud de tu amigo, pero puede requerir tiempo para ayudarlo a encontrar los recursos adecuados.",
+        explicacion:"Animar a tu amigo a buscar ayuda profesional es una forma significativa de apoyo, reconociendo que la depresión severa es una condición de salud mental que requiere intervención especializada. Acompañar a tu amigo en el proceso de encontrar recursos adecuados puede fortalecer vuestro vínculo y proporcionarle un sentido de seguridad y comprensión.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -5555,8 +5473,7 @@ let preguntas = [
       {
         optionID: 403,
         text: "Pasas más tiempo con él para hacerlo sentir mejor",
-        explicacion:
-          "Esta opción muestra apoyo y puede aumentar la alegría de tu amigo, pero puede requerir una inversión significativa de tiempo.",
+        explicacion: "Dedicar tiempo adicional a estar con tu amigo puede ofrecerle un consuelo valioso y demostrar tu apoyo incondicional. Sin embargo, es importante complementar esta compañía con el aliento para que busque ayuda profesional, asegurando que reciba el tratamiento adecuado para su condición.",          
         determinacion: 0,
         alegria: 1,
         apoyo: 1,
@@ -5567,20 +5484,18 @@ let preguntas = [
       {
         optionID: 404,
         text: "Intentas que se distraiga y se divierta para que se olvide de su tristeza",
-        explicacion:
-          "Esta opción puede aumentar momentáneamente la alegría de tu amigo, pero puede que no aborde la raíz de su problema de salud mental.",
-        determinacion: 0,
+        explicacion:"Proporcionar distracciones temporales puede ofrecer un alivio momentáneo a tu amigo, pero es crucial reconocer que la diversión por sí sola no es una solución a la depresión severa. Fomentar el equilibrio entre el disfrute de actividades y la búsqueda de ayuda profesional puede ser más beneficioso para su recuperación a largo plazo.",          
+        determinacion: -1,
         alegria: 1,
-        apoyo: 0,
-        salud: -1,
-        dinero: -1,
+        apoyo: 1,
+        salud: 0,
+        dinero: 0,
         tiempo: -1,
       },
       {
         optionID: 405,
         text: "No haces nada porque consideras que cada quien debe resolver sus problemas",
-        explicacion:
-          "Esta opción puede liberar tu tiempo y energía, pero puede disminuir la alegría y el apoyo que tu amigo siente de ti.",
+        explicacion:"Mantenerse al margen puede parecer una forma de respetar la autonomía de tu amigo, pero en casos de salud mental, ofrecer apoyo y fomentar la búsqueda de ayuda profesional puede ser vital. La empatía y el compromiso pueden marcar una diferencia significativa en la vida de alguien que enfrenta desafíos de salud mental.",          
         determinacion: 0,
         alegria: -1,
         apoyo: -2,
