@@ -17,6 +17,7 @@ function cargarPregunta(category) {
   preguntas.splice(preguntas.indexOf(pregunta), 1);
   document.getElementById("pregunta").innerHTML = "Contexto "+category+":<br><br>"+pregunta.text;
   if (pregunta.kind === "azar") {
+    document.getElementById("radioptions").classList.add("hidden");
     document.getElementById("option1").classList.add("hidden");
     document.getElementById("option2").classList.add("hidden");
     document.getElementById("option3").classList.add("hidden");
@@ -26,6 +27,7 @@ function cargarPregunta(category) {
     document.getElementById("option3_text").innerHTML = "";
     document.getElementById("option4_text").innerHTML = "";    
   } else {
+    document.getElementById("radioptions").classList.remove("hidden");
     document.getElementById("option1").classList.remove("hidden");
     document.getElementById("option2").classList.remove("hidden");
     document.getElementById("option3").classList.remove("hidden");
@@ -64,20 +66,16 @@ function showExplanation() {
     let option_index = document.querySelector(
       'input[type="radio"]:checked'
     ).value;
-    option = pregunta.options[option_index - 1];
+    option = pregunta.options[option_index - 1];    
   }
-  let evaluacion = `
-        <ul>
-          <li>Determinación: ${option.determinacion}</li>
-          <li>Alegría: ${option.alegria}</li>
-          <li>Apoyo: ${option.apoyo}</li>
-          <li>Salud: ${option.salud}</li>
-          <li>Dinero: ${option.dinero}</li>
-          <li>Tiempo: ${option.tiempo}</li>
-        </ul>
+  let evaluacion = `Determinación: ${option.determinacion}
+          <br>Alegría: ${option.alegria}
+          <br>Apoyo: ${option.apoyo}
+          <br>Salud: ${option.salud}
+          <br>Dinero: ${option.dinero}
+          <br>Tiempo: ${option.tiempo}
       `;
-  document.getElementById("explicacion").innerHTML = option.explicacion + " Evaluación: " + evaluacion;
-  document.getElementById("foto-pregunta").src = "img/consecuencias.png";
+  document.getElementById("explicacion").innerHTML = option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;  
 }
 
 // Función que deshabilita los botones de las opciones, se llama cuando el usuario ya eligió una opción

@@ -88,18 +88,14 @@ function showExplanation() {
     if(evaluacion>1) winSound.play();
     else if(evaluacion<-1) incorrectSound.play();
   }
-  let evaluacion = `
-        <ul>
-          <li>Determinación: ${option.determinacion}</li>
-          <li>Alegría: ${option.alegria}</li>
-          <li>Apoyo: ${option.apoyo}</li>
-          <li>Salud: ${option.salud}</li>
-          <li>Dinero: ${option.dinero}</li>
-          <li>Tiempo: ${option.tiempo}</li>
-        </ul>
+  let evaluacion = `Determinación: ${option.determinacion}
+          <br>Alegría: ${option.alegria}
+          <br>Apoyo: ${option.apoyo}
+          <br>Salud: ${option.salud}
+          <br>Dinero: ${option.dinero}
+          <br>Tiempo: ${option.tiempo}
       `;
-  document.getElementById("explicacion").innerHTML =
-    option.explicacion + " Evaluación: " + evaluacion;
+  document.getElementById("explicacion").innerHTML = option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;      
   actualizarPlayer(option);
   actualizarPlayerCard();
   document.getElementById("foto-pregunta").src = "img/consecuencias.png";
