@@ -6226,15 +6226,15 @@ let preguntas = [
   {
     questionID: 125,
     kind: "azar",
-    text: "Se te olvidó un trabajo importante que debes entregar mañana.",
+    text: "Un imprevisto familiar/personal/tecnológico provocó que se te olvidara un trabajo importante que debes entregar mañana.",
     imageName: "forgotten_assignment",
     options: [
       {
         optionID: 437,
         text: "Tienes que hacer el trabajo en la última hora.",
         explicacion:
-          "Darte cuenta de que has olvidado un trabajo importante y que el plazo de entrega es inminente te sumerge en una situación de alta presión, desencadenando una verdadera carrera contra el tiempo. Este contratiempo impone una carga de estrés significativa y pone a prueba tu capacidad para manejar el pánico y concentrarte bajo presión. La necesidad de completar el trabajo en un período de tiempo tan comprimido puede llevar a largas horas de trabajo intenso, afectando tanto tu bienestar físico como emocional. Mientras te esfuerzas por cumplir con el plazo, la situación se convierte en una valiosa aunque dura lección sobre la importancia de la organización y la gestión del tiempo, recordándote la necesidad de establecer sistemas más efectivos para evitar futuros olvidos.",
-        determinacion: -1,
+          "Darte cuenta de que has olvidado un trabajo importante y que el plazo de entrega es inminente te sumerge en una situación de alta presión, desencadenando una verdadera carrera contra el tiempo. Este contratiempo impone una carga de estrés significativa y pone a prueba tu capacidad para manejar el pánico y concentrarte bajo presión. La necesidad de completar el trabajo en un período de tiempo tan comprimido puede llevar a largas horas de trabajo intenso, afectando tanto tu bienestar físico como emocional. Mientras te esfuerzas por cumplir con el plazo, la situación se convierte en una valiosa aunque dura lección sobre la importancia de la organización y la gestión del tiempo, recordándote la necesidad de establecer sistemas más efectivos.",
+        determinacion: 0,
         alegria: -2,
         apoyo: 0,
         salud: -1,
@@ -6274,7 +6274,7 @@ let preguntas = [
         text: "Tienes que ayudar más en casa.",
         explicacion:
           "Las dificultades económicas en tu familia te llevan a asumir un papel más activo en el hogar, contribuyendo de manera que va más allá de lo habitual. Este podría ser un tiempo de colaboración y apoyo mutuo, donde cada miembro de la familia, incluyéndote, se esfuerza por adaptarse y enfrentar juntos los desafíos económicos. Aunque esta situación puede imponer una carga adicional sobre tus hombros, tanto en términos emocionales como de tiempo, también te brinda la oportunidad de desarrollar una mayor resiliencia y comprensión de la importancia del trabajo en equipo y la solidaridad familiar. El esfuerzo conjunto no solo puede aliviar algunas de las dificultades económicas, sino también fortalecer los lazos familiares y fomentar un sentido de responsabilidad y madurez en ti.",
-        determinacion: 2,
+        determinacion: 0,
         alegria: -2,
         apoyo: 2,
         salud: 0,
