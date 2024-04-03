@@ -6033,7 +6033,7 @@ let preguntas = [
         optionID: 427,
         text: "Tienes que corregir el error.",
         explicacion:
-          "Descubrir un error en tu nombre en los documentos de la beca introduce un obstáculo inesperado en tu proceso académico. Corregir este error implica navegar por procedimientos burocráticos, lo que puede ser un proceso tedioso y consumir tiempo valioso. Aunque este contratiempo puede causar frustración y estrés temporal, resolverlo asegura la continuidad de tu apoyo financiero académico, un aspecto crucial para tu educación. Este desafío también te brinda la oportunidad de aprender sobre la importancia de la precisión en la documentación y la perseverancia frente a las complicaciones administrativas.",
+          "Descubrir un error en tu nombre en los documentos de la beca introduce un obstáculo inesperado en tu proceso académico. Aunque este contratiempo puede causar frustración y estrés temporal, resolverlo asegura la continuidad de tu apoyo financiero académico, un aspecto crucial para tu educación. Este desafío también te brinda la oportunidad de aprender sobre la importancia de la precisión en la documentación y la perseverancia frente a las complicaciones administrativas.",
         determinacion: 0,
         alegria: -1,
         apoyo: 0,
@@ -6153,7 +6153,7 @@ let preguntas = [
         optionID: 433,
         text: "Te enfrentas a un ambiente de clase difícil.",
         explicacion:
-          "La presencia de un profesor intolerante en tu itinerario académico impone un ambiente de clase tenso y retador, poniendo a prueba tu capacidad de adaptación y resiliencia. Este tipo de entorno puede inhibir la participación abierta y el intercambio de ideas, esenciales para un aprendizaje profundo y significativo. Frente a esta situación azarosa, buscar estrategias para mantener tu enfoque en el aprendizaje, como formar grupos de estudio solidarios o buscar asesoramiento académico, puede ayudarte a salvaguardar tu educación y bienestar emocional. Es importante recordar que, aunque no puedes cambiar el comportamiento de los demás, sí tienes control sobre cómo eliges responder y cuidarte en estas circunstancias.",
+          "La presencia de un profesor intolerante en tu itinerario académico impone un ambiente de clase tenso y retador, poniendo a prueba tu capacidad de adaptación y resiliencia. Este tipo de entorno puede inhibir la participación abierta y el intercambio de ideas, esenciales para un aprendizaje profundo y significativo. Frente a esta situación azarosa, buscar estrategias para mantener tu enfoque en el aprendizaje, como formar grupos de estudio solidarios o buscar asesoramiento académico, puede ayudarte a salvaguardar tu educación y bienestar emocional.",
         determinacion: 0,
         alegria: -2,
         apoyo: -1,
@@ -6173,7 +6173,7 @@ let preguntas = [
         optionID: 434,
         text: "Tienes que dedicar más tiempo al estudio.",
         explicacion:
-          "La introducción de temas nuevos y complejos en tu currículo escolar te empuja a profundizar en tus hábitos de estudio y dedicar más tiempo al aprendizaje. Este desafío, aunque pueda parecer abrumador al principio, es una invitación a expandir tus conocimientos y fortalecer tus habilidades académicas. Aceptar esta situación con determinación y una actitud abierta al aprendizaje puede transformar estas dificultades iniciales en valiosas oportunidades de crecimiento intelectual y personal. La clave está en encontrar un equilibrio que te permita manejar el aumento de la carga de trabajo sin comprometer tu bienestar, utilizando estrategias como la planificación efectiva del tiempo, la búsqueda de recursos adicionales y, si es necesario, solicitar ayuda y orientación.",
+          "La introducción de temas nuevos y complejos en tu currículo escolar te empuja a profundizar en tus hábitos de estudio y dedicar más tiempo al aprendizaje. Este desafío, aunque pueda parecer abrumador al principio, es una invitación a expandir tus conocimientos y fortalecer tus habilidades académicas.",
         determinacion: 0,
         alegria: -1,
         apoyo: 0,
@@ -6193,7 +6193,7 @@ let preguntas = [
         optionID: 435,
         text: "Te sientes motivado para aprender más.",
         explicacion:
-          "Encontrar un tema en la escuela que despierte genuinamente tu interés es como abrir una ventana a nuevas posibilidades de aprendizaje y exploración. Esta revelación no solo inyecta una dosis de entusiasmo en tu vida académica, elevando tu motivación y alegría, sino que también te impulsa a profundizar más allá de lo que se enseña en el aula. Mientras te embarcas en esta jornada de descubrimiento, podrías encontrarte dedicando tiempo extra a investigar, participar en discusiones y buscar recursos adicionales para saciar tu curiosidad. Aunque este viaje intelectual podría exigirte invertir más tiempo, la satisfacción y el crecimiento personal que conlleva compensan con creces el esfuerzo.",
+          "Encontrar un tema en la escuela que despierte genuinamente tu interés es como abrir una ventana a nuevas posibilidades de aprendizaje y exploración. Esta revelación no solo inyecta una dosis de entusiasmo en tu vida académica, elevando tu motivación y alegría, sino que también te impulsa a profundizar más allá de lo que se enseña en el aula. Mientras te embarcas en esta jornada de descubrimiento, podrías encontrarte dedicando tiempo extra a investigar, participar en discusiones y buscar recursos adicionales para saciar tu curiosidad.",
         determinacion: 0,
         alegria: 2,
         apoyo: 0,
@@ -6213,7 +6213,7 @@ let preguntas = [
         optionID: 436,
         text: "Tienes que coordinar el trabajo de tu equipo.",
         explicacion:
-          "Ser nombrado líder de un proyecto en clase te coloca en una posición privilegiada para influir y guiar el esfuerzo colectivo hacia el éxito. Esta responsabilidad no solo pone a prueba tu capacidad para coordinar y motivar a un equipo, sino que también te brinda la oportunidad de dejar una huella significativa en el resultado del proyecto. A pesar de que liderar puede aumentar tu carga de trabajo y presentar desafíos en la gestión de diferentes personalidades y opiniones, el rol viene con la recompensa de desarrollar competencias críticas en liderazgo, resolución de conflictos y planificación estratégica. La satisfacción de ver a tu equipo alcanzar sus metas, gracias a tu dirección y apoyo, puede ser una fuente de gran alegría y un impulso a tu confianza personal.",
+          "Ser nombrado líder de un proyecto en clase te coloca en una posición privilegiada para influir y guiar el esfuerzo colectivo hacia el éxito. A pesar de que liderar puede aumentar tu carga de trabajo y presentar desafíos en la gestión de diferentes personalidades y opiniones, el rol viene con la recompensa de desarrollar competencias críticas en liderazgo, resolución de conflictos y planificación estratégica.",
         determinacion: 0,
         alegria: 1,
         apoyo: 1,
@@ -6233,7 +6233,7 @@ let preguntas = [
         optionID: 437,
         text: "Tienes que hacer el trabajo en la última hora.",
         explicacion:
-          "Darte cuenta de que has olvidado un trabajo importante y que el plazo de entrega es inminente te sumerge en una situación de alta presión, desencadenando una verdadera carrera contra el tiempo. Este contratiempo impone una carga de estrés significativa y pone a prueba tu capacidad para manejar el pánico y concentrarte bajo presión. La necesidad de completar el trabajo en un período de tiempo tan comprimido puede llevar a largas horas de trabajo intenso, afectando tanto tu bienestar físico como emocional. Mientras te esfuerzas por cumplir con el plazo, la situación se convierte en una valiosa aunque dura lección sobre la importancia de la organización y la gestión del tiempo, recordándote la necesidad de establecer sistemas más efectivos.",
+          "Darte cuenta de que has olvidado un trabajo importante y que el plazo de entrega es inminente te sumerge en una situación de alta presión, desencadenando una verdadera carrera contra el tiempo. Este contratiempo impone una carga de estrés significativa y pone a prueba tu capacidad para manejar el pánico y concentrarte bajo presión. Mientras te esfuerzas por cumplir con el plazo, la situación se convierte en una valiosa aunque dura lección sobre la importancia de la organización y la gestión del tiempo, recordándote la necesidad de establecer sistemas más efectivos.",
         determinacion: 0,
         alegria: -2,
         apoyo: 0,
@@ -6253,7 +6253,7 @@ let preguntas = [
         optionID: 438,
         text: "Le ayudas a entender el tema.",
         explicacion:
-          "Al asumir el rol de guía para tu amigo, te embarcas en una experiencia de enseñanza mutuamente beneficiosa. No solo tienes la oportunidad de reforzar tus propios conocimientos al tener que explicarlos claramente, sino que también contribuyes significativamente al progreso académico de tu amigo. Este acto de apoyo no solo puede estrechar tu relación, sino que también te brinda una satisfacción personal al ver a tu amigo superar obstáculos con tu ayuda. Si bien dedicar tiempo a explicar y repasar el material puede restar horas a tus propias tareas o descanso, la recompensa de fomentar un ambiente de aprendizaje colaborativo y la sensación de logro al hacer una diferencia positiva en la educación de tu amigo son invaluables.",
+          "Al asumir el rol de guía para tu amigo, te embarcas en una experiencia de enseñanza mutuamente beneficiosa. No solo tienes la oportunidad de reforzar tus propios conocimientos al tener que explicarlos claramente, sino que también contribuyes significativamente al progreso académico de tu amigo. Este acto de apoyo no solo puede estrechar tu relación, sino que también te brinda una satisfacción personal al ver a tu amigo superar obstáculos con tu ayuda.",
         determinacion: 0,
         alegria: 1,
         apoyo: 2,
@@ -6273,7 +6273,7 @@ let preguntas = [
         optionID: 439,
         text: "Tienes que ayudar más en casa.",
         explicacion:
-          "Las dificultades económicas en tu familia te llevan a asumir un papel más activo en el hogar, contribuyendo de manera que va más allá de lo habitual. Este podría ser un tiempo de colaboración y apoyo mutuo, donde cada miembro de la familia, incluyéndote, se esfuerza por adaptarse y enfrentar juntos los desafíos económicos. Aunque esta situación puede imponer una carga adicional sobre tus hombros, tanto en términos emocionales como de tiempo, también te brinda la oportunidad de desarrollar una mayor resiliencia y comprensión de la importancia del trabajo en equipo y la solidaridad familiar. El esfuerzo conjunto no solo puede aliviar algunas de las dificultades económicas, sino también fortalecer los lazos familiares y fomentar un sentido de responsabilidad y madurez en ti.",
+          "Las dificultades económicas en tu familia te llevan a asumir un papel más activo en el hogar, contribuyendo de manera que va más allá de lo habitual. Este podría ser un tiempo de colaboración y apoyo mutuo, donde cada miembro de la familia, incluyéndote, se esfuerza por adaptarse y enfrentar juntos los desafíos económicos. Aunque esta situación puede imponer una carga adicional sobre tus hombros, también te brinda la oportunidad de desarrollar una mayor resiliencia y comprensión de la importancia del trabajo en equipo y la solidaridad familiar.",
         determinacion: 0,
         alegria: -2,
         apoyo: 2,
@@ -6293,7 +6293,7 @@ let preguntas = [
         optionID: 440,
         text: "Participas en la evacuación y regresas a casa siguiendo los protocolos de seguridad de la escuela.",
         explicacion:
-          "La experiencia repentina de un temblor durante las horas de clase desencadena los protocolos de seguridad establecidos por tu escuela, enfocándose en garantizar la seguridad y el bienestar de todos los estudiantes y el personal. Aunque el temblor no causa daños mayores, la decisión de evacuar y suspender las clases por el resto del día se toma como precaución. Este evento inesperado interrumpe la rutina escolar y te lleva a regresar a casa más temprano de lo previsto. La situación, aunque azarosa, subraya la importancia de las medidas de seguridad y preparación ante emergencias, y te proporciona una perspectiva práctica sobre cómo reaccionar de manera calmada y ordenada ante eventos inesperados.",
+          "La experiencia repentina de un temblor durante las horas de clase desencadena los protocolos de seguridad establecidos por tu escuela, enfocándose en garantizar la seguridad y el bienestar de todos los estudiantes y el personal. La situación, aunque azarosa, subraya la importancia de las medidas de seguridad y preparación ante emergencias, y te proporciona una perspectiva práctica sobre cómo reaccionar de manera calmada y ordenada ante eventos inesperados.",
         determinacion: 0,
         alegria: 0,
         apoyo: 1,
