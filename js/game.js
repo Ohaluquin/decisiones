@@ -98,7 +98,6 @@ function showExplanation() {
   document.getElementById("explicacion").innerHTML = option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;      
   actualizarPlayer(option);
   actualizarPlayerCard();
-  document.getElementById("foto-pregunta").src = "img/consecuencias.png";
   mostrarPerfil();
   if (option.determinacion) mostrarValor("determinacion", option.determinacion);
   if (option.alegria) mostrarValor("alegria", option.alegria);
