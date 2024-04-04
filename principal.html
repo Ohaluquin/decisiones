@@ -67,17 +67,19 @@
           <br />
 
           <div class="options">
-            <input type="radio" id="option1" name="option" value="1" />
-            <label for="option1" id="option1_text"></label><br />
+            <div id="radioptions">
+              <input type="radio" id="option1" name="option" value="1" />
+              <label for="option1" id="option1_text"></label><br />
 
-            <input type="radio" id="option2" name="option" value="2" />
-            <label for="option2" id="option2_text"></label><br />
+              <input type="radio" id="option2" name="option" value="2" />
+              <label for="option2" id="option2_text"></label><br />
 
-            <input type="radio" id="option3" name="option" value="3" />
-            <label for="option3" id="option3_text"></label><br />
+              <input type="radio" id="option3" name="option" value="3" />
+              <label for="option3" id="option3_text"></label><br />
 
-            <input type="radio" id="option4" name="option" value="4" />
-            <label for="option4" id="option4_text"></label><br />
+              <input type="radio" id="option4" name="option" value="4" />
+              <label for="option4" id="option4_text"></label><br />
+            </div>
             <hr>
             <p id="explicacion"></p>
             <button class="key centrado" id="siguiente" onclick="siguiente()">Siguiente</button>
@@ -112,7 +114,7 @@
         <p>¡Has caído en una casilla de azar! Toca el dado para ver si se te aplica la carta:</p>
         <button onclick="tirarDados()"><img src="img/dado-animado.gif" alt="Tirar dado" class="dado"></button>
       </div>
-    </div>    
+    </div>
   </div>
   <script src="database/questions.js"></script>
   <script src="database/personajes.js"></script>
@@ -122,4 +124,5 @@
   <script src="js/select_column.js"></script>
   <script src="js/principal.js"></script>
 </body>
+
 </html>

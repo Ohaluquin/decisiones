@@ -17,21 +17,9 @@ function cargarPregunta(category) {
   preguntas.splice(preguntas.indexOf(pregunta), 1);
   document.getElementById("pregunta").innerHTML = "Contexto "+category+":<br><br>"+pregunta.text;
   if (pregunta.kind === "azar") {
-    document.getElementById("radioptions").classList.add("hidden");
-    document.getElementById("option1").classList.add("hidden");
-    document.getElementById("option2").classList.add("hidden");
-    document.getElementById("option3").classList.add("hidden");
-    document.getElementById("option4").classList.add("hidden");
-    document.getElementById("option1_text").innerHTML = "";
-    document.getElementById("option2_text").innerHTML = "";
-    document.getElementById("option3_text").innerHTML = "";
-    document.getElementById("option4_text").innerHTML = "";    
+    document.getElementById("radioptions").classList.add("hidden");    
   } else {
     document.getElementById("radioptions").classList.remove("hidden");
-    document.getElementById("option1").classList.remove("hidden");
-    document.getElementById("option2").classList.remove("hidden");
-    document.getElementById("option3").classList.remove("hidden");
-    document.getElementById("option4").classList.remove("hidden");
     document.getElementById("option1_text").innerHTML = pregunta.options[0].text;
     document.getElementById("option2_text").innerHTML = pregunta.options[1].text;
     document.getElementById("option3_text").innerHTML = pregunta.options[2].text;
@@ -66,7 +54,8 @@ function showExplanation() {
     let option_index = document.querySelector(
       'input[type="radio"]:checked'
     ).value;
-    option = pregunta.options[option_index - 1];    
+    option = pregunta.options[option_index - 1];  
+    document.getElementById("radioptions").classList.add("hidden");  
   }
   let evaluacion = `Determinación: ${option.determinacion}
           <br>Alegría: ${option.alegria}

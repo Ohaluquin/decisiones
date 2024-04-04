@@ -32,19 +32,9 @@ function actualizarQuestionCard() {
   preguntas.splice(preguntas.indexOf(pregunta), 1);
   document.getElementById("pregunta").innerHTML = "Contexto "+category+":<br><br>"+pregunta.text;
   if (pregunta.kind === "azar") {
-    document.getElementById("option1").classList.add("hidden");
-    document.getElementById("option2").classList.add("hidden");
-    document.getElementById("option3").classList.add("hidden");
-    document.getElementById("option4").classList.add("hidden");
-    document.getElementById("option1_text").innerHTML = "";
-    document.getElementById("option2_text").innerHTML = "";
-    document.getElementById("option3_text").innerHTML = "";
-    document.getElementById("option4_text").innerHTML = "";
+    document.getElementById("radioptions").classList.add("hidden");
   } else {
-    document.getElementById("option1").classList.remove("hidden");
-    document.getElementById("option2").classList.remove("hidden");
-    document.getElementById("option3").classList.remove("hidden");
-    document.getElementById("option4").classList.remove("hidden");
+    document.getElementById("radioptions").classList.remove("hidden");    
     document.getElementById("option1_text").innerHTML =
       pregunta.options[0].text;
     document.getElementById("option2_text").innerHTML =
@@ -87,6 +77,7 @@ function showExplanation() {
     let evaluacion = evalua(option);
     if(evaluacion>1) winSound.play();
     else if(evaluacion<-1) incorrectSound.play();
+    document.getElementById("radioptions").classList.add("hidden"); 
   }
   let evaluacion = `Determinación: ${option.determinacion}
           <br>Alegría: ${option.alegria}
