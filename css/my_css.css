@@ -259,6 +259,10 @@
   display: none;
 }
 
+.margen {
+  margin: 30px 5px;
+}
+
 .key {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -266,8 +270,7 @@
   padding: 5px;
   font-size: 16px;
   cursor: pointer;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  margin: 10px 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);  
 }
 
 .key:hover {
