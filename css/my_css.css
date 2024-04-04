@@ -480,7 +480,7 @@ progress.green::-moz-progress-bar {
 
   #select_player {
     width: 90%;
-    height: 57vh;
+    height: 58vh;
   }
 
   #sel_personaje {    
@@ -488,8 +488,13 @@ progress.green::-moz-progress-bar {
     max-width: 30vh;
   }
 
+  #contenedor_personaje {
+    width: 85%;
+    max-width: 30vh;
+  }
+
   #user_stats {
-    width: 80%;
+    width: 95%;
     height: 65vh;
   }
 
