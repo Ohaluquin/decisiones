@@ -101,7 +101,7 @@
 #modo_seleccion {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 40%;
 }
 
 #preloader {
@@ -267,6 +267,7 @@
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 10px 5px;
 }
 
 .key:hover {
@@ -299,7 +300,7 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-#contenedor_personaje {
+#contenedor_personaje {  
   position: relative;
   height: 65%;
   aspect-ratio: 1 / 1;
@@ -459,7 +460,8 @@ progress.green::-moz-progress-bar {
   position: absolute;
   padding: 5px;
   height: 55vh;
-  width: 24%;
+  width: 40%;
+  max-width: 52vh;
   z-index: 1;
 }
 
@@ -488,11 +490,6 @@ progress.green::-moz-progress-bar {
     max-width: 30vh;
   }
 
-  #contenedor_personaje {
-    width: 85%;
-    max-width: 30vh;
-  }
-
   #user_stats {
     width: 95%;
     height: 65vh;
@@ -500,6 +497,10 @@ progress.green::-moz-progress-bar {
 
   .perfil {
     width: 95%;
+  }
+
+  #contenedor_personaje {
+    width: 90%;
   }
 }
 
