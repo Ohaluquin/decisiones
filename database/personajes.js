@@ -8,7 +8,7 @@ let personajes = [
     salud: 6,
     dinero: 3,
     tiempo: 4,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [88,127,74,104,16,22,132,81,54,89,118,23],
   },
   {
     personajeID: 2,
@@ -19,7 +19,7 @@ let personajes = [
     salud: 2,
     dinero: 2,
     tiempo: 5,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [96,36,132,135,81,72,9,124,103,73],
   },
   {
     personajeID: 3,
@@ -30,7 +30,7 @@ let personajes = [
     salud: 6,
     dinero: 2,
     tiempo: 5,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [124,61,52,126,18,39,31,20,54,55,17],
   },
   {
     personajeID: 4,
@@ -41,7 +41,7 @@ let personajes = [
     salud: 4,
     dinero: 4,
     tiempo: 5,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [92,98,120,24,32,1,37,128,99,72,43],
   },
   {
     personajeID: 5,
@@ -52,7 +52,7 @@ let personajes = [
     salud: 6,
     dinero: 3,
     tiempo: 5,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [117,7,85,35,113,19,141,140,26,4,84,131,51,72],
   },
   {
     personajeID: 6,
@@ -63,7 +63,7 @@ let personajes = [
     salud: 5,
     dinero: 2,
     tiempo: 5,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [63,93,33,140,75,126,64,109,77,41,75,80],
   },
   {
     personajeID: 7,
@@ -74,7 +74,7 @@ let personajes = [
     salud: 7,
     dinero: 2,
     tiempo: 5,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [129,10,65,120,125,91,87,135,115,81,55,80],
   },
   {
     personajeID: 8,
@@ -85,7 +85,7 @@ let personajes = [
     salud: 6,
     dinero: 3,
     tiempo: 6,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [94,82,56,34,50,42,53,75,12],
   },
   {
     personajeID: 10,
@@ -96,7 +96,7 @@ let personajes = [
     salud: 6,
     dinero: 6,
     tiempo: 5,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [97,21,141,132,60,116,72,51,103,91],
   },
   {
     personajeID: 11,
@@ -107,7 +107,7 @@ let personajes = [
     salud: 4,
     dinero: 3,
     tiempo: 6,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [100,88,122,123,79,116,128,54],
   },
   {
     personajeID: 12,
@@ -118,7 +118,7 @@ let personajes = [
     salud: 6,
     dinero: 3,
     tiempo: 4,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [117,46,24,141,77,28,42,80],
   },
   {
     personajeID: 13,
@@ -129,7 +129,7 @@ let personajes = [
     salud: 6,
     dinero: 2,
     tiempo: 5,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [117,100,61,98,95,141,139,34,105,31,43],
   },
   {
     personajeID: 14,
@@ -140,7 +140,7 @@ let personajes = [
     salud: 4,
     dinero: 4,
     tiempo: 6,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [94,36,120,113,75,137,103,3,128],
   },
   {
     personajeID: 15,
@@ -151,7 +151,7 @@ let personajes = [
     salud: 7,
     dinero: 2,
     tiempo: 2,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [15,132,73,90,42,43,40],
   },
   {
     personajeID: 16,
@@ -162,7 +162,7 @@ let personajes = [
     salud: 6,
     dinero: 3,
     tiempo: 4,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [100,85,96,24,113,139,45,37,133],
   },
   {
     personajeID: 17,
@@ -173,7 +173,7 @@ let personajes = [
     salud: 4,
     dinero: 2,
     tiempo: 4,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [117,100,105,13,133,24,66],
   },
   {
     personajeID: 18,
@@ -184,7 +184,7 @@ let personajes = [
     salud: 6,
     dinero: 5,
     tiempo: 5,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [136,92,139,27,130,101,64,54],
   },
   {
     personajeID: 19,
@@ -195,6 +195,6 @@ let personajes = [
     salud: 2,
     dinero: 2,
     tiempo: 4,
-    preguntas: [7, 15, 39, 18],
+    preguntas: [10,102,33,34,87,28,30,138,72,118],
   },
 ];
