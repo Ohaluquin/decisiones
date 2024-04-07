@@ -63,6 +63,7 @@ function cargarPlayer() {
       dinero: personajeElegido.dinero,
       tiempo: personajeElegido.tiempo,
       rutaImagen: personajeElegido.rutaImagen,
+      preguntas: personajeElegido.preguntas,
       nickname: localStorage.getItem("nombrePersonaje"),
     };
     animatedGif = getImagePath();

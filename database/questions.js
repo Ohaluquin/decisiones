@@ -19,9 +19,9 @@ let preguntas = [
       },
       {
         optionID: 2,
-        text: "Le preguntas a la empresa por qué necesitan que inviertas dinero.",
+        text: "Preguntas a la empresa sobre las dudas que te genera.",
         explicacion:
-          "Estás siendo curioso y tratando de entender por qué la empresa necesita que inviertas dinero. Sin embargo, todavía no estás poniendo en riesgo tus finanzas.",
+          "Estás siendo curioso y tratando de entender por qué la empresa necesita que inviertas dinero. Sin embargo al querer resolver tus dudas con la misma empresa, todavía estás arriesgando a ser manipulado y poner en riesgo tus finanzas.",
         determinacion: 0,
         alegria: 0,
         apoyo: 1,
@@ -32,9 +32,8 @@ let preguntas = [
       {
         optionID: 3,
         text: "Te emociona la oportunidad de crecer rápidamente en tu carrera y decides invertir en el curso/programa que la empresa ofrece.",
-        explicacion:
-          "Estás mostrando entusiasmo y disposición para asumir riesgos en tu carrera, pero podrías estar cayendo en una trampa.",
-        determinacion: 0,
+        explicacion: "Estás mostrando entusiasmo y disposición para asumir riesgos en tu carrera, pero no estás considerando que podrías estar cayendo en una estafa.",
+        determinacion: -1,
         alegria: 1,
         apoyo: -1,
         salud: 0,
@@ -43,14 +42,13 @@ let preguntas = [
       },
       {
         optionID: 4,
-        text: "Decides investigar a la empresa y sus prácticas antes de tomar una decisión sobre invertir dinero.",
-        explicacion:
-          "Esto muestra la importancia de estar informado y tomar decisiones basadas en evidencia",
-        determinacion: 1,
+        text: "Aceptas la propuesta de inversión porque ves que otros también lo hacen.",
+        explicacion: "Seguir a la multitud sin analizar personalmente puede disminuir tu determinación, ya que confías en las decisiones de los demás en lugar de en tu propio juicio crítico.",          
+        determinacion: -1,
         alegria: 0,
-        apoyo: 1,
+        apoyo: 0,
         salud: 0,
-        dinero: 0,
+        dinero: -2,
         tiempo: -1,
       },
     ],
@@ -63,27 +61,25 @@ let preguntas = [
     options: [
       {
         optionID: 5,
+        text: "Informas a las autoridades sobre la situación de la persona y continúas con tu camino.",
+        explicacion:"Al delegar la ayuda a las autoridades, te aseguras de que la persona reciba la asistencia necesaria sin retrasar tus propios planes, lo que demuestra una gestión eficaz de tu tiempo y recursos.",          
+        determinacion: 1,
+        alegria: 0,
+        apoyo: 1,
+        salud: 0,
+        dinero: 0,
+        tiempo: 1,
+      },
+      {
+        optionID: 6,
         text: "Le dices que no puedes ayudarla directamente, pero le sugieres buscar ayuda de las autoridades o de alguna organización que pueda brindar ayuda de manera segura.",
-        explicacion:
-          "Estás siendo honesto con la persona al decirle que no puedes ayudarla, pero no estás poniendo en riesgo tu propia seguridad.",
+        explicacion: "Estás siendo honesto con la persona al decirle que no puedes ayudarla, pero no estás poniendo en riesgo tu propia seguridad.",          
         determinacion: 1,
         alegria: 0,
         apoyo: -1,
         salud: 0,
         dinero: 0,
         tiempo: 0,
-      },
-      {
-        optionID: 6,
-        text: "Le ofreces ayuda pero mantienes la distancia y tratas de encontrar una solución segura, como llamar a las autoridades.",
-        explicacion:
-          "Estás demostrando empatía con la persona y le estás ofreciendo ayuda si la necesita, pero también estás siendo consciente de tu propia seguridad.",
-        determinacion: 1,
-        alegria: 0,
-        apoyo: 1,
-        salud: 0,
-        dinero: 0,
-        tiempo: -1,
       },
       {
         optionID: 7,
@@ -99,10 +95,9 @@ let preguntas = [
       },
       {
         optionID: 8,
-        text: "Por miedo a que sea una estafa, le dices que se busque a alguien más.",
-        explicacion:
-          "Esto refleja que la persona está actuando por miedo y no está ofreciendo ayuda directamente.",
-        determinacion: 0,
+        text: "Inicialmente consideras ayudar, pero decides no hacerlo por miedo a que sea una estafa.",
+        explicacion:"La indecisión y el miedo pueden mermar tu determinación, llevándote a evitar acciones que podrían requerir coraje.",          
+        determinacion: -1,
         alegria: -1,
         apoyo: -1,
         salud: 0,
@@ -120,8 +115,7 @@ let preguntas = [
       {
         optionID: 9,
         text: "Le ofreces ayuda y tratas de encontrar una solución que no te ponga en peligro.",
-        explicacion:
-          "Estás demostrando empatía con la persona y le estás ofreciendo ayuda si la necesita, pero también estás siendo consciente de tu propia seguridad.",
+        explicacion: "Al ofrecer ayuda de manera segura, demuestras empatía y responsabilidad. Es importante evaluar los riesgos y buscar formas de ayudar que no comprometan tu seguridad personal. A veces, la mejor ayuda es aquella que se brinda con prudencia.",
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -132,8 +126,7 @@ let preguntas = [
       {
         optionID: 10,
         text: "Le dices que no puedes ayudarla y te alejas.",
-        explicacion:
-          "Estás siendo honesto con la persona al decirle que no puedes ayudarla, pero no estás siendo empático con ella.",
+        explicacion: "Estás siendo honesto con la persona al decirle que no puedes ayudarla aún si no estás siendo empático con ella. Reconocer y respetar tus propios límites es crucial para el autocuidado.",
         determinacion: 0,
         alegria: -1,
         apoyo: -1,
@@ -144,8 +137,7 @@ let preguntas = [
       {
         optionID: 11,
         text: "Le ofreces ayuda porque es lo correcto.",
-        explicacion:
-          "Estás poniendo en riesgo tu propia seguridad sin pensar en las consecuencias.",
+        explicacion: "Querer ayudar es valioso, pero actuar sin considerar las consecuencias puede ser peligroso. Es esencial equilibrar la compasión con el juicio crítico para evitar ponerse en situaciones que puedan ser perjudiciales para uno mismo y para otros.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 2,
@@ -156,8 +148,7 @@ let preguntas = [
       {
         optionID: 12,
         text: "Le dices que no puedes ayudarla directamente, pero le sugieres buscar ayuda de las autoridades o de alguna organización que pueda brindar ayuda de manera segura.",
-        explicacion:
-          "Esto refleja que la persona está siendo honesta y tratando de ofrecer una solución segura y efectiva.",
+        explicacion: "Dirigir a alguien hacia ayuda especializada muestra una forma inteligente de asistir sin asumir riesgos innecesarios. Promueve la idea de que a veces la ayuda más efectiva es conectar a las personas con los recursos adecuados.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -176,8 +167,7 @@ let preguntas = [
       {
         optionID: 13,
         text: "Le haces saber que estás ahí para ella y le preguntas si necesita ayuda.",
-        explicacion:
-          "Estás demostrando empatía con la persona y le estás ofreciendo ayuda si la necesita.",
+        explicacion:"Ofrecer tu apoyo y preguntar cómo puedes ayudar demuestra empatía y comprensión. Esta actitud no solo fortalece lazos de confianza sino que también fomenta un entorno de apoyo para quienes enfrentan desafíos de salud mental.",          
         determinacion: 0,
         alegria: 1,
         apoyo: 1,
@@ -188,8 +178,7 @@ let preguntas = [
       {
         optionID: 14,
         text: "Te sientes incómodo y cambias de tema.",
-        explicacion:
-          "Esto refleja que estás evadiendo la situación y no estás siendo empático con la otra persona.",
+        explicacion:"Cambiar de tema puede ser una reacción natural ante temas que nos resultan incómodos, pero es importante reconocer que evitar conversaciones sobre salud mental puede contribuir al estigma y aislar aún más a la persona.",          
         determinacion: 0,
         alegria: -1,
         apoyo: -1,
@@ -200,8 +189,7 @@ let preguntas = [
       {
         optionID: 15,
         text: "Le dices que quieres ayudar y que vas a buscar información sobre su enfermedad mental para poder entender mejor cómo puedes hacerlo.",
-        explicacion:
-          "Esto refleja que estás siendo proactivo y buscando una solución informada y efectiva.",
+        explicacion: "Comprometerse a informarse sobre la enfermedad mental de la persona muestra una dedicación genuina a ayudar. Este enfoque proactivo no solo te prepara mejor para ofrecer apoyo sino que también destaca la importancia de la educación y la comprensión en el manejo de la salud mental.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 2,
@@ -212,8 +200,7 @@ let preguntas = [
       {
         optionID: 16,
         text: "Buscas algún pretexto para alejarte",
-        explicacion:
-          "Estás evadiendo la situación y no estás siendo empático con la persona.",
+        explicacion:"Alejarse de la conversación puede parecer una salida fácil, pero es crucial reconocer que este tipo de evasión puede hacer que la persona se sienta incomprendida o aislada. Abordar la salud mental con compasión y apertura puede hacer una gran diferencia para quienes buscan apoyo.",          
         determinacion: -1,
         alegria: 0,
         apoyo: -1,
@@ -288,8 +275,7 @@ let preguntas = [
       {
         optionID: 21,
         text: "Le preguntas a tu amigo si sabe por qué su vecino tiene al perro amarrado en la azotea todo el día.",
-        explicacion:
-          "Estás tratando de entender la situación antes de tomar una decisión.",
+        explicacion:"Preguntar a tu amigo puede proporcionarte más contexto sobre la situación, lo cual es crucial antes de asumir lo peor. Entender las circunstancias permite tomar decisiones más informadas y potencialmente ofrecer ayuda de manera más efectiva.",          
         determinacion: 0,
         alegria: 0,
         apoyo: 1,
@@ -300,8 +286,7 @@ let preguntas = [
       {
         optionID: 22,
         text: "Le dices a tu amigo que deberían hablar con el vecino para ver si pueden ayudar al perro.",
-        explicacion:
-          "Estás demostrando empatía con el perro y tratando de encontrar una solución para ayudarlo.",
+        explicacion: "Al sugerir hablar con el vecino, estás promoviendo una solución basada en el diálogo y la comunidad. Esta acción demuestra un enfoque constructivo y empático hacia la resolución de problemas, buscando el bienestar del animal mientras mantienes el respeto por el vecino de tu amigo.",        
         determinacion: 2,
         alegria: 0,
         apoyo: 2,
@@ -312,20 +297,18 @@ let preguntas = [
       {
         optionID: 23,
         text: "Decides ignorar la situación y no hacer nada al respecto.",
-        explicacion:
-          "No estás siendo fiel a tus principios y valores al no hacer nada al respecto. Además, no estás demostrando empatía con el perro.",
+        explicacion:"Al decidir no actuar, podrías estar ganando tiempo para tus propias actividades, evitando el compromiso de resolver problemas que no consideras tuyos. Sin embargo, esta elección puede contradecir principios de compasión y acción comunitaria, reflejando la tensión entre la gestión personal del tiempo y la responsabilidad social. Este tipo de inacción puede contribuir al problema al no abordarlo, lo que refleja la importancia de actuar según tus principios.",          
         determinacion: -1,
         alegria: -1,
         apoyo: -1,
         salud: -1,
         dinero: 0,
-        tiempo: 0,
+        tiempo: 1,
       },
       {
         optionID: 24,
         text: "Te vas de la casa de tu amigo y decides denunciar el acto en Facebook o llamar a algún colectivo de protección de animales.",
-        explicacion:
-          "Estás siendo proactivo y buscando una solución para ayudar al perro. Además, estás demostrando empatía con el perro y tratando de crear conciencia sobre el maltrato animal.",
+        explicacion:"Denunciar la situación a través de las redes sociales o a un colectivo puede ser un paso poderoso para buscar ayuda y crear conciencia sobre el maltrato animal. Esta acción muestra un compromiso fuerte con el bienestar animal y la responsabilidad cívica, aunque es importante hacerlo de manera responsable para evitar posibles represalias o conflictos.",          
         determinacion: 2,
         alegria: 0,
         apoyo: 1,
@@ -344,8 +327,7 @@ let preguntas = [
       {
         optionID: 25,
         text: "Tratas de explicarle a la persona por qué el clasismo puede ser perjudicial, esperando que pueda influir positivamente en su padre.",
-        explicacion:
-          "Estás siendo proactivo y tratando de educar a la persona sobre el clasismo, con la esperanza de que pueda pasar ese conocimiento a su padre.",
+        explicacion:"Intentar educar a la persona sobre los daños del clasismo puede ser un paso valioso hacia el cambio. No solo estás abordando el problema directamente, sino que también estás fomentando una actitud de aprendizaje y crecimiento, lo que puede influir positivamente más allá del contexto inmediato.",          
         determinacion: 2,
         alegria: 0,
         apoyo: 1,
@@ -356,20 +338,18 @@ let preguntas = [
       {
         optionID: 26,
         text: "Tratas de cambiar de tema para evitar la situación incómoda.",
-        explicacion:
-          "Estás tratando de hacer la situación más llevadera para ti y para la persona, pero no estás abordando el comportamiento tóxico del padre de la persona.",
+        explicacion:"Al cambiar de tema, evitas una discusión potencialmente larga y difícil sobre el clasismo, lo que te permite ganar tiempo para enfocarte en aspectos más positivos de tu interacción. Sin embargo, es importante ser consciente de que esta elección también puede evitar abordar y reflexionar sobre temas sociales importantes.",        
         determinacion: 0,
         alegria: 1,
         apoyo: 0,
         salud: 0,
         dinero: 0,
-        tiempo: 0,
+        tiempo: 1,
       },
       {
         optionID: 27,
         text: "Le dices a la persona que no te sientes cómodo con la actitud de su padre y prefieres mantener cierta distancia.",
-        explicacion:
-          "Estás poniendo límites y cuidando tu bienestar emocional al mantener una distancia de una situación potencialmente incómoda.",
+        explicacion:"Establecer límites es una parte importante del autocuidado, especialmente en situaciones que pueden ser perjudiciales o tóxicas. Comunicar tus sentimientos de manera honesta puede ayudar a preservar tu bienestar emocional, a la vez que señalas comportamientos problemáticos.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -380,8 +360,7 @@ let preguntas = [
       {
         optionID: 28,
         text: "No haces nada.",
-        explicacion:
-          "No estás siendo fiel a tus principios y valores al no hacer nada al respecto. Además, estás normalizando el comportamiento tóxico del padre de la persona y no estás demostrando empatía con las personas que han sido víctimas de discriminación.",
+        explicacion: "La inacción ante actitudes clasistas puede ser interpretada como una aceptación tácita, lo cual puede perpetuar y normalizar dichas actitudes. Es importante reflexionar sobre el impacto de nuestras acciones (o falta de ellas) y considerar formas constructivas de promover la igualdad y la inclusión.",          
         determinacion: -1,
         alegria: 0,
         apoyo: -1,
@@ -400,8 +379,7 @@ let preguntas = [
       {
         optionID: 29,
         text: "Le haces saber que su comportamiento es inapropiado y le pides que se disculpe con el grupo.",
-        explicacion:
-          "Estás defendiendo a la persona que fue insultada y te estás posicionando contra el comportamiento clasista, lo que es una señal de respeto y empatía.",
+        explicacion:"Confrontar el comportamiento clasista muestra tu compromiso con los valores de respeto e igualdad. Al pedir una disculpa, no solo defiendes la dignidad de aquellos que son menospreciados, sino que también promueves una reflexión crítica sobre el impacto de nuestras palabras y actitudes en los demás.",          
         determinacion: 2,
         alegria: 0,
         apoyo: 2,
@@ -412,20 +390,18 @@ let preguntas = [
       {
         optionID: 30,
         text: "Cambias de tema para aliviar la tensión en la reunión.",
-        explicacion:
-          "Estás intentando mantener la paz en el grupo, pero no estás abordando directamente el problema.",
+        explicacion:"Al cambiar de tema, desvías la conversación de un terreno potencialmente conflictivo hacia uno más neutral, ahorrando tiempo y manteniendo la fluidez de la reunión. Aunque esta acción evita enfrentamientos inmediatos, es importante considerar las implicaciones de no abordar comentarios clasistas y el efecto que esto puede tener en la perpetuación de tales actitudes.",        
         determinacion: 0,
         alegria: 1,
         apoyo: 0,
         salud: 0,
         dinero: 0,
-        tiempo: 0,
+        tiempo: 1,
       },
       {
         optionID: 31,
         text: "Te sientes incómodo y decides alejarte del grupo.",
-        explicacion:
-          "Estás cuidando tu bienestar emocional y mental al alejarte de una situación incómoda y tóxica. Sin embargo, no estás brindando apoyo a la persona que fue insultada.",
+        explicacion:"Alejarte de la conversación puede ser una forma de autoprotección ante un ambiente que consideras tóxico o dañino. Si bien es importante cuidar tu bienestar emocional, también es crucial reflexionar sobre cómo podemos apoyar a quienes son objeto de comentarios despectivos, incluso si no lo hacemos en el momento.",          
         determinacion: 0,
         alegria: 0,
         apoyo: -1,
@@ -436,8 +412,7 @@ let preguntas = [
       {
         optionID: 32,
         text: "No haces nada.",
-        explicacion:
-          "No estás siendo fiel a tus principios y valores al no hacer nada al respecto. Además, estás normalizando el comportamiento tóxico de la persona y no estás demostrando empatía con las personas que han sido víctimas de discriminación.",
+        explicacion:"La inacción en situaciones de discriminación o desprecio puede ser percibida como una aprobación tácita de esos comportamientos. Reflexionar sobre cómo nuestras acciones o falta de acción contribuyen al mantenimiento de actitudes dañinas es fundamental para fomentar un cambio social positivo.",          
         determinacion: -1,
         alegria: 0,
         apoyo: -1,
@@ -456,8 +431,7 @@ let preguntas = [
       {
         optionID: 33,
         text: "Le haces saber que su comportamiento es inapropiado y le pides que se disculpe con la mesera.",
-        explicacion:
-          "Estás siendo fiel a tus principios y valores al no permitir que alguien trate mal a otra persona sin consecuencias. Además, estás demostrando empatía con la mesera y cuidando tu bienestar emocional y mental al no tolerar comportamientos tóxicos.",
+        explicacion:"Confrontar el comportamiento inapropiado demuestra tu compromiso con el respeto y la dignidad hacia todos, independientemente de su rol o posición. Pedir una disculpa no solo aborda el comportamiento inmediato, sino que también promueve una mayor conciencia sobre el impacto de nuestras acciones en los demás.",          
         determinacion: 2,
         alegria: 0,
         apoyo: 1,
@@ -468,8 +442,7 @@ let preguntas = [
       {
         optionID: 34,
         text: "Tratas de distraer a la persona para que deje de molestar a la mesera.",
-        explicacion:
-          "Estás tratando de hacer la situación más llevadera para ti y para la mesera, pero no estás abordando el comportamiento tóxico de la persona.",
+        explicacion: "Distrayendo a la persona, intentas aliviar la tensión sin enfrentar directamente el problema. Esta táctica puede ser efectiva en el momento, pero es importante reflexionar sobre oportunidades más directas para abordar el comportamiento tóxico de la persona.",
         determinacion: 0,
         alegria: 1,
         apoyo: 0,
@@ -480,20 +453,18 @@ let preguntas = [
       {
         optionID: 35,
         text: "Te alejas de la persona sin decir nada.",
-        explicacion:
-          "Estás cuidando tu bienestar emocional y mental al alejarte de una situación incómoda y tóxica. Sin embargo, no estás abordando el comportamiento tóxico de la persona ni demostrando empatía con la mesera.",
+        explicacion: "Alejarte de la situación te permite salvaguardar tu bienestar emocional y utilizar tu tiempo de manera más acorde a tus valores. Esta decisión refleja la importancia de rodearte de personas que respeten la dignidad de los demás y te permite evitar invertir energía en entornos negativos. Sin embargo, considera también las maneras en las que puedes apoyar a otros afectados por el comportamiento negativo.",          
         determinacion: 0,
         alegria: 0,
         apoyo: -1,
         salud: 1,
         dinero: 0,
-        tiempo: 0,
+        tiempo: 1,
       },
       {
         optionID: 36,
         text: "No haces nada.",
-        explicacion:
-          "No estás siendo fiel a tus principios y valores al no hacer nada al respecto. Además, estás normalizando el comportamiento tóxico de la persona y no estás demostrando empatía con la mesera.",
+        explicacion:"Optar por no actuar puede parecer una vía para evitar conflictos, pero también puede ser visto como una aceptación implícita del comportamiento negativo. Reflexionar sobre cómo la inacción puede ser interpretada y las implicaciones de normalizar tales actitudes es crucial.",          
         determinacion: -1,
         alegria: 0,
         apoyo: -1,
@@ -512,8 +483,7 @@ let preguntas = [
       {
         optionID: 37,
         text: "Haces como que no te importa",
-        explicacion:
-          "Estás dejando pasar una oportunidad para educar a la persona que hizo el comentario y evitar que se repita en el futuro.",
+        explicacion:"Ignorar el comentario puede parecer una forma de evitar el conflicto, pero esta pasividad podría ser interpretada como aceptación, perdiendo la oportunidad de abordar y desafiar actitudes nocivas. Es importante sopesar la comodidad del momento contra el valor de defender principios de igualdad y respeto.",          
         determinacion: -1,
         alegria: 0,
         apoyo: 0,
@@ -524,8 +494,7 @@ let preguntas = [
       {
         optionID: 38,
         text: "Te ries incómodamente y le preguntas por qué piensa eso.",
-        explicacion:
-          "Estás mostrando desaprobación (a través de la risa incómoda), pero también abriendo la puerta para una conversación que podría llevar a una mayor comprensión y crecimiento.",
+        explicacion:"Aunque la risa incómoda puede indicar tu desaprobación, hacer una pregunta abierta ofrece una oportunidad para dialogar. Esta conversación puede ser una puerta hacia el entendimiento y el cambio, permitiendo que la persona reflexione sobre sus palabras y sus implicaciones.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -536,26 +505,24 @@ let preguntas = [
       {
         optionID: 39,
         text: "Buscas algún pretexto para alejarte",
-        explicacion:
-          "Estás cuidando tu bienestar emocional y mental al alejarte de una situación incómoda y tóxica.",
+        explicacion:"Priorizar tu bienestar emocional al retirarte de la conversación es una forma válida de autocuidado y gestión de tiempo. Sin embargo, esta elección puede limitar la posibilidad de confrontar o corregir ideas perjudiciales, lo que podría contribuir a un cambio positivo.",          
         determinacion: 0,
         alegria: 0,
         apoyo: 0,
         salud: 1,
         dinero: 0,
-        tiempo: 0,
+        tiempo: 1,
       },
       {
         optionID: 40,
         text: "Lo confrontas y te vas",
-        explicacion:
-          "Estás siendo fiel a tus principios y valores al no permitir que alguien haga comentarios machistas sin consecuencias. Además, estás demostrando empatía con las mujeres que han sido víctimas de comentarios machistas.",
+        explicacion:  "Confrontar directamente el comentario y luego retirarte es una afirmación fuerte de tus valores y límites personales. Esta acción demuestra una clara oposición a las actitudes machistas, fomentando la responsabilidad por las palabras y promoviendo el respeto hacia todos.",        
         determinacion: 2,
         alegria: 0,
         apoyo: 1,
         salud: 0,
         dinero: 0,
-        tiempo: 0,
+        tiempo: 1,
       },
     ],
   },

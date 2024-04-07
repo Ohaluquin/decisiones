@@ -19,17 +19,23 @@ function actualizarQuestionCard() {
   } else if (contador % 3 === 0) {
     category = "social";
   }
-  let filteredQuestions = preguntas.filter(
-    (pregunta) => pregunta.kind === category
-  );
-  if (category === "personal" && turno % god_factor === 0) {
-    filteredQuestions = filteredQuestions.filter((pregunta) =>
-      pregunta.options.some((option) => option[necesity] >= 1)
-    );
+  
+  let filteredQuestions = preguntas.filter((pregunta) => pregunta.kind === category);  
+  let preguntaIndex = filteredQuestions.findIndex(pregunta => player.preguntas.includes(pregunta.questionID));      
+  if (preguntaIndex !== -1) {//Si hay una pregunta del personaje se toma y borra
+    pregunta_actual = preguntaIndex;
+    player.preguntas.splice(player.preguntas.indexOf(filteredQuestions[pregunta_actual].questionID), 1);
+  } else {//Si no    
+    if (category === "personal" && turno % god_factor === 0) {//Filtra las preguntas de dios
+      filteredQuestions = filteredQuestions.filter((pregunta) =>
+        pregunta.options.some((option) => option[necesity] >= 1)
+      );
+    }
+    pregunta_actual = Math.floor(Math.random() * filteredQuestions.length);
   }
-  pregunta_actual = Math.floor(Math.random() * filteredQuestions.length);
   pregunta = filteredQuestions[pregunta_actual];
   preguntas.splice(preguntas.indexOf(pregunta), 1);
+
   document.getElementById("pregunta").innerHTML = "Contexto "+category+":<br><br>"+pregunta.text;
   if (pregunta.kind === "azar") {
     document.getElementById("radioptions").classList.add("hidden");
