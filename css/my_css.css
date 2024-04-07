@@ -199,6 +199,7 @@
 
 .perfil {
   height: 95%;
+  width: 90%;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
   padding: 1px;
@@ -305,7 +306,7 @@
 
 #contenedor_personaje {  
   position: relative;
-  height: 65%;
+  height: 55%;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   border: 0.1rem solid rgb(162, 46, 17);
