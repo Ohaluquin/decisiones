@@ -14,7 +14,7 @@ function actualizarPlayerCard() {
   // Set the source of the new image element to the new image, and make it visible.
   newImgElement.src = getImagePath();
   newImgElement.style.opacity = 1;
-  document.getElementById("letreroImagen").innerHTML = "Sentimiento: " + letreroImagen;
+  document.getElementById("letreroImagen").innerHTML = "" + letreroImagen;
   // After 1 second (the duration of the transition), set the source of the original image element
   // to the new image, make it visible, and hide the new image element.
   setTimeout(function () {
