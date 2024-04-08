@@ -257,5 +257,5 @@ function mostrarPerfil() {
   document.getElementById("user_stats").style.display = "block";
   setTimeout(() => {
     document.getElementById("user_stats").style.display = "none";  
-  }, 7000);
+  }, 6000);
 }

@@ -809,7 +809,7 @@ let preguntas = [
   {
     questionID: 16,
     kind: "académico",
-    text: "Tienes muchas tareas y proyectos pendientes para la escuela o el trabajo:",
+    text: "Tienes muchas tareas y proyectos pendientes:",
     imageName: "lot_of_work",
     options: [
       {
@@ -5233,7 +5233,7 @@ let preguntas = [
   {
     questionID: 95,
     kind: "personal",
-    text: "Te enteras que tu novio vende droga",
+    text: "Te enteras que tu novi@ vende droga",
     imageName: "drugdealer2",
     options: [
       {
@@ -5644,7 +5644,7 @@ let preguntas = [
   },
   {
     questionID: 103,
-    kind: "personal",
+    kind: "social",
     text: "Descubres que un profesor está tratando injustamente a algunos estudiantes",
     imageName: "protest",
     options: [
@@ -5700,7 +5700,7 @@ let preguntas = [
   },
   {
     questionID: 104,
-    kind: "personal",
+    kind: "social",
     text: "En tu escuela, hay un estudiante con una discapacidad física que parece sentirse excluido durante las actividades de grupo",
     imageName: "inclusion",
     options: [
