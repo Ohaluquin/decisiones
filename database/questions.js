@@ -6962,4 +6962,160 @@ let preguntas = [
       },
     ],
   },
+  {
+    questionID: 142,
+    kind: "académico",
+    text: "No terminaste una tarea y ahora tienes que enfrentarte a un maestro muy exigente.",
+    imageName: "unfinished_homework",
+    options: [
+      {
+        optionID: 490,
+        text: "Confiesas honestamente que no completaste la tarea y pides una extensión.",
+        explicacion: "Decides enfrentar la situación con honestidad, explicando tus razones y asumiendo la responsabilidad. Pides más tiempo con la esperanza de que el maestro entienda y te permita completarla, lo cual puede mejorar tu relación con él y evitar consecuencias negativas como una calificación baja.",
+        determinacion: 1,
+        alegria: -1,
+        apoyo: 1,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      },
+      {
+        optionID: 491,
+        text: "Inventas una excusa complicada para justificar por qué no está hecha la tarea.",
+        explicacion: "Optas por crear una historia elaborada para evadir la entrega de la tarea, lo que puede poner en riesgo tu credibilidad si el maestro descubre la mentira, afectando negativamente tu reputación y relación con él.",
+        determinacion: -2,
+        alegria: 0,
+        apoyo: -1,
+        salud: -1,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 492,
+        text: "Decides no ir a clase para evitar enfrentar al maestro ese día.",
+        explicacion: "Eliges evitar el conflicto por completo al no asistir a clase, lo que podría darte tiempo para terminar la tarea, pero también podría resultar en una falta y posiblemente una calificación aún más baja por no presentar la tarea a tiempo.",
+        determinacion: -1,
+        alegria: -1,
+        apoyo: 0,
+        salud: 0,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 493,
+        text: "Faltas a la escuela para evitar al maestro, o entras a otras clases pero te escondes para no encontrarte con él durante el día.",
+        explicacion: "Optas por evitar completamente el conflicto al faltar a la escuela o al esconderte del maestro durante el día. Esto puede darte más tiempo para completar la tarea, pero también podría afectar negativamente tu asistencia y rendimiento académico, además de crear una situación de estrés adicional al tener que esquivar al maestro.",
+        determinacion: -1,
+        alegria: -1,
+        apoyo: -1,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      }
+    ]
+  },  
+  {
+    questionID: 143,
+    kind: "académico",
+    text: "Te asignan una tarea muy laboriosa pero tienes varias semanas para completarla. ¿Cómo gestionas tu tiempo y recursos?",
+    imageName: "laborious_homework",
+    options: [
+      {
+        optionID: 494,
+        text: "Comienzas a trabajar en la tarea inmediatamente para evitar el estrés de último minuto.",
+        explicacion: "Decides tomar la iniciativa y comenzar a trabajar en la tarea desde el principio, distribuyendo el trabajo a lo largo del tiempo disponible. Esto puede minimizar el estrés y maximizar la calidad de tu trabajo.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 0,
+        salud: 1,
+        dinero: 0,
+        tiempo: 1
+      },
+      {
+        optionID: 495,
+        text: "Piensas que hay mucho tiempo y que puedes empezar más tarde.",
+        explicacion: "Optas por posponer el inicio de la tarea, confiando en que tendrás suficiente tiempo más adelante. Esto puede llevar a estrés de último momento si subestimas la cantidad de trabajo necesario.",
+        determinacion: -1,
+        alegria: 0,
+        apoyo: 0,
+        salud: -1,
+        dinero: 0,
+        tiempo: -2
+      },
+      {
+        optionID: 496,
+        text: "Esperas unos días para ver si puedes obtener ayuda o copiar de alguno de tus compañeros.",
+        explicacion: "Optas por posponer el trabajo propio y observar si puedes recibir ayuda de tus compañeros o copiar sus respuestas. A corto plazo, esto podría parecer una solución fácil, pero a largo plazo puede fomentar hábitos de dependencia y falta de compromiso con tu aprendizaje. Esto no solo afecta tu capacidad para enfrentar desafíos académicos futuros, sino que también puede llevar a lagunas significativas en tu conocimiento, lo que podría dificultar el éxito en estudios avanzados o en tu carrera profesional.",
+        determinacion: -1,
+        alegria: 0,
+        apoyo: 0,
+        salud: -2,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 497,
+        text: "Buscas ayuda de compañeros o tutores desde el principio para asegurarte de entender todos los requisitos.",
+        explicacion: "Decides colaborar con otros desde el inicio para clarificar cualquier duda y compartir la carga de trabajo. Esta cooperación no solo facilita el proceso sino que también enriquece tu aprendizaje y fortalece tus conexiones.",
+        determinacion: 1,
+        alegria: 1,
+        apoyo: 2,
+        salud: 1,
+        dinero: 0,
+        tiempo: 0
+      }
+    ]
+  },  
+  {
+    questionID: 144,
+    kind: "académico",
+    text: "Te das cuenta de que sueles olvidar rápidamente la información después de los exámenes.",
+    imageName: "forgetting_after_exams",
+    options: [
+      {
+        optionID: 498,
+        text: "Decides que estudiar solo lo necesario para pasar los exámenes es suficiente.",
+        explicacion: "Este enfoque se centra en la eficiencia a corto plazo, estudiando solo lo esencial para pasar los exámenes. Aunque puede ahorrarte tiempo inicialmente, este método puede resultar en una comprensión superficial y en un rápido olvido de la información, limitando tu habilidad para aplicar estos conocimientos en contextos futuros.",
+        determinacion: -1,
+        alegria: 0,
+        apoyo: 0,
+        salud: -1,
+        dinero: 0,
+        tiempo: 1
+      },
+      {
+        optionID: 499,
+        text: "Te jactas de que no necesitas estudiar para pasar los examenes.",
+        explicacion: "Aunque esta actitud puede parecer confiada, podría llevarte a subestimar la importancia de un aprendizaje sólido y a desarrollar una reputación de complacencia entre tus pares y profesores. A largo plazo, esta actitud puede limitar tu crecimiento académico y profesional.",
+        determinacion: -1,
+        alegria: 1,
+        apoyo: -2,
+        salud: 0,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 500,
+        text: "Aceptas el olvido como parte del proceso de aprendizaje.",
+        explicacion: "Continuar con tu método actual puede ser menos exigente a corto plazo, pero podría no ser efectivo para retener información importante a largo plazo.",
+        determinacion: -1,
+        alegria: 0,
+        apoyo: 0,
+        salud: -1,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 501,
+        text: "Pides consejos a tus profesores para profundizar o aplicar los conocimientos en proyectos prácticos o situaciones reales.",
+        explicacion: "Implementar lo aprendido en contextos prácticos puede mejorar significativamente la retención y comprensión de los conceptos.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 1,
+        salud: 2,
+        dinero: 0,
+        tiempo: -1
+      }
+    ]
+  },
 ];
