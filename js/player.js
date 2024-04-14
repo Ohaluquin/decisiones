@@ -75,44 +75,31 @@ function evalua(option) {
   return option.determinacion + option.alegria + option.apoyo + option.salud + option.dinero + option.tiempo;
 }
 
-  // Función que actualiza los atributos del jugador después de responder una pregunta
+// Función que actualiza los atributos del jugador después de responder una pregunta
 function actualizarPlayer(option) {
+  oldImage = player.imageName;
   // Actualizar los atributos del jugador
   player.determinacion += option.determinacion;
   player.alegria += option.alegria;
   player.apoyo += option.apoyo;
   player.salud += option.salud;
   player.dinero += option.dinero;
-  player.tiempo += option.tiempo;
-  player.imageName = getImageName( // Obtener el nuevo nombre de la imagen
-    player.determinacion,
-    player.alegria,
-    player.apoyo,
-    player.salud,
-    player.dinero,
-    player.tiempo
-  );
+  player.tiempo += option.tiempo;  
+  player.imageName = getImageName(player.determinacion, player.alegria, player.apoyo,
+     player.salud, player.dinero, player.tiempo);
+  if(oldImage == player.imageName) {
+     player.imageName =getImageName(5+option.determinacion, 5+option.alegria, 
+      5+option.apoyo, 5+option.salud, 5+option.dinero, 5+option.tiempo);
+     }
 }
 
 // Función que elige una nueva imágen de acuerdo a los atributos que tenga le jugador
-function getImageName(
-  atributo1,
-  atributo2,
-  atributo3,
-  atributo4,
-  atributo5,
-  atributo6
-) {
+function getImageName(atributo1, atributo2, atributo3, atributo4, atributo5, atributo6) {
   // Encuentra el atributo con el valor más bajo
-  let minimo = Math.min(
-    Math.min(
-      Math.min(Math.min(Math.min(atributo1, atributo2), atributo3), atributo4),
-      atributo5
-    ),
-    atributo6
-  );
-  // Si el valor mínimo es menor que 7, devuelve el nombre correspondiente al atributo
-  if (minimo < 7) {
+  let minimo = Math.min(Math.min(Math.min(Math.min(Math.min
+    (atributo1, atributo2), atributo3), atributo4), atributo5), atributo6);
+  // Si el valor mínimo es menor que 3, devuelve el nombre correspondiente al atributo
+  if (minimo < 4) {
     if (minimo == atributo1) {
       necesity = "determinacion";
       letreroImagen = "Indecis@"
@@ -140,15 +127,10 @@ function getImageName(
     }
   }
   // Encuentra el atributo con el valor más alto
-  let maximo = Math.max(
-    Math.max(
-      Math.max(Math.max(Math.max(atributo1, atributo2), atributo3), atributo4),
-      atributo5
-    ),
-    atributo6
-  );
-  // Si el valor máximo es mayor que 12, devuelve el nombre correspondiente al atributo con un prefijo de "high_"
-  if (maximo > 12) {
+  let maximo = Math.max(Math.max(Math.max(Math.max(Math.max(
+    atributo1, atributo2), atributo3), atributo4), atributo5), atributo6);
+  // Si el valor máximo es mayor que 7, devuelve el nombre correspondiente al atributo con un prefijo de "high_"
+  if (maximo > 8) {
     if (maximo == atributo1) {
       letreroImagen = "Determinad@";
       return "high_determinacion.png";
@@ -174,10 +156,10 @@ function getImageName(
     (atributo1 + atributo2 + atributo3 + atributo4 + atributo5 + atributo6) /
     6.0;
   // Si el valor promedio es mayor o igual a cierto umbral, devuelve un nombre específico. De lo contrario, devuelve otro nombre.
-  if (promedio >= 10) {
+  if (promedio >= 6) {
     letreroImagen = "Bien";
     return "high_average.png";
-  } else if (promedio >= 8) {
+  } else if (promedio >= 5) {
     letreroImagen = "Regular";
     return "medium_average.png";
   } else {

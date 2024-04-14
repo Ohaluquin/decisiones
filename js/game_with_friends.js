@@ -12,6 +12,13 @@ function cargarPregunta(category) {
   let filteredQuestions = preguntas.filter(
     (pregunta) => pregunta.kind === category
   );
+  if (necesity) {//Filtra las preguntas de dios
+    filteredQuestions = filteredQuestions.filter((pregunta) =>
+      pregunta.options.some((option) => option[necesity] >= 1)
+    );
+    necesity = "";
+  }
+  if(filteredQuestions.length ==0) return;
   pregunta_actual = Math.floor(Math.random() * filteredQuestions.length);
   pregunta = filteredQuestions[pregunta_actual];
   preguntas.splice(preguntas.indexOf(pregunta), 1);
@@ -89,4 +96,8 @@ function habilitarBotones() {
   document.getElementById("option2").checked = false;
   document.getElementById("option3").checked = false;
   document.getElementById("option4").checked = false;
+}
+
+function godQuestion(atributo) {
+  necesity = atributo;
 }

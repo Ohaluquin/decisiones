@@ -477,7 +477,7 @@ let preguntas = [
   {
     questionID: 10,
     kind: "social",
-    text: "Estás con un chavo que te interesa pero hace un comentario machista",
+    text: "Estás en una cita con alguien que te interesa pero hace un comentario machista",
     imageName: "bad_joke",
     options: [
       {
@@ -515,7 +515,7 @@ let preguntas = [
       },
       {
         optionID: 40,
-        text: "Lo confrontas y te vas",
+        text: "Le confrontas y te vas",
         explicacion:  "Confrontar directamente el comentario y luego retirarte es una afirmación fuerte de tus valores y límites personales. Esta acción demuestra una clara oposición a las actitudes machistas, fomentando la responsabilidad por las palabras y promoviendo el respeto hacia todos.",        
         determinacion: 2,
         alegria: 0,

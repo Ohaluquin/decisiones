@@ -11,9 +11,9 @@ radioButtons.forEach((radio) => {
   radio.addEventListener("change", () => {
     if (Array.from(radioButtons).some((radio) => radio.checked)) {
       showExplanation();
-      console.log("here")
     }
   });
 });
 
 let letreroImagen = "";
+let necesity = "";

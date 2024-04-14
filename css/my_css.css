@@ -25,7 +25,7 @@
   padding: 10px;
 }
 
-.sp_container { /* select_player */
+.sp_container {
   display: flex;
   margin: 0 auto;
 }
@@ -292,6 +292,48 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+.determinacion {
+  width: 10%;
+  border: 0.7rem solid #000;
+  background: #222;
+  color: #FFF;
+}
+
+.apoyo {
+  width: 10%;
+  border: 0.7rem solid #FFF;
+  background: #EEE;
+  color: #000;
+}
+
+.alegria {
+  width: 10%;
+  border: 0.7rem solid #f6be05;
+  background: #e4d905;
+  color: #000;
+}
+
+.salud {
+  width: 10%;
+  border: 0.7rem solid #ff0e01;
+  background: #d31905;
+  color: #ffffff;
+}
+
+.tiempo {
+  width: 10%;
+  border: 0.7rem solid #0901ff;
+  background: #2610e9;
+  color: #ffffff;
+}
+
+.dinero {
+  width: 10%;
+  border: 0.7rem solid #02730f;
+  background: #028311;
+  color: #000000;
+}
+
 .personaje {
   width: 80%;
   height: 80%;
@@ -324,13 +366,15 @@
 
 #select_player {
   width: 30%;  
-  height: 39vw;  
+  height: 90vh;  
+  max-height: 50vw;
   padding-right: 2%;
+  font-size: 3vh;
 }
 
 #sel_personaje {
   width: 85%;  
-  max-width: 55vh;
+  max-width: 45vh;
 }
 
 
@@ -487,6 +531,8 @@ progress.green::-moz-progress-bar {
   #select_player {
     width: 90%;
     height: 58vh;
+    max-height: 58vh;
+    font-size: 1rem;
   }
 
   #sel_personaje {    
