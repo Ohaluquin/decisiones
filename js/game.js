@@ -162,6 +162,10 @@ function colocarFichaEnCasilla(casillaIndex) {
     // Establecer la posición de la ficha
     ficha.style.left = posicionX + "px";
     ficha.style.top = posicionY + "px";
+    if(casillaIndex > 0) {
+      ficha.style.width = "4rem";
+      ficha.style.height = "5rem";
+    }
   }
 }
 
@@ -174,7 +178,7 @@ diceImage.addEventListener("click", function () {
     turno++;
     let diceRoll = Math.floor(Math.random() * 4) + 1;
     diceImage.src = "img/dado" + diceRoll + ".png";
-    // Move the piece according to the dice roll
+    // Move the piece according to the dice roll           
     for (let i = 1; i <= diceRoll; i++) {
       setTimeout(() => {
         contador++;
@@ -255,7 +259,9 @@ function mostrarOpcionTirarDado() {
 function mostrarPerfil() {
   pageSound.play();
   document.getElementById("user_stats").style.display = "block";
+  document.getElementById("siguiente").style.display = "none";
   setTimeout(() => {
-    document.getElementById("user_stats").style.display = "none";  
+    document.getElementById("user_stats").style.display = "none";
+    document.getElementById("siguiente").style.display = "block";
   }, 6000);
 }

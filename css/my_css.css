@@ -244,10 +244,10 @@
 
 #ficha {
   position: absolute;
-  width: 5rem;
-  height: 5rem;
-  left: 0;
-  top: 0;
+  width: 15rem;
+  height: 20rem;
+  left: 40rem;
+  top: 14rem;
 }
 
 .centrado {
@@ -293,42 +293,42 @@
 }
 
 .determinacion {
-  width: 18%;
+  width: 16%;
   border: 0.1rem solid #000;
   background: #222;
   color: #FFF;
 }
 
 .apoyo {
-  width: 18%;
+  width: 16%;
   border: 0.1rem solid #FFF;
   background: #EEE;
   color: #000;
 }
 
 .alegria {
-  width: 18%;
+  width: 16%;
   border: 0.1rem solid #f6be05;
   background: #e4d905;
   color: #000;
 }
 
 .salud {
-  width: 18%;
+  width: 16%;
   border: 0.1rem solid #ff0e01;
   background: #d31905;
   color: #ffffff;
 }
 
 .tiempo {
-  width: 18%;
+  width: 16%;
   border: 0.1rem solid #0901ff;
   background: #2610e9;
   color: #ffffff;
 }
 
 .dinero {
-  width: 18%;
+  width: 16%;
   border: 0.1rem solid #02730f;
   background: #028311;
   color: #000000;
