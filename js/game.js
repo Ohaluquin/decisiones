@@ -5,36 +5,66 @@ const winSound = new Audio("sounds/win.mp3");
 const incorrectSound = new Audio("sounds/error_sound.mp3");
 const pageSound = new Audio("sounds/change_page.mp3");
 const diceSound = new Audio("sounds/dice.mp3");
+const endMusic = document.getElementById('end-music');
+const personalMusic = document.getElementById('personal-music');
+const academicMusic = document.getElementById('academic-music');
+const socialMusic = document.getElementById('social-music');
+const randomMusic = document.getElementById('random-music');
+personalMusic.volume = 0.5;
+academicMusic.volume = 0.5;
+socialMusic.volume = 0.5;
+randomMusic.volume = 0.5;
+
+let currentMusic = null;
+
+const playMusic = (music) => {
+    if (currentMusic) {
+        currentMusic.pause();
+        currentMusic.currentTime = 0;
+    }
+    currentMusic = music;
+    currentMusic.play();
+};
 
 // Función que cambia la carta de pregunta que se muestra, de acuerdo a la casilla del tablero en que
 // se encuentre la ficha
 function actualizarQuestionCard() {
   let category;
-  if (contador % 7 === 0) {
+  if(contador > 55) playMusic(endMusic);
+  else if (contador % 7 === 0) {
     category = "azar";
+    playMusic(randomMusic);
   } else if (contador % 3 === 1) {
     category = "académico";
+    playMusic(academicMusic);
   } else if (contador % 3 === 2) {
     category = "personal";
+    playMusic(personalMusic);
   } else if (contador % 3 === 0) {
     category = "social";
+    playMusic(socialMusic);
   }
   
   let filteredQuestions = preguntas.filter((pregunta) => pregunta.kind === category);  
-  let preguntaIndex = filteredQuestions.findIndex(pregunta => player.preguntas.includes(pregunta.questionID));      
-  if (preguntaIndex !== -1) {//Si hay una pregunta del personaje se toma y borra
-    pregunta_actual = preguntaIndex;
-    player.preguntas.splice(player.preguntas.indexOf(filteredQuestions[pregunta_actual].questionID), 1);
-  } else {//Si no    
-    if (category === "personal" && turno % god_factor === 0) {//Filtra las preguntas de dios
-      filteredQuestions = filteredQuestions.filter((pregunta) =>
-        pregunta.options.some((option) => option[necesity] >= 1)
-      );
-    }
-    pregunta_actual = Math.floor(Math.random() * filteredQuestions.length);
+  // Filtrar las preguntas del jugador
+  let playerQuestions = filteredQuestions.filter(pregunta => player.preguntas.includes(pregunta.questionID));
+  if (playerQuestions.length > 0) { // Si hay preguntas del personaje, elige una y la borra        
+    pregunta_actual = Math.floor(Math.random() * playerQuestions.length);    
+    preguntaID = playerQuestions[pregunta_actual].questionID;    
+    player.preguntas = player.preguntas.filter(id => id !== preguntaID);  
+    pregunta = filteredQuestions.find(p => p.questionID === preguntaID);    
+  } else {//Si no hay preguntas del personaje   
+    if (turno % 2 === 0) {//Filtra para ver si hay preguntas de dios
+      godQuestions = filteredQuestions.filter((pregunta) =>
+        pregunta.options.some((option) => option[necesity] >= 1));
+      if (godQuestions.length>0) filteredQuestions=godQuestions;
+    } 
+    // Seleccionar una pregunta al azar de las filtradas (incluyendo las normales si no hay de "dios")   
+    pregunta_actual = Math.floor(Math.random() * filteredQuestions.length); 
+    pregunta = filteredQuestions[pregunta_actual];
   }
-  pregunta = filteredQuestions[pregunta_actual];
-  preguntas.splice(preguntas.indexOf(pregunta), 1);
+  // Eliminar la pregunta seleccionada del conjunto global de preguntas
+  preguntas = preguntas.filter(p => p.questionID !== pregunta.questionID);  
 
   document.getElementById("pregunta").innerHTML = "Contexto "+category+":<br><br>"+pregunta.text;
   if (pregunta.kind === "azar") {
@@ -64,7 +94,8 @@ function actualizarQuestionCard() {
     card.classList.add("yellow");
   } else {
     card.classList.add("green");
-    mostrarOpcionTirarDado();
+    showExplanation(card);
+    //mostrarOpcionTirarDado();
   }
   pageSound.play();
 }
@@ -170,7 +201,7 @@ function colocarFichaEnCasilla(casillaIndex) {
 }
 
 // Función que se activa al darle click al dado
-diceImage.addEventListener("click", function () {
+diceImage.addEventListener("click", function () {  
   if (dado_activo) {
     diceSound.play();
     document.getElementById("tablero").src = "img/tablero.png";
@@ -200,22 +231,12 @@ diceImage.addEventListener("mouseover", function () {
 
 // Función que muestra un mensaje de feedback, de acuerdo a la comparación entre cómo empezo el
 // atributo y cómo terminó
-function getFeedbackAC(atributo, change) {
-  if (change >= 6)
-    return "¡Excelente! Tu " + atributo + " ha aumentado significativamente.";
-  if (change >= 3) return "Bien hecho. Tu " + atributo + " ha mejorado.";
-  if (change >= 0) return "Tu " + atributo + " se mantuvo constante.";
-  if (change >= -3)
-    return (
-      "Tu " + atributo + " ha disminuido ligeramente. Considera tus elecciones."
-    );
-  return (
-    "Cuidado, tu " +
-    atributo +
-    " ha disminuido. ¿Qué decisiones crees que contribuyeron a esto? ¿Cómo podrías mejorar tu " +
-    atributo +
-    " en el futuro?"
-  );
+function getFeedbackAC(atributo, change) {  
+  if (change >= 6) return "¡Excelente! Tu " + atributo + " ha aumentado " + change;
+  if (change >= 3) return "Bien hecho. Tu " + atributo + " ha mejorado " + change;
+  if (change >= 0) return "Tu " + atributo + " se mantuvo constante: " + change;
+  if (change >= -3) return "Tu " + atributo + " ha disminuido ligeramente " + change;
+  return "Cuidado, tu " + atributo + " ha disminuido " + change;
 }
 
 // Función que solicita el feedback de los atributos del player
@@ -240,10 +261,11 @@ function getFeedback() {
   document.getElementById("dineroFeedback").innerText = dineroFeedback;
 }
 
+/*
 function tirarDados() {
   diceSound.play();
   let resultadoDado = Math.floor(Math.random() * 6) + 1; // Genera un número entre 1 y 6
-  if (resultadoDado % 2 === 0) { // Si el resultado es par
+  if (resultadoDado%2 === 0) {
     showExplanation(); // Se aplica la carta de azar
   } else {
     deshabilitarBotones();
@@ -255,6 +277,7 @@ function tirarDados() {
 function mostrarOpcionTirarDado() {
   document.getElementById("diceModal").style.display = "block";
 }
+*/
 
 function mostrarPerfil() {
   pageSound.play();
