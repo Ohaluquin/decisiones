@@ -54,7 +54,7 @@ function actualizarQuestionCard() {
     player.preguntas = player.preguntas.filter(id => id !== preguntaID);  
     pregunta = filteredQuestions.find(p => p.questionID === preguntaID);    
   } else {//Si no hay preguntas del personaje   
-    if (turno % 2 === 0) {//Filtra para ver si hay preguntas de dios
+    if (turno % god_factor === 0) {//Filtra para ver si hay preguntas de dios
       godQuestions = filteredQuestions.filter((pregunta) =>
         pregunta.options.some((option) => option[necesity] >= 1));
       if (godQuestions.length>0) filteredQuestions=godQuestions;
@@ -123,7 +123,7 @@ function showExplanation() {
           <br>Dinero: ${option.dinero}
           <br>Tiempo: ${option.tiempo}
       `;
-  document.getElementById("explicacion").innerHTML = option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;      
+  document.getElementById("explicacion").innerHTML = "<b>" + option.text + ":</b> " + option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;      
   actualizarPlayer(option);
   actualizarPlayerCard();
   mostrarPerfil();

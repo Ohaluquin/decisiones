@@ -100,4 +100,23 @@ function habilitarBotones() {
 
 function godQuestion(atributo) {
   necesity = atributo;
+  actualizarContadores();
 }
+
+function actualizarContadores() {
+  const categorias = ['personal', 'social', 'académico', 'azar'];
+  categorias.forEach((categoria) => {
+    let filteredQuestions = preguntas.filter(
+      (pregunta) => pregunta.kind === categoria
+    );
+    if (necesity) {
+      filteredQuestions = filteredQuestions.filter((pregunta) =>
+        pregunta.options.some((option) => option[necesity] >= 1)
+      );
+    }
+    document.getElementById(`${categoria}-count`).innerText = filteredQuestions.length;
+  });
+}
+
+// Inicializar contadores al cargar la página
+actualizarContadores();

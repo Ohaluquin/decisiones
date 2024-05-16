@@ -14,53 +14,65 @@
   <div class="container-background">
     <div class="body-container">
       <!-- Sección de selección de tipo de pregunta (Center) -->
-      <div id="center" class="seleccion-pregunta centrado" style="display: block;">
-        <h1>Selecciona el tipo de pregunta:</h1>
-        <div class="botones-pregunta">
+      <div id="center" class="centrado" style="display: block;">
+        <h1>Selecciona el tipo de pregunta:</h1>                          
+        <div class="card-decks">
           <!-- Botones para seleccionar el tipo de pregunta -->
-          <img src="img/personal.png" class="card20 key" onclick="cargarPregunta('personal')">
-          <img src="img/social.png" class="key card20" onclick="cargarPregunta('social')">
-          <img src="img/academico.png" class="card20 key" onclick="cargarPregunta('académico')">
-          <img src="img/azar.png" class="key card20" onclick="cargarPregunta('azar')">
-        </div>
-        <h1>Solicitar atributo:</h1>
-        <div class="botones-pregunta">
-          <!-- Botones para seleccionar el tipo de atributo -->
-          <button class="key determinacion" onclick="godQuestion('determinacion')">Determinación</button>
-          <button class="key alegria" onclick="godQuestion('alegria')">Alegria</button>
-          <button class="key salud" onclick="godQuestion('salud')">Salud</button>
-          <button class="key apoyo" onclick="godQuestion('apoyo')">Apoyo</button>                    
-          <button class="key tiempo" onclick="godQuestion('tiempo')">Tiempo</button>
-          <button class="key dinero" onclick="godQuestion('dinero')">Dinero</button>
-        </div>
-      </div>
-
-      <div id="right" class="part centrado hidden" style="display: none;">
-        <div class="card">
-          <h3 id="pregunta"></h3>
-          <img src="img/inicio.png" alt="Presiona el dado para iniciar" id="foto-pregunta" />
-          <br />
-          <div class="options">
-            <div id="radioptions">
-              <input type="radio" id="option1" name="option" value="1" />
-              <label for="option1" id="option1_text"></label><br />
-
-              <input type="radio" id="option2" name="option" value="2" />
-              <label for="option2" id="option2_text"></label><br />
-
-              <input type="radio" id="option3" name="option" value="3" />
-              <label for="option3" id="option3_text"></label><br />
-
-              <input type="radio" id="option4" name="option" value="4" />
-              <label for="option4" id="option4_text"></label><br />
-            </div>
-            <hr>
-            <p id="explicacion"></p>
-            <button class="key centrado" id="siguiente" onclick="centerBtn()">Siguiente</button>
+          <div class="deck">
+          <img src="img/personal.png" class="key card20" onclick="cargarPregunta('personal')">
+          <span id="personal-count" class="card-count">10</span>
           </div>
+          <div class="deck">
+          <img src="img/social.png" class="key card20" onclick="cargarPregunta('social')">
+          <span id="social-count" class="card-count">10</span>
+          </div>
+          <div class="deck">
+          <img src="img/academico.png" class="key card20" onclick="cargarPregunta('académico')">
+          <span id="académico-count" class="card-count">10</span>
+          </div>
+          <div class="deck">
+          <img src="img/azar.png" class="key card20" onclick="cargarPregunta('azar')">
+          <span id="azar-count" class="card-count">10</span>
+          </div>
+        </div>      
+      <h1>Solicitar atributo:</h1>
+      <div>
+        <!-- Botones para seleccionar el tipo de atributo -->
+        <button class="key determinacion" onclick="godQuestion('determinacion')">Determinación</button>
+        <button class="key alegria" onclick="godQuestion('alegria')">Alegria</button>
+        <button class="key salud" onclick="godQuestion('salud')">Salud</button>
+        <button class="key apoyo" onclick="godQuestion('apoyo')">Apoyo</button>
+        <button class="key tiempo" onclick="godQuestion('tiempo')">Tiempo</button>
+        <button class="key dinero" onclick="godQuestion('dinero')">Dinero</button>
+      </div>
+    </div>
+
+    <div id="right" class="part centrado hidden" style="display: none;">
+      <div class="card">
+        <h3 id="pregunta"></h3>
+        <img src="img/inicio.png" alt="Presiona el dado para iniciar" id="foto-pregunta" />
+        <br />
+        <div class="options">
+          <div id="radioptions">
+            <input type="radio" id="option1" name="option" value="1" />
+            <label for="option1" id="option1_text"></label><br />
+
+            <input type="radio" id="option2" name="option" value="2" />
+            <label for="option2" id="option2_text"></label><br />
+
+            <input type="radio" id="option3" name="option" value="3" />
+            <label for="option3" id="option3_text"></label><br />
+
+            <input type="radio" id="option4" name="option" value="4" />
+            <label for="option4" id="option4_text"></label><br />
+          </div>
+          <hr>
+          <p id="explicacion"></p>
+          <button class="key centrado" id="siguiente" onclick="centerBtn(); actualizarContadores();">Siguiente</button>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <script src="database/questions.js"></script>
