@@ -18,7 +18,10 @@ function cargarPregunta(category) {
     );
     necesity = "";
   }
-  if(filteredQuestions.length ==0) return;
+  if(filteredQuestions.length ==0) {
+    actualizarContadores();
+    return;
+    }
   pregunta_actual = Math.floor(Math.random() * filteredQuestions.length);
   pregunta = filteredQuestions[pregunta_actual];
   preguntas.splice(preguntas.indexOf(pregunta), 1);
@@ -71,7 +74,7 @@ function showExplanation() {
           <br>Dinero: ${option.dinero}
           <br>Tiempo: ${option.tiempo}
       `;
-  document.getElementById("explicacion").innerHTML = option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;  
+  document.getElementById("explicacion").innerHTML = "<b>" + option.text + ":</b> " + option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;  
 }
 
 // Función que deshabilita los botones de las opciones, se llama cuando el usuario ya eligió una opción
