@@ -791,8 +791,7 @@ let preguntas = [
       {
         optionID: 61,
         text: "Haces un plan detallado para organizar tu tiempo y completar todas las tareas y proyectos",
-        explicacion:
-          "Esta opción muestra responsabilidad y madurez al hacer un plan detallado para organizar tu tiempo y completar todas las tareas y proyectos. Podría aumentar la determinación y mejorar significativamente el tiempo al permitirte utilizar tu tiempo de manera eficiente. También podría mejorar la salud al reducir el estrés y permitirte completar todas las tareas y proyectos a tiempo.",
+        explicacion: "Planificar detalladamente muestra responsabilidad y madurez, permitiéndote usar el tiempo eficientemente y reducir el estrés. Esto ayuda a completar todas las tareas a tiempo, mejorando tu salud y productividad.",        
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -803,8 +802,7 @@ let preguntas = [
       {
         optionID: 62,
         text: "Priorizas las tareas que parecen más fáciles o rápidas de hacer, dejando las más difíciles o largas para después.",
-        explicacion:
-          "Esta opción podría disminuir la determinación, el tiempo y la salud al dejar todo para el último momento. Podría generar estrés y afectar negativamente el rendimiento en las tareas y proyectos. ",
+        explicacion: "Priorizar tareas fáciles y dejar las difíciles para después puede parecer una solución rápida, pero genera estrés y afecta tu rendimiento a largo plazo. Esta estrategia muestra falta de organización y determinación, y puede resultar en un trabajo acumulado que es difícil de manejar.",        
         determinacion: -1,
         alegria: 0,
         apoyo: 0,
@@ -815,8 +813,7 @@ let preguntas = [
       {
         optionID: 63,
         text: "Te enfocas en las tareas y proyectos más importantes y dejas los demás para después",
-        explicacion:
-          "Esta opción muestra responsabilidad y planificación al enfocarte en las tareas y proyectos más importantes y dejar los demás para después. Podría aumentar la determinación y mejorar el tiempo al permitirte utilizar tu tiempo de manera eficiente. También podría mantener la salud al permitirte completar las tareas y proyectos más importantes a tiempo.",
+        explicacion: "Enfocarte en las tareas más importantes muestra planificación y responsabilidad. Esto te permite usar tu tiempo eficientemente y mantener tu salud, completando lo más importante a tiempo.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -827,8 +824,7 @@ let preguntas = [
       {
         optionID: 64,
         text: "Buscas ayuda de tus compañeros o colegas para completar las tareas y proyectos juntos",
-        explicacion:
-          "Esta opción muestra responsabilidad y colaboración al buscar ayuda de tus compañeros o colegas para completar las tareas y proyectos juntos. Podría aumentar la determinación, el tiempo, el apoyo al permitirte trabajar en equipo y utilizar tu tiempo de manera eficiente. También podría mejorar la salud al reducir el estrés y permitirte completar todas las tareas y proyectos a tiempo.",
+        explicacion:  "Buscar ayuda de compañeros muestra colaboración y responsabilidad. Trabajar en equipo reduce el estrés, mejora la eficiencia y permite completar las tareas a tiempo.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -847,8 +843,7 @@ let preguntas = [
       {
         optionID: 65,
         text: "Aceptas el trabajo y te esfuerzas por equilibrar el trabajo y el estudio",
-        explicacion:
-          "Esta opción muestra responsabilidad y determinación al aceptar el trabajo y esforzarte por equilibrar el trabajo y el estudio. Podría aumentar la determinación y mejorar significativamente el dinero al permitirte tener ingresos adicionales. Sin embargo, también podría disminuir significativamente el tiempo al tener que dedicar tiempo al trabajo y al estudio, y afectar negativamente la salud al generar estrés y cansancio.",
+        explicacion: "Aceptar el trabajo y esforzarte por equilibrar trabajo y estudio muestra responsabilidad y determinación. Sin embargo, puede generar estrés y afectar tu salud debido al tiempo adicional dedicado a ambas actividades.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -859,8 +854,7 @@ let preguntas = [
       {
         optionID: 66,
         text: "Rechazas el trabajo para dedicar más tiempo al estudio",
-        explicacion:
-          "Esta opción muestra responsabilidad y madurez al rechazar el trabajo para dedicar más tiempo al estudio. Podría aumentar la determinación y mejorar el tiempo y la salud al permitirte tener más tiempo para estudiar y evitar estrés adicional.",
+        explicacion: "Rechazar el trabajo para dedicar más tiempo al estudio muestra madurez y responsabilidad. Esto te permite evitar estrés adicional y mejorar tu rendimiento académico y salud.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -871,8 +865,7 @@ let preguntas = [
       {
         optionID: 67,
         text: "Aceptas el trabajo aunque descuides tus estudios",
-        explicacion:
-          "Esta opción podría disminuir significativamente la determinación y la salud al aceptar el trabajo pero descuidar tus estudios. Podría afectar negativamente tu rendimiento académico y generar estrés. Sin embargo, también podría mejorar significativamente el dinero al permitirte tener ingresos adicionales. También podría disminuir el tiempo al tener que dedicar tiempo al trabajo.",
+        explicacion:  "Aceptar el trabajo y descuidar tus estudios puede mejorar tus ingresos pero afecta tu rendimiento académico y salud. Esta opción muestra una falta de equilibrio y organización.",          
         determinacion: -2,
         alegria: 0,
         apoyo: 0,
@@ -883,8 +876,7 @@ let preguntas = [
       {
         optionID: 68,
         text: "Negocias con tu empleador para tener un horario flexible que te permita equilibrar el trabajo y el estudio",
-        explicacion:
-          "Esta opción muestra responsabilidad y madurez al negociar con tu empleador para tener un horario flexible que te permita equilibrar el trabajo y el estudio. Podría aumentar la determinación y mejorar significativamente el dinero al permitirte tener ingresos adicionales. También podría mantener el tiempo al tener un horario flexible y mejorar la salud al permitirte equilibrar el trabajo y el estudio sin generar estrés adicional.",
+        explicacion: "Negociar un horario flexible muestra responsabilidad y madurez. Esto te permite equilibrar trabajo y estudio, mejorando tus ingresos y salud sin generar estrés adicional.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 0,
@@ -959,8 +951,7 @@ let preguntas = [
       {
         optionID: 73,
         text: "Le ofreces tu apoyo y escuchas atentamente sus problemas",
-        explicacion:
-          "Esta opción muestra responsabilidad y empatía al ofrecer tu apoyo y escuchar atentamente los problemas de tu amigo. Podría aumentar la determinación, el apoyo al permitirte ayudar a tu amigo y fortalecer la relación. Sin embargo, también podría disminuir el tiempo al dedicar tiempo a escuchar y apoyar a tu amigo.",
+        explicacion:  "Mostrar empatía y escuchar a tu amigo fortalece la relación y ofrece apoyo en momentos difíciles. Dedicar tiempo a ayudar a tu amigo puede ser valioso, aunque afecte tu tiempo personal.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -971,8 +962,7 @@ let preguntas = [
       {
         optionID: 74,
         text: "Le dices que no tienes tiempo para ayudarlo",
-        explicacion:
-          "Esta opción podría disminuir la determinación y el apoyo al decirle a tu amigo que no tienes tiempo para ayudarlo. Podría afectar negativamente la relación y hacer que tu amigo se sienta solo en un momento difícil.",
+        explicacion: "Decir que no tienes tiempo puede hacer que tu amigo se sienta solo y no apoyado en un momento difícil, afectando negativamente la relación y mostrando falta de empatía.",          
         determinacion: -1,
         alegria: 0,
         apoyo: -2,
@@ -983,8 +973,7 @@ let preguntas = [
       {
         optionID: 75,
         text: "Le das consejos basados en tus propias experiencias.",
-        explicacion:
-          "Esta opción podría disminuir la determinación y el apoyo al dar consejos sin escuchar o entender realmente los problemas de tu amigo. Podría generar frustración y afectar negativamente la relación.",
+        explicacion: "Dar consejos sin escuchar puede generar frustración y afectar la relación. Es importante entender primero los problemas de tu amigo antes de ofrecer soluciones.",          
         determinacion: 0,
         alegria: 0,
         apoyo: -1,
@@ -995,8 +984,7 @@ let preguntas = [
       {
         optionID: 76,
         text: "Le sugieres buscar ayuda profesional y le ofreces acompañarlo",
-        explicacion:
-          "Esta opción muestra responsabilidad y empatía al sugerirle a tu amigo buscar ayuda profesional y ofrecerle acompañarlo. Podría aumentar la determinación, el apoyo al permitirte ayudar a tu amigo a buscar ayuda adecuada y fortalecer la relación. Sin embargo, también podría disminuir el tiempo al dedicar tiempo a acompañar a tu amigo.",
+        explicacion: "Sugerir ayuda profesional y ofrecer acompañamiento muestra empatía y responsabilidad. Esto ayuda a tu amigo a buscar apoyo adecuado y fortalece la relación, aunque requiere tiempo.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 2,
@@ -1015,8 +1003,7 @@ let preguntas = [
       {
         optionID: 77,
         text: "Te tomas un día libre para hacer algo que disfrutas y relajarte",
-        explicacion:
-          "A veces es necesario tomarte un día libre para hacer algo que disfrutas y relajarte. Podría aumentar la alegría y la salud al permitirte desconectar del estrés y recargar energías. Sin embargo, también podría disminuir el tiempo al tomarte un día libre.",
+        explicacion: "Tomarte un día libre para hacer algo que disfrutas ayuda a desconectar del estrés y recargar energías, mejorando tu alegría y salud, aunque reduce tu tiempo disponible.",          
         determinacion: 0,
         alegria: 2,
         apoyo: 0,
@@ -1027,8 +1014,7 @@ let preguntas = [
       {
         optionID: 78,
         text: "Continúas trabajando o estudiando, pero te das cuenta de que cada vez es más difícil concentrarte y rendir al máximo.",
-        explicacion:
-          "Esta opción podría disminuir la determinación y la salud al continuar trabajando o estudiando sin tomarte un descanso. Podría generar más estrés y afectar negativamente tu rendimiento y bienestar.",
+        explicacion: "Continuar trabajando sin descansar puede aumentar el estrés, dificultar la concentración y afectar tu rendimiento y bienestar, mostrando falta de cuidado personal.",          
         determinacion: -1,
         alegria: 0,
         apoyo: 0,
@@ -1039,8 +1025,7 @@ let preguntas = [
       {
         optionID: 79,
         text: "Hablas con amigos o familiares sobre cómo te sientes",
-        explicacion:
-          "Esta opción muestra responsabilidad y madurez al hablar con amigos o familiares sobre cómo te sientes. Podría aumentar la determinación, la alegría, el apoyo y la salud al permitirte expresar tus sentimientos y recibir consejo y apoyo de personas cercanas a ti.",
+        explicacion: "Hablar con amigos o familiares sobre tus sentimientos muestra madurez. Expresar tus emociones y recibir apoyo mejora tu determinación, alegría, apoyo y salud.",          
         determinacion: 1,
         alegria: 1,
         apoyo: 1,
@@ -1051,8 +1036,7 @@ let preguntas = [
       {
         optionID: 80,
         text: "Haces ejercicio o alguna actividad física para liberar el estrés",
-        explicacion:
-          "Esta opción muestra responsabilidad y madurez al hacer ejercicio o alguna actividad física para liberar el estrés. Podría aumentar la determinación, la alegría y mejorar significativamente la salud al permitirte liberar tensiones y mejorar tu bienestar físico y emocional. Sin embargo, también podría disminuir el tiempo al dedicar tiempo a hacer ejercicio o alguna actividad física.",
+        explicacion: "Hacer ejercicio para liberar el estrés muestra responsabilidad. Mejora tu determinación, alegría y salud, aunque consume tiempo. Ayuda a liberar tensiones y mejorar tu bienestar físico y emocional.",          
         determinacion: 1,
         alegria: 1,
         apoyo: 0,
@@ -1071,8 +1055,7 @@ let preguntas = [
       {
         optionID: 81,
         text: "Haces un plan de estudio detallado y te apegas a él para prepararte para el examen",
-        explicacion:
-          "Esta opción muestra responsabilidad y determinación al hacer un plan de estudio detallado y apegarte a él para prepararte para el examen. Podría aumentar significativamente la determinación y mejorar la salud al permitirte sentirte más preparado y seguro para el examen. Sin embargo, también podría disminuir el tiempo al dedicar más tiempo a estudiar.",
+        explicacion: "Hacer un plan de estudio detallado y seguirlo muestra responsabilidad y determinación, ayudándote a sentirte preparado y seguro, aunque requiere más tiempo de estudio.",          
         determinacion: 2,
         alegria: 0,
         apoyo: 0,
@@ -1083,8 +1066,7 @@ let preguntas = [
       {
         optionID: 82,
         text: "Estudias un poco cada día",
-        explicacion:
-          "Esta opción muestra una postura neutral al estudiar un poco cada día pero sin esforzarte demasiado. Podría mantener tu salud al permitirte un equilibrio entre el estudio y otras actividades.",
+        explicacion: "Estudiar un poco cada día permite un equilibrio entre el estudio y otras actividades, manteniendo tu salud y evitando el estrés del estudio de última hora.",          
         determinacion: 0,
         alegria: 0,
         apoyo: 0,
@@ -1095,8 +1077,7 @@ let preguntas = [
       {
         optionID: 83,
         text: "Dejas el estudio para el último día y tratas de aprender lo suficiente en una noche",
-        explicacion:
-          "Esta opción podría disminuir la determinación y la salud al dejar el estudio para el último día y tratar de aprender todo en una noche. Podría generar estrés y afectar negativamente el rendimiento en el examen. También podría disminuir el tiempo al dedicar toda la noche a estudiar, y posiblemente dedicar más tiempo después.",
+        explicacion: "Dejar el estudio para el último día puede generar estrés y afectar tu rendimiento, mostrando falta de organización y determinación. Dedicar toda la noche a estudiar puede afectar negativamente tu salud.",          
         determinacion: -1,
         alegria: 0,
         apoyo: 0,
@@ -1107,8 +1088,7 @@ let preguntas = [
       {
         optionID: 84,
         text: "Buscas ayuda de un tutor o profesor para prepararte para el examen",
-        explicacion:
-          "Esta opción muestra responsabilidad y madurez al buscar ayuda de un tutor o profesor para prepararte para el examen. Podría aumentar la determinación, el apoyo y la salud al permitirte recibir ayuda y sentirte más preparado para el examen. Sin embargo, también podría disminuir el tiempo al dedicar más tiempo a estudiar con un tutor o profesor.",
+        explicacion: "Buscar ayuda de un tutor o profesor muestra responsabilidad y madurez, ayudándote a sentirte preparado y apoyado, aunque requiere más tiempo de estudio.",        
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -7053,4 +7033,108 @@ let preguntas = [
       }
     ]
   },
+  {
+    questionID: 145,
+    kind: "social",
+    text: "Fuiste a una fiesta con una amiga que ha tomado mucho y ya se quiere ir, pero tú aún no.",
+    imageName: "friend_drunk_party",
+    options: [
+      {
+        optionID: 502,
+        text: "Decides irte con ella para asegurarte de que llegue a casa segura.",
+        explicacion: "Esta opción muestra responsabilidad y cuidado al asegurarte de que tu amiga llegue a casa segura. Aunque interrumpas tu diversión, priorizas su bienestar y seguridad.",
+        determinacion: 1,
+        alegria: -1,
+        apoyo: 2,
+        salud: 1,
+        dinero: 0,
+        tiempo: -1
+      },
+      {
+        optionID: 503,
+        text: "Le llamas un taxi y te aseguras de que tenga dinero y su teléfono antes de que se vaya.",
+        explicacion: "Al llamar un taxi y asegurarte de que tu amiga tenga lo necesario, muestras cuidado y responsabilidad. Sin embargo, es importante considerar su estado y si podrá llegar a casa sin problemas.",
+        determinacion: 1,
+        alegria: 0,
+        apoyo: 1,
+        salud: 0,
+        dinero: -1,
+        tiempo: 0
+      },
+      {
+        optionID: 504,
+        text: "La dejas ir sola o con alguien más, y le dices que te hable cuando llegue a su casa.",
+        explicacion:  "Dejar que tu amiga se vaya sola o con alguien más, asegurándote de que te contacte cuando llegue, muestra una preocupación moderada. Sin embargo, esta opción todavía puede ponerla en riesgo si no se supervisa adecuadamente.",        
+        determinacion: 0,
+        alegria: 0,
+        apoyo: -1,
+        salud: 0,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 505,
+        text: "Le dices que espere un poco más hasta que tú estés listo para irte.",
+        explicacion: "Pedirle a tu amiga que espere puede mostrar falta de consideración por su estado. Aunque puedas seguir disfrutando de la fiesta, es importante priorizar su seguridad.",
+        determinacion: -1,
+        alegria: 1,
+        apoyo: -2,
+        salud: -1,
+        dinero: 0,
+        tiempo: 1
+      }
+    ]
+  },
+  {
+    questionID: 146,
+    kind: "académico",
+    text:  "A veces te gustaría buscar ganar un poco de dinero en la escuela:",
+    imageName: "making_money_at_school",
+    options: [
+      {
+        optionID: 506,
+        text: "Vendes golosinas y bocadillos a tus compañeros y profesores durante los descansos.",
+        explicacion: "Vender golosinas y bocadillos puede ser una buena manera de ganar dinero. Esta opción muestra iniciativa y habilidades emprendedoras, aunque puede requerir una inversión inicial y tiempo para gestionar el negocio.",
+        determinacion: 1,
+        alegria: 1,
+        apoyo: 1,
+        salud: 0,
+        dinero: 2,
+        tiempo: -1
+      },
+      {
+        optionID: 507,
+        text: "Ofreces servicios de tutoría a otros estudiantes.",
+        explicacion: "Ofrecer servicios de tutoría puede ayudarte a ganar dinero mientras refuerzas tus propios conocimientos. Esta opción muestra responsabilidad y apoyo a tus compañeros, aunque puede consumir tiempo de estudio o descanso.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 2,
+        salud: 0,
+        dinero: 2,
+        tiempo: -1
+      },
+      {
+        optionID: 508,
+        text: "Decides no emprender por pena o flojera.", 
+        explicacion: "Decidir no emprender por pena o flojera puede parecer una opción más cómoda a corto plazo, pero te priva de la oportunidad de ganar dinero y desarrollar habilidades importantes. Reflexiona sobre las razones detrás de esta decisión y considera cómo podrías superarlas.",        
+        determinacion: -1,
+        alegria: 0,
+        apoyo: 0,
+        salud: 0,
+        dinero: -1,
+        tiempo: 1
+      },
+      {
+        optionID: 509,
+        text: "Vendes trabajos o proyectos escolares a otros estudiantes.",
+        explicacion: "Vender trabajos o proyectos puede generar dinero, pero es una opción poco ética que puede tener consecuencias negativas, como sanciones académicas y pérdida de confianza entre compañeros y profesores.",
+        determinacion: -2,
+        alegria: 0,
+        apoyo: -2,
+        salud: -1,
+        dinero: 2,
+        tiempo: -1
+      }
+    ]
+  },    
 ];
