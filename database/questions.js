@@ -7136,5 +7136,109 @@ let preguntas = [
         tiempo: -1
       }
     ]
+  },
+  {
+    questionID: 147,
+    kind: "social",
+    text: "Te ofrecen participar en un proyecto comunitario que ayuda a los más necesitados:",
+    imageName: "community_project",
+    options: [
+      {
+        optionID: 510,
+        text: "Aceptas el proyecto y trabajas como voluntario aceptando una pequeña remuneración.",
+        explicacion: "Aceptar el proyecto y trabajar como voluntario muestra tu compromiso con la comunidad y te permite ganar algo de dinero. Esta opción refuerza tus valores de solidaridad y responsabilidad.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 2,
+        salud: 0,
+        dinero: 1,
+        tiempo: -1
+      },
+      {
+        optionID: 511,
+        text: "Participas en el proyecto, y tomas un poco de dinero de los fondos destinados al mismo.",
+        explicacion: "Robar dinero de los fondos del proyecto es una acción poco ética que puede tener graves consecuencias. Aunque ganes dinero rápidamente, esto puede afectar tu reputación y generar problemas legales.",
+        determinacion: -2,
+        alegria: 0,
+        apoyo: -3,
+        salud: -1,
+        dinero: 2,
+        tiempo: -1
+      },
+      {
+        optionID: 512,
+        text: "Rechazas participar en el proyecto porque prefieres dedicar tu tiempo a tus estudios.",
+        explicacion: "Rechazar el proyecto para enfocarte en tus estudios puede ser una decisión responsable. Aunque no ganes dinero, priorizas tu educación y bienestar académico, lo que puede beneficiarte a largo plazo.",
+        determinacion: 1,
+        alegria: 0,
+        apoyo: 0,
+        salud: 0,
+        dinero: 0,
+        tiempo: 1
+      },
+      {
+        optionID: 513,
+        text: "Participas en el proyecto para ganar experiencia, pero no aceptas la remuneración.",
+        explicacion: "Participar en el proyecto para ganar experiencia sin aceptar remuneración muestra un alto compromiso con la comunidad. Esta opción puede fortalecer tus habilidades y tu red de contactos, aunque no te genere ingresos inmediatos.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 2,
+        salud: 0,
+        dinero: -1,
+        tiempo: -1
+      }
+    ]
+  }, 
+  {
+    questionID: 148,
+    kind: "social",
+    text: "Te ofrecen participar en la organización de un evento comunitario para recaudar fondos.",
+    imageName: "community_event",
+    options: [
+      {
+        optionID: 514,
+        text: "Aceptas y usas parte del dinero recaudado para pagar los gastos generados y el tiempo de los organizadores.",
+        explicacion: "Aceptar y usar parte del dinero recaudado para cubrir los gastos y pagar a los organizadores muestra responsabilidad y transparencia. Esta opción asegura que el evento sea sostenible y justo para todos los involucrados.",
+        determinacion: 2,
+        alegria: 2,
+        apoyo: 2,
+        salud: 0,
+        dinero: 1,
+        tiempo: -2
+      },
+      {
+        optionID: 515,
+        text: "Aceptas el evento pero te quedas con la mayoría de las ganancias sin decirle a nadie.",
+        explicacion: "Quedarte con la mayoría de las ganancias sin informarlo a los demás es una acción poco ética que puede tener consecuencias negativas. Aunque ganes dinero rápidamente, esto puede dañar tu reputación y generar desconfianza en la comunidad.",
+        determinacion: -2,
+        alegria: 0,
+        apoyo: -3,
+        salud: -1,
+        dinero: 3,
+        tiempo: -2
+      },
+      {
+        optionID: 516,
+        text: "Rechazas la oferta porque no tienes tiempo para organizar el evento.",
+        explicacion: "Rechazar la oferta por falta de tiempo muestra una gestión responsable de tus prioridades. Aunque no ganes dinero, priorizas tu bienestar y otros compromisos importantes.",
+        determinacion: 1,
+        alegria: 0,
+        apoyo: 0,
+        salud: 1,
+        dinero: 0,
+        tiempo: 1
+      },
+      {
+        optionID: 517,
+        text: "Aceptas organizar el evento pero decides donarlo todo a la causa benéfica.",
+        explicacion: "Donar todas las ganancias a la causa benéfica muestra un alto nivel de altruismo y compromiso con la comunidad. Aunque no ganes dinero personalmente, esta opción fortalece tus valores y relaciones comunitarias.",
+        determinacion: 2,
+        alegria: 2,
+        apoyo: 3,
+        salud: 0,
+        dinero: 0,
+        tiempo: -2
+      }
+    ]
   },    
 ];
