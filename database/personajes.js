@@ -88,7 +88,7 @@ let personajes = [
     preguntas: [34,42,53,94,82,56,50,75,12],
   },
   {
-    personajeID: 10,
+    personajeID: 9,
     rutaImagen: "danilara",
     determinacion: 2,
     alegria: 2,
@@ -99,7 +99,29 @@ let personajes = [
     preguntas: [103,97,21,51,132,60,116,72,91,141],
   },
   {
+    personajeID: 10,
+    rutaImagen: "andrebarret",
+    determinacion: 6,
+    alegria: 2,
+    apoyo: 4,
+    salud: 4,
+    dinero: 3,
+    tiempo: 4,
+    preguntas: [102,87,28,34,33,30,138,72,118,10],
+  },
+  {
     personajeID: 11,
+    rutaImagen: "edithdz",
+    determinacion: 6,
+    alegria: 4,
+    apoyo: 4,
+    salud: 3,
+    dinero: 2,
+    tiempo: 3,
+    preguntas: [102,87,28,34,33,30,138,72,118,10],
+  },
+  {
+    personajeID: 12,
     rutaImagen: "adrianflores",
     determinacion: 6,
     alegria: 6,
@@ -110,7 +132,7 @@ let personajes = [
     preguntas: [100,88,123,79,116,128,54,122],
   },
   {
-    personajeID: 12,
+    personajeID: 13,
     rutaImagen: "chokiskater",
     determinacion: 3,
     alegria: 3,
@@ -121,7 +143,7 @@ let personajes = [
     preguntas: [77,80,117,46,24,141,28,42],
   },
   {
-    personajeID: 13,
+    personajeID: 14,
     rutaImagen: "chrizdiaz",
     determinacion: 5,
     alegria: 6,
@@ -132,7 +154,7 @@ let personajes = [
     preguntas: [43,34,31,95,98,139,117,105,100,61,141],
   },
   {
-    personajeID: 14,
+    personajeID: 15,
     rutaImagen: "geresco",
     determinacion: 6,
     alegria: 2,
@@ -143,7 +165,7 @@ let personajes = [
     preguntas: [94,75,137,103,3,128,36,113,120],
   },
   {
-    personajeID: 15,
+    personajeID: 16,
     rutaImagen: "goguin",
     determinacion: 6,
     alegria: 6,
@@ -154,7 +176,7 @@ let personajes = [
     preguntas: [15,43,132,73,90,42,40],
   },
   {
-    personajeID: 16,
+    personajeID: 17,
     rutaImagen: "layun",
     determinacion: 3,
     alegria: 7,
@@ -165,7 +187,7 @@ let personajes = [
     preguntas: [100,85,133,96,24,139,45,37,113],
   },
   {
-    personajeID: 17,
+    personajeID: 18,
     rutaImagen: "omarap",
     determinacion: 4,
     alegria: 2,
@@ -176,7 +198,7 @@ let personajes = [
     preguntas: [117,133,24,100,105,13,66],
   },
   {
-    personajeID: 18,
+    personajeID: 19,
     rutaImagen: "pedroleon",
     determinacion: 5,
     alegria: 6,
@@ -187,7 +209,7 @@ let personajes = [
     preguntas: [64,101,130,136,92,139,27,54],
   },
   {
-    personajeID: 19,
+    personajeID: 20,
     rutaImagen: "willuri",
     determinacion: 4,
     alegria: 6,
@@ -196,5 +218,5 @@ let personajes = [
     dinero: 2,
     tiempo: 4,
     preguntas: [102,87,28,34,33,30,138,72,118,10],
-  },
+  },  
 ];
