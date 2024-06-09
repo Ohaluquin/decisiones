@@ -21,7 +21,7 @@ function actualizarPlayerCard() {
     imgElement.src = animatedGif;
     imgElement.style.opacity = 1;
     newImgElement.style.opacity = 0;
-  }, 3000);
+  }, 2000);
 }
 
 // Función que cambia de color las barras de atributos del personaje
@@ -191,5 +191,5 @@ function mostrarValor(atributo, valor) {
   setTimeout(function () {
     // Después de 2 segundos, borra el contenido del elemento span
     span.textContent = "";
-  }, 5000);
+  }, 4000);
 }
