@@ -379,7 +379,7 @@
 
 #select_player {
   width: 30%;  
-  height: 90vh;  
+  height: 80vh;  
   max-height: 50vw;
   padding-right: 2%;
   font-size: 3vh;
@@ -552,8 +552,8 @@ progress.green::-moz-progress-bar {
 
   #select_player {
     width: 90%;
-    height: 58vh;
-    max-height: 58vh;
+    height: 50vh;
+    max-height: 50vh;
     font-size: 1rem;
   }
 
