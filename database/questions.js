@@ -471,7 +471,7 @@ let preguntas = [
   {
     questionID: 10,
     kind: "social",
-    text: "Estás en una cita con alguien que te interesa pero hace un comentario machista",
+    text: "Estás en una cita con alguien que te interesa pero hace un comentario machista/homofobico",
     imageName: "bad_joke",
     options: [
       {
@@ -498,19 +498,19 @@ let preguntas = [
       },
       {
         optionID: 39,
-        text: "Buscas algún pretexto para alejarte",
-        explicacion:"Priorizar tu bienestar emocional al retirarte de la conversación es una forma válida de autocuidado y gestión de tiempo. Sin embargo, esta elección puede limitar la posibilidad de confrontar o corregir ideas perjudiciales, lo que podría contribuir a un cambio positivo.",          
-        determinacion: 0,
-        alegria: 0,
-        apoyo: 0,
-        salud: 1,
+        text: "Te ríes y haces un comentario similar",
+        explicacion:"Responder con un comentario similar perpetúa las actitudes dañinas y puede normalizar comportamientos negativos. Aunque puede parecer una forma de camaradería, este tipo de interacción refuerza estereotipos y puede herir a otros, además de disminuir tu propia empatía y respeto por los demás.",
+        determinacion: -2,
+        alegria: 1,
+        apoyo: -1,
+        salud: -1,
         dinero: 0,
-        tiempo: 1,
+        tiempo: 0,
       },
       {
         optionID: 40,
         text: "Le confrontas y te vas",
-        explicacion:  "Confrontar directamente el comentario y luego retirarte es una afirmación fuerte de tus valores y límites personales. Esta acción demuestra una clara oposición a las actitudes machistas, fomentando la responsabilidad por las palabras y promoviendo el respeto hacia todos.",        
+        explicacion:  "Confrontar directamente el comentario y luego retirarte es una afirmación fuerte de tus valores y límites personales. Esta acción demuestra una clara oposición a las actitudes negativas, fomentando la responsabilidad por las palabras y promoviendo el respeto hacia todos.",        
         determinacion: 2,
         alegria: 0,
         apoyo: 1,
@@ -561,22 +561,21 @@ let preguntas = [
       },
       {
         optionID: 44,
-        text: "Decides que no te sientes cómodo en la cena y te retiras, pero planeas hablar sobre lo que sucedió con tus amigos más tarde.",
-        explicacion:
-          "Aunque retirarse de la fiesta puede evitar conflictos, también puede ser una oportunidad para educar a las personas sobre temas importantes como la discriminación.",
-        determinacion: 0,
-        alegria: -1,
-        apoyo: 0,
-        salud: 0,
+        text: "Te ríes y haces un comentario similar para seguir la corriente.",
+        explicacion: "Hacer un comentario similar perpetúa actitudes dañinas y normaliza comportamientos negativos. Aunque puede parecer una forma de camaradería, este tipo de interacción refuerza estereotipos y puede herir a otros, además de disminuir tu propia empatía y respeto por los demás.",          
+        determinacion: -2,
+        alegria: 1,
+        apoyo: -1,
+        salud: -1,
         dinero: 0,
-        tiempo: 1,
+        tiempo: 0,
       },
     ],
   },
   {
     questionID: 12,
     kind: "social",
-    text: "Estás en una cena con amigos y alguien hace un comentario sexista.",
+    text: "Estás en una cena familiar y un amigo de tu mamá hace un comentario sexista.",
     imageName: "harasmment",
     options: [
       {
@@ -592,25 +591,25 @@ let preguntas = [
       },
       {
         optionID: 46,
-        text: "Te ríes del comentario para no causar conflicto.",
-        explicacion: "Reírse de un comentario sexista puede ser ofensivo y perpetuar estereotipos negativos. Aunque evitas un conflicto inmediato, estás contribuyendo a normalizar comportamientos dañinos que afectan a la igualdad de género.",
+        text: "Te molestas y haces un comentario ofensivo sobre el amigo de tu mamá.",
+        explicacion: "Responder con un comentario ofensivo perpetúa actitudes dañinas y normaliza comportamientos negativos. Aunque expresar tu molestia es natural, reaccionar de esta manera puede intensificar el conflicto y disminuir tu propia empatía y respeto por los demás.",
         determinacion: -2,
-        alegria: 1,
+        alegria: 0,
         apoyo: -2,
-        salud: 0,
+        salud: -1,
         dinero: 0,
         tiempo: 0,
       },
       {
         optionID: 47,
-        text: "Hablas con la persona que hizo el comentario y le explicas por qué es ofensivo.",
-        explicacion: "Es importante defender tus valores y principios. Hablar con la persona que hizo el comentario puede ayudar a crear conciencia sobre el tema y evitar comentarios ofensivos en el futuro.",
-        determinacion: 2,
+        text: "Le dices a tu mamá sobre el comentario para que ella tome medidas.",
+        explicacion: "Al hablar con tu mamá sobre el comentario, estás tomando una acción concreta para abordar el problema de manera respetuosa y adecuada. Esto puede ayudar a establecer un ambiente más respetuoso y equitativo en la familia.",
+        determinacion: 1,
         alegria: -1,
-        apoyo: 1,
+        apoyo: 2,
         salud: 0,
         dinero: 0,
-        tiempo: -1,
+        tiempo: 0,
       },
       {
         optionID: 48,
@@ -628,7 +627,7 @@ let preguntas = [
   {
     questionID: 13,
     kind: "social",
-    text: "Estás en una reunión familiar y alguien hace un comentario racista.",
+    text: "Estás en una reunión familiar y un miembro de tu familia hace un comentario racista sobre una persona cercana a ti.",
     imageName: "racism",
     options: [
       {
@@ -644,22 +643,22 @@ let preguntas = [
       },
       {
         optionID: 50,
-        text: "Te ríes del comentario para no causar conflicto.",
-        explicacion: "Reírse de un comentario racista puede ser ofensivo para otras personas y puede perpetuar estereotipos negativos. Aunque evitas un conflicto inmediato, estás contribuyendo a normalizar comportamientos dañinos que afectan a otros.",
+        text: "Te molestas y haces un comentario ofensivo sobre el miembro de tu familia.",
+        explicacion: "Responder con un comentario ofensivo puede intensificar el conflicto y perpetuar actitudes dañinas. Aunque expresar tu molestia es natural, reaccionar de esta manera puede empeorar la situación y disminuir tu propia empatía y respeto por los demás.",
         determinacion: -2,
-        alegria: 1,
+        alegria: 0,
         apoyo: -2,
-        salud: 0,
+        salud: -1,
         dinero: 0,
         tiempo: 0,
       },
       {
         optionID: 51,
-        text: "Hablas con la persona que hizo el comentario y le explicas por qué es ofensivo.",
-        explicacion: "Es importante defender tus valores y principios. Hablar con la persona que hizo el comentario puede ayudar a crear conciencia sobre el tema y evitar comentarios ofensivos en el futuro.",
+        text: "Le dices a tu familiar que no vas a tolerar que hable mal de personas cercanas a ti.",
+        explicacion: "Afrontar directamente el comentario racista y establecer un límite claro puede ayudar a crear conciencia sobre la importancia de respetar a los demás. Esta acción demuestra tu compromiso con la igualdad y el respeto hacia todos.",
         determinacion: 2,
         alegria: -1,
-        apoyo: 1,
+        apoyo: 2,
         salud: 0,
         dinero: 0,
         tiempo: -1,
@@ -1013,9 +1012,9 @@ let preguntas = [
       },
       {
         optionID: 78,
-        text: "Continúas trabajando o estudiando, pero te das cuenta de que cada vez es más difícil concentrarte y rendir al máximo.",
-        explicacion: "Continuar trabajando sin descansar puede aumentar el estrés, dificultar la concentración y afectar tu rendimiento y bienestar, mostrando falta de cuidado personal.",          
-        determinacion: -1,
+        text: "Continúas trabajando o estudiando, aún si es más difícil concentrarte y rendir al máximo.",
+        explicacion: "Continuar trabajando sin descansar puede aumentar el estrés, dificultar la concentración y afectar tu rendimiento y bienestar, mostrando falta de cuidado personal. Sin embargo, muestra tu determinación de seguir adelante a pesar de las dificultades.",
+        determinacion: 1,
         alegria: 0,
         apoyo: 0,
         salud: -2,
@@ -1076,8 +1075,8 @@ let preguntas = [
       },
       {
         optionID: 83,
-        text: "Dejas el estudio para el último día y tratas de aprender lo suficiente en una noche",
-        explicacion: "Dejar el estudio para el último día puede generar estrés y afectar tu rendimiento, mostrando falta de organización y determinación. Dedicar toda la noche a estudiar puede afectar negativamente tu salud.",          
+        text: "Confías en haber aprendido lo suficiente o que el examen no sea muy difícil y dejas el estudio intensivo para el último día",
+        explicacion: "Dejar el estudio intensivo para el último día es una estrategia arriesgada que puede funcionar si confías en haber aprendido lo suficiente o en la facilidad del examen. Sin embargo, puede generar estrés y afectar tu salud y rendimiento si no tienes suficiente tiempo para abarcar todo el material.",        
         determinacion: -1,
         alegria: 0,
         apoyo: 0,
@@ -2269,7 +2268,7 @@ let preguntas = [
   {
     questionID: 43,
     kind: "académico",
-    text: "Te cacharon copiando en el examen y estas a punto de recursar",
+    text: "El profesor piensa que estás copiando en el examen y te puede mandar a recursar:",
     imageName: "test_cheating",
     options: [
       {
@@ -2298,13 +2297,12 @@ let preguntas = [
       },
       {
         optionID: 171,
-        text: "Le echas la culpa a alguien más o inventas una excusa",
-        explicacion:
-          "Echarle la culpa a alguien más o inventar una excusa puede afectar negativamente tu relación con el profesor y disminuir tu determinación para aprender y mejorar. Además, esta opción puede impedirte enfrentar las consecuencias de tus acciones y aprender de tus errores.",
-        determinacion: -2,
-        alegria: 0,
+        text: "Le muestras al profesor que nunca copias, que prefieres estudiar y estar preparado",
+        explicacion: "Mostrarle al profesor que nunca copias y que prefieres estudiar y estar preparado demuestra tu integridad y ética de trabajo. Esto puede fortalecer tu relación con el profesor y tu reputación como estudiante.",          
+        determinacion: 2,
+        alegria: 1,
         apoyo: 0,
-        salud: 0,
+        salud: 2,
         dinero: 0,
         tiempo: 0,
       },
@@ -2768,14 +2766,13 @@ let preguntas = [
   {
     questionID: 52,
     kind: "académico",
-    text: "Tienes que entregar una actividad académica y no la has terminado, pero sólo tienes tiempo de acabarla en una clase a la que ya has faltado",
+    text: "Tienes que entregar una tarea muy importante y no la has terminado, pero solo tienes tiempo de acabarla en una clase a la que ya has faltado:",
     imageName: "distracted",
     options: [
       {
         optionID: 205,
-        text: "Faltas otra vez para terminar el trabajo",
-        explicacion:
-          "Elegir finalizar tu tarea en lugar de asistir a clase puede aliviar la presión inmediata de la entrega pendiente, pero incurre en el riesgo de acumular ausencias que podrían impactar negativamente en tu rendimiento académico y relación con el profesor. Esta decisión refleja una priorización de tareas a corto plazo sobre compromisos a largo plazo, lo cual podría requerir una evaluación de tus estrategias de gestión del tiempo y responsabilidades.",
+        text: "Faltas otra vez para terminar la tarea",
+        explicacion: "Elegir finalizar tu tarea en lugar de asistir a clase puede aliviar la presión inmediata de la entrega pendiente, pero incurre en el riesgo de acumular ausencias que podrían impactar negativamente en tu rendimiento académico y relación con el profesor. Esta decisión refleja una priorización de tareas a corto plazo sobre compromisos a largo plazo, lo cual podría requerir una evaluación de tus estrategias de gestión del tiempo y responsabilidades.",          
         determinacion: -1,
         alegria: 0,
         apoyo: -1,
@@ -2786,8 +2783,7 @@ let preguntas = [
       {
         optionID: 206,
         text: "Entras a la clase, pero terminas la tarea ahí mismo",
-        explicacion:
-          "Asistir a clase mientras intentas completar otra tarea puede parecer una solución práctica, pero te expone al riesgo de no prestar atención adecuada a la clase, además de la posibilidad de que el profesor note tu falta de enfoque. Esta estrategia podría afectar tu comprensión de la materia actual y tu relación con el profesor, subrayando la importancia de equilibrar adecuadamente tus responsabilidades académicas.",
+        explicacion: "Asistir a clase mientras intentas completar otra tarea puede parecer una solución práctica, pero te expone al riesgo de no prestar atención adecuada a la clase, además de la posibilidad de que el profesor note tu falta de enfoque. Esta estrategia podría afectar tu comprensión de la materia actual y tu relación con el profesor, subrayando la importancia de equilibrar adecuadamente tus responsabilidades académicas.",          
         determinacion: 1,
         alegria: 0,
         apoyo: -1,
@@ -2798,8 +2794,7 @@ let preguntas = [
       {
         optionID: 207,
         text: "Le pides permiso al profesor para faltar y hacer la tarea",
-        explicacion:
-          "Solicitar permiso al profesor para completar una tarea para otra clase muestra transparencia en tus intenciones, pero también revela posibles deficiencias en la planificación y gestión del tiempo. Dependiendo de tu historial de asistencia y la disposición del profesor, esta acción podría afectar tu imagen como estudiante comprometido y responsable.",
+        explicacion: "Solicitar permiso al profesor para completar una tarea para otra clase muestra transparencia en tus intenciones, pero también revela posibles deficiencias en la planificación y gestión del tiempo. Dependiendo de tu historial de asistencia y la disposición del profesor, esta acción podría afectar tu imagen como estudiante comprometido y responsable.",          
         determinacion: -1,
         alegria: 0,
         apoyo: -1,
@@ -2810,8 +2805,7 @@ let preguntas = [
       {
         optionID: 208,
         text: "Entras a clase e intentas ponerte al corriente e intentas entregar la tarea más tarde",
-        explicacion:
-          "Esta opción demuestra un compromiso con tus responsabilidades académicas, asistiendo a clase y buscando una solución para tu entrega atrasada. Aunque puede requerir un esfuerzo adicional para ponerse al corriente y negociar una extensión para tu tarea, refleja una buena ética de trabajo y disposición para enfrentar las consecuencias de tus acciones, lo que puede fortalecer tu relación con los profesores y mejorar tu capacidad de gestión del tiempo.",
+        explicacion:  "Esta opción demuestra un compromiso con tus responsabilidades académicas, asistiendo a clase y buscando una solución para tu entrega atrasada. Aunque puede requerir un esfuerzo adicional para ponerse al corriente y negociar una extensión para tu tarea, refleja una buena ética de trabajo y disposición para enfrentar las consecuencias de tus acciones, lo que puede fortalecer tu relación con los profesores y mejorar tu capacidad de gestión del tiempo.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -2829,12 +2823,11 @@ let preguntas = [
     options: [
       {
         optionID: 209,
-        text: "Faltas otra vez para terminar la tarea",
-        explicacion:
-          "Optar por completar tu tarea en vez de asistir a clase puede parecer una solución inmediata a tu problema pendiente, pero establece un precedente de evasión de responsabilidades académicas. Esta elección puede deteriorar tu relación con el profesor y afectar tu rendimiento académico, especialmente si ya tienes antecedentes de inasistencias. A largo plazo, podría cuestionarse tu compromiso con el curso y tu capacidad para manejar múltiples responsabilidades.",
-        determinacion: -1,
+        text: "Buscas copiar la tarea de uno de tus amigos para terminar rápido",
+        explicacion: "Optar por copiar la tarea de un amigo puede parecer una solución rápida, pero pone en riesgo tu integridad académica y la relación con tu amigo y profesor. Esta elección puede afectar negativamente tu reputación y capacidad para manejar responsabilidades académicas.",
+        determinacion: -2,
         alegria: 0,
-        apoyo: -1,
+        apoyo: -2,
         salud: 0,
         dinero: 0,
         tiempo: -1,
@@ -3203,13 +3196,13 @@ let preguntas = [
   {
     questionID: 60,
     kind: "personal",
-    text: "Una chica que siempre te ha gustado, pero que tiene novio, te hace insinuaciones",
+    text: "Una persona que siempre te ha gustado, pero que tiene pareja, te hace insinuaciones",
     imageName: "pretty_girl",
     options: [
       {
         optionID: 237,
-        text: "Ignoras las insinuaciones y te alejas de ella",
-        explicacion: "Elegir ignorar las insinuaciones y distanciarte de la chica demuestra un alto grado de respeto hacia su relación actual y una fuerte capacidad para establecer y mantener límites personales. Esta decisión puede ser difícil, especialmente si tienes sentimientos por ella, pero refleja madurez y un compromiso con principios éticos, lo que puede contribuir positivamente a tu bienestar emocional a largo plazo, a pesar del posible impacto negativo inicial en tu felicidad.",
+        text: "Ignoras las insinuaciones y te alejas de esa persona",
+        explicacion: "Elegir ignorar las insinuaciones y distanciarte de la persona demuestra un alto grado de respeto hacia su relación actual y una fuerte capacidad para establecer y mantener límites personales. Esta decisión puede ser difícil, especialmente si tienes sentimientos por ella, pero refleja madurez y un compromiso con principios éticos, lo que puede contribuir positivamente a tu bienestar emocional a largo plazo, a pesar del posible impacto negativo inicial en tu felicidad.",
         determinacion: 1,
         alegria: -1,
         apoyo: 0,
@@ -3219,9 +3212,8 @@ let preguntas = [
       },
       {
         optionID: 238,
-        text: "Hablas con ella y le preguntas directamente sobre sus intenciones",
-        explicacion:
-          "Confrontar a la chica con honestidad y claridad sobre sus insinuaciones demuestra valentía y una búsqueda de transparencia en tus relaciones personales. Esta conversación directa puede aclarar malentendidos y definir las expectativas de ambos, lo que ayuda a prevenir situaciones incómodas o conflictivas en el futuro. Aunque este enfoque puede ser incómodo inicialmente, promueve la salud emocional y el respeto mutuo.",
+        text: "Hablas con esa persona y le preguntas directamente sobre sus intenciones",
+        explicacion: "Confrontar a la persona con honestidad y claridad sobre sus insinuaciones demuestra valentía y una búsqueda de transparencia en tus relaciones personales. Esta conversación directa puede aclarar malentendidos y definir las expectativas de ambos, lo que ayuda a prevenir situaciones incómodas o conflictivas en el futuro. Aunque este enfoque puede ser incómodo inicialmente, promueve la salud emocional y el respeto mutuo.",       
         determinacion: 2,
         alegria: 0,
         apoyo: 0,
@@ -3231,9 +3223,8 @@ let preguntas = [
       },
       {
         optionID: 239,
-        text: "Aceptas coquetear con la chica y seguirle el juego, aunque no deje a su novio por ti",
-        explicacion:
-          "Participar en un coqueteo sabiendo que la chica está comprometida puede llevar a una situación emocionalmente complicada y potencialmente dolorosa. Este enfoque puede ofrecer gratificación a corto plazo, pero plantea riesgos significativos de dañar las relaciones involucradas y comprometer tu integridad. A largo plazo, esta elección podría afectar negativamente tu bienestar emocional y tu reputación.",
+        text: "Aceptas coquetear con esa persona y seguirle el juego, aunque no deje a su pareja por ti",
+        explicacion: "Participar en un coqueteo sabiendo que la persona está comprometida puede llevar a una situación emocionalmente complicada y potencialmente dolorosa. Este enfoque puede ofrecer gratificación a corto plazo, pero plantea riesgos significativos de dañar las relaciones involucradas y comprometer tu integridad. A largo plazo, esta elección podría afectar negativamente tu bienestar emocional y tu reputación.",          
         determinacion: -1,
         alegria: 0,
         apoyo: -1,
@@ -3257,14 +3248,13 @@ let preguntas = [
   {
     questionID: 61,
     kind: "personal",
-    text: "La novia de tu amigo te hace insinuaciones",
+    text: "La pareja de tu amig@ te hace insinuaciones",
     imageName: "couple",
     options: [
       {
         optionID: 241,
         text: "Le sigues el juego y le coqueteas",
-        explicacion:
-          "Responder a las insinuaciones coqueteando puede ofrecer una gratificación inmediata, pero plantea riesgos significativos de dañar la relación con tu amigo y su novia. Esta acción puede ser percibida como una traición a la confianza de tu amigo y podría llevar a consecuencias negativas duraderas, tanto en tu amistad como en tu reputación personal. Es importante considerar el impacto a largo plazo de tus acciones en tus relaciones y en tu propia autoestima.",
+        explicacion: "Responder a las insinuaciones coqueteando puede ofrecer una gratificación inmediata, pero plantea riesgos significativos de dañar la relación con tu amig@ y su pareja. Esta acción puede ser percibida como una traición a la confianza de tu amig@ y podría llevar a consecuencias negativas duraderas, tanto en tu amistad como en tu reputación personal. Es importante considerar el impacto a largo plazo de tus acciones en tus relaciones y en tu propia autoestima.",          
         determinacion: -1,
         alegria: 0,
         apoyo: -1,
@@ -3275,8 +3265,7 @@ let preguntas = [
       {
         optionID: 242,
         text: "La rechazas y le dices que no te interesa",
-        explicacion:
-          "Rechazar las insinuaciones y dejar claras tus intenciones muestra un alto nivel de respeto por la relación de tu amigo, además de una fuerte ética personal. Esta decisión puede ser incómoda en el momento, pero establece límites saludables y protege tu relación con tu amigo y tu integridad personal. Al actuar de acuerdo con tus valores, fortaleces tu autorespeto y el respeto que otros tienen por ti.",
+        explicacion: "Rechazar las insinuaciones y dejar claras tus intenciones muestra un alto nivel de respeto por la relación de tu amig@, además de una fuerte ética personal. Esta decisión puede ser incómoda en el momento, pero establece límites saludables y protege tu relación con tu amig@ y tu integridad personal. Al actuar de acuerdo con tus valores, fortaleces tu autorespeto y el respeto que otros tienen por ti.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
@@ -3286,9 +3275,8 @@ let preguntas = [
       },
       {
         optionID: 243,
-        text: "La rechazas y le cuentas a tu amigo lo que pasó",
-        explicacion:
-          "Rechazar las insinuaciones y comunicarle a tu amigo lo ocurrido es un acto de honestidad y lealtad, aunque pueda ser difícil o incómodo. Esta opción valora la transparencia y la confianza en tu amistad, y puede prevenir malentendidos o situaciones más complicadas en el futuro. Sin embargo, es crucial abordar la conversación con sensibilidad y cuidado para evitar herir innecesariamente los sentimientos de tu amigo.",
+        text: "La rechazas y le cuentas a tu amig@ lo que pasó",
+        explicacion: "Rechazar las insinuaciones y comunicarle a tu amig@ lo ocurrido es un acto de honestidad y lealtad, aunque pueda ser difícil o incómodo. Esta opción valora la transparencia y la confianza en tu amistad, y puede prevenir malentendidos o situaciones más complicadas en el futuro. Sin embargo, es crucial abordar la conversación con sensibilidad y cuidado para evitar herir innecesariamente los sentimientos de tu amig@.",          
         determinacion: 2,
         alegria: -1,
         apoyo: 2,
@@ -3298,9 +3286,8 @@ let preguntas = [
       },
       {
         optionID: 244,
-        text: "La rechazas y no le dices nada a tu amigo",
-        explicacion:
-          "Rechazar las insinuaciones sin involucrar a tu amigo puede parecer una manera de protegerlo de una situación dolorosa, pero retener esta información también podría ser visto como una omisión de la verdad, lo que podría afectar la confianza en tu amistad si eventualmente se descubre. Esta decisión busca evitar el conflicto inmediato, pero plantea la pregunta de si el silencio podría tener consecuencias negativas a largo plazo en la relación con tu amigo.",
+        text: "La rechazas y no le dices nada a tu amig@",
+        explicacion: "Rechazar las insinuaciones sin involucrar a tu amig@ puede parecer una manera de protegerl@ de una situación dolorosa, pero retener esta información también podría ser visto como una omisión de la verdad, lo que podría afectar la confianza en tu amistad si eventualmente se descubre. Esta decisión busca evitar el conflicto inmediato, pero plantea la pregunta de si el silencio podría tener consecuencias negativas a largo plazo en la relación con tu amig@.",          
         determinacion: 0,
         alegria: 0,
         apoyo: -1,
