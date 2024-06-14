@@ -4159,7 +4159,7 @@ let preguntas = [
         explicacion:
           "Aunque buscar un preservativo pueda pausar el momento, demuestra una actitud responsable y previsora hacia tu salud y bienestar, así como el de tu pareja. Esta decisión refleja la importancia de estar preparados y protegidos, subrayando que la seguridad no debería comprometerse por el impulso del momento.",
         determinacion: 1,
-        alegria: -1,
+        alegria: 1,
         apoyo: 0,
         salud: 1,
         dinero: -1,
@@ -4170,12 +4170,12 @@ let preguntas = [
         text: "Te controlas y preparas un momento más adecuado con preservativo incluido",
         explicacion:
           "Optar por esperar y planificar un momento más adecuado con las precauciones necesarias muestra una gran madurez y respeto por ti mismo y tu pareja. Esta decisión enfatiza la importancia de la salud sexual y la comunicación en la relación, promoviendo experiencias íntimas seguras y consensuadas.",
-        determinacion: 1,
-        alegria: -1,
+        determinacion: 2,
+        alegria: 0,
         apoyo: 0,
-        salud: 1,
-        dinero: -1,
-        tiempo: -1,
+        salud: 2,
+        dinero: 0,
+        tiempo: 0,
       },
       {
         optionID: 308,
@@ -4484,7 +4484,7 @@ let preguntas = [
           "Buscar apoyo en un familiar de confianza puede proporcionarte un refugio emocional y consejos valiosos sobre cómo manejar la situación. Esta acción refleja tu determinación por buscar una solución segura, manteniendo el apoyo dentro de tu red familiar.",
         determinacion: 1,
         alegria: 0,
-        apoyo: 1,
+        apoyo: 2,
         salud: 1,
         dinero: 0,
         tiempo: -1,
@@ -4506,7 +4506,7 @@ let preguntas = [
         text: "Enfrentas a tu familiar aunque se genere un problema mayor",
         explicacion:
           "Confrontar directamente al familiar puede ser una decisión valiente, pero también riesgosa. Es vital considerar las posibles consecuencias de tal enfrentamiento y buscar maneras seguras de abordar el conflicto. La seguridad personal debe ser siempre la prioridad.",
-        determinacion: 1,
+        determinacion: 2,
         alegria: -2,
         apoyo: 0,
         salud: -2,
@@ -4518,10 +4518,10 @@ let preguntas = [
         text: "Buscas alternativas de otro lugar donde puedas vivir",
         explicacion:
           "Buscar un nuevo entorno seguro es una medida proactiva importante cuando el hogar deja de ser un lugar seguro. Aunque esta decisión puede ser difícil y conllevar desafíos emocionales y financieros, prioriza tu bienestar y seguridad, abriendo el camino hacia un entorno más saludable.",
-        determinacion: 1,
+        determinacion: 2,
         alegria: -1,
         apoyo: -1,
-        salud: 1,
+        salud: 2,
         dinero: -2,
         tiempo: -1,
       },
@@ -4839,7 +4839,7 @@ let preguntas = [
       },
       {
         optionID: 355,
-        text: "Hablas con él para compartir contraseñas sin que sepa que le descubriste",
+        text: "Hablas con tu pareja para compartir contraseñas sin que sepa que le descubriste",
         explicacion:
           "Ofrecer compartir contraseñas puede parecer una manera de fortalecer la confianza, pero es esencial que ambos socios estén de acuerdo y cómodos con esta decisión. La comunicación abierta sobre las expectativas de privacidad y confianza es clave para evitar malentendidos y asegurar que ambas partes se sientan respetadas.",
         determinacion: 0,
@@ -5618,16 +5618,15 @@ let preguntas = [
     options: [
       {
         optionID: 410,
-        text: "Hablas con el profesor para sugerir adaptaciones que permitan su inclusión",
-        explicacion:
-          "Proponer adaptaciones inclusivas al profesor refleja un compromiso con un entorno de aprendizaje accesible para todos. Esta iniciativa puede mejorar significativamente la experiencia educativa del estudiante con discapacidad y fomentar una cultura de inclusión en la escuela.",
-        determinacion: 2,
-        alegria: 0,
-        apoyo: 1,
-        salud: 0,
+        text: "Haces bromas y pones sobrenombres al estudiante",
+        explicacion: "Hacer bromas y poner sobrenombres puede parecer inofensivo, pero perpetúa el aislamiento y puede causar daño emocional al estudiante. Esta acción refleja una falta de empatía y puede tener consecuencias negativas tanto para el estudiante como para la comunidad escolar.",          
+        determinacion: -2,
+        alegria: -2,
+        apoyo: -2,
+        salud: -1,
         dinero: 0,
-        tiempo: -1,
-      },
+        tiempo: 0,
+      },      
       {
         optionID: 411,
         text: "Invitas al estudiante a unirse a tu grupo durante las actividades",
@@ -5642,6 +5641,17 @@ let preguntas = [
       },
       {
         optionID: 412,
+        text: "Hablas con un profesor para comentarle tu preocupación",
+        explicacion: "Hablar con un profesor sobre tu preocupación demuestra empatía y un deseo de mejorar la situación del estudiante. Esto puede ayudar a que el profesor tome medidas para asegurar la inclusión del estudiante en las actividades de grupo.",          
+        determinacion: 1,
+        alegria: 0,
+        apoyo: 1,
+        salud: 0,
+        dinero: 0,
+        tiempo: 0,
+      },
+      {
+        optionID: 413,
         text: "No haces nada porque consideras que no es tu responsabilidad",
         explicacion:
           "Elegir no actuar puede perpetuar la sensación de aislamiento del estudiante. Asumir un rol activo en la promoción de la inclusión puede contribuir a una comunidad escolar más acogedora y solidaria para todos los estudiantes.",
@@ -5651,18 +5661,6 @@ let preguntas = [
         salud: 0,
         dinero: 0,
         tiempo: 0,
-      },
-      {
-        optionID: 413,
-        text: "Empiezas una campaña de concientización sobre la inclusión en tu escuela",
-        explicacion:
-          "Iniciar una campaña de concientización destaca la importancia de la inclusión y la aceptación de la diversidad. Esta acción puede educar e inspirar a toda la comunidad escolar para adoptar prácticas más inclusivas y fomentar un ambiente de respeto y apoyo mutuo.",
-        determinacion: 3,
-        alegria: 1,
-        apoyo: 2,
-        salud: 0,
-        dinero: 0,
-        tiempo: -3,
       },
     ],
   },
@@ -5674,27 +5672,26 @@ let preguntas = [
     options: [
       {
         optionID: 414,
-        text: "Reportas la foto a la plataforma de redes sociales",
+        text: "No haces nada porque consideras que no es tu problema",
         explicacion:
-          "Reportar la foto ayuda a abordar el problema en la plataforma, respetando la privacidad y dignidad de tu compañero. Esta acción responsable puede contribuir a un entorno digital más seguro y respetuoso, aunque es importante también ofrecer apoyo emocional a tu compañero durante este tiempo.",
-        determinacion: 1,
-        alegria: 0,
-        apoyo: 2,
+          "Decidir no actuar puede parecer evitar complicaciones, pero la indiferencia ante el acoso o la violación de la privacidad puede perpetuar una cultura de falta de respeto en línea. Considerar acciones constructivas para apoyar a tu compañero puede marcar una diferencia significativa en su bienestar.",
+        determinacion: -1,
+        alegria: -0,
+        apoyo: -1,
         salud: 0,
         dinero: 0,
-        tiempo: -1,
+        tiempo: 0,
       },
       {
         optionID: 415,
-        text: "Hablas con tu compañero de clase sobre la foto",
-        explicacion:
-          "Comunicarte directamente con tu compañero te permite ofrecer apoyo personal y discutir posibles pasos a seguir para manejar la situación. Esta acción demuestra empatía y solidaridad, y puede ser un importante gesto de apoyo en un momento difícil.",
+        text: "Le cuentas a un profesor la situación",
+        explicacion: "Contar a un profesor sobre la situación puede ayudar a abordar el problema de manera formal y proporcionar apoyo adicional a tu compañero. Esta acción demuestra responsabilidad y empatía, contribuyendo a una respuesta más estructurada y efectiva.",          
         determinacion: 1,
         alegria: 0,
         apoyo: 1,
         salud: 0,
         dinero: 0,
-        tiempo: -1,
+        tiempo: 0,
       },
       {
         optionID: 416,
@@ -5710,16 +5707,16 @@ let preguntas = [
       },
       {
         optionID: 417,
-        text: "No haces nada porque consideras que no es tu problema",
+        text: "Hablas con tu compañero de clase sobre la foto",
         explicacion:
-          "Decidir no actuar puede parecer evitar complicaciones, pero la indiferencia ante el acoso o la violación de la privacidad puede perpetuar una cultura de falta de respeto en línea. Considerar acciones constructivas para apoyar a tu compañero puede marcar una diferencia significativa en su bienestar.",
-        determinacion: -1,
-        alegria: -0,
-        apoyo: -1,
+          "Comunicarte directamente con tu compañero te permite ofrecer apoyo personal y discutir posibles pasos a seguir para manejar la situación. Esta acción demuestra empatía y solidaridad, y puede ser un importante gesto de apoyo en un momento difícil.",
+        determinacion: 1,
+        alegria: 0,
+        apoyo: 1,
         salud: 0,
         dinero: 0,
-        tiempo: 0,
-      },
+        tiempo: -1,
+      },      
     ],
   },
   {
@@ -7227,5 +7224,109 @@ let preguntas = [
         tiempo: -2
       }
     ]
-  },    
+  },
+  {
+    questionID: 149,
+    kind: "personal",
+    text: "Te das cuenta de que tu amiga cercana está mostrando signos de bulimia o anorexia.",
+    imageName: "eating_disorder",
+    options: [
+      {
+        optionID: 518,
+        text: "No haces nada porque no quieres entrometerte en sus asuntos personales",
+        explicacion: "Elegir no actuar puede evitar una confrontación incómoda, pero puede dejar a tu amiga en una situación peligrosa sin el apoyo que necesita. Es importante considerar cómo tu intervención podría ayudarla a recibir la ayuda necesaria.",
+        determinacion: -1,
+        alegria: -1,
+        apoyo: -2,
+        salud: 0,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 519,
+        text: "Le haces bromas sobre sus hábitos alimenticios para ver si se abre contigo",
+        explicacion: "Hacer bromas sobre sus hábitos alimenticios puede ser percibido como insensible y puede empeorar la situación emocional de tu amiga. Es crucial abordar temas sensibles con empatía y respeto.",
+        determinacion: -2,
+        alegria: -2,
+        apoyo: -3,
+        salud: -1,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 520,
+        text: "Hablas con tu amiga directamente sobre tus preocupaciones y le ofreces tu apoyo",
+        explicacion: "Abordar directamente tus preocupaciones con tu amiga y ofrecerle apoyo demuestra empatía y cuidado. Este gesto puede ayudar a tu amiga a sentirse comprendida y apoyada, y puede ser el primer paso para buscar ayuda profesional.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 2,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      },
+      {
+        optionID: 521,
+        text: "Hablas con un profesor o un adulto de confianza sobre la situación",
+        explicacion: "Buscar la ayuda de un profesor o un adulto de confianza puede proporcionar un soporte adicional y profesional. Esta acción muestra responsabilidad y el deseo de buscar la mejor ayuda para tu amiga.",
+        determinacion: 1,
+        alegria: 0,
+        apoyo: 2,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      },
+    ]
+  },
+  {
+    questionID: 150,
+    kind: "social",
+    text: "Tu comunidad está sufriendo una ola de calor extrema y falta de lluvias, lo que ha llevado a la escasez de agua",
+    imageName: "heat_wave",
+    options: [
+      {
+        optionID: 522,
+        text: "Reduces tu consumo de agua y animas a otros a hacer lo mismo",
+        explicacion: "Reducir tu consumo de agua y promover la conservación entre tus conocidos ayuda a aliviar la presión sobre los recursos hídricos y muestra una actitud responsable y solidaria.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 2,
+        salud: 1,
+        dinero: 0,
+        tiempo: -1
+      },
+      {
+        optionID: 523,
+        text: "Ignoras la situación y sigues usando agua como siempre",
+        explicacion: "Ignorar la escasez de agua puede agravar el problema y pone en riesgo la disponibilidad del recurso para ti y los demás en el futuro. Es importante ser consciente y responsable en tiempos de crisis.",
+        determinacion: -2,
+        alegria: 0,
+        apoyo: -2,
+        salud: -1,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 524,
+        text: "Buscas maneras de recolectar agua de lluvia en tu casa",
+        explicacion: "Buscar formas de recolectar agua de lluvia en tu casa es una manera práctica y efectiva de contribuir a la conservación del agua. Esta acción muestra iniciativa y responsabilidad hacia la crisis del agua.",
+        determinacion: 1,
+        alegria: 1,
+        apoyo: 1,
+        salud: 1,
+        dinero: 0,
+        tiempo: -2
+      },
+      {
+        optionID: 525,
+        text: "Difundes información sobre el uso excesivo de agua por parte de grandes empresas y pides a la comunidad que tome conciencia",
+        explicacion: "Difundir información sobre cómo grandes empresas como las de refrescos e inmobiliarias utilizan grandes cantidades de agua puede crear conciencia y presión pública para un uso más responsable del agua. Esta acción promueve una mayor responsabilidad colectiva y puede ayudar a movilizar esfuerzos para la conservación del agua.",
+        determinacion: 1,
+        alegria: 1,
+        apoyo: 1,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      }
+    ]
+  },        
 ];
