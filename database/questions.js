@@ -1407,14 +1407,14 @@ let preguntas = [
       },
       {
         optionID: 107,
-        text: "Vas con tu novi@ y te regresas temprano para hacer la tarea aunque no la termines bien",
-        explicacion: "Comprometerte a pasar tiempo con tu pareja y luego regresar para trabajar en tu tarea muestra un esfuerzo por balancear tus relaciones y obligaciones. Sin embargo, esto puede resultar en un trabajo de menor calidad.",          
-        determinacion: 1,
-        alegria: 1,
-        apoyo: 1,
-        salud: 0,
+        text: "Siempre haces tus tareas importantes con anticipación, así que no tienes este problema",
+        explicacion: "Planificar y completar tus tareas con anticipación demuestra una excelente gestión del tiempo y compromiso con tus responsabilidades. Esto te permite disfrutar de tu tiempo libre sin estrés adicional.",
+        determinacion: 3,
+        alegria: 2,
+        apoyo: 0,
+        salud: 2,
         dinero: 0,
-        tiempo: -1,
+        tiempo: 1,
       },
       {
         optionID: 108,
@@ -1544,7 +1544,7 @@ let preguntas = [
   {
     questionID: 30,
     kind: "académico",
-    text: "Tienes un examen importante mañana y no has estudiado:",
+    text: "Un profesor les avisó que mañana tienen un examen importante:",
     imageName: "postpone",
     options: [
       {
@@ -2766,7 +2766,7 @@ let preguntas = [
   {
     questionID: 52,
     kind: "académico",
-    text: "Tienes que entregar una tarea muy importante y no la has terminado, pero solo tienes tiempo de acabarla en una clase a la que ya has faltado:",
+    text: "Te acabas de enterar que te falta algo en una tarea muy importante y solo tienes tiempo de acabarla en una clase a la que ya has faltado:",
     imageName: "distracted",
     options: [
       {
@@ -7328,5 +7328,265 @@ let preguntas = [
         tiempo: -1
       }
     ]
-  },        
+  },
+  {
+    questionID: 151,
+    kind: "académico",
+    text: "Te está yendo mal en una o dos materias y empiezas a perder el ánimo para asistir a clases",
+    imageName: "losing_interest",
+    options: [
+      {
+        optionID: 526,
+        text: "Dejas de entrar a clases y buscas otra actividad que te haga sentir mejor",
+        explicacion: "Dejar de asistir a clases y buscar otra actividad puede proporcionar una gratificación temporal, pero no aborda el problema subyacente y puede tener consecuencias negativas a largo plazo para tu educación y tus objetivos.",
+        determinacion: -2,
+        alegria: 1,
+        apoyo: -2,
+        salud: 0,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 527,
+        text: "Hablas con tu tutor escolar sobre tus dificultades",
+        explicacion: "Hablar con un consejero escolar puede proporcionarte el apoyo necesario para enfrentar tus dificultades académicas. Esta acción demuestra responsabilidad y el deseo de mejorar tu situación con la ayuda de un profesional.",
+        determinacion: 2,
+        alegria: 0,
+        apoyo: 2,
+        salud: 1,
+        dinero: 0,
+        tiempo: -1
+      },
+      {
+        optionID: 528,
+        text: "Buscas la ayuda de un tutor particular para mejorar en las materias que te van mal",
+        explicacion: "Buscar la ayuda de un tutor muestra tu determinación para mejorar y superar tus dificultades académicas. Esta opción puede ayudarte a entender mejor las materias y recuperar la confianza en tus habilidades.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 1,
+        salud: 0,
+        dinero: -1,
+        tiempo: -1
+      },
+      {
+        optionID: 529,
+        text: "Decides faltar a esas clases y cursarlas nuevamente el proximo semestre",
+        explicacion: "Decidir faltar a las clases y planear cursarlas nuevamente el próximo semestre puede parecer una solución, pero puede retrasar tu progreso académico y no resolver las dificultades actuales. Es importante enfrentar los problemas de manera proactiva.",
+        determinacion: -2,
+        alegria: -1,
+        apoyo: -2,
+        salud: -1,
+        dinero: 0,
+        tiempo: 0
+      },      
+    ]
+  },
+  {
+    questionID: 152,
+    kind: "académico",
+    text: "Se acerca la fecha para presentar el examen de ingreso a la universidad y estás preocupado por cómo te irá",
+    imageName: "university_exam",
+    options: [
+      {
+        optionID: 530,
+        text: "No hago el examen porque no me siento capaz",
+        explicacion: "Decidir no hacer el examen por miedo al fracaso puede evitar el estrés inmediato, pero también limita tus oportunidades educativas y profesionales futuras. Es importante enfrentar tus miedos y dar lo mejor de ti.",
+        determinacion: -3,
+        alegria: -2,
+        apoyo: -2,
+        salud: 0,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 531,
+        text: "Elijo una carrera que necesite pocos aciertos para ingresar",
+        explicacion: "Optar por una carrera con requisitos de ingreso más bajos puede ser una estrategia para asegurar tu admisión, pero es importante considerar si esa carrera realmente alinea con tus intereses y objetivos a largo plazo.",
+        determinacion: 0,
+        alegria: 1,
+        apoyo: 0,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      },
+      {
+        optionID: 532,
+        text: "Me inscribo en un curso de preparación para el examen",
+        explicacion: "Inscribirte en un curso de preparación demuestra tu compromiso y determinación para hacerlo bien en el examen. Esta opción puede mejorar tus habilidades y aumentar tu confianza.",
+        determinacion: 3,
+        alegria: 2,
+        apoyo: 1,
+        salud: 0,
+        dinero: -1,
+        tiempo: -2
+      },
+      {
+        optionID: 533,
+        text: "Estudio por mi parte",
+        explicacion: "Estudiar por tu cuenta requiere disciplina y organización. Esta opción muestra tu autodeterminación y capacidad para trabajar de manera independiente, aunque puede ser más difícil sin guía estructurada.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 0,
+        salud: 0,
+        dinero: 0,
+        tiempo: -2
+      },
+    ]
+  },
+  {
+    questionID: 153,
+    kind: "académico",
+    text: "Estás inscribiéndote en tus clases para el próximo semestre y revisas los grupos disponibles. ¿Cómo decides en qué grupo inscribirte?",
+    imageName: "class_registration",
+    options: [
+      {
+        optionID: 534,
+        text: "Evito grupos donde estén profesores muy exigentes",
+        explicacion: "Evitar grupos con profesores muy exigentes puede reducir el estrés y la carga de trabajo, pero también puede limitar tu oportunidad de aprendizaje y crecimiento académico. Es importante equilibrar la exigencia con tu capacidad de adaptación y mejora.",
+        determinacion: -1,
+        alegria: 1,
+        apoyo: 0,
+        salud: 1,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 535,
+        text: "Elijo un grupo donde estén profesores que sé que son buenos",
+        explicacion: "Elegir grupos con profesores que tienen buena reputación puede mejorar tu experiencia de aprendizaje y asegurar que recibas una educación de calidad. Esta decisión muestra tu compromiso con tu desarrollo académico.",
+        determinacion: 2,
+        alegria: 2,
+        apoyo: 0,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      },
+      {
+        optionID: 536,
+        text: "Me inscribo en un grupo donde estén mis amigos",
+        explicacion: "Inscribirse en un grupo con amigos puede hacer que la experiencia escolar sea más agradable y menos estresante. Sin embargo, es importante asegurarse de que la calidad de la enseñanza también sea adecuada.",
+        determinacion: 1,
+        alegria: 2,
+        apoyo: 1,
+        salud: 1,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 537,
+        text: "Evito grupos donde hay profesores que sé que aprendo poco",
+        explicacion: "Evitar grupos con profesores que no enseñan bien puede ayudarte a tener una mejor experiencia educativa y asegurarte de que estás aprendiendo lo necesario. Esta decisión refleja tu deseo de obtener una educación de calidad.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 0,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      }
+    ]
+  },
+  {
+    questionID: 154,
+    kind: "académico",
+    text: "Estás en una clase donde sientes que no aprendes mucho.",
+    imageName: "boring_class",
+    options: [
+      {
+        optionID: 538,
+        text: "Dejas de entrar a la clase",
+        explicacion: "Dejar de asistir a la clase puede parecer una solución fácil, pero puede afectar tu rendimiento académico y tu relación con el profesor. Es importante considerar otras opciones antes de tomar una decisión tan drástica.",
+        determinacion: -2,
+        alegria: 0,
+        apoyo: -1,
+        salud: 0,
+        dinero: 0,
+        tiempo: 1
+      },
+      {
+        optionID: 539,
+        text: "Haces solo lo suficiente para cubrir",
+        explicacion: "Hacer lo mínimo necesario para aprobar la clase puede ayudarte a pasar, pero también puede limitar tu aprendizaje y desarrollo académico. Esta opción refleja una actitud de conformismo.",
+        determinacion: -1,
+        alegria: 0,
+        apoyo: 0,
+        salud: 0,
+        dinero: 0,
+        tiempo: 0
+      },
+      {
+        optionID: 540,
+        text: "Buscas llevar la materia en otro grupo con un profesor diferente",
+        explicacion: "Cambiar de grupo y buscar un profesor diferente puede mejorar tu experiencia de aprendizaje si encuentras un ambiente más adecuado para tus necesidades. Esta opción refleja tu disposición para tomar medidas proactivas en tu educación.",
+        determinacion: 2,
+        alegria: 1,
+        apoyo: 0,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      },
+      {
+        optionID: 541,
+        text: "Estudias por tu cuenta para complementar lo que no aprendes en clase",
+        explicacion: "Estudiar por tu cuenta muestra iniciativa y autodeterminación. Esta opción puede ayudarte a llenar los vacíos en tu aprendizaje y asegurarte de que estás adquiriendo los conocimientos necesarios.",
+        determinacion: 3,
+        alegria: 1,
+        apoyo: 0,
+        salud: 0,
+        dinero: 0,
+        tiempo: -1
+      }
+    ]
+  },
+  {
+    questionID: 155,
+    kind: "académico",
+    text: "A pesar de que te has esforzado, tu rendimiento académico no es el adecuado. ¿Qué haces?",
+    imageName: "academic_struggle",
+    options: [
+      {
+        optionID: 542,
+        text: "Dejas de entrar a clases y buscas otras actividades que te hagan sentir mejor como estar con tus amigos, jugar fútbol o ir a fiestas",
+        explicacion: "Dejar de asistir a clases y buscar actividades placenteras puede proporcionar alivio temporal, pero no aborda la causa subyacente de tus problemas académicos y puede afectar negativamente tu futuro educativo.",
+        determinacion: -2,
+        alegria: 1,
+        apoyo: -2,
+        salud: 1,
+        dinero: 0,
+        tiempo: 1
+      },
+      {
+        optionID: 543,
+        text: "Hablas con tus padres para dejar de ir a la escuela y aprender un oficio o ponerte a trabajar",
+        explicacion: "Hablar con tus padres sobre dejar la escuela para aprender un oficio o trabajar puede ser una decisión difícil pero práctica en algunos casos. Esta opción puede ofrecerte una vía alternativa para el éxito personal y profesional. Aprender un oficio te permite adquirir habilidades prácticas y entrar al mercado laboral más rápido, lo cual puede ser satisfactorio y económicamente beneficioso. Sin embargo, es importante considerar que esta decisión también puede limitar tus opciones de educación superior y algunas oportunidades profesionales a largo plazo. Discutirlo con tus padres puede ayudarte a evaluar las ventajas y desventajas, y asegurarte de que estás tomando una decisión informada y apoyada.",
+        determinacion: 1,
+        alegria: 0,
+        apoyo: 1,
+        salud: 0,
+        dinero: 1,
+        tiempo: 0
+      },
+      {
+        optionID: 544,
+        text: "Decepcionado de ti, recurres a las drogas o el alcohol",
+        explicacion: "Recurrir a las drogas o el alcohol es una respuesta destructiva a los problemas académicos que puede tener consecuencias graves para tu salud y bienestar. Es importante buscar ayuda y apoyo en lugar de recurrir a sustancias.",
+        determinacion: -3,
+        alegria: -2,
+        apoyo: -3,
+        salud: -3,
+        dinero: -1,
+        tiempo: -1
+      },
+      {
+        optionID: 545,
+        text: "Aceptas que tal vez avances más lento que tus compañeros, pero decides no rendirte",
+        explicacion: "Aceptar tu propio ritmo y decidir no rendirte demuestra una gran fortaleza y determinación. Reconocer tus limitaciones y seguir esforzándote es crucial para tu desarrollo personal y académico.",
+        determinacion: 3,
+        alegria: 1,
+        apoyo: 2,
+        salud: 1,
+        dinero: 0,
+        tiempo: -1
+      }
+    ]
+  }                  
 ];
