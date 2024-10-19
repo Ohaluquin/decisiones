@@ -102,11 +102,12 @@ function actualizarQuestionCard() {
 // Función que muestra una explicación a la opción elegida
 function showExplanation() {
   deshabilitarBotones();
-  let option;
+  let option, option_index;
   if (pregunta.kind === "azar") {
+    option_index = 1;
     option = pregunta.options[0];
   } else {
-    let option_index = document.querySelector(
+    option_index = document.querySelector(
       'input[type="radio"]:checked'
     ).value;
     option = pregunta.options[option_index - 1];
@@ -115,6 +116,10 @@ function showExplanation() {
     else if(evaluacion<-1) incorrectSound.play();
     document.getElementById("radioptions").classList.add("hidden"); 
   }
+  // Convertir option_index (1, 2, 3, 4) en A, B, C, D
+  let letras = ['A', 'B', 'C', 'D'];
+  let letraOpcion = letras[option_index - 1]; // Restamos 1 porque los índices de arrays empiezan en 0  
+  registrarRespuesta(pregunta.questionID, letraOpcion); // REGISTRAR LA RESPUESTA
   let evaluacion = `Determinación: ${option.determinacion}
           <br>Alegría: ${option.alegria}
           <br>Apoyo: ${option.apoyo}
@@ -174,7 +179,7 @@ function siguiente() {
 // Función coloca el gif de la ficha en la casilla correspondiente
 function colocarFichaEnCasilla(casillaIndex) {
   stepsSound.play();
-  if (casillaIndex >= 3) { //casillas.length) {
+  if (casillaIndex >= casillas.length) {
     // Fin del juego
     getFeedback();
     document.getElementById("summaryModal").style.display = "block";
@@ -215,7 +220,7 @@ diceImage.addEventListener("click", function () {
         colocarFichaEnCasilla(contador);
         if (i == diceRoll) {
           actualizarQuestionCard();
-          setTimeout(() => {centerBtn();}, 1500); // 2000 milliseconds = 2 seconds          
+          setTimeout(() => {centerBtn();}, 1500);     
         }
       }, i * 500);
     }
@@ -240,6 +245,9 @@ function getFeedbackAC(atributo, change) {
 
 // Función que solicita el feedback de los atributos del player
 function getFeedback() {
+  let cadenaBinaria = codificarRespuestas(respuestas);
+  let codigoBase64 = binarioABase64(cadenaBinaria);
+  document.getElementById("codigoRespuestas").innerText = `Código: ${codigoBase64}`;
   var determinationChange = player.determinacion - initialDetermination;
   var determinationFeedback = getFeedbackAC("Determinación", determinationChange);
   var alegriaChange = player.alegria - initialAlegria;
@@ -271,4 +279,40 @@ function mostrarPerfil() {
     document.getElementById("user_stats").style.display = "none";
     document.getElementById("siguiente").style.display = "block";
   }, 4000);
+}
+
+function codificarRespuestas(respuestas) {
+  let cadenaBinaria = '';
+  respuestas.forEach((respuesta) => {
+    // Convertir número de pregunta a binario (8 bits)
+    let preguntaBin = respuesta.pregunta.toString(2).padStart(8, '0');
+    // Convertir opción a binario (2 bits)
+    let opcionBin = '';
+    switch (respuesta.opcion) {
+      case 'A': opcionBin = '00'; break;
+      case 'B': opcionBin = '01'; break;
+      case 'C': opcionBin = '10'; break;
+      case 'D': opcionBin = '11'; break;
+    }
+    // Concatenar número de pregunta y opción
+    cadenaBinaria += preguntaBin + opcionBin;
+  });
+  return cadenaBinaria;
+}
+
+function binarioABase64(cadenaBinaria) {
+  // Convertir la cadena binaria en bloques de 8 bits a bytes
+  let byteArray = [];
+  for (let i = 0; i < cadenaBinaria.length; i += 8) {
+    let byte = cadenaBinaria.substring(i, i + 8);
+    byteArray.push(parseInt(byte, 2)); // Convertir a entero de 8 bits
+  }
+  // Crear un buffer a partir del array de bytes
+  let buffer = new Uint8Array(byteArray);
+  // Codificar el buffer a Base 64 usando btoa (browser built-in)
+  return btoa(String.fromCharCode.apply(null, buffer));
+}
+
+function registrarRespuesta(preguntaID, letraOpcion) {
+  respuestas.push({ pregunta: preguntaID, opcion: letraOpcion });
 }
