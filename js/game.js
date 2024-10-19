@@ -174,7 +174,7 @@ function siguiente() {
 // Función coloca el gif de la ficha en la casilla correspondiente
 function colocarFichaEnCasilla(casillaIndex) {
   stepsSound.play();
-  if (casillaIndex >= casillas.length) {
+  if (casillaIndex >= 3) { //casillas.length) {
     // Fin del juego
     getFeedback();
     document.getElementById("summaryModal").style.display = "block";
@@ -258,6 +258,9 @@ function getFeedback() {
   document.getElementById("saludFeedback").innerText = saludFeedback;
   document.getElementById("tiempoFeedback").innerText = tiempoFeedback;
   document.getElementById("dineroFeedback").innerText = dineroFeedback;
+  var gifElement = document.getElementById("animatedGif");
+  gifElement.src = animatedGif;
+  gifElement.style.display = "block";
 }
 
 function mostrarPerfil() {

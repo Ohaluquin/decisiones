@@ -98,20 +98,31 @@
     <div id="summaryModal" class="modal">
       <div class="modal-content">
         <h4>¡Felicidades por completar Decisiones y Azares!</h4>
-        <p>Así es como se modificaron tus atributos:</p>
-        <p id="determinacionFeedback"></p>
-        <p id="alegriaFeedback"></p>
-        <p id="apoyoFeedback"></p>
-        <p id="saludFeedback"></p>
-        <p id="dineroFeedback"></p>
-        <p id="tiempoFeedback"></p>
+        <!-- Contenedor de flexbox -->
+        <div id="feedbackContainer" class="flex-container">
+          <!-- Contenedor del GIF animado a la izquierda -->
+          <div id="gifContainer" class="flex-item gif">
+            <img id="animatedGif" style="display:none;" />
+          </div>
+          <!-- Contenedor de los feedbacks a la derecha -->
+          <div id="feedbackMessages" class="flex-item feedback">
+            <p>Así es como se modificaron tus atributos:</p>
+            <p id="determinacionFeedback"></p>
+            <p id="alegriaFeedback"></p>
+            <p id="apoyoFeedback"></p>
+            <p id="saludFeedback"></p>
+            <p id="dineroFeedback"></p>
+            <p id="tiempoFeedback"></p>
+          </div>        
+        </div>        
         <br />
-        <p Este juego fue desarrollado por Óscar Hugo Álvarez Luquín></p>
-        <p con el apoyo de chatGPT, stable diffusion, udio, DALL-E y photoshop></p>        
+        <p>Este juego fue desarrollado por Óscar Hugo Álvarez Luquín</p>
+        <p>con asistencia de IA generativa: chatGPT+, stable diffusion, udio y audioGen</p>
         <br />
         <a href="select_player.html">Jugar de nuevo</a>
       </div>
     </div>
+    
     <div id="diceModal" class="modal dice">
       <div class="modal-content">
         <p>¡Has caído en una casilla de azar! Toca el dado para ver si se te aplica la carta:</p>

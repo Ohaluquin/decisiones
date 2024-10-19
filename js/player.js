@@ -17,11 +17,11 @@ function actualizarPlayerCard() {
   document.getElementById("letreroImagen").innerHTML = "" + letreroImagen;
   // After 1 second (the duration of the transition), set the source of the original image element
   // to the new image, make it visible, and hide the new image element.
-  setTimeout(function () {
-    imgElement.src = animatedGif;
-    imgElement.style.opacity = 1;
-    newImgElement.style.opacity = 0;
-  }, 2000);
+  //setTimeout(function () {
+  //  imgElement.src = animatedGif;
+  //  imgElement.style.opacity = 1;
+  //  newImgElement.style.opacity = 0;
+  //}, 2000);
 }
 
 // Función que cambia de color las barras de atributos del personaje

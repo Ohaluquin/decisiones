@@ -474,21 +474,6 @@ progress.green::-moz-progress-bar {
   transition: opacity 1s ease;
 }
 
-.modal {
-  display: none;
-  color: #ddd;
-  position: fixed;
-  background-color: #0c69f3;
-  padding: 3px;
-  border-radius: 1rem;
-  width: 50%; /* Puedes ajustar este valor según tus necesidades */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
 .nombre {
   font-size: 2rem;
   font-style: bold;
@@ -581,3 +566,63 @@ progress.green::-moz-progress-bar {
     width: 70%;
   }
 }
+
+.modal {
+  display: none;
+  color: #ddd;
+  position: fixed;
+  background-color: #0c69f3;
+  padding: 20px; /* Aumentar el padding para dar más espacio */
+  border-radius: 1rem;
+  width: 50%; /* Ajustar ancho del modal para que los elementos tengan más espacio */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);  
+}
+
+/* Para mejorar la legibilidad del texto */
+.modal p {
+  color: #fff; /* Asegúrate de que el texto sea completamente blanco para contraste */
+}
+
+/* Contenedor principal de los feedbacks y el GIF */
+.flex-container {
+  display: flex;
+  justify-content: flex-start; /* Para crear espacio entre el GIF y los feedbacks */
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  gap: 30px; /* Espacio entre el GIF y los mensajes */
+  margin-top: 20px;
+}
+
+/* Flex item para el GIF */
+.flex-item.gif {
+  flex: 0 0 200px;
+  text-align: center; /* Centrar el GIF dentro de su contenedor */
+}
+
+/* Ajustar tamaño del GIF si es necesario */
+#gifContainer img {
+  max-width: 200px; /* Cambia este valor según el tamaño del GIF */
+  height: auto;
+}
+
+/* Flex item para los mensajes */
+.flex-item.feedback {
+  flex: 1; /* Ocupará más espacio que el GIF */
+}
+
+#feedbackMessages p {
+  margin: 5px 0; /* Ajusta el espacio entre los mensajes */
+}
+
+/* Diseño de la modal para centrar el contenido */
+.modal-content {
+  max-width: 800px; /* Limitar el ancho de la modal para que no ocupe toda la pantalla */
+  margin: auto;
+  padding: 20px;
+  background-color: #0c69f3;
+  border-radius: 8px;
+}
+
