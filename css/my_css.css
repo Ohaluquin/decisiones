@@ -236,6 +236,15 @@
   border: 0.1rem solid rgb(242, 207, 124);
 }
 
+#control-panel {
+  display: flex; /* Organiza los elementos en una fila */
+  justify-content: center; /* Centra los elementos en el div */
+  align-items: center; /* Alinea los elementos verticalmente */
+  gap: 20px; /* Espacio entre los elementos */
+  margin-top: 10px; /* Un poco de espacio arriba del div */
+  max-height: 5em;
+}
+
 .contextos {
   width: 90%;
   height: 90%;
@@ -260,8 +269,8 @@
 }
 
 #dado {
-  width: 20%;
-  height: 15%;
+  width: 15%;  
+  height: 5em;
 }
 
 #ficha {
@@ -624,5 +633,84 @@ progress.green::-moz-progress-bar {
   padding: 20px;
   background-color: #0c69f3;
   border-radius: 8px;
+}
+
+#ver-atributos-toggle, #intercambiar-atributos {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: block;
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#ver-atributos-toggle:hover, #intercambiar-atributos:hover {
+  background-color: #45a049;
+}
+
+button#confirmar-intercambio, .close {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button#confirmar-intercambio:hover, .close:hover {
+  background-color: #45a049;
+}
+
+/* Asegurar que el select y labels sean visibles con tu esquema de colores */
+.atributos label {
+  color: #fff;
+}
+
+select {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Alinear el botón de cerrar correctamente dentro del modal */
+.modal .close {
+  position: absolute;
+  top: 10px; /* Espacio desde la parte superior del modal */
+  right: 10px; /* Espacio desde la parte derecha del modal */
+  background-color: #f44336; /* Rojo para indicar el cierre */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.modal .close:hover {
+  background-color: #d32f2f; /* Más oscuro al pasar el cursor */
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.close-modal:hover {
+  background-color: darkred;
 }
 

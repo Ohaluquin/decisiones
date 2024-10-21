@@ -14,14 +14,7 @@ function actualizarPlayerCard() {
   // Set the source of the new image element to the new image, and make it visible.
   newImgElement.src = getImagePath();
   newImgElement.style.opacity = 1;
-  document.getElementById("letreroImagen").innerHTML = "" + letreroImagen;
-  // After 1 second (the duration of the transition), set the source of the original image element
-  // to the new image, make it visible, and hide the new image element.
-  //setTimeout(function () {
-  //  imgElement.src = animatedGif;
-  //  imgElement.style.opacity = 1;
-  //  newImgElement.style.opacity = 0;
-  //}, 2000);
+  document.getElementById("letreroImagen").innerHTML = "" + letreroImagen;  
 }
 
 // Función que cambia de color las barras de atributos del personaje
@@ -191,5 +184,5 @@ function mostrarValor(atributo, valor) {
   setTimeout(function () {
     // Después de 2 segundos, borra el contenido del elemento span
     span.textContent = "";
-  }, 4000);
+  }, 4000);  
 }

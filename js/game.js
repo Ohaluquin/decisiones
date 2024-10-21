@@ -31,15 +31,16 @@ const playMusic = (music) => {
 function actualizarQuestionCard() {
   let category;
   if(contador > 55) playMusic(endMusic);
+  else if (contador % 3 === 2) {
+    category = "personal";
+    playMusic(personalMusic);
+  }
   else if (contador % 7 === 0) {
     category = "azar";
     playMusic(randomMusic);
   } else if (contador % 3 === 1) {
     category = "académico";
-    playMusic(academicMusic);
-  } else if (contador % 3 === 2) {
-    category = "personal";
-    playMusic(personalMusic);
+    playMusic(academicMusic);   
   } else if (contador % 3 === 0) {
     category = "social";
     playMusic(socialMusic);
@@ -127,7 +128,11 @@ function showExplanation() {
           <br>Dinero: ${option.dinero}
           <br>Tiempo: ${option.tiempo}
       `;
-  document.getElementById("explicacion").innerHTML = "<b>" + option.text + ":</b> " + option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;      
+  if (pregunta.kind === "azar") {    
+    document.getElementById("explicacion").innerHTML = "<b>A veces, el azar interviene en nuestras vidas sin darnos la oportunidad de elegir:</b> " + option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;      
+  } else {
+    document.getElementById("explicacion").innerHTML = "<b>" + option.text + ":</b> " + option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;      
+  }
   actualizarPlayer(option);
   actualizarPlayerCard();
   mostrarPerfil();
@@ -136,7 +141,7 @@ function showExplanation() {
   if (option.apoyo) mostrarValor("apoyo", option.apoyo);
   if (option.salud) mostrarValor("salud", option.salud);
   if (option.dinero) mostrarValor("dinero", option.dinero);
-  if (option.tiempo) mostrarValor("tiempo", option.tiempo);
+  if (option.tiempo) mostrarValor("tiempo", option.tiempo);  
 }
 
 // Función que deshabilita los botones de las opciones, se llama cuando el usuario ya eligió una opción
@@ -230,6 +235,7 @@ diceImage.addEventListener("click", function () {
 
 //Si el dado está activo muestra el gif animado
 diceImage.addEventListener("mouseover", function () {
+  verificarAtributos();
   if (dado_activo) diceImage.src = "img/dado-animado.gif";
 });
 
@@ -274,11 +280,91 @@ function getFeedback() {
 function mostrarPerfil() {
   pageSound.play();
   document.getElementById("user_stats").style.display = "block";
-  document.getElementById("siguiente").style.display = "none";
+  document.getElementById("siguiente").style.display = "none";  
   setTimeout(() => {
     document.getElementById("user_stats").style.display = "none";
     document.getElementById("siguiente").style.display = "block";
   }, 4000);
+}
+
+function mostrarPerfilToggle() {
+  const tarjeta = document.getElementById("user_stats"); // ID de la tarjeta de atributos
+  const boton = document.getElementById("ver-atributos-toggle"); // ID del botón de toggle
+  if (!atributosVisibleToggle) {
+      tarjeta.style.display = "block"; // Mostrar tarjeta
+      boton.innerHTML = "Ocultar Atributos"; // Cambiar texto del botón
+      atributosVisibleToggle = true;
+  } else {
+      tarjeta.style.display = "none"; // Ocultar tarjeta
+      boton.innerHTML = "Ver Atributos"; // Cambiar texto del botón
+      atributosVisibleToggle = false;
+  }
+}
+
+// Abre el modal de intercambio
+function intercambiarAtributos() {
+  // Verificar si la tarjeta de atributos está visible y cerrarla si es así
+  if (document.getElementById("user_stats").style.display === "block") {
+    mostrarPerfilToggle();
+    }
+  document.getElementById("intercambio-modal").style.display = "block";
+}
+
+// Cierra el modal de intercambio
+function cerrarIntercambio() {
+  document.getElementById("intercambio-modal").style.display = "none";
+}
+
+// Realiza el intercambio de atributos
+function realizarIntercambio() {
+  const atributoADisminuir = document.getElementById("atributo-a-disminuir").value;
+  const atributoAAumentar = document.getElementById("atributo-a-aumentar").value;
+  if (atributoADisminuir === atributoAAumentar) {
+      alert("No puedes intercambiar el mismo atributo.");
+      return;
+  }
+  // Verificar que el atributo a disminuir tenga al menos 3 puntos
+  if (player[atributoADisminuir.toLowerCase()] < 3) {
+      alert(`No tienes suficientes puntos en ${atributoADisminuir} para disminuir.`);
+      return;
+  }
+  player[atributoADisminuir.toLowerCase()] -= 2;
+  player[atributoAAumentar.toLowerCase()] += 1;  
+  cerrarIntercambio();
+  actualizarPlayerCard();
+  mostrarPerfilToggle();
+}
+
+function mostrarModalFinal(atributoPerdido) {
+  // Asigna el atributo perdido al mensaje del modal
+  document.getElementById("atributo-perdido").textContent = atributoPerdido;
+  // Usa concatenación para asignar la imagen correspondiente al atributo perdido
+  let imagenAtributo = getImagePath();
+  // Asigna la imagen seleccionada al src del modal
+  document.getElementById("imagen-perdida").src = imagenAtributo;
+  // Muestra el modal
+  document.getElementById("modal-final-triste").style.display = "block";
+}
+
+function verificarAtributos() {
+  if (player.alegria <= 0) {
+      mostrarModalFinal("alegria");
+  } else if (player.tiempo <= 0) {
+      mostrarModalFinal("tiempo");
+  } else if (player.dinero <= 0) {
+      mostrarModalFinal("dinero");
+  } else if (player.salud <= 0) {
+      mostrarModalFinal("salud");
+  } else if (player.determinacion <= 0) {
+      mostrarModalFinal("determinacion");
+  } else if (player.apoyo <= 0) {
+      mostrarModalFinal("apoyo");
+  }
+}
+
+function reiniciarJuego() {
+  document.getElementById("modal-final-triste").style.display = "none";
+  window.location.href = "select_player.html";
 }
 
 function codificarRespuestas(respuestas) {
