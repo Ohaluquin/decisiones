@@ -714,3 +714,7 @@ select {
   background-color: darkred;
 }
 
+#imagen-perdida {
+  max-width: 80%;
+  max-height: 60%;
+}

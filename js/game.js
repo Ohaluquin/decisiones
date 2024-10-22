@@ -336,13 +336,10 @@ function realizarIntercambio() {
 }
 
 function mostrarModalFinal(atributoPerdido) {
-  // Asigna el atributo perdido al mensaje del modal
-  document.getElementById("atributo-perdido").textContent = atributoPerdido;
-  // Usa concatenación para asignar la imagen correspondiente al atributo perdido
-  let imagenAtributo = getImagePath();
-  // Asigna la imagen seleccionada al src del modal
-  document.getElementById("imagen-perdida").src = imagenAtributo;
-  // Muestra el modal
+  dado_activo = false;  
+  document.getElementById("atributo-perdido").textContent = atributoPerdido;  
+  let imagenAtributo = getImagePath();  
+  document.getElementById("imagen-perdida").src = imagenAtributo;  
   document.getElementById("modal-final-triste").style.display = "block";
 }
 
