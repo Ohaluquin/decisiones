@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jugar con Amigos</title>
-  <link rel="stylesheet" href="css/my_css.css" />
+  <link rel="stylesheet" href="css/css_with_friends.css" />
   <link rel="icon" href="data:," />
 </head>
 
@@ -15,64 +15,73 @@
     <div class="body-container">
       <!-- Sección de selección de tipo de pregunta (Center) -->
       <div id="center" class="centrado" style="display: block;">
-        <h1>Selecciona el tipo de pregunta:</h1>                          
+        <h1>Selecciona el tipo de pregunta:</h1>
         <div class="card-decks">
           <!-- Botones para seleccionar el tipo de pregunta -->
           <div class="deck">
-          <img src="img/personal.png" class="key card20" onclick="cargarPregunta('personal')">
-          <span id="personal-count" class="card-count">10</span>
+            <img src="img/Categorias/personal.png" class="key card20" onclick="cargarPregunta('personal')">
+            <span id="personal-count" class="card-count">10</span>
           </div>
           <div class="deck">
-          <img src="img/social.png" class="key card20" onclick="cargarPregunta('social')">
-          <span id="social-count" class="card-count">10</span>
+            <img src="img/Categorias/social.png" class="key card20" onclick="cargarPregunta('social')">
+            <span id="social-count" class="card-count">10</span>
           </div>
           <div class="deck">
-          <img src="img/academico.png" class="key card20" onclick="cargarPregunta('académico')">
-          <span id="académico-count" class="card-count">10</span>
+            <img src="img/Categorias/académico.png" class="key card20" onclick="cargarPregunta('académico')">
+            <span id="académico-count" class="card-count">10</span>
           </div>
           <div class="deck">
-          <img src="img/azar.png" class="key card20" onclick="cargarPregunta('azar')">
-          <span id="azar-count" class="card-count">10</span>
+            <img src="img/Categorias/azar.png" class="key card20" onclick="cargarPregunta('azar')">
+            <span id="azar-count" class="card-count">10</span>
           </div>
-        </div>      
-      <h1>Solicitar atributo:</h1>
-      <div>
-        <!-- Botones para seleccionar el tipo de atributo -->
-        <button class="key determinacion" onclick="godQuestion('determinacion')">Determinación</button>
-        <button class="key alegria" onclick="godQuestion('alegria')">Alegria</button>
-        <button class="key salud" onclick="godQuestion('salud')">Salud</button>
-        <button class="key apoyo" onclick="godQuestion('apoyo')">Apoyo</button>
-        <button class="key tiempo" onclick="godQuestion('tiempo')">Tiempo</button>
-        <button class="key dinero" onclick="godQuestion('dinero')">Dinero</button>
+        </div>
+        <div class="atributos-container">
+          <h1>Solicitar atributo:</h1>
+          <img src="img/Iconos/determinacion.png" class="icono-atributo" onclick="godQuestion('determinacion')"
+            alt="Determinación">
+          <img src="img/Iconos/alegria.png" class="icono-atributo" onclick="godQuestion('alegria')" alt="Alegría">
+          <img src="img/Iconos/salud.png" class="icono-atributo" onclick="godQuestion('salud')" alt="Salud">
+          <img src="img/Iconos/apoyo.png" class="icono-atributo" onclick="godQuestion('apoyo')" alt="Apoyo">
+          <img src="img/Iconos/tiempo.png" class="icono-atributo" onclick="godQuestion('tiempo')" alt="Tiempo">
+          <img src="img/Iconos/dinero.png" class="icono-atributo" onclick="godQuestion('dinero')" alt="Dinero">
+        </div>
       </div>
-    </div>
 
-    <div id="right" class="part centrado hidden" style="display: none;">
-      <div class="card">
-        <h3 id="pregunta"></h3>
-        <img src="img/inicio.png" alt="Presiona el dado para iniciar" id="foto-pregunta" />
-        <br />
-        <div class="options">
-          <div id="radioptions">
-            <input type="radio" id="option1" name="option" value="1" />
-            <label for="option1" id="option1_text"></label><br />
-
-            <input type="radio" id="option2" name="option" value="2" />
-            <label for="option2" id="option2_text"></label><br />
-
-            <input type="radio" id="option3" name="option" value="3" />
-            <label for="option3" id="option3_text"></label><br />
-
-            <input type="radio" id="option4" name="option" value="4" />
-            <label for="option4" id="option4_text"></label><br />
+      <div id="right" class="part centrado hidden" style="display: none;">
+        <div class="card">
+          <div class="contenido-pergamino">
+            <h3 id="pregunta" class="titulo-pregunta"></h3>
+            <img src="img/inicio.png" alt="Imagen de contexto" id="foto-pregunta" class="imagen-contexto" />
+            <div class="options">
+              <div id="radioptions" class="opciones-marcadas">
+                <label><input type="radio" id="option1" name="option" value="1" /> <span
+                    id="option1_text"></span></label><br />
+                <label><input type="radio" id="option2" name="option" value="2" /> <span
+                    id="option2_text"></span></label><br />
+                <label><input type="radio" id="option3" name="option" value="3" /> <span
+                    id="option3_text"></span></label><br />
+                <label><input type="radio" id="option4" name="option" value="4" /> <span
+                    id="option4_text"></span></label><br />
+              </div>
+            </div>
+            <p id="explicacion" class="explicacion-pergamino"></p>
+            <div id="evaluacion-final" class="evaluacion" style="display: none;">
+              <h3>Evaluación:</h3>
+              <div class="atributos-evaluacion">
+                <div class="atributo"><img src="img/Iconos/determinacion.png" alt="Determinación"><span id="eva-det">0</span></div>
+                <div class="atributo"><img src="img/Iconos/alegria.png" alt="Alegría"><span id="eva-ale">0</span></div>
+                <div class="atributo"><img src="img/Iconos/apoyo.png" alt="Apoyo"><span id="eva-apo">0</span></div>
+                <div class="atributo"><img src="img/Iconos/salud.png" alt="Salud"><span id="eva-sal">0</span></div>
+                <div class="atributo"><img src="img/Iconos/dinero.png" alt="Dinero"><span id="eva-din">0</span></div>
+                <div class="atributo"><img src="img/Iconos/tiempo.png" alt="Tiempo"><span id="eva-tie">0</span></div>
+              </div>
+            </div>
+            <button class="key boton-siguiente" id="siguiente"
+              onclick="centerBtn(); actualizarContadores();">Siguiente</button>
           </div>
-          <hr>
-          <p id="explicacion"></p>
-          <button class="key centrado" id="siguiente" onclick="centerBtn(); actualizarContadores();">Siguiente</button>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <script src="database/questions.js"></script>

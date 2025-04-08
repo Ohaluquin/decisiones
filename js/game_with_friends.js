@@ -9,6 +9,9 @@ const diceSound = new Audio("sounds/dice.mp3");
 // Función para cargar una pregunta basada en el tipo seleccionado
 function cargarPregunta(category) {
   document.getElementById("explicacion").innerHTML = "";
+  document.getElementById("foto-pregunta").style.display = "block";
+  document.getElementById("evaluacion-final").style.display = "none";
+
   let filteredQuestions = preguntas.filter(
     (pregunta) => pregunta.kind === category
   );
@@ -57,6 +60,10 @@ function cargarPregunta(category) {
 // Función que muestra una explicación a la opción elegida
 function showExplanation() {
   deshabilitarBotones();
+
+  // Ocultar imagen de contexto
+  document.getElementById("foto-pregunta").style.display = "none";
+
   let option;
   if (pregunta.kind === "azar") {
     option = pregunta.options[0];
@@ -67,14 +74,20 @@ function showExplanation() {
     option = pregunta.options[option_index - 1];  
     document.getElementById("radioptions").classList.add("hidden");  
   }
-  let evaluacion = `Determinación: ${option.determinacion}
-          <br>Alegría: ${option.alegria}
-          <br>Apoyo: ${option.apoyo}
-          <br>Salud: ${option.salud}
-          <br>Dinero: ${option.dinero}
-          <br>Tiempo: ${option.tiempo}
-      `;
-  document.getElementById("explicacion").innerHTML = "<b>" + option.text + ":</b> " + option.explicacion + "<br><h2>Evaluación:</h2>" + evaluacion;  
+
+  // Mostrar retroalimentación
+  document.getElementById("explicacion").innerHTML =
+    "<br /><b>" + option.text + ":</b><br /><br /> " + option.explicacion + "<br /><br />";
+
+  // Mostrar evaluación con íconos
+  mostrarEvaluacion({
+    determinacion: option.determinacion,
+    alegria: option.alegria,
+    apoyo: option.apoyo,
+    salud: option.salud,
+    dinero: option.dinero,
+    tiempo: option.tiempo
+  });
 }
 
 // Función que deshabilita los botones de las opciones, se llama cuando el usuario ya eligió una opción
@@ -119,6 +132,24 @@ function actualizarContadores() {
     }
     document.getElementById(`${categoria}-count`).innerText = filteredQuestions.length;
   });
+}
+
+function mostrarEvaluacion(evals) {
+  const evaDiv = document.getElementById("evaluacion-final");
+  evaDiv.style.display = "block";
+
+  const asigna = (id, val) => {
+    const span = document.getElementById(id);
+    span.innerText = val;
+    span.style.color = val > 0 ? "green" : (val < 0 ? "red" : "black");
+  };
+
+  asigna("eva-det", evals.determinacion);
+  asigna("eva-ale", evals.alegria);
+  asigna("eva-apo", evals.apoyo);
+  asigna("eva-sal", evals.salud);
+  asigna("eva-din", evals.dinero);
+  asigna("eva-tie", evals.tiempo);
 }
 
 // Inicializar contadores al cargar la página

@@ -1,0 +1,280 @@
+.body-container {
+  /* principal */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 98vh;
+  position: absolute;
+  background: rgba(220, 215, 206, 0.65);
+}
+
+.container-background {
+  /* Para la imagen de fondo de principal */
+  background-image: url("../img/login.png");
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Opción para que la imagen permanezca fija al desplazarse */
+}
+
+.card_over_image {
+  /* Para el contenedor arriba de la imagen*/
+  position: absolute;
+  width: 40rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  color: rgb(0, 0, 0);
+  font-size: medium;
+  font-weight: bold;
+}
+
+.card70 {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.part {
+  width: 70%;
+  height: 98vh;
+}
+
+#center {
+  display: none;
+}
+
+.card {
+  width: 95%;
+  margin: 0 auto;
+  border: 1rem solid rgb(42, 119, 80);
+  padding: 3px;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  font-size: small;
+  min-height: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.card.red {
+  border: 1rem solid rgb(231, 18, 18);
+}
+
+.card.blue {
+  border: 1rem solid #0d5cd3;
+}
+
+.card.green {
+  border: 1rem solid #098434;
+}
+
+.card.yellow {
+  border: 1rem solid #f4cc3b;
+}
+
+.card img {
+  width: 80%;
+  max-width: 30vh;
+  max-height: 30vh;
+  aspect-ratio: 1/1;
+  display: block;
+  margin: 0 auto;
+  border: 0.1rem solid rgb(111, 202, 209);
+}
+
+.card-decks {
+  display: flex;
+  justify-content: space-around;
+}
+
+.deck {
+  width: 16%;
+}
+
+.card-count {
+  position: relative;
+  bottom: 11%;
+  right: -45%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+  width: 30px;
+  text-align: center;
+}
+
+.centrado {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.card20 {
+  width: 96%;
+  margin: 0 auto;
+  border: 0.5rem solid rgb(42, 119, 80);
+  padding: 3px;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.part {
+  width: 100%;
+}
+
+.atributos label {
+  color: #fff;
+}
+
+.atributos-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.icono-atributo {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.contenido-pergamino {
+  text-align: center;
+  width: 100%;
+}
+
+.titulo-pregunta {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.imagen-contexto {
+  width: 250px;
+  height: auto;
+  margin: 10px 0 20px 0;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.opciones-marcadas label {
+  display: block;
+  margin: 4px 0;
+  font-size: 14px;
+  text-align: left;
+  padding-left: 30px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.explicacion-pergamino {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 16px;
+  color: #333;
+}
+
+.boton-siguiente {
+  margin-top: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  background-color: #005f73;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.atributos-evaluacion {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.atributo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+}
+
+.atributo img {
+  width: 70px;
+  height: 70px;
+  border: #000;
+}
+
+.card {
+  background-image: url("../img/fondo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  border-radius: 18px;
+  max-width: 640px;
+  max-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+    max-width: 95vw;
+    max-height: none;
+  }
+
+  .imagen-contexto {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .atributos-evaluacion {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .atributo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .boton-siguiente {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .titulo-pregunta {
+    font-size: 16px;
+  }
+
+  .explicacion-pergamino {
+    font-size: 14px;
+  }
+
+  .icono-atributo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .atributos-container {
+    gap: 10px;
+  }
+
+  .deck {
+    width: 22%;
+  }
+
+  .card20 {
+    width: 90%;
+  }
+}
