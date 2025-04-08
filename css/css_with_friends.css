@@ -47,14 +47,20 @@
 .card {
   width: 95%;
   margin: 0 auto;
-  border: 1rem solid rgb(42, 119, 80);
-  padding: 3px;
+  border: 0.3rem solid rgb(9, 10, 10);
   border-radius: 1rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   font-size: small;
   min-height: 90%;
   max-height: 90%;
   overflow: auto;
+  background-image: url("../img/fondo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  max-width: 640px;
+  max-height: 400px;
 }
 
 .card.red {
@@ -118,7 +124,7 @@
 .card20 {
   width: 96%;
   margin: 0 auto;
-  border: 0.5rem solid rgb(42, 119, 80);
+  border: 0.1rem solid rgb(35, 43, 39);
   padding: 3px;
   border-radius: 1rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -213,17 +219,6 @@
   width: 70px;
   height: 70px;
   border: #000;
-}
-
-.card {
-  background-image: url("../img/fondo.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 20px;
-  border-radius: 18px;
-  max-width: 640px;
-  max-height: 400px;
 }
 
 @media (max-width: 768px) {
