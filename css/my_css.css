@@ -40,7 +40,7 @@
 }
 
 .container-background { /* Para la imagen de fondo de principal */
-  background-image: url("../img/login.png");
+  background-image: url("../img/login.webp");
   height: 100vh;
   background-position: center center;  
   background-size: cover;
@@ -115,15 +115,8 @@
   align-items: center;
 }
 
-.bg-register-image {
-  background: url("../img/register.png");
-  background-position: center;
-  background-size: cover;
-  border-radius: 1rem;
-}
-
 .bg-login-image {
-  background: url("../img/login.png");
+  background: url("../img/login.webp");
   background-position: center;
   background-size: cover;
   border-radius: 1rem;
@@ -401,7 +394,6 @@
 
 
 #logo {
-  width: 90%;
   height: 50%;
   margin: 0 auto;
   border: 0.1rem solid rgb(162, 46, 17);

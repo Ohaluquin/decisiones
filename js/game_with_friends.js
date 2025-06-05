@@ -38,8 +38,8 @@ function cargarPregunta(category) {
     document.getElementById("option3_text").innerHTML = pregunta.options[2].text;
     document.getElementById("option4_text").innerHTML = pregunta.options[3].text;
   }
-  document.getElementById("foto-pregunta").src = "img/Preguntas/" + pregunta.imageName + ".png";
-  document.getElementById("foto-pregunta").alt = "img/Preguntas/" + pregunta.imageName + ".png";
+  document.getElementById("foto-pregunta").src = "img/Preguntas/" + pregunta.imageName + ".webp";
+  document.getElementById("foto-pregunta").alt = "img/Preguntas/" + pregunta.imageName + ".webp";
   habilitarBotones();
   const card = document.querySelector(".card");
   card.classList.remove("red", "blue", "green", "yellow");

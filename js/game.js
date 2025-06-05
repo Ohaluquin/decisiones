@@ -82,9 +82,9 @@ function actualizarQuestionCard() {
       pregunta.options[3].text;
   }
   document.getElementById("foto-pregunta").src =
-    "img/Preguntas/" + pregunta.imageName + ".png";
+    "img/Preguntas/" + pregunta.imageName + ".webp";
   document.getElementById("foto-pregunta").alt =
-    "img/Preguntas/" + pregunta.imageName + ".png";
+    "img/Preguntas/" + pregunta.imageName + ".webp";
   const card = document.querySelector(".card");
   card.classList.remove("red", "blue", "green", "yellow");
   if (pregunta.kind === "personal") {
@@ -213,7 +213,7 @@ function colocarFichaEnCasilla(casillaIndex) {
 diceImage.addEventListener("click", function () {  
   if (dado_activo) {
     diceSound.play();
-    document.getElementById("tablero").src = "img/tablero.png";
+    document.getElementById("tablero").src = "img/tablero.webp";
     habilitarBotones();
     turno++;
     let diceRoll = Math.floor(Math.random() * 4) + 1;

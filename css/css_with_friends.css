@@ -10,7 +10,7 @@
 
 .container-background {
   /* Para la imagen de fondo de principal */
-  background-image: url("../img/login.png");
+  background-image: url("../img/login.webp");
   height: 100vh;
   background-position: center center;
   background-size: cover;
@@ -54,7 +54,7 @@
   min-height: 90%;
   max-height: 90%;
   overflow: auto;
-  background-image: url("../img/fondo.png");
+  background-image: url("../img/fondo.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

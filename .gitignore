@@ -1,0 +1,27 @@
+ 
+# Ignorar carpeta del generador
+generador_tarjetas/
+
+# Ignorar entornos virtuales (Python)
+venv/
+.env/
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar configuración local de editores
+.vscode/
+.idea/
+
+# Ignorar dependencias de Node (si usas JavaScript)
+node_modules/
+
+# Archivos de producción
+dist/
+build/
