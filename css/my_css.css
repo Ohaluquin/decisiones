@@ -1,6 +1,6 @@
 .index_body { /* Index */
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
   height: 98vh;
   margin: 0;
   background-color: rgb(27, 85, 45);
@@ -12,7 +12,7 @@
   justify-content: center;
   background-color: blue;
   text-align: center;
-  width: 80%;
+  width: 90vw;
   height: 80%;
   margin: 0 auto;
   color: #ebdcdc;
@@ -394,7 +394,7 @@
 
 
 #logo {
-  height: 60%;
+  height: 40%;
   margin: 0 auto;
   border: 0.1rem solid rgb(162, 46, 17);
   background-color: rgb(215, 118, 0);
