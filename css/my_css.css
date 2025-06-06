@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 98vh;
   margin: 0;
-  background-color: rgb(72, 72, 213);
+  background-color: rgb(27, 85, 45);
 }
 
 .index_container { /* Index */
@@ -72,8 +72,7 @@
 }
 
 .bg-gradient-primary {    /*color de fondo del menú */
-  background-color: #0c69f3;
-  background-image: linear-gradient(180deg, #1b4886 10%, #085bff 100%);
+  background: linear-gradient(to bottom, #8a0d1f, #2c5631);
   background-size: cover;  
 }
 
@@ -289,7 +288,8 @@
 }
 
 .key {
-  background-color: #fff;
+  background-color: #27662e;
+  color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px;
@@ -299,11 +299,11 @@
 }
 
 .key:hover {
-  background-color: #ea8282;
+  background-color: #8b1515;
 }
 
 .key:active {
-  background-color: #de1414;
+  background-color: #de1313;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -402,6 +402,12 @@
   border-radius: 1rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
+
+img#logo_iems {
+  width: 80px;
+  margin-top: 10px;
+}
+
 
 #tabla_barras {
   width: 90%;
@@ -709,4 +715,25 @@ select {
 #imagen-perdida {
   max-width: 80%;
   max-height: 60%;
+}
+
+footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+footer img.iems-footer-logo {
+  width: 60px;
+  height: auto;
+}
+
+footer p {
+  flex: 1;
+  text-align: center;
+  font-size: 0.9em;
+  color: #f0f0f0;
+  margin: 10px 0;
 }

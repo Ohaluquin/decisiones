@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Instrucciones - Decisiones y Azares</title>
-  <link rel="stylesheet" href="css/css_with_friends.css" />
   <style>
-    .instrucciones-contenido {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
-      text-align: center;
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #8a0d1f, #2c5631);
+      display: flex;
+      flex-direction: column;
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
     }
 
+    .logos-instrucciones {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding-top: 20px;
+    }
+
+    .logos-instrucciones img {
+      height: 100px;
+    }
+
+    .instrucciones-contenido {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
     .instrucciones-contenido h1 {
-      font-size: 1.5em;
-      color: #264653;
-      margin-bottom: 15px;
+      font-size: 1.7em;
+      color: #8a0d1f;
+      margin-bottom: 20px;
     }
 
     .instrucciones-contenido p {
       font-size: 1em;
       line-height: 1.6em;
       margin-bottom: 20px;
-      color: #333;
+      color: #222;
     }
 
     .boton-inicio {
       margin-top: 30px;
       padding: 12px 25px;
-      font-size: 14px;
+      font-size: 15px;
       border-radius: 10px;
-      background-color: #007f5f;
+      background-color: #2c5631;
       color: white;
       border: none;
       cursor: pointer;
@@ -43,37 +68,40 @@
     }
 
     .boton-inicio:hover {
-      background-color: #2b9348;
+      background-color: #1e3d22;
       transform: scale(1.05);
     }
 
     .nota-final {
       margin-top: 30px;
-      font-size: 0.7em;
-      color: #555;
+      font-size: 0.8em;
+      color: #444;
       font-style: italic;
     }
   </style>
 </head>
 
 <body>
-  <div class="container-background">
-    <div class="body-container">
-      <div class="instrucciones-contenido">
-        <h1>Instrucciones</h1>
-        <p>
-          Para jugar <strong>Decisiones y Azares</strong>, necesitas el <strong>juego físico</strong>, que contiene un instructivo, el tablero, un dado y las fichas que representan los atributos de cada jugador. 
-        </p>
-        <p>
-          En esta versión digital se presentan las preguntas y sus consecuencias. Sin embargo, los movimientos en el tablero, la gestión de fichas y la dinámica del juego deben realizarse en el mundo real.        
-        </p>
-        <button class="boton-inicio" onclick="window.location.href='with_friends.html'">Ir al juego</button>
-        <p class="nota-final">
-          *Este juego utiliza personajes, imágenes y situaciones inspiradas en la realidad, adaptadas con fines educativos.
-        </p>
-      </div>
-    </div>
+  <div class="logos-instrucciones">
+    <img src="img/logo.webp" alt="Logo del juego" />
+    <img src="img/iems-logo.webp" alt="Logo IEMS" />
+  </div>
+
+  <div class="instrucciones-contenido">
+    <h1>Instrucciones</h1>
+    <p>
+      Para jugar <strong>Decisiones y Azares</strong>, necesitas el <strong>juego físico</strong>, que contiene un
+      instructivo, el tablero, un dado y las fichas que representan los atributos de cada jugador.
+    </p>
+    <p>
+      Esta versión digital presenta únicamente las preguntas y sus consecuencias. La gestión de fichas, los movimientos
+      en el tablero y la dinámica completa del juego deben realizarse en el mundo real.
+    </p>
+    <button class="boton-inicio" onclick="window.location.href='with_friends.html'">Ir al juego</button>
+    <p class="nota-final">
+      *Este juego utiliza personajes, imágenes y situaciones inspiradas en la realidad, adaptadas con fines educativos.
+    </p>
   </div>
 </body>
-</html>
 
+</html>
