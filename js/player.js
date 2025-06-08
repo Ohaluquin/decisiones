@@ -96,27 +96,27 @@ function getImageName(atributo1, atributo2, atributo3, atributo4, atributo5, atr
     if (minimo == atributo1) {
       necesity = "determinacion";
       letreroImagen = "Indecis@"
-      return "low_determinacion.png";
+      return "low_determinacion.webp";
     } else if (minimo == atributo2) {
       necesity = "alegria";
       letreroImagen = "Triste";
-      return "low_alegria.png";
+      return "low_alegria.webp";
     } else if (minimo == atributo3) {
       necesity = "apoyo";
       letreroImagen = "Aislad@";
-      return "low_apoyo.png";
+      return "low_apoyo.webp";
     } else if (minimo == atributo4) {
       necesity = "salud";
       letreroImagen = "Enferm@";
-      return "low_salud.png";
+      return "low_salud.webp";
     } else if (minimo == atributo5) {
       necesity = "dinero";
       letreroImagen = "Pobre";
-      return "low_dinero.png";
+      return "low_dinero.webp";
     } else {
       necesity = "tiempo";
       letreroImagen = "Apurad@";
-      return "low_tiempo.png";
+      return "low_tiempo.webp";
     }
   }
   // Encuentra el atributo con el valor más alto
@@ -126,22 +126,22 @@ function getImageName(atributo1, atributo2, atributo3, atributo4, atributo5, atr
   if (maximo > 8) {
     if (maximo == atributo1) {
       letreroImagen = "Determinad@";
-      return "high_determinacion.png";
+      return "high_determinacion.webp";
     } else if (maximo == atributo2) {
       letreroImagen = "Alegre";
-      return "high_alegria.png";
+      return "high_alegria.webp";
     } else if (maximo == atributo3) {
       letreroImagen = "Apoyad@";
-      return "high_apoyo.png";
+      return "high_apoyo.webp";
     } else if (maximo == atributo4) {
       letreroImagen = "Saludable";
-      return "high_salud.png";
+      return "high_salud.webp";
     } else if (maximo == atributo5) {
       letreroImagen = "Adinerad@";
-      return "high_dinero.png";
+      return "high_dinero.webp";
     } else {
       letreroImagen = "Libre";
-      return "high_tiempo.png";
+      return "high_tiempo.webp";
     }
   }
   // Calcula el valor promedio de los atributos
@@ -151,13 +151,13 @@ function getImageName(atributo1, atributo2, atributo3, atributo4, atributo5, atr
   // Si el valor promedio es mayor o igual a cierto umbral, devuelve un nombre específico. De lo contrario, devuelve otro nombre.
   if (promedio >= 6) {
     letreroImagen = "Bien";
-    return "high_average.png";
+    return "high_average.webp";
   } else if (promedio >= 5) {
     letreroImagen = "Regular";
-    return "medium_average.png";
+    return "medium_average.webp";
   } else {
     letreroImagen = "Mal";
-    return "low_average.png";
+    return "low_average.webp";
   }
 }
 
