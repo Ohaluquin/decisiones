@@ -15,26 +15,6 @@
     <div class="body-container">
       <!-- Sección de selección de tipo de pregunta (Center) -->
       <div id="center" class="centrado" style="display: block;">
-        <h1>Selecciona el tipo de pregunta:</h1>
-        <div class="card-decks">
-          <!-- Botones para seleccionar el tipo de pregunta -->
-          <div class="deck">
-            <img src="img/Categorias/personal.webp" class="key card20" onclick="cargarPregunta('personal')">
-            <span id="personal-count" class="card-count">10</span>
-          </div>
-          <div class="deck">
-            <img src="img/Categorias/social.webp" class="key card20" onclick="cargarPregunta('social')">
-            <span id="social-count" class="card-count">10</span>
-          </div>
-          <div class="deck">
-            <img src="img/Categorias/académico.webp" class="key card20" onclick="cargarPregunta('académico')">
-            <span id="académico-count" class="card-count">10</span>
-          </div>
-          <div class="deck">
-            <img src="img/Categorias/azar.webp" class="key card20" onclick="cargarPregunta('azar')">
-            <span id="azar-count" class="card-count">10</span>
-          </div>
-        </div>
         <div class="atributos-container">
           <img src="img/Iconos/determinacion.webp" class="icono-atributo" onclick="godQuestion('determinacion')" alt="Determinación">
           <img src="img/Iconos/alegria.webp" class="icono-atributo" onclick="godQuestion('alegria')" alt="Alegría">
@@ -43,6 +23,28 @@
           <img src="img/Iconos/tiempo.webp" class="icono-atributo" onclick="godQuestion('tiempo')" alt="Tiempo">
           <img src="img/Iconos/dinero.webp" class="icono-atributo" onclick="godQuestion('dinero')" alt="Dinero">
         </div>
+        <br><br>
+        <h1>Selecciona el tipo de pregunta:</h1>
+        <div class="card-decks">
+          <!-- Botones para seleccionar el tipo de pregunta -->
+          <div class="deck">
+            <img src="img/Categorias/personal.webp" class="key card20" onclick="cargarPregunta('personal')">
+            <span id="personal-count" class="card-count count-personal">10</span>
+          </div>
+          <div class="deck">
+            <img src="img/Categorias/social.webp" class="key card20" onclick="cargarPregunta('social')">
+            <span id="social-count" class="card-count count-social">10</span>
+          </div>
+          <div class="deck">
+            <img src="img/Categorias/académico.webp" class="key card20" onclick="cargarPregunta('académico')">
+            <span id="académico-count" class="card-count count-academico">10</span>
+          </div>
+          <div class="deck">
+            <img src="img/Categorias/azar.webp" class="key card20" onclick="cargarPregunta('azar')">
+            <span id="azar-count" class="card-count count-azar">10</span>
+          </div>
+        </div>
+
       </div>
 
       <div id="right" class="part centrado hidden" style="display: none;">
