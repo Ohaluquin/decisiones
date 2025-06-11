@@ -96,10 +96,18 @@ h1 {
   max-height: 400px;
 }
 
-.card.red { border: 1rem solid rgb(231, 18, 18); }
-.card.blue { border: 1rem solid #0d5cd3; }
-.card.green { border: 1rem solid #076b2a; }
-.card.yellow { border: 1rem solid #f4cc3b; }
+.card.red {
+  border: 1rem solid rgb(231, 18, 18);
+}
+.card.blue {
+  border: 1rem solid #0d5cd3;
+}
+.card.green {
+  border: 1rem solid #076b2a;
+}
+.card.yellow {
+  border: 1rem solid #f4cc3b;
+}
 
 .card img {
   max-width: 35vh;
@@ -134,17 +142,37 @@ h1 {
 }
 
 .count-personal {
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), rgba(0,0,0,0.1)), #003049;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.2),
+      rgba(0, 0, 0, 0.1)
+    ),
+    #003049;
 }
 .count-social {
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), rgba(0,0,0,0.1)), #9b2226;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.2),
+      rgba(0, 0, 0, 0.1)
+    ),
+    #9b2226;
 }
 .count-academico {
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), rgba(0,0,0,0.1)), #c89f43;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.2),
+      rgba(0, 0, 0, 0.1)
+    ),
+    #c89f43;
   color: black;
 }
 .count-azar {
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), rgba(0,0,0,0.1)), #004d40;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.2),
+      rgba(0, 0, 0, 0.1)
+    ),
+    #004d40;
 }
 
 /* -----------------------------
@@ -244,7 +272,7 @@ h1 {
 ----------------------------- */
 .deck:nth-child(2),
 .deck:nth-child(3) {
-  transform: translateY(25vh);
+  transform: translateY(30vh);
 }
 
 @media (max-width: 768px) {
@@ -310,5 +338,12 @@ h1 {
 
   .card20 {
     width: 90%;
+  }
+}
+
+@media (max-height: 640px), (orientation: landscape) and (max-width: 768px) {
+  .deck:nth-child(2),
+  .deck:nth-child(3) {
+    transform: translateY(0);
   }
 }
