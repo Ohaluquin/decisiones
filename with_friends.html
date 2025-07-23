@@ -15,9 +15,9 @@
     <div class="body-container">
       <!-- Sección de selección de tipo de pregunta (Center) -->
       <div id="center" class="centrado" style="display: block;">
-        <br>
         <div class="atributos-container">
-          <img src="img/Iconos/determinacion.webp" class="icono-atributo" onclick="godQuestion('determinacion')" alt="Determinación">
+          <img src="img/Iconos/determinacion.webp" class="icono-atributo" onclick="godQuestion('determinacion')"
+            alt="Determinación">
           <img src="img/Iconos/alegria.webp" class="icono-atributo" onclick="godQuestion('alegria')" alt="Alegría">
           <img src="img/Iconos/salud.webp" class="icono-atributo" onclick="godQuestion('salud')" alt="Salud">
           <img src="img/Iconos/apoyo.webp" class="icono-atributo" onclick="godQuestion('apoyo')" alt="Apoyo">
@@ -64,31 +64,37 @@
                 <label><input type="radio" id="option4" name="option" value="4" /> <span
                     id="option4_text"></span></label><br />
               </div>
-            </div>
-            <p id="explicacion" class="explicacion-pergamino"></p>
-            <div id="evaluacion-final" class="evaluacion" style="display: none;">
-              <h3>Evaluación:</h3>
-              <div class="atributos-evaluacion">
-                <div class="atributo"><img src="img/Iconos/determinacion.webp" alt="Determinación"><span id="eva-det">0</span></div>
-                <div class="atributo"><img src="img/Iconos/alegria.webp" alt="Alegría"><span id="eva-ale">0</span></div>
-                <div class="atributo"><img src="img/Iconos/apoyo.webp" alt="Apoyo"><span id="eva-apo">0</span></div>
-                <div class="atributo"><img src="img/Iconos/salud.webp" alt="Salud"><span id="eva-sal">0</span></div>
-                <div class="atributo"><img src="img/Iconos/dinero.webp" alt="Dinero"><span id="eva-din">0</span></div>
-                <div class="atributo"><img src="img/Iconos/tiempo.webp" alt="Tiempo"><span id="eva-tie">0</span></div>
+              <div id="instruccionDado" class="instruccion-dado" style="display: none;">
+                <img src="img/dado.webp" alt="Ícono de dado" class="icono-dado" />
+                <p>Lanza un dado. Si cae <strong>par</strong>, elige la opción superior.<br>
+                  Si cae <strong>non</strong>, elige la opción inferior.</p>
               </div>
+              <p id="explicacion" class="explicacion-pergamino"></p>
+              <div id="evaluacion-final" class="evaluacion" style="display: none;">
+                <h3>Evaluación:</h3>
+                <div class="atributos-evaluacion">
+                  <div class="atributo"><img src="img/Iconos/determinacion.webp" alt="Determinación"><span
+                      id="eva-det">0</span></div>
+                  <div class="atributo"><img src="img/Iconos/alegria.webp" alt="Alegría"><span id="eva-ale">0</span>
+                  </div>
+                  <div class="atributo"><img src="img/Iconos/apoyo.webp" alt="Apoyo"><span id="eva-apo">0</span></div>
+                  <div class="atributo"><img src="img/Iconos/salud.webp" alt="Salud"><span id="eva-sal">0</span></div>
+                  <div class="atributo"><img src="img/Iconos/dinero.webp" alt="Dinero"><span id="eva-din">0</span></div>
+                  <div class="atributo"><img src="img/Iconos/tiempo.webp" alt="Tiempo"><span id="eva-tie">0</span></div>
+                </div>
+              </div>
+              <button class="key boton-siguiente" id="siguiente"
+                onclick="centerBtn(); actualizarContadores();">Siguiente</button>
             </div>
-            <button class="key boton-siguiente" id="siguiente"
-              onclick="centerBtn(); actualizarContadores();">Siguiente</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="database/questions.js"></script>
-  <script src="js/config_with_friends.js"></script>
-  <script src="js/select_column.js"></script>
-  <script src="js/game_with_friends.js"></script>
+    <script src="database/questions.js"></script>
+    <script src="js/config_with_friends.js"></script>
+    <script src="js/select_column.js"></script>
+    <script src="js/game_with_friends.js"></script>
 </body>
 
 </html>

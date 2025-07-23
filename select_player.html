@@ -6,12 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Selecciona Personaje</title>
-  <link rel="stylesheet" href="css/my_css.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/character-selector.css" />  
   <link rel="icon" href="data:," />
 </head>
 
 <body>
-  <h1 class="sp_container">Elige tu personaje:<button class="key centrado" onclick=guardar()>Aceptar</button></h1>
+  <h1>Elige tu personaje:<button class="key centrado" onclick=guardar()>Aceptar</button>
+    <img class="title_image" src="img/titulo.webp"/>
+  </h1>
   <div class="sp_container">
     <div id="select_player" class="part centrado">
       <div class="perfil centrado">
@@ -51,98 +54,52 @@
     <div id="girl" class="part">
       <table>
         <tr>
-          <td>
-            <img src="img/personajes/danfer/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('danfer')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/yeye/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('yeye')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/layun/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('layun')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/omarap/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('omarap')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/andrebarret/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('andrebarret')" 
-              class="personaje" />            
-          </td>          
+          <td><img src="img/personajes/danfer/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('danfer')" class="personaje" /></td>
+          <td><img src="img/personajes/yeye/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('yeye')" class="personaje" /></td>
+          <td><img src="img/personajes/layun/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('layun')" class="personaje" /></td>
+          <td><img src="img/personajes/omarap/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('omarap')" class="personaje" /></td>
+          <td><img src="img/personajes/andrebarret/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('andrebarret')" class="personaje" /></td>
         </tr>
         <tr>
-          <td>
-            <img src="img/personajes/chokiskater/medium_average.webp" alt="Botón"
-              onclick="cambiarPersonaje('chokiskater')" class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/chrizdiaz/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('chrizdiaz')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/kzenteno/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('kzenteno')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/mferis/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('mferis')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/shanik/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('shanik')"
-              class="personaje" />
-          </td>          
+          <td><img src="img/personajes/chokiskater/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('chokiskater')" class="personaje" /></td>
+          <td><img src="img/personajes/chrizdiaz/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('chrizdiaz')" class="personaje" /></td>
+          <td><img src="img/personajes/kzenteno/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('kzenteno')" class="personaje" /></td>
+          <td><img src="img/personajes/mferis/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('mferis')" class="personaje" /></td>
+          <td><img src="img/personajes/shanik/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('shanik')" class="personaje" /></td>
         </tr>
         <tr>
-          <td>
-            <img src="img/personajes/edithdz/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('edithdz')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/adrianflores/medium_average.webp" alt="Botón"
-              onclick="cambiarPersonaje('adrianflores')" class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/bonnelv/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('bonnelv')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/jazzbeltran/medium_average.webp" alt="Botón"
-              onclick="cambiarPersonaje('jazzbeltran')" class="personaje" />
-          </td>        
-          <td>
-            <img src="img/personajes/geresco/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('geresco')"
-              class="personaje" />
-          </td>
+          <td><img src="img/personajes/edithdz/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('edithdz')" class="personaje" /></td>
+          <td><img src="img/personajes/adrianflores/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('adrianflores')" class="personaje" /></td>
+          <td><img src="img/personajes/bonnelv/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('bonnelv')" class="personaje" /></td>
+          <td><img src="img/personajes/jazzbeltran/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('jazzbeltran')" class="personaje" /></td>
+          <td><img src="img/personajes/geresco/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('geresco')" class="personaje" /></td>
         </tr>
         <tr>
-          <td>
-            <img src="img/personajes/goguin/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('goguin')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/jmora/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('jmora')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/danilara/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('danilara')"
-              class="personaje" />
-          </td>          
-          <td>
-            <img src="img/personajes/pedroleon/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('pedroleon')"
-              class="personaje" />
-          </td>
-          <td>
-            <img src="img/personajes/willuri/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('willuri')"
-              class="personaje" />
-          </td>
+          <td><img src="img/personajes/goguin/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('goguin')" class="personaje" /></td>
+          <td><img src="img/personajes/jmora/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('jmora')" class="personaje" /></td>
+          <td><img src="img/personajes/danilara/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('danilara')" class="personaje" /></td>
+          <td><img src="img/personajes/pedroleon/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('pedroleon')" class="personaje" /></td>
+          <td><img src="img/personajes/willuri/medium_average.webp" alt="Botón" onclick="cambiarPersonaje('willuri')" class="personaje" /></td>
         </tr>
       </table>
     </div>
   </div>
   <script src="database/personajes.js"></script>
   <script src="js/select_player.js"></script>
+  <script>
+    // Actualizar la clase 'seleccionado' al cambiar de personaje
+    document.addEventListener('DOMContentLoaded', function() {
+      const personajes = document.querySelectorAll('.personaje');
+      personajes.forEach(personaje => {
+        personaje.addEventListener('click', function() {
+          // Remover la clase de todos los personajes
+          personajes.forEach(p => p.classList.remove('seleccionado'));
+          // Agregar la clase al personaje seleccionado
+          this.classList.add('seleccionado');
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

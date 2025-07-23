@@ -2,7 +2,7 @@
 
 // Función que actualiza la visualización de la carta del perfil del jugador
 function actualizarPlayerCard() {
-  document.getElementById("nombre").innerHTML = player.nickname;
+  //document.getElementById("nombre").innerHTML = player.nickname;
   actualizarColorProgress("determinacion");
   actualizarColorProgress("alegria");
   actualizarColorProgress("apoyo");
@@ -14,7 +14,7 @@ function actualizarPlayerCard() {
   // Set the source of the new image element to the new image, and make it visible.
   newImgElement.src = getImagePath();
   newImgElement.style.opacity = 1;
-  document.getElementById("letreroImagen").innerHTML = "" + letreroImagen;  
+  document.getElementById("letreroImagen").innerHTML = "" + letreroImagen;    
 }
 
 // Función que cambia de color las barras de atributos del personaje
@@ -48,7 +48,7 @@ function cargarPlayer() {
     if (personajeElegido === null) return;
     player = { // Crear el objeto player con los datos necesarios
       id: personajeElegido.personajeID,
-      imageName: "animated.gif",
+      imageName: "medium_average.webp",
       determinacion: personajeElegido.determinacion,
       alegria: personajeElegido.alegria,
       apoyo: personajeElegido.apoyo,
@@ -58,8 +58,10 @@ function cargarPlayer() {
       rutaImagen: personajeElegido.rutaImagen,
       preguntas: personajeElegido.preguntas,
       nickname: localStorage.getItem("nombrePersonaje"),
+      historia: personajeElegido.historia,
+      categorias: personajeElegido.categorias,
     };
-    animatedGif = getImagePath();
+    animatedGif = "img/personajes/" + player.rutaImagen + "/" + "animated.gif"; //getImagePath();
     actualizarPlayerCard();
   }
 }

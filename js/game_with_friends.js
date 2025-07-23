@@ -15,23 +15,34 @@ function cargarPregunta(category) {
   let filteredQuestions = preguntas.filter(
     (pregunta) => pregunta.kind === category
   );
-  if (necesity) {//Filtra las preguntas de dios
+  if (necesity) {
+    //Filtra las preguntas de dios
     filteredQuestions = filteredQuestions.filter((pregunta) =>
       pregunta.options.some((option) => option[necesity] >= 1)
     );
     necesity = "";
   }
-  if(filteredQuestions.length ==0) {
+  if (filteredQuestions.length == 0) {
     actualizarContadores();
     return;
-    }
+  }
   pregunta_actual = Math.floor(Math.random() * filteredQuestions.length);
   pregunta = filteredQuestions[pregunta_actual];
   preguntas.splice(preguntas.indexOf(pregunta), 1);
-  document.getElementById("pregunta").innerHTML = "Contexto "+category+":<br><br>"+pregunta.text;
+  document.getElementById("pregunta").innerHTML =
+    "Contexto " + category + ":<br><br>" + pregunta.text;
+
   if (pregunta.kind === "azar") {
-    document.getElementById("radioptions").classList.add("hidden");    
+    document.getElementById("radioptions").classList.remove("hidden");
+    document.getElementById("option1_text").innerHTML = pregunta.options[0].text;
+    document.getElementById("option2_text").innerHTML = pregunta.options[1].text;
+    document.getElementById("option3_text").innerHTML = "";
+    document.getElementById("option4_text").innerHTML = "";
+    document.getElementById("option3").style.display = "none";
+    document.getElementById("option4").style.display = "none";
   } else {
+    document.getElementById("option3").style.display = "inline-block";
+    document.getElementById("option4").style.display = "inline-block";
     document.getElementById("radioptions").classList.remove("hidden");
     document.getElementById("option1_text").innerHTML = pregunta.options[0].text;
     document.getElementById("option2_text").innerHTML = pregunta.options[1].text;
@@ -40,7 +51,14 @@ function cargarPregunta(category) {
   }
   document.getElementById("foto-pregunta").src = "img/Preguntas/" + pregunta.imageName + ".webp";
   document.getElementById("foto-pregunta").alt = "img/Preguntas/" + pregunta.imageName + ".webp";
+
   habilitarBotones();
+  if (pregunta.kind === "azar") {
+    document.getElementById("instruccionDado").style.display = "block";
+  } else {
+    document.getElementById("instruccionDado").style.display = "none";
+  }
+
   const card = document.querySelector(".card");
   card.classList.remove("red", "blue", "green", "yellow");
   if (pregunta.kind === "personal") {
@@ -51,9 +69,8 @@ function cargarPregunta(category) {
     card.classList.add("yellow");
   } else {
     card.classList.add("green");
-    showExplanation(card);
-  }  
-  pageSound.play();  
+  }
+  pageSound.play();
   rightBtn();
 }
 
@@ -65,19 +82,18 @@ function showExplanation() {
   document.getElementById("foto-pregunta").style.display = "none";
 
   let option;
-  if (pregunta.kind === "azar") {
-    option = pregunta.options[0];
-  } else {
-    let option_index = document.querySelector(
-      'input[type="radio"]:checked'
-    ).value;
-    option = pregunta.options[option_index - 1];  
-    document.getElementById("radioptions").classList.add("hidden");  
-  }
+
+  let option_index = document.querySelector('input[type="radio"]:checked').value;
+  option = pregunta.options[option_index - 1];
+  document.getElementById("radioptions").classList.add("hidden");
 
   // Mostrar retroalimentación
   document.getElementById("explicacion").innerHTML =
-    "<br /><b>" + option.text + ":</b><br /><br /> " + option.explicacion + "<br /><br />";
+    "<br /><b>" +
+    option.text +
+    ":</b><br /><br /> " +
+    option.explicacion +
+    "<br /><br />";
 
   // Mostrar evaluación con íconos
   mostrarEvaluacion({
@@ -86,7 +102,7 @@ function showExplanation() {
     apoyo: option.apoyo,
     salud: option.salud,
     dinero: option.dinero,
-    tiempo: option.tiempo
+    tiempo: option.tiempo,
   });
 }
 
@@ -98,6 +114,7 @@ function deshabilitarBotones() {
   document.getElementById("option4").disabled = true;
   nextButton.disabled = false;
   nextButton.style.display = "block";
+  document.getElementById("instruccionDado").style.display = "none";  
 }
 
 // Función que vuelve a habilitar los botones de las opciones, se llama una vez que se puede hacer otra pregunta
@@ -111,7 +128,7 @@ function habilitarBotones() {
   document.getElementById("option1").checked = false;
   document.getElementById("option2").checked = false;
   document.getElementById("option3").checked = false;
-  document.getElementById("option4").checked = false;
+  document.getElementById("option4").checked = false;  
 }
 
 function godQuestion(atributo) {
@@ -120,7 +137,7 @@ function godQuestion(atributo) {
 }
 
 function actualizarContadores() {
-  const categorias = ['personal', 'social', 'académico', 'azar'];
+  const categorias = ["personal", "social", "académico", "azar"];
   categorias.forEach((categoria) => {
     let filteredQuestions = preguntas.filter(
       (pregunta) => pregunta.kind === categoria
@@ -130,7 +147,8 @@ function actualizarContadores() {
         pregunta.options.some((option) => option[necesity] >= 1)
       );
     }
-    document.getElementById(`${categoria}-count`).innerText = filteredQuestions.length;
+    document.getElementById(`${categoria}-count`).innerText =
+      filteredQuestions.length;
   });
 }
 
@@ -141,7 +159,7 @@ function mostrarEvaluacion(evals) {
   const asigna = (id, val) => {
     const span = document.getElementById(id);
     span.innerText = val;
-    span.style.color = val > 0 ? "green" : (val < 0 ? "red" : "black");
+    span.style.color = val > 0 ? "green" : val < 0 ? "red" : "black";
   };
 
   asigna("eva-det", evals.determinacion);

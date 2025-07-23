@@ -1,0 +1,392 @@
+/* Estilos para el selector de personajes */
+body {
+  background: linear-gradient(to bottom, #8a0d1f, #2c5631);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  
+}
+
+/* Contenedor principal */
+.sp_container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: calc(100vh - 40px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Título y botón de aceptar */
+h1 {
+  width: 85%;  
+  color: #eaedf0;
+  text-align: center;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  max-height: 10%;
+}
+
+.perfil {
+  background: rgb(243, 148, 41);
+  border: 0.2rem solid rgb(162, 46, 17);
+  background-color: rgb(219, 150, 65);
+  border-radius: 12px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 15px;
+  width: 300px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: sticky;
+  top: 15px;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.perfil:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.title_image {
+  width: 20%;
+}
+
+#select_player {
+  width: 30%;  
+  height: 80vh;  
+  max-height: 50vw;
+  padding-right: 2%;
+  font-size: 3vh;
+}
+
+/* Imagen del personaje */
+#sel_personaje {
+  width: 85%;  
+  max-width: 30vh;  
+  object-fit: cover;
+  border-radius: 2%;
+  border: 4px solid #3498db;
+  margin: 0 auto 15px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#sel_personaje:hover {
+  transform: scale(1.05);
+}
+
+#tabla_barras {
+  width: 90%;
+}
+
+.tabla_barras {
+  width: 100%;
+}
+
+.tabla_barras td {
+  width: 45%; /* Asegura que la celda ocupa todo el ancho disponible */
+}
+
+.tabla_barras progress {
+  width: 100%; /* Ajusta al 80% del ancho de la celda */
+  max-width: 600px; /* Establece un ancho máximo */
+  min-width: 25px; /* Establece un ancho mínimo */
+}
+
+
+progress {
+  width: 100%;
+  block-size: 0.6em;
+  inline-size: 5em;
+  vertical-align: -0.1em;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+}
+
+progress-bar {
+  background-color: rgb(105, 116, 250);
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: rgb(105, 116, 250);
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: rgb(105, 116, 250);
+}
+
+progress.red::-webkit-progress-value {
+  background-color: red;
+}
+
+progress.red::-moz-progress-bar {
+  background-color: red;
+}
+
+progress.yellow::-webkit-progress-value {
+  background-color: yellow;
+}
+
+progress.yellow::-moz-progress-bar {
+  background-color: yellow;
+}
+
+progress.green::-webkit-progress-value {
+  background-color: green;
+}
+
+progress.green::-moz-progress-bar {
+  background-color: green;
+}
+
+/* Tabla de atributos */
+#tabla_barras {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+#tabla_barras td {
+  padding: 4px 0;
+  vertical-align: middle;
+}
+
+/* Estilos para las barras de progreso */
+progress {
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  background-color: #f0f0f0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+/* Colores para las barras de progreso */
+progress.red::-webkit-progress-value {
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+}
+
+progress.yellow::-webkit-progress-value {
+  background: linear-gradient(to right, #f39c12, #d35400);
+}
+
+progress.green::-webkit-progress-value {
+  background: linear-gradient(to right, #2ecc71, #27ae60);
+}
+
+/* Sección de selección de personajes */
+#girl {
+  flex: 1;
+  min-width: 300px;
+  max-width: 800px;
+  margin: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 50px);
+  padding: 10px 5px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+#girl table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+
+/* Miniaturas de personajes */
+.personaje {
+    width: 75%;
+  height: 75%;
+  
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #bdc3c7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 3px;
+}
+
+.personaje:hover {
+  transform: scale(1.1);
+  border-color: #3498db;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.personaje.seleccionado {
+  border-color: #e74c3c;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px #e74c3c, 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de aceptar */
+.key {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.key:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+  background: linear-gradient(135deg, #27ae60, #219653);
+}
+
+.key:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(46, 204, 113, 0.3);
+}
+
+/* Estilos responsivos */
+/* Ajustes para pantallas medianas */
+@media (max-width: 1200px) {
+  .perfil {
+    width: 280px;
+    padding: 12px;
+  }
+  
+  #girl {
+    max-width: 500px;
+  }
+  
+  .personaje {
+    width: 55px;
+    height: 55px;
+  }
+  
+  #sel_personaje {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Ajustes para tablets */
+@media (max-width: 992px) {
+  .sp_container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 10px;
+  }
+  
+  .perfil {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+    position: static;
+    max-height: none;
+  }
+  
+  #girl {
+    max-width: 100%;
+    max-height: none;
+    margin: 0 auto;
+  }
+  
+  .personaje {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .sp_container {
+    padding: 8px;
+  }
+  
+  .perfil {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 8px;
+  }
+  
+  #sel_personaje {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .personaje {
+    width: 45px;
+    height: 45px;
+    margin: 2px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .key {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+  
+  h1 {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .key {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Animación de carga */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.perfil {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Efecto de selección */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+}
+
+.seleccionado {
+  animation: pulse 1.5s infinite;
+}
+

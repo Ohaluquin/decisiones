@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
 let personaje = 0;
 
 async function inicio() {
-  cargarNombre();
   cambiarPersonaje(personajes[personaje].rutaImagen);
 }
 
@@ -45,24 +44,7 @@ function actualizarColorProgress(atributo) {
   }
 }
 
-function guardarNombre(nombre) {
-  localStorage.setItem('nombrePersonaje', nombre);
-}
-
-function cargarNombre() {
-  const nombre = localStorage.getItem('nombrePersonaje');
-  if (nombre) {
-    document.getElementById('nombre').innerHTML = nombre;
-  }
-}
-
-function editarNombre() {
-  const nombre = document.getElementById('nombreInput').value;
-  guardarNombre(nombre);
-  cargarNombre();
-}
-
 function guardar() {
   localStorage.setItem("personaje_index", personaje.personajeID);
-  window.location.replace("principal.html");
+  window.location.replace("campaña.html");
 }

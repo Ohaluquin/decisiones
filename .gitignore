@@ -1,6 +1,7 @@
  
 # Ignorar carpeta del generador
 generador_tarjetas/
+editorPreguntas/
 
 # Ignorar entornos virtuales (Python)
 venv/
