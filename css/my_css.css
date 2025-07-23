@@ -7,6 +7,9 @@
 }
 
 #gameCanvas {
+
+  max-width: 90vw;
+  max-height: 80vh;
   border-radius: 5%;  
   margin-top: 10px;
   padding: 3px;
@@ -440,7 +443,8 @@ img#logo_iems {
   height: 15rem;
   width: 12rem;  
   z-index: 1;
-  top: 10px;
+  top: unset;
+  bottom: 10px;
   right: 10px;
   background: rgba(255, 248, 232, 0.9);
   border: 2px solid #b0742b;
@@ -981,6 +985,7 @@ footer p {
   font-weight: bold;
   color: #222;
 }
+
 #touch-controls {
   position: absolute;
   bottom: 10px;
@@ -1003,4 +1008,21 @@ footer p {
 
 #touch-controls button:hover {
   background-color: #4caf50;
+}
+
+@media (max-width: 768px) {
+  #touch-controls {
+    bottom: 10px;
+    left: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #touch-controls button {
+    font-size: 2rem;
+    padding: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
 }
