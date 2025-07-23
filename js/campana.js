@@ -1,6 +1,6 @@
 // campaña.js — Modo historia basado en el prototipo rieles.js
-const x_position=220;
-const y_position=100;
+const x_position = 220;
+const y_position = 100;
 
 class CampañaScene extends Scene {
   constructor(game) {
@@ -85,13 +85,12 @@ class CampañaScene extends Scene {
     });
   }
 
-  mostrarPregunta(tipo, callback) {    
-    actualizarQuestionCard(tipo); 
+  mostrarPregunta(tipo, callback) {
+    actualizarQuestionCard(tipo);
     centerBtn();
     // Guardar callback para ejecutarse después de responder
-    siguienteCallback = callback; 
+    siguienteCallback = callback;
   }
-
 
   update(dt) {
     if (this.isFading) return;
@@ -174,10 +173,11 @@ class RielesPlayer extends Sprite {
     this.moveComplete = false;
 
     this.sprites = {
-      idle: this._sheet("img/personaje/idle.png", 3, 9, 120),
-      walk: this._sheet("img/personaje/side.png", 5, 6, 40),
-      back: this._sheet("img/personaje/back.png", 3, 6, 90),
-      front: this._sheet("img/personaje/front.png", 4, 8, 90),
+      idle: this._sheet("img/personaje/idle.webp", 4, 9, 200),
+      walk: this._sheet("img/personaje/side.webp", 5, 6, 40),
+      back: this._sheet("img/personaje/back.webp", 3, 6, 90),
+      front: this._sheet("img/personaje/front.webp", 4, 8, 90),
+      bored: this._sheet("img/personaje/bored.webp", 3, 9, 120),
     };
 
     this.fsm = new StateMachine({
@@ -304,6 +304,23 @@ class RielesPlayer extends Sprite {
     let dx = this.x;
     const dy = this.y;
 
+    // 🔴 Sombra antes del sprite
+    ctx.save();
+    ctx.beginPath();
+    ctx.ellipse(
+      this.x + this.width / 2,
+      this.y + this.height - 10,
+      this.width / 2.8,
+      8,
+      0,
+      0,
+      2 * Math.PI
+    );
+    ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+    ctx.fill();
+    ctx.restore();
+
+    // 🔵 Sprite del personaje
     ctx.save();
     if (this.facing === "right") {
       ctx.scale(-1, 1);
@@ -328,7 +345,7 @@ class RielesPlayer extends Sprite {
 
 document.addEventListener("DOMContentLoaded", () => {
   const game = new Game("gameCanvas", 640, 480);
-  const escena = new CampañaScene(game);
+  window.escena = new CampañaScene(game);
   game.sceneManager.register("campaña", escena);
   game
     .start([
@@ -338,9 +355,37 @@ document.addEventListener("DOMContentLoaded", () => {
       { type: "image", key: "fondo3", src: "img/fondos/fondo3.png" },
       { type: "image", key: "fondo4", src: "img/fondos/fondo4.png" },
       { type: "image", key: "fondo5", src: "img/fondos/fondo5.png" },
-      { type: "image", key: "player", src: "img/personaje/idle.png" },
+      { type: "image", key: "player", src: "img/personaje/idle.webp" },
     ])
     .then(() => {
       game.sceneManager.switch("campaña");
     });
 });
+
+function mover(direccion) {
+  const player = window.escena?.player;
+  if (!player || player.isMoving) return;
+
+  switch (direccion) {
+    case "up":
+      player.facing = "up";
+      player._startMove(0, -64);
+      player.fsm.transition("back");
+      break;
+    case "down":
+      player.facing = "down";
+      player._startMove(0, 64);
+      player.fsm.transition("front");
+      break;
+    case "left":
+      player.facing = "left";
+      player._startMove(-64, 0);
+      player.fsm.transition("walk");
+      break;
+    case "right":
+      player.facing = "right";
+      player._startMove(64, 0);
+      player.fsm.transition("walk");
+      break;
+  }
+}

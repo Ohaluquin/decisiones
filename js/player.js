@@ -2,37 +2,19 @@
 
 // Función que actualiza la visualización de la carta del perfil del jugador
 function actualizarPlayerCard() {
-  //document.getElementById("nombre").innerHTML = player.nickname;
-  actualizarColorProgress("determinacion");
-  actualizarColorProgress("alegria");
-  actualizarColorProgress("apoyo");
-  actualizarColorProgress("salud");
-  actualizarColorProgress("dinero");
-  actualizarColorProgress("tiempo");
   let imgElement = document.getElementById("fotoPersonaje");
   let newImgElement = document.getElementById("fotoPersonaje-nueva");
   // Set the source of the new image element to the new image, and make it visible.
   newImgElement.src = getImagePath();
   newImgElement.style.opacity = 1;
-  document.getElementById("letreroImagen").innerHTML = "" + letreroImagen;    
+  document.getElementById("letreroImagen").innerHTML = "" + letreroImagen;
+  document.getElementById("determinacion").innerText = player.determinacion;    
+  document.getElementById("alegria").innerText = player.alegria;
+  document.getElementById("apoyo").innerText = player.apoyo;
+  document.getElementById("salud").innerText = player.salud;
+  document.getElementById("dinero").innerText = player.dinero;
+  document.getElementById("tiempo").innerText = player.tiempo;
 }
-
-// Función que cambia de color las barras de atributos del personaje
-function actualizarColorProgress(atributo) {
-  document.getElementById(atributo).value = player[atributo];
-  var barra_progress = document.getElementById(atributo);
-  var value = barra_progress.value;
-  var max = barra_progress.max;
-  var percent = (value / max) * 100;
-  barra_progress.classList.remove("red", "yellow", "green");
-  if (percent < 30) {
-    barra_progress.classList.add("red");
-  } else if (percent > 70) {
-    barra_progress.classList.add("green");
-  } else {
-    barra_progress.classList.add("yellow");
-  }
-} 
 
 // Función que lee los datos del personaje elegido, crea el player y llama a que se visualice la tarjeta del perfil del jugador
 function cargarPlayer() {
@@ -175,16 +157,12 @@ function getFicha() {
 
 // Muestra momentaneamente el valor de la evaluacion del elemento en la barra de progreso del atributo
 function mostrarValor(atributo, valor) {
-  var span = document.getElementById(atributo + "-value");
+  var span = document.getElementById(atributo);
   if (valor > 0) {
-    span.textContent = "+" + valor;
-  } else if (valor == 0) {
-    span.textContent = " ";
+    span.style.color = "green";    
+  } else if (valor < 0) {
+    span.style.color = "red";    
   } else {
-    span.textContent = valor;
+    span.style.color = "black";    
   }
-  setTimeout(function () {
-    // Después de 2 segundos, borra el contenido del elemento span
-    span.textContent = "";
-  }, 4000);  
 }

@@ -6,6 +6,13 @@
   background-color: rgb(27, 85, 45);
 }
 
+#gameCanvas {
+  border-radius: 5%;  
+  margin-top: 10px;
+  padding: 3px;
+  background: rgba(220, 215, 206, 0.5);
+}
+
 .index_container { /* Index */
   display: block;
   flex-direction: column;
@@ -64,13 +71,9 @@
   background-size: cover;  
 }
 
-.title-image {
-  display: flex;
-  width: 50%;
-  height: 10%;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 25%;
+.title-image {  
+  height: 10%;  
+  align-items: center;  
 }
 
 .title-image img {
@@ -224,7 +227,7 @@
 }
 
 .perfil {
-  height: 95%;
+  height: 90%;
   width: 90%;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
@@ -233,9 +236,8 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.perfil img {  
-  display: block;
-  margin: 0 auto;
+.perfil img {
+  width: 85%;  
   border-radius: 0.5rem;
   border: 0.1rem solid rgb(242, 207, 124);
 }
@@ -369,20 +371,13 @@
 
 #contenedor_personaje {  
   position: relative;
-  height: 55%;
+  height: 70%;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   border: 0.1rem solid rgb(162, 46, 17);
-  background-color: rgb(215, 118, 0);
+  background-color: rgb(229 140 32);
   padding: 1px;
-  border-radius: 1rem;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-#fotoPersonaje, #fotoPersonaje-nueva {
-  position: absolute;
-  top: 0;
-  left: 0;
+  border-radius: 1rem;  
 }
 
 #select_player {
@@ -412,75 +407,6 @@ img#logo_iems {
   margin-top: 10px;
 }
 
-
-#tabla_barras {
-  width: 90%;
-}
-
-.tabla_barras {
-  width: 100%;
-}
-
-.tabla_barras td {
-  width: 45%; /* Asegura que la celda ocupa todo el ancho disponible */
-}
-
-.tabla_barras progress {
-  width: 100%; /* Ajusta al 80% del ancho de la celda */
-  max-width: 600px; /* Establece un ancho máximo */
-  min-width: 25px; /* Establece un ancho mínimo */
-}
-
-
-progress {
-  width: 100%;
-  block-size: 0.6em;
-  inline-size: 5em;
-  vertical-align: -0.1em;
-}
-
-progress[value] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: none;
-}
-
-progress-bar {
-  background-color: rgb(105, 116, 250);
-}
-
-progress[value]::-webkit-progress-bar {
-  background-color: rgb(105, 116, 250);
-}
-
-progress[value]::-moz-progress-bar {
-  background-color: rgb(105, 116, 250);
-}
-
-progress.red::-webkit-progress-value {
-  background-color: red;
-}
-
-progress.red::-moz-progress-bar {
-  background-color: red;
-}
-
-progress.yellow::-webkit-progress-value {
-  background-color: yellow;
-}
-
-progress.yellow::-moz-progress-bar {
-  background-color: yellow;
-}
-
-progress.green::-webkit-progress-value {
-  background-color: green;
-}
-
-progress.green::-moz-progress-bar {
-  background-color: green;
-}
-
 .transition {
   transition: opacity 1s ease;
 }
@@ -502,24 +428,26 @@ progress.green::-moz-progress-bar {
   height: 10rem;
 }
 
-#letreroImagen {
-  position: absolute; /* Posicionamiento absoluto dentro del contenedor relativo */
-  top: 10px; /* Posición desde la parte superior del contenedor (ajústalo según necesites) */
-  left: 10px; /* Posición desde la izquierda del contenedor (ajústalo según necesites) */
-  background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente (opcional) */
+#letreroImagen {    
   color: #0c69f3;
   padding: 5px; /* Espaciado interno (opcional) */
-  font-size: 1rem; /* Tamaño de fuente (ajústalo según necesites) */
-  z-index: 2; /* Asegura que el letrero aparezca sobre las imágenes */
+  font-size: 1rem; /* Tamaño de fuente (ajústalo según necesites) */  
 }
 
 #user_stats {
   position: absolute;
   padding: 5px;
-  height: 55vh;
-  width: 40%;
-  max-width: 52vh;
+  height: 15rem;
+  width: 12rem;  
   z-index: 1;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 248, 232, 0.9);
+  border: 2px solid #b0742b;
+  border-radius: 12px;
+  padding: 8px;      
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  display: flex;
 }
 
 .card20 {
@@ -539,28 +467,6 @@ progress.green::-moz-progress-bar {
 
   .part {
     width: 100%;
-  }
-
-  #select_player {
-    width: 90%;
-    height: 50vh;
-    max-height: 50vh;
-    font-size: 1rem;
-  }
-
-
-
-  #user_stats {
-    width: 95%;
-    height: 65vh;
-  }
-
-  .perfil {
-    width: 95%;
-  }
-
-  #contenedor_personaje {
-    width: 90%;
   }
 }
 
@@ -698,6 +604,7 @@ select {
   border-radius: 50%;
   width: 30px;
   height: 30px;
+  z-index: 2;
 }
 
 .close-modal:hover {
@@ -1056,3 +963,44 @@ footer p {
   flex-wrap: wrap;
 }
 
+.mini-stats {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  flex-wrap: wrap;  
+}
+
+.mini-stats img {
+  width: 25px;
+  height: 25px;
+}
+
+.mini-stats span {
+  font-size: 0.85rem;
+  margin-right: 6px;
+  font-weight: bold;
+  color: #222;
+}
+#touch-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#touch-controls button {
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #27662e;
+  color: white;
+  box-shadow: 0 0 5px black;
+}
+
+#touch-controls button:hover {
+  background-color: #4caf50;
+}

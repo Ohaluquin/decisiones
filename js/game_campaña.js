@@ -164,13 +164,13 @@ function showExplanation() {
   }
   actualizarPlayer(option);
   actualizarPlayerCard();
-  mostrarPerfil();
-  if (option.determinacion) mostrarValor("determinacion", option.determinacion);
-  if (option.alegria) mostrarValor("alegria", option.alegria);
-  if (option.apoyo) mostrarValor("apoyo", option.apoyo);
-  if (option.salud) mostrarValor("salud", option.salud);
-  if (option.dinero) mostrarValor("dinero", option.dinero);
-  if (option.tiempo) mostrarValor("tiempo", option.tiempo);
+  pageSound.play();  
+  mostrarValor("determinacion", option.determinacion);
+  mostrarValor("alegria", option.alegria);
+  mostrarValor("apoyo", option.apoyo);
+  mostrarValor("salud", option.salud);
+  mostrarValor("dinero", option.dinero);
+  mostrarValor("tiempo", option.tiempo);
   mostrarEvaluacion({
     determinacion: option.determinacion,
     alegria: option.alegria,
@@ -237,26 +237,14 @@ function siguiente() {
   verificarAtributos();
 }
 
-function mostrarPerfil() {
-  pageSound.play();
-  document.getElementById("user_stats").style.display = "block";
-  document.getElementById("siguiente").style.display = "none";
-  setTimeout(() => {
-    document.getElementById("user_stats").style.display = "none";
-    document.getElementById("siguiente").style.display = "block";
-  }, 4000);
-}
-
 function mostrarPerfilToggle() {
   const tarjeta = document.getElementById("user_stats"); // ID de la tarjeta de atributos
   const boton = document.getElementById("btnUserStats"); // ID del botón de toggle
   if (!atributosVisibleToggle) {
-    tarjeta.style.display = "block"; // Mostrar tarjeta
-    boton.innerHTML = "Ocultar Atributos"; // Cambiar texto del botón
+    tarjeta.style.display = "block"; // Mostrar tarjeta  
     atributosVisibleToggle = true;
   } else {
-    tarjeta.style.display = "none"; // Ocultar tarjeta
-    boton.innerHTML = "Ver Atributos"; // Cambiar texto del botón
+    tarjeta.style.display = "none"; // Ocultar tarjeta    
     atributosVisibleToggle = false;
   }
 }

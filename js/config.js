@@ -10,7 +10,7 @@ let initialSalud = 0;
 let initialTiempo = 0;
 let initialDinero = 0;
 let respuestas = [];
-let atributosVisibleToggle = false;
+let atributosVisibleToggle = true;
 
 // Arreglo de coordenadas representando las posiciones donde se debe colocar la ficha
 // en las casillas del tablero del juego.

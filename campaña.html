@@ -12,51 +12,41 @@
 
 <body>
   <div class="body-container bg-gradient-primary">
-    <div id="user_stats" class="part centrado modal" name="atributos">
+    <div id="user_stats" class="part centrado" name="atributos">
       <div class="perfil centrado">
         <button class="close-modal" onclick="mostrarPerfilToggle()">✖</button>
         <div id="contenedor_personaje">
-          <span id="letreroImagen">p</span>
-          <img id="fotoPersonaje" src="" class="transition"
-            style="position:absolute; opacity:1; width: 100%; height: 100%;">
-          <img id="fotoPersonaje-nueva" src="" class="transition"
-            style="position:absolute; opacity:0; width: 100%; height: 100%;">
+          <span id="letreroImagen">Sentimiento</span>
+          <img id="fotoPersonaje" src="" class="transition" />
+          <img id="fotoPersonaje-nueva" src="" class="transition" />
         </div>
-        <hr>
-        <table id="tabla_barras">
-          <tbody class="tabla_barras">
-            <tr>
-              <td>Determinación:</td>
-              <td><progress value="8" max="12" id="determinacion"></progress></td>
-              <td><span id="determinacion-value"></span></td>
-            </tr>
-            <tr>
-              <td>Alegría:</td>
-              <td><progress value="10" max="12" id="alegria"></progress></td>
-              <td><span id="alegria-value"></span></td>
-            </tr>
-            <tr>
-              <td>Apoyo:</td>
-              <td><progress value="8" max="12" id="apoyo"></progress></td>
-              <td><span id="apoyo-value"></span></td>
-            </tr>
-            <tr>
-              <td>Salud:</td>
-              <td><progress value="15" max="12" id="salud"></progress></td>
-              <td><span id="salud-value"></span></td>
-            </tr>
-            <tr>
-              <td>Dinero:</td>
-              <td><progress value="3" max="12" id="dinero"></progress></td>
-              <td><span id="dinero-value"></span></td>
-            </tr>
-            <tr>
-              <td>Tiempo:</td>
-              <td><progress value="18" max="12" id="tiempo"></progress></td>
-              <td><span id="tiempo-value"></span></td>
-            </tr>
-          </tbody>
-        </table>
+        <hr />
+        <div class="mini-stats">
+          <div class="atributo">
+            <img src="img/Iconos/determinacion.webp" />
+            <span id="determinacion">8</span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/alegria.webp" />
+            <span id="alegria">10</span></span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/apoyo.webp" />
+            <span id="apoyo">8</span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/salud.webp" />
+            <span id="salud">15</span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/dinero.webp" />
+            <span id="dinero">3</span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/tiempo.webp" />
+            <span id="tiempo">18</span>
+          </div>
+        </div>
       </div>
     </div>
     <div id="center" class="part centrado">
@@ -66,35 +56,50 @@
           <img src="img/inicio.webp" alt="Imagen de contexto" id="foto-pregunta" class="imagen-contexto" />
 
           <div class="options">
-            <div id="contenedor-dado" style="display: none; text-align: center;">        
-              <img id="gif-dado" src="img/dado_animado.gif" alt="Dado rodando" style="height: 80px; display: none;" />      
-              <button id="btnLanzarDado" onclick="lanzarDado()" class="key center">🎲 Lanzar dado</button>
+            <div id="contenedor-dado" style="display: none; text-align: center">
+              <img id="gif-dado" src="img/dado_animado.gif" alt="Dado rodando" style="height: 80px; display: none" />
+              <button id="btnLanzarDado" onclick="lanzarDado()" class="key center">
+                🎲 Lanzar dado
+              </button>
             </div>
             <div id="radioptions" class="opciones-marcadas">
-              <label><input type="radio" id="option1" name="option" value="1" /> <span
-                  id="option1_text"></span></label><br />
-              <label><input type="radio" id="option2" name="option" value="2" /> <span
-                  id="option2_text"></span></label><br />
-              <label><input type="radio" id="option3" name="option" value="3" /> <span
-                  id="option3_text"></span></label><br />
-              <label><input type="radio" id="option4" name="option" value="4" /> <span
-                  id="option4_text"></span></label><br />
+              <label><input type="radio" id="option1" name="option" value="1" />
+                <span id="option1_text"></span></label><br />
+              <label><input type="radio" id="option2" name="option" value="2" />
+                <span id="option2_text"></span></label><br />
+              <label><input type="radio" id="option3" name="option" value="3" />
+                <span id="option3_text"></span></label><br />
+              <label><input type="radio" id="option4" name="option" value="4" />
+                <span id="option4_text"></span></label><br />
             </div>
           </div>
 
-          <div id="evaluacion-final" class="evaluacion" style="display: none;">
+          <div id="evaluacion-final" class="evaluacion" style="display: none">
             <p id="explicacion" class="explicacion-pergamino"></p>
             <h3>Evaluación:</h3>
             <div class="atributos-evaluacion">
-              <div class="atributo"><img src="img/Iconos/determinacion.webp" alt="Determinación"><span
-                  id="eva-det">0</span></div>
-              <div class="atributo"><img src="img/Iconos/alegria.webp" alt="Alegría"><span id="eva-ale">0</span></div>
-              <div class="atributo"><img src="img/Iconos/apoyo.webp" alt="Apoyo"><span id="eva-apo">0</span></div>
-              <div class="atributo"><img src="img/Iconos/salud.webp" alt="Salud"><span id="eva-sal">0</span></div>
-              <div class="atributo"><img src="img/Iconos/dinero.webp" alt="Dinero"><span id="eva-din">0</span></div>
-              <div class="atributo"><img src="img/Iconos/tiempo.webp" alt="Tiempo"><span id="eva-tie">0</span></div>
+              <div class="atributo">
+                <img src="img/Iconos/determinacion.webp" alt="Determinación" /><span id="eva-det">0</span>
+              </div>
+              <div class="atributo">
+                <img src="img/Iconos/alegria.webp" alt="Alegría" /><span id="eva-ale">0</span>
+              </div>
+              <div class="atributo">
+                <img src="img/Iconos/apoyo.webp" alt="Apoyo" /><span id="eva-apo">0</span>
+              </div>
+              <div class="atributo">
+                <img src="img/Iconos/salud.webp" alt="Salud" /><span id="eva-sal">0</span>
+              </div>
+              <div class="atributo">
+                <img src="img/Iconos/dinero.webp" alt="Dinero" /><span id="eva-din">0</span>
+              </div>
+              <div class="atributo">
+                <img src="img/Iconos/tiempo.webp" alt="Tiempo" /><span id="eva-tie">0</span>
+              </div>
             </div>
-            <button class="close-modal close-card" id="siguiente" onclick="siguiente()">✖</button>
+            <button class="close-modal close-card" id="siguiente" onclick="siguiente()">
+              ✖
+            </button>
           </div>
         </div>
       </div>
@@ -102,28 +107,39 @@
     <div id="right" class="part centrado">
       <div class="game-container">
         <div class="title-image">
-          <img src="img/titulo.webp" alt="Titulo">
-          <button id="btnUserStats" class="key" onclick="mostrarPerfilToggle()">Ver Atributos</button>
+          <button id="btnUserStats" class="key" onclick="mostrarPerfilToggle()">
+            <img src="img/titulo.webp" alt="Titulo" />
+          </button>
         </div>
-        <canvas id="gameCanvas"></canvas>
+        <div class="canvas-container">
+          <canvas id="gameCanvas"></canvas>
+          <div id="touch-controls">
+            <button onclick="mover('up')">↑</button>
+            <button onclick="mover('left')">←</button>
+            <button onclick="mover('down')">↓</button>
+            <button onclick="mover('right')">→</button>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Modal de intercambio de atributos -->
     <div id="modal-intercambio-auto" class="modal">
       <div class="modal-contenido">
-        <button class="close-modal" onclick="document.getElementById('modal-intercambio-auto').style.display='none'">✖</button>
+        <button class="close-modal" onclick="document.getElementById('modal-intercambio-auto').style.display='none'">
+          ✖
+        </button>
         <h2>¡Intercambio de emergencia!</h2>
         <div class="atributos-horizontales">
           <div>
-            <img id="icono-perdido" class="icono-atributo" src="" alt="Perdido">
+            <img id="icono-perdido" class="icono-atributo" src="" alt="Perdido" />
             <p>+1 <span id="nombre-perdido"></span></p>
           </div>
           <div>
-            <img id="icono-disminuido" class="icono-atributo" src="" alt="Disminuido">
+            <img id="icono-disminuido" class="icono-atributo" src="" alt="Disminuido" />
             <p>-2 <span id="nombre-disminuido"></span></p>
           </div>
         </div>
-        <p id="mensaje-intercambio" class="historia-texto"></p>        
+        <p id="mensaje-intercambio" class="historia-texto"></p>
       </div>
     </div>
     <!-- Modal HTML Structure -->
@@ -134,7 +150,7 @@
         <div id="feedbackContainer" class="flex-container">
           <!-- Contenedor del GIF animado a la izquierda -->
           <div id="gifContainer" class="flex-item gif">
-            <img id="animatedGif" style="display:none;" />
+            <img id="animatedGif" style="display: none" />
           </div>
           <!-- Contenedor de los feedbacks a la derecha -->
           <div id="feedbackMessages" class="flex-item feedback">
@@ -149,7 +165,10 @@
         </div>
         <br />
         <p>Este juego fue desarrollado por Hugo Luquín</p>
-        <p>con asistencia de IA generativa: chatGPT+, stable diffusion, udio y audioGen</p>
+        <p>
+          con asistencia de IA generativa: chatGPT+, stable diffusion, udio y
+          audioGen
+        </p>
         <br />
         <a href="select_player.html">Jugar de nuevo</a>
       </div>
@@ -158,33 +177,52 @@
     <!-- Modal para el final -->
     <div id="modal-final-triste" class="modal">
       <span class="close" onclick="reiniciarJuego()">&times;</span>
-      <img src="" alt="Personaje triste" id="imagen-perdida" /> <!-- Esta imagen cambiará según el atributo -->
+      <img src="" alt="Personaje triste" id="imagen-perdida" />
+      <!-- Esta imagen cambiará según el atributo -->
       <h2>¡Lo siento! Has perdido el juego.</h2>
-      <p>Te has quedado sin <span id="atributo-perdido"></span>. No puedes continuar el juego.</p>
+      <p>
+        Te has quedado sin <span id="atributo-perdido"></span>. No puedes
+        continuar el juego.
+      </p>
     </div>
     <div id="modal_historia" class="modal-historia">
       <div class="historia-contenedor">
-        <h2 class="titulo-historia" id="titulo-historia">Tu historia comienza aquí</h2>
+        <h2 class="titulo-historia" id="titulo-historia">
+          Tu historia comienza aquí
+        </h2>
         <div class="historia-flex">
           <div class="columna-izquierda">
-            <img id="historia-img" src="" alt="Personaje" class="imagen-personaje">
+            <img id="historia-img" src="" alt="Personaje" class="imagen-personaje" />
           </div>
           <div class="columna-derecha">
             <div id="historia-texto" class="bloque-historia"></div>
           </div>
         </div>
         <div class="atributos-horizontales">
-          <div class="atributo"><img src="img/Iconos/determinacion.webp"><span id="h_det">5</span></div>
-          <div class="atributo"><img src="img/Iconos/alegria.webp"><span id="h_ale">4</span></div>
-          <div class="atributo"><img src="img/Iconos/apoyo.webp"><span id="h_apo">5</span></div>
-          <div class="atributo"><img src="img/Iconos/salud.webp"><span id="h_sal">4</span></div>
-          <div class="atributo"><img src="img/Iconos/dinero.webp"><span id="h_din">4</span></div>
-          <div class="atributo"><img src="img/Iconos/tiempo.webp"><span id="h_tie">5</span></div>
+          <div class="atributo">
+            <img src="img/Iconos/determinacion.webp" /><span id="h_det">5</span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/alegria.webp" /><span id="h_ale">4</span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/apoyo.webp" /><span id="h_apo">5</span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/salud.webp" /><span id="h_sal">4</span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/dinero.webp" /><span id="h_din">4</span>
+          </div>
+          <div class="atributo">
+            <img src="img/Iconos/tiempo.webp" /><span id="h_tie">5</span>
+          </div>
         </div>
-        <button onclick="cerrarHistoria()" class="btn-comenzar">Comenzar</button>
+        <button onclick="cerrarHistoria()" class="btn-comenzar">
+          Comenzar
+        </button>
       </div>
     </div>
-
   </div>
   <audio id="end-music" src="sounds/Juventud.mp3"></audio>
   <audio id="personal-music" src="sounds/personal.mp3" loop></audio>
