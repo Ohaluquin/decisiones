@@ -30,8 +30,9 @@ const playMusic = (music) => {
 };
 
 function actualizarQuestionCard(tipo) {
+  document.getElementById("user_stats").style.display = "none";
+  document.getElementById("abrirUserStats").style.display = "none";
   let category = tipo;
-  console.log(contador);
   if (contador > 15) {
     playMusic(endMusic);
     getFeedback();
@@ -235,8 +236,25 @@ function siguiente() {
   document.getElementById("foto-pregunta").style.display = "block";
   document.getElementById("evaluacion-final").style.display = "none";
   verificarAtributos();
+  mostrarPerfilToggle(true);
 }
 
+function mostrarPerfilToggle(forzarMostrar = null) {
+  const panel = document.getElementById("user_stats");
+  const boton = document.getElementById("abrirUserStats");
+
+  const estaVisible = panel.style.display !== "none";
+
+  if (forzarMostrar === true || (!estaVisible && forzarMostrar === null)) {
+    panel.style.display = "block";
+    boton.style.display = "none";
+  } else {
+    panel.style.display = "none";
+    boton.style.display = "block";
+  }
+}
+
+/*
 function mostrarPerfilToggle() {
   const tarjeta = document.getElementById("user_stats"); // ID de la tarjeta de atributos
   const boton = document.getElementById("btnUserStats"); // ID del botón de toggle
@@ -247,7 +265,7 @@ function mostrarPerfilToggle() {
     tarjeta.style.display = "none"; // Ocultar tarjeta    
     atributosVisibleToggle = false;
   }
-}
+}*/
 
 function mostrarHistoria() {
   document.getElementById("modal_historia").style.display = "flex";

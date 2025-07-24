@@ -230,8 +230,8 @@
 }
 
 .perfil {
-  height: 90%;
-  width: 90%;
+  height: 95%;
+  width: 95%;
   border: 0.3rem solid rgb(172, 105, 50);
   background-color: rgb(229, 151, 77);
   padding: 1px;
@@ -440,8 +440,8 @@ img#logo_iems {
 #user_stats {
   position: absolute;
   padding: 5px;
-  height: 15rem;
-  width: 12rem;  
+  height: 21rem;
+  width: 19rem;  
   z-index: 1;
   top: unset;
   bottom: 10px;
@@ -890,9 +890,9 @@ footer p {
   background: #fefaf2;
   border: 3px solid #c87c2e;
   border-radius: 20px;
-  padding: 2rem;
-  max-width: 1000px;
-  width: 90%;
+  padding: 0.2rem;
+  max-width: 800px;  
+  max-height: 90vh;
   color: #333;
   font-family: 'Georgia', serif;
 }
@@ -906,7 +906,7 @@ footer p {
 
 .historia-flex {
   display: flex;
-  gap: 2rem;
+  gap: 0.2rem;
   flex-wrap: wrap;
 }
 
@@ -938,12 +938,12 @@ footer p {
 
 .bloque-historia {
   background: #fff8e5;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 10px;
   border: 2px solid #c87c2e;
-  min-height: 200px;
+  min-height: 180px;
   text-align: justify;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .btn-comenzar {
@@ -975,8 +975,8 @@ footer p {
 }
 
 .mini-stats img {
-  width: 25px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
 }
 
 .mini-stats span {
@@ -1026,3 +1026,19 @@ footer p {
     border-radius: 50%;
   }
 }
+
+#abrirUserStats {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+  font-size: 2rem;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  background-color: #27662e;
+  color: white;
+  box-shadow: 2px 2px 5px black;
+  display: none; /* Aparece solo si se cierra manual o auto */
+}
+

@@ -326,17 +326,28 @@ class RielesPlayer extends Sprite {
       ctx.scale(-1, 1);
       dx = -(dx + this.width);
     }
+    // Escalado dinámico según Y (más alto = más pequeño)
+    const escala = 0.8 + 0.2 * (this.y / this.scene.game.canvas.height);
+    const w = this.width * escala;
+    const h = this.height * escala;
+
+    // Ajustar posición para centrar el personaje escalado
+    const cx = dx + (this.width - w) / 2;
+    const cy = dy + (this.height - h);
+
+    // Dibujo final con escala
     ctx.drawImage(
       anim.image,
       col * anim.fw,
       row * anim.fh,
       anim.fw,
       anim.fh,
-      dx,
-      dy,
-      this.width,
-      this.height
+      cx,
+      cy,
+      w,
+      h
     );
+
     ctx.restore();
   }
 }
