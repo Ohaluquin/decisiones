@@ -173,11 +173,10 @@ class RielesPlayer extends Sprite {
     this.moveComplete = false;
 
     this.sprites = {
-      idle: this._sheet("img/personaje/idle.webp", 4, 9, 200),
-      walk: this._sheet("img/personaje/side.webp", 5, 6, 40),
-      back: this._sheet("img/personaje/back.webp", 3, 6, 90),
-      front: this._sheet("img/personaje/front.webp", 4, 8, 90),
-      bored: this._sheet("img/personaje/bored.webp", 3, 9, 120),
+      idle: this._sheet(getPath()+"idle.webp", 4, 9, 200),
+      walk: this._sheet(getPath()+"side.webp", 4, 7, 40),
+      back: this._sheet(getPath()+"back.webp", 2, 8, 90),
+      front: this._sheet(getPath()+"front.webp", 4, 8, 90),      
     };
 
     this.fsm = new StateMachine({
@@ -327,7 +326,7 @@ class RielesPlayer extends Sprite {
       dx = -(dx + this.width);
     }
     // Escalado dinámico según Y (más alto = más pequeño)
-    const escala = 0.8 + 0.2 * (this.y / this.scene.game.canvas.height);
+    const escala = 0.6 + 0.4 * (this.y / 180);
     const w = this.width * escala;
     const h = this.height * escala;
 
@@ -366,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { type: "image", key: "fondo3", src: "img/fondos/fondo3.png" },
       { type: "image", key: "fondo4", src: "img/fondos/fondo4.png" },
       { type: "image", key: "fondo5", src: "img/fondos/fondo5.png" },
-      { type: "image", key: "player", src: "img/personaje/idle.webp" },
+      { type: "image", key: "player", src: getPath()+"idle.webp" },
     ])
     .then(() => {
       game.sceneManager.switch("campaña");

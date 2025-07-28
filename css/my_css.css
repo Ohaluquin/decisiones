@@ -441,7 +441,7 @@ img#logo_iems {
   position: absolute;
   padding: 5px;
   height: 21rem;
-  width: 19rem;  
+  width: 16rem;  
   z-index: 1;
   top: unset;
   bottom: 10px;
@@ -938,12 +938,13 @@ footer p {
 
 .bloque-historia {
   background: #fff8e5;
-  padding: 0.5rem;
+  padding: 2rem;
   border-radius: 10px;
   border: 2px solid #c87c2e;
-  min-height: 180px;
+  min-height: 130px;
   text-align: justify;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
 }
 
 .btn-comenzar {
@@ -975,8 +976,8 @@ footer p {
 }
 
 .mini-stats img {
-  width: 45px;
-  height: 45px;
+  width: 38px;
+  height: 38px;
 }
 
 .mini-stats span {

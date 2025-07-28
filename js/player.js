@@ -17,7 +17,8 @@ function actualizarPlayerCard() {
 }
 
 // Función que lee los datos del personaje elegido, crea el player y llama a que se visualice la tarjeta del perfil del jugador
-function cargarPlayer() {
+function cargarPlayer() {  
+  if(player) return;
   const ID = localStorage.getItem("personaje_index"); // Obtener el índice del personaje elegido desde localStorage
   let personajeElegido = null;
   if (ID !== null) { // Verificar si el índice existe
@@ -145,9 +146,14 @@ function getImageName(atributo1, atributo2, atributo3, atributo4, atributo5, atr
   }
 }
 
+// Función que regresa el nombre de la ruta
+ function getPath() {
+  if(!player) cargarPlayer();
+  return "img/personajes/" + player.rutaImagen + "/";
+}
 // Función que regresa el nombre de la imagen uniendo ruta + nombre_personaje + estado_atributos_jugador
  function getImagePath() {
-  return "img/personajes/" + player.rutaImagen + "/" + player.imageName;
+  return getPath() + player.imageName;
 }
 
 // Función que regresa el nombre de la imagen uniendo ruta + nombre_personaje + estado_atributos_jugador
