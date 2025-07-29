@@ -48,37 +48,37 @@ function actualizarQuestionCard(tipo) {
       }[tipo]
     );
   }
+  
   // Paso 1: filtrar solo por tipo (kind)
-  let tipoFiltradas = preguntas.filter((p) => p.kind === category);
-  // Paso 2: intentar filtrar también por categorías del jugador
-  let filteredQuestions = tipoFiltradas.filter((pregunta) =>
-    pregunta.categorias?.some((cat) => player.categorias.includes(cat))
-  );
+  let tipoFiltradas = preguntas.filter((p) => p.kind === category);  
 
-  // Si no hay preguntas con categorías compatibles, usamos todas las del tipo
-  if (filteredQuestions.length === 0) {
-    filteredQuestions = tipoFiltradas;
-  }
-  // Filtrar las preguntas del jugador
-  let playerQuestions = filteredQuestions.filter((pregunta) =>
+  // Paso 2: Filtrar las preguntas del jugador
+  let playerQuestions = tipoFiltradas.filter((pregunta) =>
     player.preguntas.includes(pregunta.questionID)
-  );
-  if (playerQuestions.length > 0) {
+  );  
+
+  if(playerQuestions.length > 0) {
     // Si hay preguntas del personaje, elige una y la borra
     pregunta_actual = Math.floor(Math.random() * playerQuestions.length);
     preguntaID = playerQuestions[pregunta_actual].questionID;
     player.preguntas = player.preguntas.filter((id) => id !== preguntaID);
-    pregunta = filteredQuestions.find((p) => p.questionID === preguntaID);
+    pregunta = tipoFiltradas.find((p) => p.questionID === preguntaID);
   } else {
-    //Si no hay preguntas del personaje
-    if (turno % god_factor === 0) {
-      //Filtra para ver si hay preguntas de dios
-      godQuestions = filteredQuestions.filter((pregunta) =>
-        pregunta.options.some((option) => option[necesity] >= 1)
+    // Paso 3: intentar filtrar por categorías del jugador
+    let filteredQuestions = tipoFiltradas.filter((pregunta) =>
+       pregunta.categorias?.some((cat) => player.categorias.includes(cat))
+    );    
+
+    // Si no hay preguntas con categorías compatibles, usamos todas las del tipo
+    if (filteredQuestions.length === 0) {filteredQuestions = tipoFiltradas;}
+        
+    //Filtra para ver si hay preguntas Dios
+    godQuestions = filteredQuestions.filter((pregunta) =>
+      pregunta.options.some((option) => option[necesity] >= 1)
       );
-      if (godQuestions.length > 0) filteredQuestions = godQuestions;
-    }
-    // Seleccionar una pregunta al azar de las filtradas (incluyendo las normales si no hay de "dios")
+    if (godQuestions.length > 0) filteredQuestions = godQuestions;    
+    
+    // Seleccionar una pregunta al azar de las filtradas
     pregunta_actual = Math.floor(Math.random() * filteredQuestions.length);
     pregunta = filteredQuestions[pregunta_actual];
   }
@@ -254,19 +254,6 @@ function mostrarPerfilToggle(forzarMostrar = null) {
   }
 }
 
-/*
-function mostrarPerfilToggle() {
-  const tarjeta = document.getElementById("user_stats"); // ID de la tarjeta de atributos
-  const boton = document.getElementById("btnUserStats"); // ID del botón de toggle
-  if (!atributosVisibleToggle) {
-    tarjeta.style.display = "block"; // Mostrar tarjeta  
-    atributosVisibleToggle = true;
-  } else {
-    tarjeta.style.display = "none"; // Ocultar tarjeta    
-    atributosVisibleToggle = false;
-  }
-}*/
-
 function mostrarHistoria() {
   document.getElementById("modal_historia").style.display = "flex";
   document.getElementById("historia-img").src = getImagePath();
@@ -381,8 +368,7 @@ function getFeedback() {
   var tiempoFeedback = getFeedbackAC("Tiempo", tiempoChange);
   var dineroChange = player.dinero - initialDinero;
   var dineroFeedback = getFeedbackAC("Dinero", dineroChange);
-  document.getElementById("determinacionFeedback").innerText =
-    determinationFeedback;
+  document.getElementById("determinacionFeedback").innerText = determinationFeedback;
   document.getElementById("alegriaFeedback").innerText = alegriaFeedback;
   document.getElementById("apoyoFeedback").innerText = apoyoFeedback;
   document.getElementById("saludFeedback").innerText = saludFeedback;

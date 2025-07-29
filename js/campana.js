@@ -24,20 +24,18 @@ class CampañaScene extends Scene {
 
   generarMapaBase() {
     this.locations = {
-      0: { name: "Patio", image: "fondo0", neighbors: { right: 1, up: 5 } },
-      1: {
-        name: "Biblioteca",
-        image: "fondo1",
-        neighbors: { left: 0, down: 2 },
-      },
-      2: {
-        name: "Laboratorio",
-        image: "fondo2",
-        neighbors: { up: 1, right: 3 },
-      },
-      3: { name: "Cafetería", image: "fondo3", neighbors: { left: 2, up: 4 } },
-      4: { name: "Azotea", image: "fondo4", neighbors: { down: 3 } },
-      5: { name: "Puente", image: "fondo5", neighbors: { down: 0 } },
+      0: { name: "Entrada", image: "entrada",  neighbors: { up: 1} },
+      1: { name: "Auditorio", image: "auditorio", neighbors: { up: 2, down: 0 } },
+      2: { name: "Puente", image: "puente", neighbors: { down: 1, left: 4, right: 5 } },                    
+      3: { name: "Puente Semiescolar", image: "puente_semi", neighbors: { down: 6, right:10 } },          
+      4: { name: "Salones", image: "salones", neighbors: { down: 2 } },
+      5: { name: "Bajopuente", image: "bajopuente", neighbors: { up: 7, left: 2, right: 8, down: 9 } },            
+      6: { name: "Cubiculos", image: "cubiculos2", neighbors: { up: 3, down: 9 } },      
+      7: { name: "Servicios Escolares", image: "escolares", neighbors: { down: 5 } },
+      8: { name: "Patio", image: "patio", neighbors: { up: 5, down: 10} },      
+      9: { name: "Puente Techado", image: "puente_techado", neighbors: { down: 5, up: 6 } },      
+      10: { name: "Biblioteca", image: "conciertos", neighbors: { up: 8, down: 11, right: 3 } },            
+      11: { name: "Cancha", image: "cancha", neighbors: { up: 10 } },            
     };
   }
 
@@ -149,6 +147,7 @@ class CampañaScene extends Scene {
       );
     }
     super.draw(ctx);
+    this.drawArrows(ctx);
     if (this.fadeAlpha > 0) {
       ctx.fillStyle = `rgba(0,0,0,${this.fadeAlpha})`;
       ctx.fillRect(0, 0, this.game.canvas.width, this.game.canvas.height);
@@ -158,6 +157,44 @@ class CampañaScene extends Scene {
   _shuffle(arr) {
     return [...arr].sort(() => Math.random() - 0.5);
   }
+
+  drawArrows(ctx) {
+  const loc = this.locations[this.currentId];
+  const directions = Object.keys(loc.neighbors);
+
+  ctx.font = "18px Arial";
+  ctx.fillStyle = "rgba(255,255,255,0.8)";
+  ctx.strokeStyle = "black";
+  ctx.lineWidth = 3;
+  ctx.textAlign = "center";
+
+  directions.forEach(dir => {
+    const nextId = loc.neighbors[dir];
+    const destino = this.locations[nextId].name;
+
+    let x = this.game.canvas.width / 2;
+    let y = this.game.canvas.height / 2;
+
+    switch (dir) {
+      case "up":    y -= 150; break;
+      case "down":  y += 200; break;
+      case "left":  x -= 200; break;
+      case "right": x += 200; break;
+    }
+
+    // Dibujar texto con borde para mayor legibilidad
+    ctx.strokeText(destino, x, y);
+    ctx.fillText(destino, x, y);
+
+    // Dibujar la flecha
+    ctx.strokeText(this.getArrowSymbol(dir), x, y - 20);
+    ctx.fillText(this.getArrowSymbol(dir), x, y - 20);
+  });
+}
+
+getArrowSymbol(dir) {
+  return { up: "↑", down: "↓", left: "←", right: "→" }[dir];
+}
 }
 
 class RielesPlayer extends Sprite {
@@ -358,13 +395,21 @@ document.addEventListener("DOMContentLoaded", () => {
   window.escena = new CampañaScene(game);
   game.sceneManager.register("campaña", escena);
   game
-    .start([
-      { type: "image", key: "fondo0", src: "img/fondos/fondo0.png" },
-      { type: "image", key: "fondo1", src: "img/fondos/fondo1.png" },
-      { type: "image", key: "fondo2", src: "img/fondos/fondo2.png" },
-      { type: "image", key: "fondo3", src: "img/fondos/fondo3.png" },
-      { type: "image", key: "fondo4", src: "img/fondos/fondo4.png" },
-      { type: "image", key: "fondo5", src: "img/fondos/fondo5.png" },
+
+  .start([      
+      { type: "image", key: "auditorio", src: "img/fondos/auditorio.webp" },
+      { type: "image", key: "bajopuente", src: "img/fondos/bajopuente.webp" },      
+      { type: "image", key: "conciertos", src: "img/fondos/conciertos.webp" },
+      { type: "image", key: "cubiculos1", src: "img/fondos/cubiculos1.webp" },
+      { type: "image", key: "cubiculos2", src: "img/fondos/cubiculos2.webp" },      
+      { type: "image", key: "entrada", src: "img/fondos/entrada.webp" },      
+      { type: "image", key: "escolares", src: "img/fondos/escolares.webp" },                  
+      { type: "image", key: "patio", src: "img/fondos/patio.webp" },
+      { type: "image", key: "puente", src: "img/fondos/puente.webp" },
+      { type: "image", key: "puente_semi", src: "img/fondos/puente_semi.webp" },
+      { type: "image", key: "puente_techado", src: "img/fondos/puente_techado.webp" },
+      { type: "image", key: "salones", src: "img/fondos/salones.webp" },      
+      { type: "image", key: "cancha", src: "img/fondos/cancha.webp" },      
       { type: "image", key: "player", src: getPath()+"idle.webp" },
     ])
     .then(() => {

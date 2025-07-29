@@ -7,7 +7,7 @@ function actualizarPlayerCard() {
   // Set the source of the new image element to the new image, and make it visible.
   newImgElement.src = getImagePath();
   newImgElement.style.opacity = 1;
-  document.getElementById("letreroImagen").innerHTML = "" + letreroImagen;
+  document.getElementById("letreroImagen").innerHTML = "Sensación:" + letreroImagen;
   document.getElementById("determinacion").innerText = player.determinacion;    
   document.getElementById("alegria").innerText = player.alegria;
   document.getElementById("apoyo").innerText = player.apoyo;

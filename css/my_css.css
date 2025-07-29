@@ -432,9 +432,9 @@ img#logo_iems {
 }
 
 #letreroImagen {    
-  color: #0c69f3;
+  color: #e6e8ec;
   padding: 5px; /* Espaciado interno (opcional) */
-  font-size: 1rem; /* Tamaño de fuente (ajústalo según necesites) */  
+  font-size: 1.2rem; /* Tamaño de fuente (ajústalo según necesites) */  
 }
 
 #user_stats {
@@ -485,14 +485,15 @@ img#logo_iems {
   color: #fff;
   position: fixed;
   background-color: #0c69f3;
-  padding: 20px; /* Aumentar el padding para dar más espacio */
+  padding: 20px; 
   border-radius: 1rem;
-  width: 50%; /* Ajustar ancho del modal para que los elementos tengan más espacio */
+  width: 50%; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);  
+  z-index: 2;
 }
 
 /* Contenedor principal de los feedbacks y el GIF */
@@ -528,7 +529,7 @@ img#logo_iems {
 
 /* Diseño de la modal para centrar el contenido */
 .modal-content {
-  max-width: 800px; /* Limitar el ancho de la modal para que no ocupe toda la pantalla */
+  max-width: 800px; 
   margin: auto;
   padding: 20px;
   background-color: #0c69f3;
@@ -579,12 +580,11 @@ select {
   border-radius: 5px;
 }
 
-/* Alinear el botón de cerrar correctamente dentro del modal */
 .modal .close {
   position: absolute;
-  top: 10px; /* Espacio desde la parte superior del modal */
-  right: 10px; /* Espacio desde la parte derecha del modal */
-  background-color: #f44336; /* Rojo para indicar el cierre */
+  top: 10px; 
+  right: 10px; 
+  background-color: #f44336; 
   color: white;
   border: none;
   padding: 5px 10px;
@@ -608,7 +608,7 @@ select {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .close-modal:hover {
@@ -734,7 +734,7 @@ footer p {
 }
 
 .titulo-pregunta {
-  font-size: 18px;
+  font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
@@ -749,7 +749,7 @@ footer p {
 .opciones-marcadas label {
   display: block;
   margin: 10px 0 4px;
-  font-size: 14px;
+  font-size: 1.2rem;
   text-align: left;
   padding-left: 30px;
   position: relative;
@@ -758,8 +758,8 @@ footer p {
 .explicacion-pergamino {
   margin-top: 20px;
   font-style: italic;
-  font-size: 16px;
-  color: #333;
+  font-size: 1.2rem;
+  color: #262626;
 }
 
 .boton-siguiente {
@@ -788,7 +788,7 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 
 .atributo img {
@@ -952,7 +952,7 @@ footer p {
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
@@ -981,7 +981,7 @@ footer p {
 }
 
 .mini-stats span {
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   margin-right: 6px;
   font-weight: bold;
   color: #222;

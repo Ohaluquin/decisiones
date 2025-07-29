@@ -5039,11 +5039,11 @@ let preguntas = [
   {
     "questionID": 99,
     "kind": "azar",
-    "text": "Tienes que cuidar a un familiar",
+    "text": "Uno de tus familiares necesita que lo cuides.",
     "imageName": "sick_father",
     "options": [
       {
-        "text": "si",
+        "text": "Tienes que cuidarlo",
         "explicacion": "Aunque cuidar a alguien puede ser agotador y consumir tiempo, también puede fortalecer los lazos familiares y ayudarte a desarrollar empatía y responsabilidad.",
         "salud": 0,
         "alegria": 0,
