@@ -5,7 +5,6 @@ body {
   flex-direction: column;
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  
 }
 
 /* Contenedor principal */
@@ -25,7 +24,7 @@ body {
 
 /* Título y botón de aceptar */
 h1 {
-  width: 85%;  
+  width: 85%;
   color: #eaedf0;
   text-align: center;
   margin-bottom: 0px;
@@ -61,17 +60,17 @@ h1 {
 .title_image {
   width: 20%;
 }
-  
+
 #select_player {
-  width: 30%;    
+  width: 30%;
   padding-right: 2%;
   font-size: 3vh;
 }
 
 /* Imagen del personaje */
 #sel_personaje {
-  width: 85%;  
-  max-width: 30vh;  
+  width: 85%;
+  max-width: 30vh;
   object-fit: cover;
   border-radius: 2%;
   border: 4px solid #3498db;
@@ -101,7 +100,6 @@ h1 {
   max-width: 600px; /* Establece un ancho máximo */
   min-width: 25px; /* Establece un ancho mínimo */
 }
-
 
 progress {
   width: 100%;
@@ -220,9 +218,9 @@ progress.green::-webkit-progress-value {
 
 /* Miniaturas de personajes */
 .personaje {
-    width: 75%;
+  width: 75%;
   height: 75%;
-  
+
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #bdc3c7;
@@ -279,16 +277,16 @@ progress.green::-webkit-progress-value {
     width: 280px;
     padding: 12px;
   }
-  
+
   #girl {
     max-width: 500px;
   }
-  
+
   .personaje {
     width: 55px;
     height: 55px;
   }
-  
+
   #sel_personaje {
     width: 140px;
     height: 140px;
@@ -304,7 +302,6 @@ progress.green::-webkit-progress-value {
 
 /* Ajustes para tablets */
 @media (max-width: 992px) {
- 
   .perfil {
     width: 100%;
     max-width: 400px;
@@ -312,13 +309,13 @@ progress.green::-webkit-progress-value {
     position: static;
     max-height: none;
   }
-  
+
   #girl {
     max-width: 100%;
     max-height: none;
     margin: 0 auto;
   }
-  
+
   .personaje {
     width: 50px;
     height: 50px;
@@ -327,55 +324,65 @@ progress.green::-webkit-progress-value {
 
 /* Ajustes para móviles */
 @media (max-width: 768px) {
-    .sp_container {
+  .sp_container {
     flex-direction: column;
     height: auto;
-    min-height: 100vh;  
+    min-height: 100vh;
     padding: 8px;
   }
-  
+
   .perfil {
     width: 100%;
     max-width: 100%;
     padding: 12px 8px;
   }
-  
+
   #sel_personaje {
     width: 120px;
     height: 120px;
   }
-  
+
   .personaje {
     width: 45px;
     height: 45px;
     margin: 2px;
   }
-  
+
   h1 {
     font-size: 1.5rem;
     margin-bottom: 15px;
   }
-  
+
   .key {
     padding: 8px 20px;
     font-size: 14px;
     margin-top: 10px;
   }
-  
-  h1 {    
+
+  h1 {
     gap: 15px;
-  }    
+  }
 
   #select_player {
-    width: 90%;    
+    width: 90%;
     font-size: 1rem;
+  }
+
+  .title_image {
+    width: 30%;
   }
 }
 
 /* Animación de carga */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .perfil {
@@ -384,12 +391,17 @@ progress.green::-webkit-progress-value {
 
 /* Efecto de selección */
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+  }
 }
 
 .seleccionado {
   animation: pulse 1.5s infinite;
 }
-

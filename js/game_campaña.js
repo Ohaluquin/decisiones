@@ -433,9 +433,9 @@ function lanzarDado() {
   const resultado = Math.floor(Math.random() * 6) + 1;
   document.getElementById("btnLanzarDado").disabled = true;
 
-  const gif = document.getElementById("gif-dado");
-  gif.style.display = "inline-block";
+  const gif = document.getElementById("gif-dado");  
   gif.src = "img/dado.gif?" + new Date().getTime();
+  gif.style.display = "inline-block";
 
   setTimeout(() => {
     const index = resultado % 2 === 0 ? 0 : 1;
@@ -445,6 +445,6 @@ function lanzarDado() {
     // Ahora sí llamar a showExplanation para continuar
     document.getElementById("contenedor-dado").style.display = "none";    
     showExplanation();
-  }, 1500);
-  gif.style.display = "none";
+    gif.style.display = "none";
+  }, 1500);  
 }
