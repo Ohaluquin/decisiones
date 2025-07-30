@@ -30,10 +30,10 @@ class CampañaScene extends Scene {
       3: { name: "Puente Semiescolar", image: "puente_semi", neighbors: { down: 6, right:10 } },          
       4: { name: "Salones", image: "salones", neighbors: { down: 2 } },
       5: { name: "Bajopuente", image: "bajopuente", neighbors: { up: 7, left: 2, right: 8, down: 9 } },            
-      6: { name: "Cubiculos", image: "cubiculos2", neighbors: { up: 3, down: 9 } },      
+      6: { name: "Cubiculos", image: "cubiculos2", neighbors: { up: 9, down: 3 } },      
       7: { name: "Servicios Escolares", image: "escolares", neighbors: { down: 5 } },
       8: { name: "Patio", image: "patio", neighbors: { up: 5, down: 10} },      
-      9: { name: "Puente Techado", image: "puente_techado", neighbors: { down: 5, up: 6 } },      
+      9: { name: "Puente Techado", image: "puente_techado", neighbors: { down: 6, up: 5 } },      
       10: { name: "Biblioteca", image: "conciertos", neighbors: { up: 8, down: 11, right: 3 } },            
       11: { name: "Cancha", image: "cancha", neighbors: { up: 10 } },            
     };

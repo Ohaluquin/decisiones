@@ -433,8 +433,8 @@ img#logo_iems {
 
 #letreroImagen {    
   color: #e6e8ec;
-  padding: 5px; /* Espaciado interno (opcional) */
-  font-size: 1.2rem; /* Tamaño de fuente (ajústalo según necesites) */  
+  padding: 5px; 
+  font-size: 1.2rem; 
 }
 
 #user_stats {
@@ -463,27 +463,6 @@ img#logo_iems {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-@media (max-width: 768px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .part {
-    width: 100%;
-  }
-
-  #summaryModal {
-    width: 98%;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .part {
-    width: 70%;
-  }
-}
-
 .modal {
   display: none;
   color: #fff;
@@ -503,21 +482,22 @@ img#logo_iems {
 /* Contenedor principal de los feedbacks y el GIF */
 .flex-container {
   display: flex;
-  justify-content: flex-start; /* Para crear espacio entre el GIF y los feedbacks */
-  align-items: flex-start; /* Alinea los elementos en la parte superior */
-  gap: 30px; /* Espacio entre el GIF y los mensajes */
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 20px; 
   margin-top: 20px;
+  max-height: 90vh;
 }
 
 /* Flex item para el GIF */
 .flex-item.gif {
   flex: 0 0 200px;
-  text-align: center; /* Centrar el GIF dentro de su contenedor */
+  text-align: center; 
 }
 
 /* Ajustar tamaño del GIF si es necesario */
 #gifContainer img {
-  max-width: 200px; /* Cambia este valor según el tamaño del GIF */
+  max-width: 200px; 
   height: auto;
   border-radius: 10%;
 }
@@ -810,6 +790,15 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .part {
+    width: 100%;
+  }
+
   .card {
     padding: 15px;
     max-width: 95vw;
@@ -868,12 +857,43 @@ footer p {
   .card20 {
     width: 90%;
   }
+
+  .modal-content {  
+    padding: 0px;  
+  }
+
+  #summaryModal {
+    width: 96%;
+    font-size: 0.8rem;
+    gap: 10px;
+  }
+
+  #touch-controls {
+    bottom: 10px;
+    left: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #touch-controls button {
+    font-size: 2rem;
+    padding: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
 }
 
 @media (max-height: 640px), (orientation: landscape) and (max-width: 768px) {
   .deck:nth-child(2),
   .deck:nth-child(3) {
     transform: translateY(0);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .part {
+    width: 70%;
   }
 }
 
@@ -1015,23 +1035,6 @@ footer p {
   background-color: #4caf50;
 }
 
-@media (max-width: 768px) {
-  #touch-controls {
-    bottom: 10px;
-    left: 10px;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #touch-controls button {
-    font-size: 2rem;
-    padding: 15px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-  }
-}
-
 #abrirUserStats {
   position: absolute;
   bottom: 10px;
@@ -1046,4 +1049,3 @@ footer p {
   box-shadow: 2px 2px 5px black;
   display: none; /* Aparece solo si se cierra manual o auto */
 }
-
