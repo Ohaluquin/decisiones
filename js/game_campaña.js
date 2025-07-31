@@ -37,6 +37,7 @@ function actualizarQuestionCard(tipo) {
     playMusic(endMusic);
     getFeedback();
     document.getElementById("summaryModal").style.display = "block";
+    return;
   } else {
     contador++;
     playMusic(
