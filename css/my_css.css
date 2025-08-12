@@ -79,8 +79,16 @@
   align-items: center;  
 }
 
-.title-image img {
-  width: 200px;
+.title-image img {      
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.18));  
+  height: 64px;
+  width: auto;  
+  border: 1px solid #032236;
+  background:#fff; 
+  border-radius:12px; 
+  padding:6px;
+  box-shadow: 0 12px 24px rgba(0,0,0,.22);
+  margin-top: 1em;
 } 
 
 .height-fixed {
@@ -397,7 +405,7 @@
 
 #logo {
   height: 50%;
-  margin: 0 auto;
+  margin: 1em auto;
   border: 0.1rem solid rgb(162, 46, 17);
   background-color: rgb(215, 118, 0);
   padding: 1px;
@@ -408,6 +416,7 @@
 img#logo_iems {
   width: 80px;
   margin-top: 10px;
+  border-radius: 10px;
 }
 
 .transition {

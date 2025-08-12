@@ -17,6 +17,7 @@ personalMusic.volume = 0.2;
 academicMusic.volume = 0.2;
 socialMusic.volume = 0.2;
 randomMusic.volume = 0.2;
+endMusic.volume = 0.2;
 
 let currentMusic = null;
 
@@ -270,6 +271,7 @@ function mostrarHistoria() {
 
 function cerrarHistoria() {
   document.getElementById("modal_historia").style.display = "none";
+  playMusic(endMusic);
 }
 
 function mostrarModalFinal(atributoPerdido) {

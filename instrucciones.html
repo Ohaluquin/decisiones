@@ -9,25 +9,38 @@
 </head>
 
 <body>
-  <div class="logos-instrucciones">
-    <img src="img/logo.webp" alt="Logo del juego" />
-    <img src="img/iems-logo.webp" alt="Logo IEMS" />
-  </div>
+  <!-- Encabezado con título -->
+  <header class="page-head">
+    <img class="game-title" src="img/titulo.webp" alt="Decisiones y Azares" />
+  </header>
 
-  <div class="instrucciones-contenido">
+  <!-- Tarjeta de instrucciones -->
+  <main class="instrucciones-contenido">
+    <h1>Cómo jugar el modo campaña de Decisiones y Azares:</h1>
     <p>
-          <h1>Cómo jugar el modo campaña de Decisiones y Azares:</h1>
-          1. <b>Selecciona un Personaje:</b> Elige un personaje que te represente, cada uno con sus propias condiciones.<br />
-          2. <b>Recorre el plantel:</b> Te aparecerán preguntas de diferentes contextos: Personal, Social, Académico y Azaroso.<br />
-          3. <b>Responde Preguntas:</b> Enfrenta preguntas de opción múltiple. Tus elecciones influirán en tus atributos y modelarán tu viaje en el juego.<br />
-          4. <b>Reflexiona y Aprende:</b> Tras cada decisión, lee la explicación para comprender las posibles repercusiones de tus elecciones en la vida real.<br />
-          5. <b>Finaliza el Juego:</b> El juego termina cuando respondes 15 preguntas. ¿Estás listo para enfrentar las consecuencias de tus decisiones? ¡Buena suerte!<br />
-          </p>
+      1. <b>Selecciona un Personaje</b> que te represente, cada uno con sus propias condiciones.<br />
+      2. <b>Recorre el plantel,</b> en algunas áreas al azar te aparecerán preguntas de opción múltiple.<br />
+      3. <b>Responde las Preguntas.</b> Tus elecciones influirán en tus atributos y modelarán tu viaje en el juego.<br />
+      4. <b>Reflexiona y Aprende:</b> Tras cada decisión, lee la explicación para comprender las posibles repercusiones de tus elecciones en la vida real.<br />
+      5. <b>Finaliza el Juego:</b> El juego termina cuando respondes 15 preguntas.<br />
+      ¿Estás listo para enfrentar las consecuencias de tus decisiones? ¡Buena suerte!
+    </p>
+
     <button class="boton-inicio" onclick="window.location.href='select_player.html'">Comenzar campaña</button>
     <p class="nota-final">
       *Este juego utiliza personajes, imágenes y situaciones inspiradas en la realidad, adaptadas con fines educativos.
     </p>
-  </div>
+  </main>
+
+  <!-- Pie con logo del IEMS -->
+  <footer class="page-foot">
+    <div class="foot-inner">
+      <img class="iems-logo" src="img/iems-logo.webp" alt="IEMS" />
+      <p class="credits">
+        Desarrollado con el apoyo del IEMS · © 2024 Hugo Luquín
+      </p>
+    </div>
+  </footer>
 </body>
 
 </html>

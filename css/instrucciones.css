@@ -12,23 +12,30 @@ body {
   font-family: "Segoe UI", sans-serif;
 }
 
-.logos-instrucciones {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  padding-top: 20px;
+/* Encabezado con título */
+.page-head {
+  display: grid;
+  place-items: center;
+  margin: 18px 0 8px;
 }
 
-.logos-instrucciones img {
-  height: 100px;
+.game-title {    
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.18));
+  width: auto;
+  height: 64px;
+  border-radius: 5%;
+  border: 1px solid #032236;
+  background:#fff; border-radius:12px; padding:6px;
+  box-shadow: 0 12px 24px rgba(0,0,0,.22);
 }
 
+/* Tarjeta de instrucciones */
 .instrucciones-contenido {
-  max-width: 800px;
-  margin: 30px auto;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 35px;
+  max-width: 1000px;
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -58,7 +65,6 @@ body {
   cursor: pointer;
   transition: transform 0.2s;
 }
-
 .boton-inicio:hover {
   background-color: #1e3d22;
   transform: scale(1.05);
@@ -69,4 +75,41 @@ body {
   font-size: 0.8em;
   color: #444;
   font-style: italic;
+}
+
+/* Pie de página con logo del IEMS */
+.page-foot {
+  /*margin-top: auto;*/
+  padding: 12px 0;
+}
+.foot-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+.iems-logo {
+  height: 64px;
+  width: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.credits {
+  text-align: center;
+  color: #f1f1f1;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 560px) {
+  .iems-logo {
+    height: 40px;
+    padding: 4px;
+  }
+  .credits {
+    font-size: 0.8rem;
+  }
 }

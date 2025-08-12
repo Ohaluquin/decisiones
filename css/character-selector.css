@@ -59,6 +59,11 @@ h1 {
 
 .title_image {
   width: 20%;
+  height: 64px;
+  border-radius: 5%;
+  border: 1px solid #032236;
+  background:#fff; border-radius:12px; padding:6px;
+  box-shadow: 0 12px 24px rgba(0,0,0,.22);
 }
 
 #select_player {
