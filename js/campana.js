@@ -27,7 +27,7 @@ class CampañaScene extends Scene {
       0: { name: "Entrada", image: "entrada",  neighbors: { up: 1} },
       1: { name: "Auditorio", image: "auditorio", neighbors: { up: 2, down: 0 } },
       2: { name: "Puente", image: "puente", neighbors: { down: 1, left: 4, right: 5 } },                    
-      3: { name: "Puente Semiescolar", image: "puente_semi", neighbors: { down: 6, right:10 } },          
+      3: { name: "Puente Semiescolar", image: "puente_semi", neighbors: { up: 6, left:10 } },          
       4: { name: "Salones", image: "salones", neighbors: { down: 2 } },
       5: { name: "Bajopuente", image: "bajopuente", neighbors: { up: 7, left: 2, right: 8, down: 9 } },            
       6: { name: "Cubiculos", image: "cubiculos2", neighbors: { up: 9, down: 3 } },      
@@ -399,8 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
   .start([      
       { type: "image", key: "auditorio", src: "img/fondos/auditorio.webp" },
       { type: "image", key: "bajopuente", src: "img/fondos/bajopuente.webp" },      
-      { type: "image", key: "conciertos", src: "img/fondos/conciertos.webp" },
-      { type: "image", key: "cubiculos1", src: "img/fondos/cubiculos1.webp" },
+      { type: "image", key: "conciertos", src: "img/fondos/conciertos.webp" },      
       { type: "image", key: "cubiculos2", src: "img/fondos/cubiculos2.webp" },      
       { type: "image", key: "entrada", src: "img/fondos/entrada.webp" },      
       { type: "image", key: "escolares", src: "img/fondos/escolares.webp" },                  

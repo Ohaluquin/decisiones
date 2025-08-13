@@ -1,15 +1,31 @@
-html,
-body {
+html {
   height: 100%;
   margin: 0;
 }
 
-body {
-  background: linear-gradient(to bottom, #8a0d1f, #2c5631);
-  display: flex;
+.index_container { /* Index */
+  display: block;
   flex-direction: column;
+  justify-content: center;
+  background-color: blue;
+  text-align: center;
+  width: 90vw;
+  height: 80%;
+  margin: 0 auto;
+  color: #ebdcdc;
+}
+
+.index_body { /* Index */
+  display: flex;
+  flex-direction: column;  
+  height: 98vh;
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
+  background-color: rgb(27, 85, 45);
+}
+
+.bg-gradient-primary {    /*color de fondo del menú */
+  background: linear-gradient(to bottom, #8a0d1f, #2c5631);
+  background-size: cover;  
 }
 
 /* Encabezado con título */
@@ -77,39 +93,37 @@ body {
   font-style: italic;
 }
 
-/* Pie de página con logo del IEMS */
-.page-foot {
-  /*margin-top: auto;*/
-  padding: 12px 0;
-}
-.foot-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr;
+footer .footer-container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  padding: 0 20px;
+  flex-wrap: wrap;
 }
-.iems-logo {
-  height: 64px;
-  width: auto;
-  background: #fff;
+
+footer img.iems-footer-logo {
+  width: 60px;
+  height: auto;
+}
+
+img#logo_iems {
+  width: 80px;
+  margin-top: 10px;
   border-radius: 10px;
-  padding: 6px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-.credits {
+
+footer p {
+  flex: 1;
   text-align: center;
-  color: #f1f1f1;
-  font-size: 0.9rem;
+  font-size: 0.9em;
+  color: #f0f0f0;
+  margin: 10px 0;
 }
+
 
 @media (max-width: 560px) {
   .iems-logo {
     height: 40px;
     padding: 4px;
-  }
-  .credits {
-    font-size: 0.8rem;
   }
 }
