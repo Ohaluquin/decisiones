@@ -285,7 +285,7 @@ let preguntas = [
       },
       {
         "text": "Decides ignorar la situación y no hacer nada al respecto.",
-        "explicacion": "Al decidir no actuar, podrías estar ganando tiempo para tus propias actividades, evitando el compromiso de resolver problemas que no consideras tuyos. Sin embargo, esta elección puede contradecir principios de compasión y acción comunitaria, reflejando la tensión entre la gestión personal del tiempo y la responsabilidad social. Este tipo de inacción puede contribuir al problema al no abordarlo.",
+        "explicacion": "Al decidir no actuar, podrías estar ganando tiempo para tus propias actividades, evitando el compromiso de resolver problemas que no consideras tuyos. Sin embargo, esta elección puede contradecir principios de compasión y acción comunitaria. Este tipo de inacción puede contribuir al problema al no abordarlo.",
         "salud": -1,
         "alegria": -1,
         "apoyo": -1,
@@ -2648,7 +2648,7 @@ let preguntas = [
     "options": [
       {
         "text": "Faltas otra vez para terminar la tarea",
-        "explicacion": "Elegir finalizar tu tarea en lugar de asistir a clase puede aliviar la presión inmediata de la entrega pendiente, pero incurre en el riesgo de acumular ausencias que podrían impactar negativamente en tu rendimiento académico y relación con el profesor. Esta decisión refleja una priorización de tareas a corto plazo sobre compromisos a largo plazo, lo cual podría requerir una evaluación de tus estrategias de gestión del tiempo y responsabilidades.",
+        "explicacion": "Priorizar la tarea puede resolver el problema inmediato, pero faltar de nuevo puede afectar tu rendimiento y aumentar el riesgo de sanciones por inasistencias. Refleja un enfoque a corto plazo más que una solución equilibrada.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -2658,7 +2658,7 @@ let preguntas = [
       },
       {
         "text": "Entras a la clase, pero terminas la tarea ahí mismo",
-        "explicacion": "Asistir a clase mientras intentas completar otra tarea puede parecer una solución práctica, pero te expone al riesgo de no prestar atención adecuada a la clase, además de la posibilidad de que el profesor note tu falta de enfoque. Esta estrategia podría afectar tu comprensión de la materia actual y tu relación con el profesor, subrayando la importancia de equilibrar adecuadamente tus responsabilidades académicas.",
+        "explicacion": "Permite cumplir con ambas cosas, pero tu atención a la clase será limitada. Esto puede afectar tu aprendizaje y la percepción del profesor sobre tu compromiso.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -2668,7 +2668,7 @@ let preguntas = [
       },
       {
         "text": "Le pides permiso al profesor para faltar y hacer la tarea",
-        "explicacion": "Solicitar permiso al profesor para completar una tarea para otra clase muestra transparencia en tus intenciones, pero también revela posibles deficiencias en la planificación y gestión del tiempo. Dependiendo de tu historial de asistencia y la disposición del profesor, esta acción podría afectar tu imagen como estudiante comprometido y responsable.",
+        "explicacion": "Ser transparente con tu situación muestra honestidad, pero también puede dar la impresión de poca organización. La respuesta del profesor dependerá de tu historial y actitud.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -2678,7 +2678,7 @@ let preguntas = [
       },
       {
         "text": "Entras a clase e intentas ponerte al corriente e intentas entregar la tarea más tarde",
-        "explicacion": "Esta opción demuestra un compromiso con tus responsabilidades académicas, asistiendo a clase y buscando una solución para tu entrega atrasada. Aunque puede requerir un esfuerzo adicional para ponerse al corriente y negociar una extensión para tu tarea, refleja una buena ética de trabajo y disposición para enfrentar las consecuencias de tus acciones, lo que puede fortalecer tu relación con los profesores y mejorar tu capacidad de gestión del tiempo.",
+        "explicacion": "Muestra compromiso y responsabilidad, al cumplir con la clase y buscar una solución para la entrega. Aunque implica más esfuerzo, fortalece tu imagen como estudiante responsable.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -2700,7 +2700,7 @@ let preguntas = [
     "options": [
       {
         "text": "Buscas copiar la tarea de uno de tus amigos para terminar rápido",
-        "explicacion": "Optar por copiar la tarea de un amigo puede parecer una solución rápida, pero pone en riesgo tu integridad académica y la relación con tu amigo y profesor. Esta elección puede afectar negativamente tu reputación y capacidad para manejar responsabilidades académicas.",
+        "explicacion": "Copiar puede parecer una salida fácil, pero daña tu integridad y te impide aprender. Además, puede afectar la confianza de tus amigos y la relación con tus profesores.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -2,
@@ -2710,7 +2710,7 @@ let preguntas = [
       },
       {
         "text": "Entras a la clase, pero haces la tarea ahí mismo",
-        "explicacion": "Asistir a clase mientras completas una tarea de otra asignatura puede comprometer tu capacidad para absorber el material que se está enseñando, reduciendo la eficacia de tu aprendizaje. Además, si el profesor se da cuenta, puede interpretarlo como una falta de respeto y compromiso hacia su materia, lo que podría impactar negativamente en tu relación con él.",
+        "explicacion": "Decides cumplir con todo, pero al hacer la tarea durante la clase pierdes aprendizaje y puedes dar una mala impresión al profesor.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -2720,7 +2720,7 @@ let preguntas = [
       },
       {
         "text": "Entras tarde a clase y entregas la tarea sin haberla terminado bien",
-        "explicacion": "Entregar una tarea incompleta o mal terminada puede impactar en tu calificación y en la percepción que el profesor tiene de tu compromiso y calidad de trabajo. Esta acción demuestra la necesidad de mejorar tu gestión del tiempo para evitar comprometer la calidad de tu trabajo académico y tu puntualidad en clase.",
+        "explicacion": "Priorizar la tarea y llegar tarde afecta tu imagen como estudiante. Entregar algo incompleto puede reflejar falta de organización.",
         "salud": 0,
         "alegria": -1,
         "apoyo": -1,
@@ -2730,7 +2730,7 @@ let preguntas = [
       },
       {
         "text": "Entras a clase e intentas ponerte al corriente y entregas la tarea después",
-        "explicacion": "Al priorizar tu presencia en clase, demuestras respeto por el aprendizaje y por el profesor, al tiempo que reconoces la importancia de cumplir con tus tareas. Esta elección podría requerir esfuerzos adicionales para ponerte al día, pero subraya tu capacidad para afrontar desafíos y mantener un alto nivel de responsabilidad académica.",
+        "explicacion": "Esta opción muestra compromiso al respetar la clase y asumir la responsabilidad de entregar después. Aunque requiere esfuerzo adicional, fortalece tu credibilidad y disciplina.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -2752,7 +2752,7 @@ let preguntas = [
     "options": [
       {
         "text": "Propones una pausa rápida para organizar y repartir la tarea, y luego seguir con el relajo",
-        "explicacion": "Sugerir una pausa para distribuir el trabajo muestra liderazgo y responsabilidad. Equilibrar diversión y deberes puede fortalecer la cooperación del grupo y asegurar que todos contribuyan, resaltando la importancia de la organización y el compromiso.",
+        "explicacion": "Muestras liderazgo y responsabilidad, equilibrando diversión y deberes para que todos contribuyan y el trabajo avance.",
         "salud": 0,
         "alegria": 1,
         "apoyo": 1,
@@ -2782,7 +2782,7 @@ let preguntas = [
       },
       {
         "text": "Te vas y lo haces tú sólo",
-        "explicacion": "Trabajar solo muestra determinación y asegura que el trabajo se haga. Sin embargo, puede afectar negativamente las relaciones y la alegría, ya que tus amigos pueden sentirse excluidos.",
+        "explicacion": "Trabajar solo muestra determinación y asegura que el trabajo se haga. Sin embargo, puede afectar negativamente las relaciones ya que tus amigos pueden sentirse excluidos.",
         "salud": 0,
         "alegria": -1,
         "apoyo": -1,
@@ -2824,7 +2824,7 @@ let preguntas = [
       },
       {
         "text": "No se la pasas porque consideras que no es correcto",
-        "explicacion": "Esta opción muestra respeto por las reglas y normas establecidas en el examen. Además, es ético y profesional.",
+        "explicacion": "Mantienes tu ética y respeto por las reglas, aunque tu amigo pueda sentirse molesto o decepcionado en el momento.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -2910,7 +2910,7 @@ let preguntas = [
     "options": [
       {
         "text": "Se lo prestas confiando en que te lo regresará",
-        "explicacion": "Prestar tu cuaderno es un acto de generosidad que refleja tu disposición a ayudar y tu confianza en los demás. Aunque esta acción puede fortalecer los lazos y fomentar un ambiente de cooperación, también corres el riesgo de no recuperar tu cuaderno a tiempo, lo que podría impactar tu propio estudio si necesitas los apuntes.",
+        "explicacion": "Ayudar a otros demuestra generosidad, pero confiar en alguien poco comprometido puede dejarte sin tus apuntes cuando los necesites. Es importante apoyar, pero también proteger tus recursos.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 0,
@@ -2920,7 +2920,7 @@ let preguntas = [
       },
       {
         "text": "Lo acompañas para que le saque copias y te lo regrese",
-        "explicacion": "Acompañar a tu compañero para que saque copias de tu cuaderno demuestra un compromiso con ayudar, al tiempo que proteges tus propios intereses académicos asegurándote de retener tus apuntes. Tal actitud puede fomentar un sentido de responsabilidad compartida y fortalecer las relaciones interpersonales, manteniendo tus límites personales.",
+        "explicacion": "Ayudas sin perder tus apuntes, mostrando empatía y cuidado por tu propio estudio. Es una forma equilibrada de apoyar sin ponerte en desventaja.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -2930,7 +2930,7 @@ let preguntas = [
       },
       {
         "text": "Le dices que lo vas a ocupar y que mejor se lo pida a alguien más",
-        "explicacion": "Negarte a prestar tu cuaderno muestra una priorización de tus necesidades y estudios por encima de la ayuda a los demás. Aunque esta opción puede ser vista como práctica y respetuosa de tus propios límites, también podría ser interpretada como falta de solidaridad, afectando potencialmente la percepción que otros tienen de ti. Es importante comunicar tus razones de manera clara y empática para minimizar cualquier impacto negativo en tus relaciones.",
+        "explicacion": "Poner límites para proteger tu estudio es válido, pero si no explicas bien tu decisión, podrías parecer indiferente. Comunicarlo con respeto puede evitar conflictos.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -2,
@@ -2940,7 +2940,7 @@ let preguntas = [
       },
       {
         "text": "Le dices que ni lo conoces y no se lo prestas",
-        "explicacion": "Rechazar la solicitud de tu compañero de manera directa y enfática establece firmes límites personales, pero podría ser percibido como hostil o poco cooperativo, lo que podría tensionar las relaciones dentro del ambiente académico. Esta elección refleja una fuerte autodefensa de tus recursos, pero el desafío radica en manejar la situación de manera que no cierre puertas a futuras interacciones positivas o apoyo mutuo entre compañeros.",
+        "explicacion": "Decir que no de forma brusca protege tus materiales, pero puede parecer hostil. Cuidar tu espacio es importante, pero también lo es la forma en que lo comunicas.",
         "salud": 0,
         "alegria": -1,
         "apoyo": -2,
@@ -2992,7 +2992,7 @@ let preguntas = [
       },
       {
         "text": "Me quedo en la clase y le mando un mensaje a mi amigo para saber cómo está y si necesita algo",
-        "explicacion": "Optar por permanecer en clase mientras te preocupas por tu amigo a distancia es una decisión que equilibra tu compromiso académico con tu apoyo a un amigo. Aunque esta opción no aborda directamente el conflicto con el profesor, demuestra una preocupación genuina por el bienestar de tu amigo y mantiene tu enfoque en tus propias responsabilidades académicas.",
+        "explicacion": "Mantenerte en clase te permite cumplir con tus responsabilidades académicas sin dejar de mostrar interés y apoyo. Aunque no intervienes directamente en el conflicto, mantienes la conexión con tu amigo y evitas afectar tu propio rendimiento escolar.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -3015,7 +3015,7 @@ let preguntas = [
     "options": [
       {
         "text": "Yo también me salgo para apoyarlo, pero hablamos después con nuestr@ profesor(a)",
-        "explicacion": "Salir de clase para apoyar a tu amigo demuestra lealtad y solidaridad, pero también implica asumir las consecuencias de interrumpir tu aprendizaje. La decisión de hablar posteriormente con el profesor indica una voluntad de resolver el conflicto de manera constructiva, mostrando madurez y responsabilidad. Esta acción puede fortalecer tu relación con tu amigo y potencialmente con tu profesor si la conversación se maneja con respeto y empatía.",
+        "explicacion": "Salir de clase para apoyar a tu amigo demuestra lealtad y solidaridad, pero también implica asumir las consecuencias de interrumpir tu aprendizaje. La decisión de hablar posteriormente con el profesor indica una voluntad de resolver el conflicto de manera constructiva, mostrando madurez y responsabilidad, si la conversación se maneja con respeto y empatía.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 2,
@@ -3068,7 +3068,7 @@ let preguntas = [
     "options": [
       {
         "text": "Ignoras las insinuaciones y te alejas de esa persona",
-        "explicacion": "Elegir ignorar las insinuaciones y distanciarte de la persona demuestra un alto grado de respeto hacia su relación actual y una fuerte capacidad para establecer y mantener límites personales. Esta decisión puede ser difícil, especialmente si tienes sentimientos por ella, pero refleja madurez y un compromiso con principios éticos, lo que puede contribuir positivamente a tu bienestar emocional a largo plazo, a pesar del posible impacto negativo inicial en tu felicidad.",
+        "explicacion": "Elegir ignorar las insinuaciones demuestra una fuerte capacidad para establecer y mantener límites personales. Esta decisión puede ser difícil, especialmente si tienes sentimientos por ella, pero refleja madurez y un compromiso con principios éticos, lo que puede contribuir positivamente a tu bienestar emocional a largo plazo.",
         "salud": 1,
         "alegria": -1,
         "apoyo": 0,
@@ -3078,7 +3078,7 @@ let preguntas = [
       },
       {
         "text": "Hablas con esa persona y le preguntas directamente sobre sus intenciones",
-        "explicacion": "Confrontar a la persona con honestidad y claridad sobre sus insinuaciones demuestra valentía y una búsqueda de transparencia en tus relaciones personales. Esta conversación directa puede aclarar malentendidos y definir las expectativas de ambos, lo que ayuda a prevenir situaciones incómodas o conflictivas en el futuro. Aunque este enfoque puede ser incómodo inicialmente, promueve la salud emocional y el respeto mutuo.",
+        "explicacion": "Confrontar a la persona con honestidad y claridad sobre sus insinuaciones demuestra valentía y una búsqueda de transparencia en tus relaciones personales. Esta conversación directa puede aclarar malentendidos y definir las expectativas de ambos. Aunque este enfoque puede ser incómodo inicialmente, promueve la salud emocional y el respeto mutuo.",
         "salud": 1,
         "alegria": 0,
         "apoyo": 0,
@@ -3088,7 +3088,7 @@ let preguntas = [
       },
       {
         "text": "Aceptas coquetear con esa persona y seguirle el juego, aunque no deje a su pareja por ti",
-        "explicacion": "Participar en un coqueteo sabiendo que la persona está comprometida puede llevar a una situación emocionalmente complicada y potencialmente dolorosa. Este enfoque puede ofrecer gratificación a corto plazo, pero plantea riesgos significativos de dañar las relaciones involucradas y comprometer tu integridad. A largo plazo, esta elección podría afectar negativamente tu bienestar emocional y tu reputación.",
+        "explicacion": "Participar en un coqueteo sabiendo que la persona está comprometida puede llevar a una situación emocionalmente complicada y potencialmente dolorosa. Este enfoque puede ofrecer gratificación a corto plazo, pero plantea riesgos significativos de dañar las relaciones involucradas y comprometer tu integridad. A largo plazo podría afectar tu bienestar emocional y reputación.",
         "salud": -1,
         "alegria": 0,
         "apoyo": -1,
@@ -3120,7 +3120,7 @@ let preguntas = [
     "options": [
       {
         "text": "Le sigues el juego y le coqueteas",
-        "explicacion": "Responder a las insinuaciones coqueteando puede ofrecer una gratificación inmediata, pero plantea riesgos significativos de dañar la relación con tu amig@ y su pareja. Esta acción puede ser percibida como una traición a la confianza de tu amig@ y podría llevar a consecuencias negativas duraderas, tanto en tu amistad como en tu reputación personal. Es importante considerar el impacto a largo plazo de tus acciones en tus relaciones y en tu propia autoestima.",
+        "explicacion": "Coquetear puede parecer divertido en el momento, pero estás traicionando la confianza de tu amig@ y dañando tu imagen personal. Esta decisión puede tener consecuencias duraderas en tus relaciones.",
         "salud": -1,
         "alegria": 0,
         "apoyo": -1,
@@ -3130,7 +3130,7 @@ let preguntas = [
       },
       {
         "text": "La rechazas y le dices que no te interesa",
-        "explicacion": "Rechazar las insinuaciones y dejar claras tus intenciones muestra un alto nivel de respeto por la relación de tu amig@, además de una fuerte ética personal. Esta decisión puede ser incómoda en el momento, pero establece límites saludables y protege tu relación con tu amig@ y tu integridad personal. Al actuar de acuerdo con tus valores, fortaleces tu autorespeto y el respeto que otros tienen por ti.",
+        "explicacion": "Poner límites con claridad muestra respeto por ti y por tu amig@. Aunque sea incómodo, estás protegiendo la amistad y actuando con integridad.",
         "salud": 1,
         "alegria": 0,
         "apoyo": 1,
@@ -3140,7 +3140,7 @@ let preguntas = [
       },
       {
         "text": "La rechazas y le cuentas a tu amig@ lo que pasó",
-        "explicacion": "Rechazar las insinuaciones y comunicarle a tu amig@ lo ocurrido es un acto de honestidad y lealtad, aunque pueda ser difícil o incómodo. Esta opción valora la transparencia y la confianza en tu amistad, y puede prevenir malentendidos o situaciones más complicadas en el futuro. Sin embargo, es crucial abordar la conversación con sensibilidad y cuidado para evitar herir innecesariamente los sentimientos de tu amig@.",
+        "explicacion": "Ser honesto con tu amig@ fortalece la confianza y demuestra lealtad. Aunque pueda causar tensión, decir la verdad puede evitar conflictos mayores en el futuro.",
         "salud": 1,
         "alegria": -1,
         "apoyo": 2,
@@ -3150,7 +3150,7 @@ let preguntas = [
       },
       {
         "text": "La rechazas y no le dices nada a tu amig@",
-        "explicacion": "Rechazar las insinuaciones sin involucrar a tu amig@ puede parecer una manera de protegerl@ de una situación dolorosa, pero retener esta información también podría ser visto como una omisión de la verdad, lo que podría afectar la confianza en tu amistad si eventualmente se descubre. Esta decisión busca evitar el conflicto inmediato, pero plantea la pregunta de si el silencio podría tener consecuencias negativas a largo plazo en la relación con tu amig@.",
+        "explicacion": "Callar puede parecer una forma de evitar problemas, pero guardar el secreto puede dañar la confianza si tu amig@ se entera por otro lado. Reflexiona si el silencio protege o complica la relación.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3244,7 +3244,7 @@ let preguntas = [
       },
       {
         "text": "No donas nada porque crees que no resuelve la situación",
-        "explicacion": "Elegir no donar porque dudas de la eficacia de la ayuda puede reflejar escepticismo hacia la forma en que se abordan los problemas sociales. Si bien es importante ser crítico y buscar soluciones efectivas, la inacción puede limitar las oportunidades para hacer una diferencia positiva. Considerar otras formas de contribuir o investigar más a fondo para encontrar organizaciones y métodos de ayuda en los que confíes podría ser un enfoque más constructivo.",
+        "explicacion": "Elegir no donar porque dudas de la eficacia de la ayuda puede reflejar escepticismo hacia la forma en que se abordan los problemas sociales. Si bien es importante ser crítico y buscar soluciones efectivas, la inacción puede limitar las oportunidades para hacer una diferencia positiva. Considerar otras formas de contribuir podría ser un enfoque más constructivo.",
         "salud": 0,
         "alegria": -1,
         "apoyo": -1,
@@ -3380,7 +3380,7 @@ let preguntas = [
     "options": [
       {
         "text": "Asumes la responsabilidad y das el recado aunque gastes tiempo",
-        "explicacion": "Esta opción podría aumentar la determinación, la alegría y el apoyo al ayudar a alguien a dar un recado importante. Podría disminuir el tiempo al dedicar tiempo extra para dar el recado, pero el resultado final sería satisfactorio al haber ayudado a alguien.",
+        "explicacion": "Ayudar a alguien aunque no lo conozcas bien muestra empatía y compromiso. Aunque inviertas tiempo, estás fortaleciendo tu sentido de responsabilidad y colaboración.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -3390,7 +3390,7 @@ let preguntas = [
       },
       {
         "text": "Inventas una excusa y le dices que le pida a alguien más",
-        "explicacion": "Esta opción podría aumentar el tiempo al no dedicar tiempo para dar el recado, pero disminuiría la determinación, la alegría y el apoyo al no ser sincero y no ayudar a alguien en necesidad. Podría ser útil reflexionar sobre el valor de ser sincero y ayudar a los demás.",
+        "explicacion": "Evitas el compromiso, pero mentir puede dañar tu credibilidad. A veces es mejor decir la verdad con respeto que inventar una excusa.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3400,7 +3400,7 @@ let preguntas = [
       },
       {
         "text": "Le dices que no quieres hacerlo porque no te quieres comprometer",
-        "explicacion": "Esta opción podría aumentar el tiempo al no dedicar tiempo para dar el recado, pero disminuiría la alegría y el apoyo al no ayudar a alguien en necesidad. Ser sincero sobre tus razones para no ayudar podría ser una forma respetuosa de manejar la situación.",
+        "explicacion": "Decir que no con sinceridad muestra claridad en tus límites. Aunque no ayudes, al menos mantienes tu honestidad.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3410,7 +3410,7 @@ let preguntas = [
       },
       {
         "text": "Aceptas, pero sin responsabilizarte a dar el recado",
-        "explicacion": "Esta opción podría disminuir la determinación, la alegría y el apoyo al aceptar dar el recado sin realmente tener la intención de hacerlo. Podría ser útil reflexionar sobre el valor de ser sincero y responsable en tus acciones.",
+        "explicacion": "Aceptar sin intención de cumplir puede causar confusión y desconfianza. Es mejor no comprometerte que fallar en lo prometido.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -2,
@@ -3431,7 +3431,7 @@ let preguntas = [
     "options": [
       {
         "text": "Hablas a la policía para reportar la situación",
-        "explicacion": "Esta opción podría aumentar la determinación y el apoyo al tomar acción para reportar una situación peligrosa y buscar ayuda de las autoridades. Podría disminuir el tiempo al dedicar tiempo para hacer el reporte, pero el resultado final sería satisfactorio al haber ayudado a mantener la seguridad en tu comunidad.",
+        "explicacion": "Al pedir ayuda a las autoridades estás actuando con responsabilidad y ayudando a prevenir que la violencia escale. Aunque toma algo de tu tiempo, contribuyes a mantener la seguridad de todos sin ponerte en riesgo.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -3441,7 +3441,7 @@ let preguntas = [
       },
       {
         "text": "Lo ignoras y continúas con tus actividades",
-        "explicacion": "Esta opción podría aumentar el tiempo al no detenerte para reportar la situación, pero disminuiría la determinación, la alegría y el apoyo al ignorar una situación peligrosa en tu comunidad. Podría ser útil reflexionar sobre el valor de tomar acción para mantener la seguridad en tu comunidad.",
+        "explicacion": "Ignorar una situación peligrosa te ahorra tiempo en el momento, pero puede reflejar indiferencia ante el bienestar de los demás. Evitar involucrarse puede generar culpa o normalizar la violencia en tu comunidad.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3451,7 +3451,7 @@ let preguntas = [
       },
       {
         "text": "Intentas intervenir para calmar la situación",
-        "explicacion": "Esta opción podría aumentar la determinación y el apoyo al intentar calmar una situación peligrosa en tu comunidad, pero disminuiría la salud al ponerte en riesgo al intervenir directamente. Podría disminuir el tiempo al dedicar tiempo para intervenir. Podría ser útil considerar si es seguro intervenir directamente o si es mejor buscar ayuda de las autoridades.",
+        "explicacion": "Intervenir directamente muestra valentía y un alto sentido de comunidad, pero también puede ponerte en peligro. Antes de actuar, es importante valorar tu seguridad y considerar si hay formas más seguras de ayudar.",
         "salud": -2,
         "alegria": 0,
         "apoyo": 1,
@@ -3461,7 +3461,7 @@ let preguntas = [
       },
       {
         "text": "Lo grabas sin intervenir",
-        "explicacion": "Esta opción podría disminuir la determinación, la alegría y el apoyo al grabar una situación peligrosa sin tomar acción para ayudar a resolverla. Podría disminuir el tiempo al dedicar tiempo para grabar la situación. Podría ser útil reflexionar sobre el valor de tomar acción para mantener la seguridad en tu comunidad en lugar de solo grabar lo que está sucediendo.",
+        "explicacion": "Grabar sin ayudar puede parecer útil para documentar, pero si no haces nada más, estás dejando pasar la oportunidad de apoyar. Esta actitud puede reforzar la pasividad ante el conflicto y afectar negativamente el tejido social.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -2,
@@ -3534,7 +3534,7 @@ let preguntas = [
     "options": [
       {
         "text": "Le ayudas aunque sepas que llegarás tarde",
-        "explicacion": "Esta opción podría aumentar la determinación, la alegría y el apoyo al ayudar a alguien en necesidad a pesar de tener prisa. Podría disminuir el tiempo al llegar tarde a la escuela, pero el resultado final sería satisfactorio al haber ayudado a alguien.",
+        "explicacion": "Elegir ayudar demuestra empatía y compromiso con los demás, aunque implique un sacrificio personal. Estas acciones fortalecen tus valores y construyen una sociedad más solidaria.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -3544,7 +3544,7 @@ let preguntas = [
       },
       {
         "text": "Esperas a que alguien le ayude y si no, tú lo haces",
-        "explicacion": "Esta opción podría aumentar la determinación al estar dispuesto a ayudar si nadie más lo hace. Podría disminuir el tiempo al esperar y posiblemente llegar tarde a la escuela. Podría ser útil considerar si puedes permitirte el tiempo extra para ayudar.",
+        "explicacion": "Estás dispuesto a ayudar si es necesario, lo cual muestra sensibilidad y responsabilidad. Aunque esperas un poco, tomas una decisión consciente según la situación.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 0,
@@ -3554,7 +3554,7 @@ let preguntas = [
       },
       {
         "text": "Te preocupa, pero decides irte para llegar a tiempo a la escuela",
-        "explicacion": "Esta opción podría aumentar el tiempo al no detenerte para ayudar y llegar a tiempo a la escuela, pero disminuiría la determinación, la alegría y el apoyo al no ayudar a alguien en necesidad. Podría ser útil reflexionar sobre el valor de ayudar a los demás y buscar formas de equilibrar tus responsabilidades y ayudar a los demás.",
+        "explicacion": "Priorizar tus responsabilidades es válido, pero no actuar ante alguien en necesidad puede dejarte con una sensación incómoda. A veces, ayudar solo requiere unos minutos.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3564,7 +3564,7 @@ let preguntas = [
       },
       {
         "text": "No te importa, y te vas",
-        "explicacion": "Esta opción podría aumentar el tiempo al no detenerte para ayudar y llegar a tiempo a la escuela, pero disminuiría la determinación, la alegría y el apoyo al no mostrar preocupación por alguien en necesidad. Podría ser útil reflexionar sobre el valor de ayudar a los demás y buscar formas de equilibrar tus responsabilidades y ayudar a los demás.",
+        "explicacion": "Ignorar a alguien que necesita ayuda refleja indiferencia. Aunque llegas a tiempo, pierdes la oportunidad de hacer una diferencia y mostrar empatía.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -2,
@@ -3585,7 +3585,7 @@ let preguntas = [
     "options": [
       {
         "text": "Te ofreces a participar asumiendo responsabilidades",
-        "explicacion": "Esta opción podría aumentar la determinación, la alegría y el apoyo al participar activamente en la organización para mejorar las calles de tu comunidad. Podría disminuir el tiempo al dedicar tiempo extra para ayudar en la organización, pero el resultado final sería satisfactorio al haber contribuido a tu comunidad.",
+        "explicacion": "Participar activamente muestra compromiso y liderazgo. Aunque implica tiempo, contribuyes al bienestar colectivo y fortaleces el sentido de comunidad.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -3595,7 +3595,7 @@ let preguntas = [
       },
       {
         "text": "Decides participar, pero sin tomar responsabilidades",
-        "explicacion": "Esta opción podría aumentar la determinación y la alegría al participar en la organización para mejorar las calles de tu comunidad sin tomar responsabilidades adicionales. Podría ser útil comunicarte con los organizadores para asegurarte de que estás contribuyendo de manera efectiva.",
+        "explicacion": "Estás aportando desde tu presencia, aunque sin comprometerte del todo. Es una forma válida de involucrarte, pero tu impacto será más limitado.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 0,
@@ -3605,7 +3605,7 @@ let preguntas = [
       },
       {
         "text": "Aunque te parece importante, te da flojera participar",
-        "explicacion": "Esta opción podría aumentar el tiempo al no dedicar tiempo a ayudar en la organización para mejorar las calles de tu comunidad, pero disminuiría la determinación, la alegría y el apoyo al no participar activamente en tu comunidad. Podría ser útil buscar motivación para participar y contribuir a tu comunidad.",
+        "explicacion": "Reconocer que algo es importante pero no actuar por apatía muestra falta de compromiso. Alejarte de los problemas colectivos también te aleja de las soluciones.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3615,7 +3615,7 @@ let preguntas = [
       },
       {
         "text": "Decides no participar porque crees que no se va a solucionar nada",
-        "explicacion": "Esta opción podría aumentar el tiempo al no dedicar tiempo a ayudar en la organización para mejorar las calles de tu comunidad, pero disminuiría la determinación, la alegría y el apoyo al no considerar importante participar activamente en tu comunidad. Podría ser útil reflexionar sobre el valor de contribuir a tu comunidad y buscar formas de participar.",
+        "explicacion": "Pensar que nada cambiará puede hacerte sentir fuera del problema, pero esa actitud también impide los avances. La participación ciudadana es clave para transformar la realidad.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -2,
@@ -3631,12 +3631,12 @@ let preguntas = [
   {
     "questionID": 71,
     "kind": "social",
-    "text": "En tu colonia se está organizando una fiesta/feria/posada y ves que necesitan apoyo en algunas cosas que tu podrías hacer, pero que te quitan tiempo y te responsabilizaría (o compromete)",
+    "text": "En tu colonia se está organizando una fiesta/feria/posada y ves que necesitan apoyo en algunas cosas que tú podrías hacer, pero que te quitan tiempo y te responsabilizaría (o compromete)",
     "imageName": "neighbours_reunion",
     "options": [
       {
         "text": "Te emocionas y te ofreces a participar",
-        "explicacion": "Esta opción podría aumentar la determinación, la alegría y el apoyo al participar activamente en la organización de la fiesta/feria/posada en tu colonia. Podría disminuir el tiempo al dedicar tiempo extra para ayudar en la organización, pero el resultado final sería satisfactorio al haber contribuido a tu comunidad.",
+        "explicacion": "Sumarte con entusiasmo muestra iniciativa y ganas de convivir. Aunque implica esfuerzo, fortalece los lazos vecinales y te hace parte activa de tu comunidad.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -3646,7 +3646,7 @@ let preguntas = [
       },
       {
         "text": "Decides participar, pero sólo en lo que se pueda sin tomar responsabilidades",
-        "explicacion": "Esta opción podría aumentar la determinación y la alegría al participar en la organización de la fiesta/feria/posada en tu colonia sin tomar responsabilidades adicionales. Podría ser útil comunicarte con los organizadores para asegurarte de que estás contribuyendo de manera efectiva.",
+        "explicacion": "Contribuyes desde lo que puedes ofrecer, lo cual también suma. Participar sin comprometerte del todo puede ser una forma equilibrada de involucrarte.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 0,
@@ -3656,7 +3656,7 @@ let preguntas = [
       },
       {
         "text": "Aunque te guste te da flojera participar",
-        "explicacion": "Esta opción podría aumentar el tiempo al no dedicar tiempo a ayudar en la organización de la fiesta/feria/posada, pero disminuiría la determinación, la alegría y el apoyo al no participar activamente en tu comunidad. Podría ser útil buscar motivación para participar y contribuir a tu comunidad.",
+        "explicacion": "Reconocer que te agrada la idea pero no actuar por flojera limita tu aporte a la comunidad. A veces, superar la pereza puede abrirte a experiencias valiosas.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3666,7 +3666,7 @@ let preguntas = [
       },
       {
         "text": "Decides no participar porque no lo consideras importante y ocupas tu tiempo en otras cosas",
-        "explicacion": "Esta opción podría aumentar el tiempo al no dedicar tiempo a ayudar en la organización de la fiesta/feria/posada, pero disminuiría la determinación, la alegría y el apoyo al no considerar importante participar activamente en tu comunidad. Podría ser útil reflexionar sobre el valor de contribuir a tu comunidad y buscar formas de participar.",
+        "explicacion": "No involucrarte por restarle valor a la actividad puede alejarte del sentido de comunidad. Participar, aunque sea poco, puede marcar una diferencia en el ambiente del lugar donde vives.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -2,
@@ -3687,7 +3687,7 @@ let preguntas = [
     "options": [
       {
         "text": "Te encargas de todo el trabajo y no dejas que tus compañeros participen",
-        "explicacion": "Esta opción podría disminuir la determinación, el apoyo y el tiempo al no trabajar en equipo y asumir toda la responsabilidad del trabajo. Podría ser útil comunicarte con tus compañeros y repartir las tareas para trabajar juntos y aprender unos de otros.",
+        "explicacion": "Hacer todo tú solo demuestra compromiso, pero limita el aprendizaje del grupo y puede causar desgaste. Trabajar en equipo también es parte del reto.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3697,7 +3697,7 @@ let preguntas = [
       },
       {
         "text": "Dejas que tus compañeros hagan todo el trabajo y tú solo pones tu nombre",
-        "explicacion": "Esta opción podría aumentar el tiempo al no dedicar tiempo al trabajo, pero disminuiría la determinación y el apoyo al no contribuir al trabajo en equipo. Podría ser útil comunicarte con tus compañeros y repartir las tareas para trabajar juntos y aprender unos de otros.",
+        "explicacion": "No participar afecta tu desarrollo y la confianza del equipo. Aunque ahorras tiempo, pierdes la oportunidad de aprender y aportar.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -2,
@@ -3707,7 +3707,7 @@ let preguntas = [
       },
       {
         "text": "Te repartes las tareas con tus compañeros y cada uno hace su parte",
-        "explicacion": "Esta opción podría aumentar la determinación, la alegría y el apoyo al trabajar en equipo y repartir las tareas equitativamente. Podría ser útil comunicarte con tus compañeros para asegurarte de que todos estén contribuyendo equitativamente al trabajo.",
+        "explicacion": "Repartir responsabilidades equitativamente permite avanzar de forma justa y eficiente. Refuerza la colaboración y el compromiso de todos.",
         "salud": 0,
         "alegria": 1,
         "apoyo": 1,
@@ -3717,7 +3717,7 @@ let preguntas = [
       },
       {
         "text": "Te comunicas con tus compañeros y trabajas con ellos en todas las partes del trabajo",
-        "explicacion": "Esta opción podría aumentar la determinación, la alegría y el apoyo al trabajar en equipo y colaborar en todas las partes del trabajo. Podría disminuir el tiempo al dedicar tiempo extra para trabajar juntos, pero el resultado final sería más satisfactorio al haber trabajado en equipo.",
+        "explicacion": "Colaborar en conjunto fomenta el diálogo, la cooperación y el aprendizaje colectivo. Aunque toma más tiempo, fortalece los vínculos y mejora los resultados.",
         "salud": 0,
         "alegria": 1,
         "apoyo": 2,
@@ -3786,12 +3786,12 @@ let preguntas = [
   {
     "questionID": 74,
     "kind": "académico",
-    "text": "Estas en corte de evaluación y surge una eventualidad familiar que te obliga a ir con tus familiares y faltar a clases varios días",
+    "text": "Estás en corte de evaluación y surge una eventualidad familiar que te obliga a ir con tus familiares y faltar a clases varios días",
     "imageName": "empty_chair",
     "options": [
       {
         "text": "Decides no ir con tu familia y concluir el semestre",
-        "explicacion": "Esta opción podría aumentar la determinación al cumplir con tus responsabilidades académicas, pero disminuiría la alegría y el apoyo al no estar presente para tu familia en un momento importante. Podría ser útil buscar un equilibrio entre tus responsabilidades académicas y familiares.",
+        "explicacion": "Elegir quedarte muestra compromiso académico, pero te aleja de tu familia en un momento importante. A veces cumplir con una responsabilidad implica soltar otra.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3801,7 +3801,7 @@ let preguntas = [
       },
       {
         "text": "Vas con tu familia y luego resuelves tu situación académica",
-        "explicacion": "Esta opción podría aumentar la alegría y el apoyo al estar presente para tu familia en un momento importante, pero disminuiría el tiempo al tener que dedicar tiempo extra para resolver tu situación académica después. Podría ser útil buscar un equilibrio entre tus responsabilidades académicas y familiares.",
+        "explicacion": "Priorizar a tu familia fortalece los lazos afectivos. Después, tendrás que asumir el esfuerzo adicional para ponerte al corriente en la escuela.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -3811,7 +3811,7 @@ let preguntas = [
       },
       {
         "text": "Hablas con los profesores para ver cómo puedes salvar el semestre",
-        "explicacion": "Esta opción podría aumentar la determinación, la alegría y el apoyo al buscar una solución para cumplir con tus responsabilidades académicas y estar presente para tu familia en un momento importante. Podría disminuir el tiempo al tener que dedicar tiempo extra para completar el trabajo perdido.",
+        "explicacion": "Buscar soluciones con tus profesores demuestra madurez y responsabilidad. Aunque implica más esfuerzo, te permite cumplir con ambas partes.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -3821,7 +3821,7 @@ let preguntas = [
       },
       {
         "text": "Hablas con los profesores para que te pasen con lo que ya has hecho en el semestre porque no mereces ir a intersemestre",
-        "explicacion": "Esta opción podría aumentar el tiempo al no tener que dedicar tiempo extra para completar el trabajo perdido, pero disminuiría la determinación y el apoyo al depender de los profesores para pasar el semestre sin completar todo el trabajo requerido. Podría ser útil buscar una solución más justa y equitativa para cumplir con tus responsabilidades académicas.",
+        "explicacion": "Pedir que te aprueben sin completar lo necesario puede parecer práctico, pero refleja evasión de responsabilidades. Buscar acuerdos justos suele ser más constructivo.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3843,7 +3843,7 @@ let preguntas = [
     "options": [
       {
         "text": "Ofreces tu ayuda para trabajar juntos en la tarea, a pesar de que te lleve tiempo extra.",
-        "explicacion": "Esta opción podría aumentar el apoyo y la alegría al ayudar a un amigo, pero podría disminuir el tiempo ya que te llevará tiempo extra. También podría aumentar la determinación al enfrentarte a un desafío.",
+        "explicacion": "Ayudar a tu amigo fortalece su aprendizaje y la amistad. Aunque exige tiempo, también refuerza tu compromiso y empatía.",
         "salud": 0,
         "alegria": 1,
         "apoyo": 2,
@@ -3853,7 +3853,7 @@ let preguntas = [
       },
       {
         "text": "Le sugieres a tu amigo que busque ayuda de un profesor o tutor.",
-        "explicacion": "Sugerir que tu amigo busque ayuda de un profesor o tutor muestra apoyo sin comprometer tu tiempo. Esta opción permite que tu amigo reciba la ayuda adecuada y se fortalezca académicamente.",
+        "explicacion": "Orientarlo hacia apoyo profesional es una forma responsable de ayudar sin asumir tú la tarea. Favorece su autonomía y aprendizaje.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -3863,7 +3863,7 @@ let preguntas = [
       },
       {
         "text": "Decides no intervenir, ya que crees que tu amigo debe aprender a manejar sus responsabilidades.",
-        "explicacion": "Decidir no intervenir puede mantener tu tiempo y salud sin cambios, pero puede disminuir el apoyo percibido por tu amigo. Esta opción fomenta la independencia, aunque puede ser vista como falta de ayuda.",
+        "explicacion": "Dejar que tu amigo se haga cargo puede fomentar su independencia, aunque podría sentirse poco apoyado en un momento difícil.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -3873,7 +3873,7 @@ let preguntas = [
       },
       {
         "text": "Haces la tarea por tu amigo para que pueda entregarla a tiempo.",
-        "explicacion": "Esta opción podría aumentar el apoyo y la alegría al ayudar a un amigo, pero podría disminuir la determinación y el tiempo ya que estás evitando que tu amigo aprenda y te lleva tiempo extra.",
+        "explicacion": "Aunque parece un gesto solidario, hacerlo por él impide que aprenda y te sobrecarga. Ayudar no siempre significa resolver todo.",
         "salud": 0,
         "alegria": 1,
         "apoyo": 1,
@@ -3896,7 +3896,7 @@ let preguntas = [
     "options": [
       {
         "text": "Vas a la fiesta, dejando que tu pareja se quede trabajando en su tarea.",
-        "explicacion": "Optar por ir a la fiesta puede aumentar tu alegría momentáneamente, pero podría disminuir el apoyo al no estar presente para ayudar o motivar a tu pareja con su tarea. Esta decisión refleja priorizar tu diversión sobre las necesidades académicas de tu pareja.",
+        "explicacion": "Disfrutar la fiesta te da alegría momentánea, pero puede hacer que tu pareja se sienta poco apoyada. Tus decisiones también afectan tus relaciones.",
         "salud": 0,
         "alegria": 1,
         "apoyo": -2,
@@ -3906,7 +3906,7 @@ let preguntas = [
       },
       {
         "text": "Decides quedarte ayudando a tu pareja con la tarea, incluso si eso significa perder la fiesta.",
-        "explicacion": "Quedarte para apoyar a tu pareja en su tarea demuestra compromiso y apoyo, aunque sacrificas tu tiempo de descanso y diversión. Esta decisión puede fortalecer tu relación, pero es importante considerar también tu bienestar y descanso.",
+        "explicacion": "Apoyar a tu pareja en lugar de salir demuestra compromiso y solidaridad. Aunque sacrificas diversión, fortaleces la relación y tu empatía.",
         "salud": 0,
         "alegria": -1,
         "apoyo": 2,
@@ -3916,7 +3916,7 @@ let preguntas = [
       },
       {
         "text": "Asistes a la fiesta por un corto tiempo y luego vuelves para ayudar a tu pareja a terminar su tarea.",
-        "explicacion": "Esta opción busca equilibrar el disfrute personal y el apoyo a tu pareja. Aunque demuestras compromiso al regresar temprano, la calidad de la ayuda que puedas ofrecer podría verse comprometida por el tiempo limitado.",
+        "explicacion": "Intentas balancear el disfrute y el apoyo, lo cual es válido. Sin embargo, dividir tu atención puede afectar la calidad del apoyo que brindas.",
         "salud": 0,
         "alegria": 1,
         "apoyo": 1,
@@ -3926,7 +3926,7 @@ let preguntas = [
       },
       {
         "text": "No asistes a la fiesta, y desde tu casa buscas material que le pueda servir a tu novi@ para hacer su tarea.",
-        "explicacion": "Optar por no asistir a la fiesta y en su lugar dedicar tiempo a buscar recursos y material para tu pareja demuestra una forma proactiva y reflexiva de apoyo. Esta acción puede no solo ayudar a tu pareja a completar su tarea más eficazmente sino también fortalecer la relación al mostrar que valoras su éxito académico.",
+        "explicacion": "Apoyas a tu pareja de forma práctica, aunque sin estar presente. Es un gesto valioso que demuestra interés por su bienestar académico.",
         "salud": 0,
         "alegria": -1,
         "apoyo": 1,
@@ -4394,7 +4394,7 @@ let preguntas = [
       },
       {
         "text": "También lo agredes o amenazas para que deje de hacerlo",
-        "explicacion": "Responder al abuso con agresión o amenazas puede parecer una forma de recuperar el control, pero en realidad puede aumentar el riesgo y la gravedad del conflicto. Es crucial abordar la situación de manera que priorice tu seguridad y bienestar, evitando acciones que puedan escalar la violencia. Buscar ayuda de profesionales y servicios de apoyo puede proporcionar opciones más seguras y efectivas para abordar el abuso.",
+        "explicacion": "Responder al abuso con agresión o amenazas puede parecer una forma de recuperar el control, pero en realidad puede aumentar el riesgo. Es crucial abordar la situación de manera que priorice tu seguridad y bienestar, evitando acciones que puedan escalar la violencia. Buscar ayuda de profesionales puede proporcionar opciones más seguras y efectivas para abordar el abuso.",
         "salud": -2,
         "alegria": -2,
         "apoyo": -1,
@@ -5283,7 +5283,7 @@ let preguntas = [
     "options": [
       {
         "text": "Organizas una protesta pacífica después de clases",
-        "explicacion": "Esta opción muestra determinación y puede aumentar la alegría y el apoyo entre los estudiantes, pero puede requerir una inversión significativa de tiempo.",
+        "explicacion": "Actuar en grupo fortalece la solidaridad y la voz colectiva. Aunque toma tiempo, puede generar cambios y unir a quienes comparten la causa.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -5293,7 +5293,7 @@ let preguntas = [
       },
       {
         "text": "Le envías una carta al director para informarle de la situación",
-        "explicacion": "Esta opción muestra determinación y puede resolver la situación de manera más directa, pero puede que no movilice a otros estudiantes para que se unan a la causa.",
+        "explicacion": "Comunicarte con la autoridad escolar es una forma directa y formal de buscar solución. Requiere iniciativa, aunque no siempre involucra a más personas.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 0,
@@ -5303,7 +5303,7 @@ let preguntas = [
       },
       {
         "text": "Decides no hacer nada porque consideras que no es tu problema",
-        "explicacion": "Esta opción puede liberar tu tiempo y energía, pero puede disminuir la alegría y el apoyo que los estudiantes afectados sienten de ti.",
+        "explicacion": "Ignorar la injusticia te libera de responsabilidades, pero también te aleja del grupo y puede afectar cómo los demás perciben tu compromiso con lo justo.",
         "salud": 0,
         "alegria": 0,
         "apoyo": -1,
@@ -5313,7 +5313,7 @@ let preguntas = [
       },
       {
         "text": "Hablas directamente con el profesor sobre la situación",
-        "explicacion": "Esta opción muestra determinación, pero puede resultar en una confrontación que disminuya tu alegría y bienestar.",
+        "explicacion": "Enfrentar el problema de forma directa puede ser valiente y efectivo, pero también incómodo. Requiere claridad y firmeza para evitar confrontaciones negativas.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 0,
@@ -6188,7 +6188,7 @@ let preguntas = [
     "options": [
       {
         "text": "Aceptas el trabajo para equilibrar estudios y trabajo, consciente de los desafíos.",
-        "explicacion": "Decidir asumir el trabajo de fin de semana representa una oportunidad para adquirir experiencia laboral valiosa y ganar dinero extra. Esta decisión refleja tu capacidad para manejar múltiples responsabilidades y tu deseo de ser económicamente proactivo. Sin embargo, equilibrar el trabajo y los estudios requiere una gestión eficaz del tiempo y podría limitar tus momentos de ocio y descanso.",
+        "explicacion": "Aceptar el trabajo muestra iniciativa y compromiso con tu crecimiento económico. Sin embargo, equilibrar estudios y empleo exige buena organización y puede reducir tu tiempo libre y descanso.",
         "determinacion": 1,
         "alegria": 0,
         "apoyo": 0,
@@ -6198,7 +6198,7 @@ let preguntas = [
       },
       {
         "text": "Decides no aceptar el trabajo, priorizando tu bienestar y estudios.",
-        "explicacion": "Optar por declinar la oferta de trabajo demuestra tu compromiso con tu rendimiento académico y tu conciencia sobre la importancia del descanso y el tiempo personal. Esta elección puede permitirte concentrarte más plenamente en tus estudios y actividades extracurriculares, aunque renuncies a los beneficios económicos y la experiencia laboral que el trabajo podría ofrecer.",
+        "explicacion": "Rechazar el trabajo refleja que valoras tu salud, descanso y rendimiento escolar. Aunque pierdes ingresos y experiencia, ganas tiempo para concentrarte en lo académico y en ti.",
         "determinacion": 1,
         "alegria": 0,
         "apoyo": 0,
@@ -6208,7 +6208,7 @@ let preguntas = [
       },
       {
         "text": "Aceptas y además trabajas horas adicionales buscando maximizar tus ingresos.",
-        "explicacion": "Decidir asumir horas adicionales es una decisión que refleja tu deseo o necesidad de aumentar tus ingresos. Aunque este compromiso adicional puede poner a prueba tu capacidad para equilibrar el trabajo con tus responsabilidades académicas.  Esta elección subraya la importancia que le das a la independencia económica y tu disposición para trabajar duro, incluso si implica hacer sacrificios en otras áreas de tu vida.",
+        "explicacion": "Trabajar más horas puede ayudarte económicamente y demostrar esfuerzo, pero también puede afectar tu salud, tiempo y estudios si no logras un equilibrio adecuado.",
         "determinacion": 2,
         "alegria": -1,
         "apoyo": 0,
@@ -6218,7 +6218,7 @@ let preguntas = [
       },
       {
         "text": "Pides tiempo para pensarlo y consultas con tus amigos y familia.",
-        "explicacion": "Buscar el consejo de familiares y mentores antes de tomar una decisión refleja tu apertura a la orientación y el valor que pones en las perspectivas externas. Esta colaboración en el proceso de toma de decisiones puede proporcionarte insights valiosos y asegurarte de que consideras todas las posibles implicaciones de aceptar el trabajo.",
+        "explicacion": "Pedir consejo antes de decidir muestra madurez y apertura. Escuchar otras opiniones puede ayudarte a tomar una decisión más consciente y considerar aspectos que tal vez no habías visto.",
         "determinacion": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -6702,17 +6702,17 @@ let preguntas = [
     "options": [
       {
         "text": "Hablas con ella sobre la importancia de establecer limites saludables en su relación para mejorar su enfoque en los estudios.",
-        "explicacion": "Decides abordar la situación directamente, expresando tu preocupación por cómo su nueva relación está afectando su desempeño académico y la importancia de establecer límites saludables en su relación, sugiriendo maneras en las que puede equilibrar mejor su tiempo entre su novio y sus responsabilidades académicas.",
+        "explicacion": "Hablar con tu amiga desde la preocupación muestra madurez y solidaridad. Al sugerir límites saludables, le ayudas a reflexionar sobre cómo equilibrar su vida personal y académica sin dejar de apoyar su relación.",
         "salud": 1,
         "alegria": 1,
         "apoyo": 2,
         "determinacion": 2,
-        "tiempo": 0,
+        "time": 0,
         "dinero": 0
       },
       {
         "text": "Ofreces ayudarla con sus tareas y estudios para compensar el tiempo perdido.",
-        "explicacion": "Te ofreces proactivamente a ayudar a tu amiga con el estudio y las tareas, facilitando que se ponga al día con el trabajo escolar sin tener que sacrificar su tiempo con su novio.",
+        "explicacion": "Ayudarla muestra empatía y compromiso con su bienestar académico. Sin embargo, si lo haces constantemente, podrías cargar con responsabilidades que no te corresponden y limitar su aprendizaje.",
         "salud": 0,
         "alegria": 1,
         "apoyo": 2,
@@ -6722,7 +6722,7 @@ let preguntas = [
       },
       {
         "text": "Le das espacio para que maneje su situación y buscas ampliar tu círculo social y haces una nueva amiga.",
-        "explicacion": "Optas por una aproximación equilibrada, respetando la autonomía de tu amiga y su capacidad para manejar sus propios asuntos, al tiempo que tomas la iniciativa de conocer gente nueva y formar nuevas amistades. Este enfoque te permite mantener el apoyo a tu amiga desde la distancia, mientras personalmente te abres a nuevas experiencias y perspectivas a través de nuevas conexiones sociales, además de evitar depender de una sola amistad.",
+        "explicacion": "Respetar su espacio sin juzgar puede fortalecer la amistad a largo plazo. Al mismo tiempo, abrirte a nuevas amistades te permite crecer, evitar la dependencia y mantener tu bienestar emocional.",
         "salud": 1,
         "alegria": 2,
         "apoyo": 1,
@@ -6732,7 +6732,7 @@ let preguntas = [
       },
       {
         "text": "Consideras la idea de iniciar una relación romántica tú también.",
-        "explicacion": "La situación te lleva a reflexionar sobre tu propia vida amorosa, considerando la posibilidad de buscar una relación romántica, inspirada en parte por los cambios en la vida de tu amiga y el deseo de experimentar algo similar.",
+        "explicacion": "Pensar en tener una relación por inspiración o comparación puede abrir nuevas experiencias, pero también conviene reflexionar si realmente lo deseas o solo estás reaccionando a la situación de tu amiga.",
         "salud": 0,
         "alegria": 1,
         "apoyo": 0,
@@ -6836,7 +6836,7 @@ let preguntas = [
       },
       {
         "text": "Faltas a la escuela para evitar al maestro, o entras a otras clases pero te escondes para no encontrarte con él durante el día.",
-        "explicacion": "Optas por evitar completamente el conflicto al faltar a la escuela o al esconderte del maestro durante el día. Esto puede darte más tiempo para completar la tarea, pero también podría afectar negativamente tu asistencia y rendimiento académico, además de crear una situación de estrés adicional al tener que esquivar al maestro.",
+        "explicacion": "Esto puede darte más tiempo para completar la tarea, pero también podría afectar negativamente tu asistencia y rendimiento académico, además de crear una situación de estrés adicional al tener que esquivar al maestro.",
         "salud": 0,
         "alegria": -1,
         "apoyo": -1,
@@ -6878,7 +6878,7 @@ let preguntas = [
       },
       {
         "text": "Esperas unos días para ver si puedes obtener ayuda o copiar de alguno de tus compañeros.",
-        "explicacion": "Optas por posponer el trabajo propio y observar si puedes recibir ayuda de tus compañeros o copiar sus respuestas. A corto plazo, esto podría parecer una solución fácil, pero a largo plazo puede fomentar hábitos de dependencia y falta de compromiso con tu aprendizaje. Esto no solo afecta tu capacidad para enfrentar desafíos académicos futuros, sino que también puede llevar a lagunas significativas en tu conocimiento, lo que podría dificultar el éxito en estudios avanzados o en tu carrera profesional.",
+        "explicacion": "A corto plazo, esto podría parecer una solución fácil, pero a largo plazo puede fomentar hábitos de dependencia y falta de compromiso con tu aprendizaje. Esto no solo afecta tu capacidad para enfrentar desafíos académicos futuros, sino que también puede llevar a lagunas significativas en tu conocimiento, lo que podría dificultar el éxito en estudios avanzados o en tu carrera profesional.",
         "salud": -2,
         "alegria": 0,
         "apoyo": 0,
@@ -6888,7 +6888,7 @@ let preguntas = [
       },
       {
         "text": "Buscas ayuda de compañeros o tutores desde el principio para asegurarte de entender todos los requisitos.",
-        "explicacion": "Decides colaborar con otros desde el inicio para clarificar cualquier duda y compartir la carga de trabajo. Esta cooperación no solo facilita el proceso sino que también enriquece tu aprendizaje y fortalece tus conexiones.",
+        "explicacion": "Colaborar con otros desde el inicio para clarificar cualquier duda y compartir la carga de trabajo no solo facilita el proceso sino que también enriquece tu aprendizaje y fortalece tus conexiones.",
         "salud": 1,
         "alegria": 1,
         "apoyo": 2,
@@ -7479,7 +7479,7 @@ let preguntas = [
     "options": [
       {
         "text": "Dejas de entrar a clases y buscas otras actividades que te hagan sentir mejor como estar con tus amigos, jugar fútbol o ir a fiestas",
-        "explicacion": "Dejar de asistir a clases y buscar actividades placenteras puede proporcionar alivio temporal, pero no aborda la causa subyacente de tus problemas académicos y puede afectar negativamente tu futuro educativo.",
+        "explicacion": "Alejarte de la escuela puede darte alivio momentáneo, pero no resuelve el problema de fondo. A largo plazo, podrías quedarte con menos opciones y apoyo.",
         "salud": 1,
         "alegria": 1,
         "apoyo": -2,
@@ -7489,7 +7489,7 @@ let preguntas = [
       },
       {
         "text": "Hablas con tus padres para dejar de ir a la escuela y aprender un oficio o ponerte a trabajar",
-        "explicacion": "Hablar con tus padres sobre dejar la escuela para aprender un oficio o trabajar puede ser una decisión difícil pero práctica en algunos casos. Esta opción puede ofrecerte una vía alternativa para el éxito personal y profesional. Aprender un oficio te permite adquirir habilidades prácticas y entrar al mercado laboral más rápido, lo cual puede ser satisfactorio y económicamente beneficioso. Sin embargo, es importante considerar que esta decisión también puede limitar tus opciones de educación superior y algunas oportunidades profesionales a largo plazo. Discutirlo con tus padres puede ayudarte a evaluar las ventajas y desventajas, y asegurarte de que estás tomando una decisión informada y apoyada.",
+        "explicacion": "Explorar otras rutas como un oficio puede ser valioso si lo decides con claridad. Hablarlo con tu familia ayuda a tomar una decisión informada y con respaldo.",
         "salud": 0,
         "alegria": 0,
         "apoyo": 1,
@@ -7499,7 +7499,7 @@ let preguntas = [
       },
       {
         "text": "Decepcionado de ti, recurres a las drogas o el alcohol",
-        "explicacion": "Recurrir a las drogas o el alcohol es una respuesta destructiva a los problemas académicos que puede tener consecuencias graves para tu salud y bienestar. Es importante buscar ayuda y apoyo en lugar de recurrir a sustancias.",
+        "explicacion": "Usar sustancias para escapar solo agrava el problema y daña tu salud, tus vínculos y tu motivación. Pedir ayuda es siempre una mejor salida.",
         "salud": -3,
         "alegria": -2,
         "apoyo": -3,
@@ -7509,7 +7509,7 @@ let preguntas = [
       },
       {
         "text": "Aceptas que tal vez avances más lento que tus compañeros, pero decides no rendirte",
-        "explicacion": "Aceptar tu propio ritmo y decidir no rendirte demuestra una gran fortaleza y determinación. Reconocer tus limitaciones y seguir esforzándote es crucial para tu desarrollo personal y académico.",
+        "explicacion": "Reconocer tu propio ritmo y seguir adelante es una muestra de madurez. La constancia puede abrirte muchas puertas con el tiempo.",
         "salud": 1,
         "alegria": 1,
         "apoyo": 2,
@@ -7741,42 +7741,42 @@ let preguntas = [
       {
         "text": "Lo gastas todo de inmediato en algo que quieres mucho.",
         "explicacion": "Disfrutar tu beca puede ser emocionante, pero gastar todo de inmediato te deja sin recursos para necesidades futuras.",
-        "determinacion": -1,
+        "salud": 0,
         "alegria": 2,
         "apoyo": 0,
-        "salud": 0,
-        "dinero": -2,
-        "tiempo": 0
+        "determinacion": -1,
+        "tiempo": 0,
+        "dinero": -2
       },
       {
         "text": "Ahorras la mayor parte para algo más grande en el futuro.",
         "explicacion": "Guardar la beca demuestra disciplina y visión a largo plazo. Puede parecer difícil ahora, pero te ayudará a cumplir metas más grandes después.",
-        "determinacion": 2,
+        "salud": 0,
         "alegria": 0,
         "apoyo": 0,
-        "salud": 0,
-        "dinero": 3,
-        "tiempo": 0
+        "determinacion": 2,
+        "tiempo": 0,
+        "dinero": 3
       },
       {
         "text": "Gastas una parte y ahorras otra parte.",
         "explicacion": "Encuentras un balance entre disfrutar una parte de tu beca y guardar otra para el futuro. Es una decisión responsable y realista.",
-        "determinacion": 1,
+        "salud": 0,
         "alegria": 1,
         "apoyo": 0,
-        "salud": 0,
-        "dinero": 1,
-        "tiempo": 0
+        "determinacion": 1,
+        "tiempo": 0,
+        "dinero": 1
       },
       {
         "text": "Se lo prestas o das a un familiar o amigo que lo necesita.",
         "explicacion": "La solidaridad es valiosa, pero te deja sin recursos propios y podrías lamentarlo si surge una necesidad personal más adelante.",
-        "determinacion": 1,
+        "salud": 0,
         "alegria": 0,
         "apoyo": 2,
-        "salud": 0,
-        "dinero": -2,
-        "tiempo": 0
+        "determinacion": 1,
+        "tiempo": 0,
+        "dinero": -2
       }
     ],
     "categorias": [
