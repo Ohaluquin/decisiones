@@ -127,3 +127,60 @@ footer p {
     padding: 4px;
   }
 }
+
+/* —— Modal Decisiones y Azares —— */
+.mz-modal[aria-hidden="true"] { display: none; }
+.mz-modal[aria-hidden="false"] { display: block; }
+
+.mz-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.5);
+  backdrop-filter: blur(2px);
+}
+
+.mz-dialog {
+  position: fixed; inset: 0;
+  max-width: 880px;
+  width: calc(100% - 2rem);
+  margin: auto;
+  background: #ffffff;
+  color: #111;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  padding: 1.25rem 1.25rem 1.5rem;
+  outline: none;
+}
+
+.index_body .mz-dialog { /* armoniza con tu tema si usas fondos oscuros */
+  background: #fffdfc;
+}
+
+.mz-close {
+  position: absolute; top: .5rem; right: .75rem;
+  border: none; background: transparent; font-size: 2rem; line-height: 1;
+  cursor: pointer; color: #444;
+}
+
+.mz-content p { margin: .75rem 0; line-height: 1.6; }
+.mz-content ul { margin: .25rem 0 .75rem 1.25rem; }
+.mz-content li { margin: .25rem 0; }
+
+.mz-sep {
+  border: none; border-top: 1px solid rgba(0,0,0,.1);
+  margin: 1rem 0 .75rem;
+}
+
+.mz-credits {
+  font-size: .95rem;
+  opacity: .9;
+}
+
+.footer-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .mz-dialog { padding: 1.5rem 2rem 2rem; }
+}
