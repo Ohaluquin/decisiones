@@ -70,15 +70,16 @@
             el <strong>juego de mesa centrado en las decisiones</strong> de los estudiantes, respondiendo preguntas con
             contextos realistas y atributos indispensables para el funcionamiento del estudiante (salud, alegría, apoyo,
             determinación, tiempo y dinero). Las preguntas, las evaluaciones y las retroalimentaciones fueron pensadas
-            para
-            que inviten a reflexionar sobre cómo cada elección tiene consecuencias. El azar fue introducido porque a
-            veces
-            nos ocurren cosas donde no tenemos injerencia.
+            para que inviten a reflexionar sobre cómo cada elección tiene consecuencias. 
           </p>
           <p>
             Posteriormente, con la salida de la inteligencia artificial generativa, se desarrolló la versión digital del
-            juego, como forma de aprender a implementar dichas herramientas, y ahora se cuenta con dos modos de juego.          
-            Durante el desarrollo de la app se ha recibido retroalimentación de colegas del seminario, estudiantes, 
+            juego, como forma de aprender a implementar dichas herramientas, y ahora se cuenta con dos modos de juego:
+            <strong>Jugar con Amigos</strong> (modo híbrido, con tablero físico y tarjetas virtuales) y
+            <strong>Modo campaña</strong> (pensado para jugar de forma individual).
+
+          <p>
+            Durante el desarrollo de la app se ha recibido retroalimentación de colegas del seminario, estudiantes,
             docentes, exalumnos, y de las <strong>Direcciones Académica y de Innovación</strong> del IEMS.
           </p>
           <p>
@@ -89,9 +90,14 @@
             y abrir espacio para conversar sobre <em>temas sensibles</em> de manera dinámica y accesible.
             Según las elecciones de los participantes, el tutor puede detectar asuntos que convenga trabajar con mayor
             profundidad
-            y proponer <strong>actividades complementarias</strong>, como desarrollar cuentos o cuestionarios de reflexión
+            y proponer <strong>actividades complementarias</strong>, como desarrollar cuentos o cuestionarios de
+            reflexión
             con preguntas del tipo:
-            <em>¿qué pregunta te impactó más?, ¿qué hubieras hecho diferente a tus compañeros?</em>
+            <em>¿qué situación te impactó más?, ¿qué hubieras hecho diferente a tus compañeros?</em>
+          </p>
+          <p>
+            De este modo, el juego se convierte no solo en una experiencia lúdica,
+            sino también en una <strong>herramienta pedagógica</strong> que fortalece la tutoría de seguimiento.
           </p>
           <hr class="mz-sep" />
           <p class="mz-credits">
@@ -110,20 +116,36 @@
         const dialog = modal.querySelector('.mz-dialog');
         const closeEls = modal.querySelectorAll('[data-close-modal], .mz-close');
         let lastFocused = null;
+        let scrollY = 0; // para iOS
 
         function openModal(e) {
           if (e) e.preventDefault();
           lastFocused = document.activeElement;
           modal.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden'; // bloquea scroll del body
-          // Enfoque al contenedor para accesibilidad
+
+          // Bloquea scroll del body también en iOS
+          scrollY = window.scrollY || document.documentElement.scrollTop;
+          document.body.style.position = 'fixed';
+          document.body.style.top = `-${scrollY}px`;
+          document.body.style.left = '0';
+          document.body.style.right = '0';
+          document.body.style.width = '100%';
+
           setTimeout(() => dialog.focus(), 0);
           trapFocus(true);
         }
 
         function closeModal() {
           modal.setAttribute('aria-hidden', 'true');
-          document.body.style.overflow = '';
+
+          // Restaura scroll del body
+          document.body.style.position = '';
+          document.body.style.top = '';
+          document.body.style.left = '';
+          document.body.style.right = '';
+          document.body.style.width = '';
+          window.scrollTo(0, scrollY);
+
           trapFocus(false);
           if (lastFocused) lastFocused.focus();
         }
@@ -138,25 +160,15 @@
             'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
           );
           if (!focusables.length) return;
-
           const first = focusables[0];
           const last = focusables[focusables.length - 1];
-
-          if (e.shiftKey && document.activeElement === first) {
-            e.preventDefault();
-            last.focus();
-          } else if (!e.shiftKey && document.activeElement === last) {
-            e.preventDefault();
-            first.focus();
-          }
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
         }
 
         function trapFocus(enable) {
-          if (enable) {
-            document.addEventListener('keydown', onKeyDown);
-          } else {
-            document.removeEventListener('keydown', onKeyDown);
-          }
+          if (enable) document.addEventListener('keydown', onKeyDown);
+          else document.removeEventListener('keydown', onKeyDown);
         }
 
         openBtn.addEventListener('click', openModal);

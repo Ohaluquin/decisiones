@@ -184,3 +184,23 @@ footer p {
 @media (min-width: 768px) {
   .mz-dialog { padding: 1.5rem 2rem 2rem; }
 }
+
+/* ——— Modal: scroll y móvil ——— */
+.mz-modal { position: fixed; inset: 0; z-index: 9999; }
+.mz-dialog {
+  max-width: 920px;
+  width: calc(100% - 2rem);
+  max-height: min(88dvh, 720px);   /* alto máx. visible */
+  overflow: auto;                   /* scroll interno */
+  -webkit-overflow-scrolling: touch;/* inercia en iOS */
+  overscroll-behavior: contain;     /* evita “arrastre” al body */
+}
+
+/* Que el contenido no se pegue a los bordes al hacer scroll */
+.mz-content { padding-bottom: .5rem; }
+
+/* En pantallas pequeñas, un poquito más compacto */
+@media (max-width: 480px) {
+  .mz-dialog { padding: 1rem; max-height: 90dvh; }
+  .mz-content p { line-height: 1.55; }
+}
