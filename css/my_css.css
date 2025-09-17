@@ -1109,6 +1109,7 @@ footer p {
 .footer-link {
   text-decoration: underline;
   cursor: pointer;
+  color: white;
 }
 
 /* Responsive */
