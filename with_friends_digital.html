@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Decisiones y Azares — Jugar con Amigos (Digital local)</title>
+  <!-- Reutiliza tu hoja de estilos principal -->
+  <link rel="stylesheet" href="css/css_with_friends.css" />
+  <!-- Estilos del tablero y panel de jugadores -->
+  <link rel="stylesheet" href="css/board.css" />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <div class="app-grid">
+    <main class="board-wrap">
+      <div id="board" class="board" aria-label="Tablero"></div>
+      <div id="pawns" class="pawns" aria-hidden="true"></div>
+    </main>
+
+    <aside class="side">
+      <section class="panel">
+        <header class="title">
+          <h2>Turno</h2>
+          <div class="muted" id="turnLabel">—</div>
+        </header>
+        <div class="controls">
+          <button id="rollBtn" class="primary">Tirar dado 🎲</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <header class="title"><h2>Jugadores</h2><span class="muted" id="roundLabel">Ronda 1</span></header>
+        <div id="players" class="players list-compact"></div>
+      </section>      
+    </aside>
+  </div>
+  
+  <!-- Modal de pregunta nativo para este modo digital (independiente del HTML clásico) -->
+  <dialog id="qModal" class="card">
+    <div class="modal contenido-pergamino">
+      <h3 id="qTitle">Pregunta</h3>
+      <div id="qKind" class="kind">—</div>
+      <div class="qflex">
+        <img id="qImg" alt="Imagen de contexto" class="imagen-contexto" />
+        <div class="qright">
+          <div id="qText" class="qtext">…</div>
+          <div id="qOpts" class="opts"></div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Carga tu banco de preguntas existente -->
+  <script src="database/questions.js"></script>
+  <!-- Motor de tablero -->
+  <script src="js/game_digital.js"></script>
+</body>
+</html>
