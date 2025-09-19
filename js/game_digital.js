@@ -37,7 +37,8 @@
   const boardEl = document.getElementById("board");
   const pawnsLayer = document.getElementById("pawns");
   const playersEl = document.getElementById("players");
-  const rollBtn = document.getElementById("rollBtn");
+  const confirmBtn = document.getElementById("confirmRoll");
+  const diceValueEl = document.getElementById("diceValue");
   const turnLabel = document.getElementById("turnLabel");
   const roundLabel = document.getElementById("roundLabel");
   const logEl = document.getElementById("log");
@@ -53,6 +54,7 @@
     players: [],
     turnIdx: 0,
     round: 1,
+    lastDice: 1,
     busy: false,
     positions: new Map(),
     pawns: new Map(),
@@ -280,8 +282,20 @@
     console.log("Por tipo (normalizado):", porTipo);
     console.groupEnd();
 
-    rollBtn.addEventListener("click", onRoll);
+    confirmBtn.addEventListener("click", onConfirmRoll);
     window.addEventListener("resize", computeCentersAndReposition);
+  }
+
+
+  function onConfirmRoll() {
+    if (Game.busy) return;
+    Game.busy = true;
+    if (typeof confirmBtn !== 'undefined' && confirmBtn) confirmBtn.disabled = true;
+
+    const steps = parseInt(diceValueEl && diceValueEl.value, 10) || 1;
+    Game.lastDice = steps;
+    const p = Game.players[Game.turnIdx];
+    movePawn(p.id, steps);
   }
 
   function onRoll() {
@@ -345,18 +359,13 @@
     qModal.setAttribute("data-kind", kNorm);
 
     // Pergamino dentro del <dialog>
-    qTitle.textContent = `Pregunta para ${player.name}`;
-    qKind.textContent = (q.kind || kind).toUpperCase();
+    //qTitle.textContent = `Pregunta para ${player.name}`;
+    //qKind.textContent = (q.kind || kind).toUpperCase();
     qText.innerHTML = q.text || "…";
     qImg.src = `img/Preguntas/${q.imageName || "inicio"}.webp`;
 
     qOpts.innerHTML = `
-      <div id=\"contenedor-dado\" style=\"display:${
-        esAzar ? "block" : "none"
-      }; text-align:center; margin-bottom:8px\">
-        <img id=\"gif-dado\" src=\"img/dado.gif\" alt=\"Dado\" style=\"height:80px; display:none\" />
-        <div id=\"instruccionDado\" class=\"muted\" style=\"margin:6px 0\">Lanza el dado para obtener PAR o NON</div>
-        <button id=\"btnLanzarDado\" class=\"key center\">🎲 Lanzar dado</button>
+        <div id=\"instruccionDado\" class=\"hidden\" style=\"color: white\">Lanza el dado para obtener PAR (selecciona opción de arriba) o NON (selecciona opción de abajo)</div>
       </div>
       <div id=\"radioptions\" class=\"opciones-marcadas\">
         <label><input type=\"radio\" id=\"option1\" name=\"option\" value=\"1\" /> <span id=\"option1_text\"></span></label><br />
@@ -419,20 +428,10 @@
     );
 
     if (esAzar) {
-      const gif = document.getElementById("gif-dado");
-      const btn = document.getElementById("btnLanzarDado");
-      btn.addEventListener("click", () => {
-        gif.style.display = "inline-block";
-        setTimeout(() => {
-          const resultado = Math.floor(Math.random() * 6) + 1;
-          const par = resultado % 2 === 0;
-          document.getElementById("option1").checked = par; // A = par
-          document.getElementById("option2").checked = !par; // B = non
-          document.getElementById("contenedor-dado").style.display = "none";
-          btnResponder.disabled = false; // ahora puedes responder manualmente
-          gif.style.display = "none";
-        }, 900);
-      });
+      document.getElementById("instruccionDado").style.display = "inline-block";
+    }
+    else {
+      document.getElementById("instruccionDado").style.display = "none";
     }
 
     btnResponder.addEventListener("click", () => {
@@ -443,9 +442,7 @@
 
       const radiosWrap = document.getElementById("radioptions");
       if (radiosWrap) radiosWrap.classList.add("hidden");
-      const contDado = document.getElementById("contenedor-dado");
-      if (contDado) contDado.style.display = "none";
-
+      
       const exp = document.getElementById("explicacion");
       exp.innerHTML = esAzar
         ? `<b>Azar:</b> ${op.explicacion || ""}`
@@ -503,7 +500,7 @@
     if (Game.turnIdx === 0) Game.round++;
     updateTurnLabel();
     Game.busy = false;
-    rollBtn.disabled = false;
+    confirmBtn.disabled = false;
   }
 
   function updateTurnLabel() {

@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Instrucciones - Decisiones y Azares</title>
   <link rel="stylesheet" href="css/instrucciones.css" />
+  <style>
+    /* Tooltip simple con data-attr */
+    .btn-tooltip { position: relative; display:inline-block; }
+    .btn-tooltip[data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute; left: 50%; transform: translateX(-50%);
+      bottom: calc(100% + 10px);
+      background: rgba(0,0,0,.85); color: #fff; padding: .6rem .8rem;
+      border-radius: .5rem; width: min(320px, 90vw); text-align: center;
+      font-size: .9rem; line-height: 1.2; z-index: 10;
+      box-shadow: 0 6px 18px rgba(0,0,0,.25);
+    }
+    .btns-modos { display: grid; gap: 1rem; margin-top: -30px;}
+    @media (min-width:768px){ .btns-modos { grid-template-columns: 1fr 1fr; } }
+    .boton-inicio {
+      width: 100%; padding: 1rem 1.25rem; border-radius: 14px;
+      font-weight: 700; border: 0; cursor: pointer;
+    }
+    .boton-primario { background: var(--academico, #ffc400); color:#1b1b1b; }
+    .boton-secundario { background: var(--personal, #3aa3ff); color:#fff; }
+    .instrucciones-lista li { margin: .4rem 0; color:rgb(100, 33, 14)}    
+    .mz-sep { margin: 1.25rem 0; }
+  </style>
 </head>
 
 <body class="index_body">
@@ -15,27 +37,49 @@
       <img class="game-title" src="img/titulo.webp" alt="Decisiones y Azares" />
     </header>
 
-    <!-- Tarjeta de instrucciones -->
-    <main class="instrucciones-contenido">
-      <h1>Antes de comenzar...</h1>
-      <p>
-        Para jugar <strong>Decisiones y Azares</strong>, necesitas el <strong>juego físico</strong>, que incluye un
-        instructivo, el tablero, un dado y las fichas que representan los atributos de cada jugador.
-      </p>
-      <p>
-        Esta versión digital presenta únicamente las preguntas y sus consecuencias. La gestión de fichas, los
-        movimientos
-        en el tablero y toda la dinámica del juego deben realizarse en el mundo real.
-      </p>
-      <button class="boton-inicio" onclick="window.location.href='with_friends.html'">Ir al juego</button>
+    <!-- Contenido -->
+    <main class="instrucciones-contenido" aria-labelledby="h1">
+      <h1 id="h1">Instructivo:</h1>
+      <ol class="instrucciones-lista">
+        <li><strong>Jugadores:</strong> 2 a 6. Duración: 30–60 min.</li>
+        <li><strong>Inicio:</strong> Cada jugador toma <strong>18 fichas</strong> de atributos y coloca su avatar en la salida. Se elige al azar quién comienza.</li>
+        <li><strong>Turno:</strong> Lanza el dado y avanza. El color de la casilla indica el tipo de tarjeta: 🔴 Social, 🟡 Académica, 🔵 Personal, 🟢 Azar. Lee la situación y elige una opción. Aplica los cambios en tus atributos.</li>
+        <li><strong>Reglas de fichas:</strong> Si te quedas sin un atributo, puedes <em>intercambiar 2 fichas</em> de otros atributos por 1 del que te falta. Si no puedes intercambiar, pierdes el juego.</li>        
+        <li><strong>Fin y ganador:</strong> Termina cuando alguien llega a la última casilla. Gana quien haya <em>gestionado mejor</em> sus atributos (más fichas del atributo con menor cantidad; de persistir empate, mayor total).</li>        
+      </ol>
+
       <p class="nota-final">
-        *Este juego utiliza personajes, imágenes y situaciones inspiradas en la realidad, adaptadas con fines
-        educativos.
+        *Este juego utiliza personajes, imágenes y situaciones inspiradas en la realidad, adaptadas con fines educativos.
       </p>
+      <hr>
+      <h1>Elige cómo quieres jugar:</h1>
+      <!-- Botones de modos con tooltip -->
+      <div class="btns-modos" role="list" aria-label="Modos de juego">
+        <!-- Modo híbrido original -->
+        <div role="listitem">
+          <a class="btn-tooltip" data-tip="Tablero, dado y fichas físicos. La app solo muestra tarjetas con preguntas, evaluaciones y retroalimentaciones. Ideal para juego de mesa y grupos."
+             href="with_friends.html">
+            <button class="boton-inicio boton-primario" type="button">
+              Híbrido
+            </button>
+          </a>
+        </div>
+
+        <!-- Nuevo modo híbrido (dado físico, tablero y tarjetas virtuales) -->
+        <div role="listitem">
+          <!-- TODO: Cambia el href a la ruta real de tu nuevo modo cuando esté listo -->
+          <a class="btn-tooltip" data-tip="Tablero, fichas y tarjetas virtuales en pantalla; solo el dado es físico para conservar la experiencia de lanzar."
+             href="with_friends_digital.html">
+            <button class="boton-inicio boton-secundario" type="button">
+              Digital
+            </button>
+          </a>
+        </div>
+      </div>
     </main>
 
     <!-- Pie con logo del IEMS -->
-    <footer>
+ <footer>
       <div class="footer-container">
         <img src="img/iems-logo.webp" alt="Logo IEMS" id="logo_iems" />
         <p>
@@ -60,19 +104,24 @@
           <p>
             <strong>Decisiones y Azares</strong> nació en el <em>Seminario de Complejidad en la Educación</em> del
             <strong>Centro de Ciencias de la Complejidad (C3-UNAM)</strong>, coordinado por el Dr. Felipe Lara Rosano,
-            junto con el equipo transdisciplinario del IEMS Contreras (ETIC). Su origen está en un diagnóstico sobre las
-            <strong>necesidades humanas, culturales y educativas</strong> de los estudiantes del IEMS Magdalena
+            junto con el "Equipo Transdisciplinario del IEMS Contreras" (ETIC). Su origen está en un diagnóstico sobre
+            las <strong>necesidades humanas, culturales y educativas</strong> de los estudiantes del IEMS Magdalena
             Contreras.
           </p>
           <p>
-            En ese diagnóstico teníamos un modelo centrado en el estudiante donde se analizaron las interacciones del
-            modelo estudiante con otros submodelos y cómo podrian afectar el desarrollo del estudiante. De este análisis
-            surgió el <strong>juego de mesa centrado en las decisiones</strong> de los estudiantes, respondiendo preguntas
-            con contextos realistas y atributos indispensables para el funcionamiento del estudiante (salud, alegría, 
-            apoyo, determinación, tiempo y dinero). La dinámica del juego, las preguntas, las evaluaciones y las 
-            retroalimentaciones fueron pensadas y discutidas por los miembros del grupo ETIC para que inviten a reflexionar
-            sobre cómo cada elección tiene consecuencias. 
+            El diagnóstico se basó en la aplicación de la teoría de la complejidad con un enfoque sistémico, que permitió
+            analizar al estudiante como sistema focal en interacción con familia, amigos, docentes, escuela y comunidad, 
+            entendiendo que su desarrollo académico y personal emerge de esas múltiples interrelaciones dinámicas. De este
+            análisis surgió el <strong>juego de mesa centrado en las decisiones</strong> de los estudiantes, respondiendo
+            preguntas con contextos realistas y modelando al estudiante a partir de atributos indispensables para su 
+            funcionamiento (salud, alegría, apoyo, determinación, tiempo y dinero). La dinámica del juego, las preguntas,
+            las evaluaciones y las retroalimentaciones fueron pensadas y discutidas por los miembros del grupo ETIC para
+            que inviten a reflexionar sobre cómo cada elección tiene consecuencias. 
           </p>
+          <p>
+            El objetivo original del juego fue observar cómo las decisiones de los estudiantes reflejaban la influencia
+            de los diferentes sistemas que los rodean, así como sus valores, costumbres y proyecto de vida.
+          </p>          
           <p>
             Posteriormente, con la salida de la inteligencia artificial generativa, se desarrolló la versión digital del
             juego, como forma de aprender a implementar dichas herramientas, y ahora se cuenta con dos modos de juego:
@@ -88,7 +137,7 @@
             tutor guía la actividad.
             Funciona como una <strong>herramienta lúdica de indagación</strong>, que permite observar el tipo de
             respuestas que eligen los estudiantes
-            y abrir espacio para conversar sobre <em>temas sensibles</em> de manera dinámica y accesible.
+            y abrir espacio para conversar sobre <em>temas sensibles</em> de manera dinámica, espontánea y accesible.
             Según las elecciones de los participantes, el tutor puede detectar asuntos que convenga trabajar con mayor
             profundidad
             y proponer <strong>actividades complementarias</strong>, como desarrollar cuentos o cuestionarios de
@@ -103,8 +152,9 @@
           <hr class="mz-sep" />
           <p class="mz-credits">
             Créditos: Dr. Felipe Lara Rosano y el grupo ETIC: Mitzi Castrejon, Gustavo Barajas, Mabegnac Dueñas,
-            Karina Neria, Oscar Hugo Álvarez; estudiantes y exalumnos colaboradores. 
-            Coordinación y desarrollo: Oscar Hugo Álvarez.
+            Karina Neria y Oscar Hugo Álvarez. 
+            <br>
+            Coordinación y desarrollo: Oscar Hugo Álvarez.            
           </p>
         </div>
       </div>
