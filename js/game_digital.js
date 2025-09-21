@@ -1,4 +1,3 @@
-// FILE: js/game_digital.js
 (() => {
   const ROWS = 6,
     COLS = 6;
@@ -48,7 +47,7 @@
   const qText = document.getElementById("qText");
   const qOpts = document.getElementById("qOpts");
   const qImg = document.getElementById("qImg");
-  
+
   // ===== Animación de peones (estilo v3, suave) =====
   const STEP_MS = 240; // duración por paso
   const EASE    = 'cubic-bezier(.2,.8,.2,1)'; // ease-out con punch
@@ -70,104 +69,104 @@
   }
 
   // Helpers comunes
-function iconForAttr(attr){
-  const k = (attr||'').toLowerCase();
-  const map = { salud:'salud', alegria:'alegria', apoyo:'apoyo', determinacion:'determinacion', tiempo:'tiempo', dinero:'dinero' };
-  const name = map[k] || k || 'salud';
-  const alt = labelAttr(k);
-  return `<img src="img/Iconos/${name}.webp" alt="${alt}" class="atributo" />`;
-}
-
-function labelAttr(attr){
-  const m = {salud:'Salud', alegria:'Alegría', apoyo:'Apoyo', determinacion:'Determinación', tiempo:'Tiempo', dinero:'Dinero'};
-  return m[(attr||'').toLowerCase()] || attr;
-}
-
-function fmtDelta(n){ return n>0 ? `+${n}` : String(n); }
-
-// ===== Modal único para Intercambio / Eliminación =====
-function ensureExchangeModal(){
-  let css = document.getElementById("exchg-modal-css");
-  if(!css){
-    css = document.createElement("style");
-    css.id = "exchg-modal-css";
-    css.textContent = `
-    dialog.exchg { border:0; border-radius:16px; background:#0f131c; color:#e6e9ef; box-shadow:0 24px 80px rgba(0,0,0,.65); max-width:560px; width:calc(100% - 32px); padding:0; }
-    .exchg .hd { display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid #232733; }
-    .exchg .hd h3 { margin:0; font-size:18px; }
-    .exchg .bd { padding:14px 16px; display:grid; gap:12px; }
-    .exchg .ft { display:flex; gap:10px; justify-content:flex-end; padding:14px 16px; border-top:1px solid #232733; }
-    .pill { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background:#151b27; border:1px solid #2a3140; font-weight:700; }
-    .delta.plus{ color:#51cf66; } .delta.minus{ color:#f03e3e; }
-    .muted{ color:#9aa3b2; } .row{ display:flex; align-items:center; gap:10px; } .arrow{ opacity:.6; }
-    .btn{ appearance:none; border:none; border-radius:12px; padding:10px 14px; font-weight:800; cursor:pointer; }
-    .btn.primary{ background:linear-gradient(180deg,#14b8a6,#10938a); color:#fff; }
-    .btn.ghost{ background:transparent; color:#e6e9ef; border:1px solid #2a3140; }
-    `;
-    document.head.appendChild(css);
-  }  
-  let dlg = document.getElementById("exchg-modal");
-  if(!dlg){
-    dlg = document.createElement("dialog");
-    dlg.id = "exchg-modal";
-    dlg.className = "exchg";
-    dlg.innerHTML = `
-      <div class="hd"><h3 id="exchg-title">Intercambio de emergencia</h3>
-        <button class="btn ghost" id="exchg-close" aria-label="Cerrar">✕</button>
-      </div>
-      <div class="bd" id="exchg-body"></div>
-      <div class="ft"><button class="btn primary" id="exchg-ok">Continuar</button></div>`;
-    document.body.appendChild(dlg);
-    dlg.querySelector("#exchg-close").onclick = ()=> dlg.close();
-    dlg.querySelector("#exchg-ok").onclick = ()=> dlg.close();
-    dlg.addEventListener("cancel", (e)=>{ e.preventDefault(); dlg.close(); });
+  function iconForAttr(attr){
+    const k = (attr||'').toLowerCase();
+    const map = { salud:'salud', alegria:'alegria', apoyo:'apoyo', determinacion:'determinacion', tiempo:'tiempo', dinero:'dinero' };
+    const name = map[k] || k || 'salud';
+    const alt = labelAttr(k);
+    return `<img src="img/Iconos/${name}.webp" alt="${alt}" class="atributo" />`;
   }
-  return dlg;
-}
 
-function waitClose(dlg){
-  return new Promise(res => dlg.addEventListener('close', () => res(), {once:true}));
-}
+  function labelAttr(attr){
+    const m = {salud:'Salud', alegria:'Alegría', apoyo:'Apoyo', determinacion:'Determinación', tiempo:'Tiempo', dinero:'Dinero'};
+    return m[(attr||'').toLowerCase()] || attr;
+  }
 
-// --- API limpia a usar ---
-async function showEmergencyExchange(payload){
-  const {fromName, operations, give, receive, reason} = payload || {};
-  const dlg = ensureExchangeModal();
-  dlg.querySelector("#exchg-title").textContent = "Intercambio de emergencia";
-  let rowsHtml = "";
-  const ops = Array.isArray(operations) && operations.length ? operations : [{give, receive}];
-  rowsHtml = ops.map(op => {
-    const g = op?.give, r = op?.receive;
-    return `<div class="row">
-      <span class="pill"><span>${iconForAttr(g?.attr)}</span>${labelAttr(g?.attr)} <span class="delta minus">${fmtDelta(g?.delta ?? -2)}</span></span>
-      <span class="arrow">→</span>
-      <span class="pill"><span>${iconForAttr(r?.attr)}</span>${labelAttr(r?.attr)} <span class="delta plus">${fmtDelta(r?.delta ?? +1)}</span></span>
-    </div>`;
-  }).join("");
-  dlg.querySelector("#exchg-body").innerHTML = `
-    <div class="muted">Se aplicó intercambio de emergencia para mantener al menos 1 en todos los atributos.</div>
-    ${rowsHtml}
-    ${reason ? `<div class="muted">Motivo: ${reason}</div>` : ""}`;
-  dlg.showModal();
-  try { log(`Intercambio de emergencia: ${fromName||''}`); } catch(e){}
-  await waitClose(dlg);
-}
+  function fmtDelta(n){ return n>0 ? `+${n}` : String(n); }
 
-async function showEmergencyElimination(payload){
-  const {fromName, reason} = payload || {};
-  const dlg = ensureExchangeModal();
-  dlg.querySelector("#exchg-title").textContent = "Jugador eliminado";
-  dlg.querySelector("#exchg-body").innerHTML = `
-    <div><strong>${fromName||'El jugador'}</strong> no pudo completar los intercambios de emergencia requeridos y <strong>queda eliminado</strong>.</div>
-    ${reason ? `<div class="muted" style="margin-top:6px">${reason}</div>` : ""}`;
-  dlg.showModal();
-  try { log(`Eliminado: ${fromName||''}. ${reason||''}`); } catch(e){}
-  await waitClose(dlg);
-}
+  // ===== Modal único para Intercambio / Eliminación =====
+  function ensureExchangeModal(){
+    let css = document.getElementById("exchg-modal-css");
+    if(!css){
+      css = document.createElement("style");
+      css.id = "exchg-modal-css";
+      css.textContent = `
+      dialog.exchg { border:0; border-radius:16px; background:#0f131c; color:#e6e9ef; box-shadow:0 24px 80px rgba(0,0,0,.65); max-width:560px; width:calc(100% - 32px); padding:0; }
+      .exchg .hd { display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid #232733; }
+      .exchg .hd h3 { margin:0; font-size:18px; }
+      .exchg .bd { padding:14px 16px; display:grid; gap:12px; }
+      .exchg .ft { display:flex; gap:10px; justify-content:flex-end; padding:14px 16px; border-top:1px solid #232733; }
+      .pill { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background:#151b27; border:1px solid #2a3140; font-weight:700; }
+      .delta.plus{ color:#51cf66; } .delta.minus{ color:#f03e3e; }
+      .muted{ color:#9aa3b2; } .row{ display:flex; align-items:center; gap:10px; } .arrow{ opacity:.6; }
+      .btn{ appearance:none; border:none; border-radius:12px; padding:10px 14px; font-weight:800; cursor:pointer; }
+      .btn.primary{ background:linear-gradient(180deg,#14b8a6,#10938a); color:#fff; }
+      .btn.ghost{ background:transparent; color:#e6e9ef; border:1px solid #2a3140; }
+      `;
+      document.head.appendChild(css);
+    }  
+    let dlg = document.getElementById("exchg-modal");
+    if(!dlg){
+      dlg = document.createElement("dialog");
+      dlg.id = "exchg-modal";
+      dlg.className = "exchg";
+      dlg.innerHTML = `
+        <div class="hd"><h3 id="exchg-title">Intercambio de emergencia</h3>
+          <button class="btn ghost" id="exchg-close" aria-label="Cerrar">✕</button>
+        </div>
+        <div class="bd" id="exchg-body"></div>
+        <div class="ft"><button class="btn primary" id="exchg-ok">Continuar</button></div>`;
+      document.body.appendChild(dlg);
+      dlg.querySelector("#exchg-close").onclick = ()=> dlg.close();
+      dlg.querySelector("#exchg-ok").onclick = ()=> dlg.close();
+      dlg.addEventListener("cancel", (e)=>{ e.preventDefault(); dlg.close(); });
+    }
+    return dlg;
+  }
 
-// --- Aliases por compatibilidad (si en algún lado los llamabas) ---
-window.notifyEmergencyExchange        = showEmergencyExchange;
-window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
+  function waitClose(dlg){
+    return new Promise(res => dlg.addEventListener('close', () => res(), {once:true}));
+  }
+
+  // --- API limpia a usar ---
+  async function showEmergencyExchange(payload){
+    const {fromName, operations, give, receive, reason} = payload || {};
+    const dlg = ensureExchangeModal();
+    dlg.querySelector("#exchg-title").textContent = "Intercambio de emergencia";
+    let rowsHtml = "";
+    const ops = Array.isArray(operations) && operations.length ? operations : [{give, receive}];
+    rowsHtml = ops.map(op => {
+      const g = op?.give, r = op?.receive;
+      return `<div class="row">
+        <span class="pill"><span>${iconForAttr(g?.attr)}</span>${labelAttr(g?.attr)} <span class="delta minus">${fmtDelta(g?.delta ?? -2)}</span></span>
+        <span class="arrow">→</span>
+        <span class="pill"><span>${iconForAttr(r?.attr)}</span>${labelAttr(r?.attr)} <span class="delta plus">${fmtDelta(r?.delta ?? +1)}</span></span>
+      </div>`;
+    }).join("");
+    dlg.querySelector("#exchg-body").innerHTML = `
+      <div class="muted">Se aplicó intercambio de emergencia para mantener al menos 1 en todos los atributos.</div>
+      ${rowsHtml}
+      ${reason ? `<div class="muted">Motivo: ${reason}</div>` : ""}`;
+    dlg.showModal();
+    try { log(`Intercambio de emergencia: ${fromName||''}`); } catch(e){}
+    await waitClose(dlg);
+  }
+
+  async function showEmergencyElimination(payload){
+    const {fromName, reason} = payload || {};
+    const dlg = ensureExchangeModal();
+    dlg.querySelector("#exchg-title").textContent = "Jugador eliminado";
+    dlg.querySelector("#exchg-body").innerHTML = `
+      <div><strong>${fromName||'El jugador'}</strong> no pudo completar los intercambios de emergencia requeridos y <strong>queda eliminado</strong>.</div>
+      ${reason ? `<div class="muted" style="margin-top:6px">${reason}</div>` : ""}`;
+    dlg.showModal();
+    try { log(`Eliminado: ${fromName||''}. ${reason||''}`); } catch(e){}
+    await waitClose(dlg);
+  }
+
+  // --- Aliases por compatibilidad (si en algún lado los llamabas) ---
+  window.notifyEmergencyExchange        = showEmergencyExchange;
+  window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
 
   // Estado
   const Game = {
@@ -290,7 +289,6 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
     );
   }
 
-  
   function initPawns() {
     pawnsLayer.innerHTML = "";
     Game.players.forEach((p) => {
@@ -309,7 +307,7 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
     });
   }
 
-    function jitter(pid) {
+  function jitter(pid) {
     const i = pid % 6,
       d = 12;
     const ofs = [
@@ -323,7 +321,6 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
     return { x: ofs[0], y: ofs[1] };
   }
 
-  
   function placePawn(pid, idx, instant = false) {
     const pt = Game.centers[idx];
     if (!pt) return;
@@ -385,13 +382,9 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
     renderPlayers();
     updateTurnLabel();
 
-    // Logs de verificación de preguntas (como pediste)
-    const _all = qsrc();    
-
     confirmBtn.addEventListener("click", onConfirmRoll);
     window.addEventListener("resize", computeCentersAndReposition);
   }
-
 
   function onConfirmRoll() {
     if (Game.busy) return;
@@ -426,7 +419,7 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
       return;
     }
     if (kind === TILE_KINDS.AZAR) {
-      // Igual que el híbrido: pregunta de AZAR con dado par/non
+      // Pregunta de AZAR (dos opciones). El jugador elige según su dado físico.
       askQuestion("azar", player, true);
       return;
     }
@@ -434,7 +427,31 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
     askQuestion(kind, player, false);
   }
 
-  // ===== Preguntas (estilo híbrido, sin auto-cerrar) =====
+  // ===== Botón ✕ para cerrar qModal (y bloqueo hasta responder) =====
+  function ensureQCloseButton(){
+    if (!qModal) return;
+    if (document.getElementById("qCloseBtn")) return;
+    const btn = document.createElement("button");
+    btn.id = "qCloseBtn";
+    btn.textContent = "✕";
+    btn.setAttribute("aria-label","Cerrar");
+    Object.assign(btn.style, {
+      position:"absolute", right:"10px", top:"10px",
+      border:"1px solid #2a3140", background:"transparent",
+      color:"#e6e9ef", borderRadius:"10px", padding:"4px 10px",
+      cursor:"pointer", display:"none", zIndex:"10"
+    });
+    btn.addEventListener("click", ()=> qModal.close());
+    qModal.style.position = "relative";
+    qModal.appendChild(btn);
+
+    // Bloquea ESC/cancel mientras no haya respuesta
+    qModal.addEventListener("cancel", (e)=>{
+      if (qModal.dataset.answered !== "1") e.preventDefault();
+    });
+  }
+
+  // ===== Preguntas (clic en opción ⇒ evaluar; cerrar con ✕) =====
   function askQuestion(kind, player, esAzar) {
     const pool = qsrc().filter(
       (q) => normalize(q.kind || q.tipo) === normalize(kind)
@@ -449,39 +466,35 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
     const kNorm = normalize(q.kind || kind);
     qModal.setAttribute("data-kind", kNorm);
 
-    // Pergamino dentro del <dialog>
-    //qTitle.textContent = `Pregunta para ${player.name}`;
-    //qKind.textContent = (q.kind || kind).toUpperCase();
     qText.innerHTML = q.text || "…";
     qImg.src = `img/Preguntas/${q.imageName || "inicio"}.webp`;
 
+    // Construir opciones + explicación + evaluación (sin botones de acción)
     qOpts.innerHTML = `
-        <div id=\"instruccionDado\" class=\"hidden\" style=\"color: white\">Lanza el dado para obtener PAR (selecciona opción de arriba) o NON (selecciona opción de abajo)</div>
+      <div id="instruccionDado" class="hidden" style="color:white">
+        Lanza el dado físico: PAR = opción de arriba, NON = opción de abajo
       </div>
-      <div id=\"radioptions\" class=\"opciones-marcadas\">
-        <label><input type=\"radio\" id=\"option1\" name=\"option\" value=\"1\" /> <span id=\"option1_text\"></span></label><br />
-        <label><input type=\"radio\" id=\"option2\" name=\"option\" value=\"2\" /> <span id=\"option2_text\"></span></label><br />
-        <label id=\"opt3wrap\"><input type=\"radio\" id=\"option3\" name=\"option\" value=\"3\" /> <span id=\"option3_text\"></span></label><br />
-        <label id=\"opt4wrap\"><input type=\"radio\" id=\"option4\" name=\"option\" value=\"4\" /> <span id=\"option4_text\"></span></label><br />
+      <div id="radioptions" class="opciones-marcadas">
+        <label><input type="radio" id="option1" name="option" value="1" /> <span id="option1_text"></span></label><br />
+        <label><input type="radio" id="option2" name="option" value="2" /> <span id="option2_text"></span></label><br />
+        <label id="opt3wrap"><input type="radio" id="option3" name="option" value="3" /> <span id="option3_text"></span></label><br />
+        <label id="opt4wrap"><input type="radio" id="option4" name="option" value="4" /> <span id="option4_text"></span></label><br />
       </div>
-      <p id=\"explicacion\" class=\"explicacion-pergamino\"></p>
-      <div id=\"evaluacion-final\" class=\"evaluacion\" style=\"display:none\">
+      <p id="explicacion" class="explicacion-pergamino"></p>
+      <div id="evaluacion-final" class="evaluacion" style="display:none">
         <h3>Evaluación:</h3>
-        <div class=\"atributos-evaluacion\">
-          <div class=\"atributo\"><img src=\"img/Iconos/determinacion.webp\" alt=\"Determinación\" /><span id=\"eva-det\">0</span></div>
-          <div class=\"atributo\"><img src=\"img/Iconos/alegria.webp\"       alt=\"Alegría\"       /><span id=\"eva-ale\">0</span></div>
-          <div class=\"atributo\"><img src=\"img/Iconos/apoyo.webp\"         alt=\"Apoyo\"         /><span id=\"eva-apo\">0</span></div>
-          <div class=\"atributo\"><img src=\"img/Iconos/salud.webp\"         alt=\"Salud\"         /><span id=\"eva-sal\">0</span></div>
-          <div class=\"atributo\"><img src=\"img/Iconos/dinero.webp\"        alt=\"Dinero\"        /><span id=\"eva-din\">0</span></div>
-          <div class=\"atributo\"><img src=\"img/Iconos/tiempo.webp\"        alt=\"Tiempo\"        /><span id=\"eva-tie\">0</span></div>
+        <div class="atributos-evaluacion">
+          <div class="atributo"><img src="img/Iconos/determinacion.webp" alt="Determinación" /><span id="eva-det">0</span></div>
+          <div class="atributo"><img src="img/Iconos/alegria.webp"       alt="Alegría"       /><span id="eva-ale">0</span></div>
+          <div class="atributo"><img src="img/Iconos/apoyo.webp"         alt="Apoyo"         /><span id="eva-apo">0</span></div>
+          <div class="atributo"><img src="img/Iconos/salud.webp"         alt="Salud"         /><span id="eva-sal">0</span></div>
+          <div class="atributo"><img src="img/Iconos/dinero.webp"        alt="Dinero"        /><span id="eva-din">0</span></div>
+          <div class="atributo"><img src="img/Iconos/tiempo.webp"        alt="Tiempo"        /><span id="eva-tie">0</span></div>
         </div>
-      </div>
-      <div class=\"actions\" style=\"display:flex; gap:8px; margin-top:10px\">
-        <button id=\"btnResponder\" class=\"primary\" disabled>Responder</button>
-        <button id=\"btnSiguiente\" style=\"display:none\">Siguiente ▶</button>
       </div>
     `;
 
+    // Mostrar/ocultar opciones según tipo
     const setTxt = (i, txt) => {
       const lab = document.getElementById(`option${i}_text`);
       const wrapId = i === 3 ? "opt3wrap" : i === 4 ? "opt4wrap" : null;
@@ -491,63 +504,54 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
         if (wrap) wrap.style.display = "none";
         if (inp && inp.parentElement && !wrap)
           inp.parentElement.style.display = "none";
-      } else {
-        if (lab) lab.textContent = txt;
+      } else if (lab) {
+        lab.textContent = txt;
       }
     };
 
     if (esAzar) {
       setTxt(1, q.options?.[0]?.text || "Opción A");
       setTxt(2, q.options?.[1]?.text || "Opción B");
-      setTxt(3, null);
-      setTxt(4, null);
+      setTxt(3, null); setTxt(4, null);
+      const inst = document.getElementById("instruccionDado");
+      if (inst) inst.style.display = "inline-block";
     } else {
       setTxt(1, q.options?.[0]?.text || null);
       setTxt(2, q.options?.[1]?.text || null);
       setTxt(3, q.options?.[2]?.text || null);
       setTxt(4, q.options?.[3]?.text || null);
+      const inst = document.getElementById("instruccionDado");
+      if (inst) inst.style.display = "none";
     }
 
-    const radios = qOpts.querySelectorAll('input[type="radio"]');
-    const btnResponder = document.getElementById("btnResponder");
-    const btnSiguiente = document.getElementById("btnSiguiente");
+    // Configurar botón ✕ y bloqueo de cierre hasta responder
+    ensureQCloseButton();
+    qModal.dataset.answered = "0";
+    const qClose = document.getElementById("qCloseBtn");
+    if (qClose) qClose.style.display = "none";
 
-    radios.forEach((r) =>
-      r.addEventListener("change", () => {
-        btnResponder.disabled = false;
-      })
-    );
+    // Evaluación inmediata al seleccionar
+    const radiosWrap = document.getElementById("radioptions");
+    const exp = document.getElementById("explicacion");
+    const evaDiv = document.getElementById("evaluacion-final");
 
-    if (esAzar) {
-      document.getElementById("instruccionDado").style.display = "inline-block";
-    }
-    else {
-      document.getElementById("instruccionDado").style.display = "none";
-    }
-
-    btnResponder.addEventListener("click", () => {
-      const checked = qOpts.querySelector('input[type="radio"]:checked');
-      if (!checked) return;
-      const idx = parseInt(checked.value, 10) - 1;
+    function evaluateAndShow(idx){ // idx: 0..3
       const op = q.options[idx];
+      if (!op) return;
 
-      const radiosWrap = document.getElementById("radioptions");
       if (radiosWrap) radiosWrap.classList.add("hidden");
-      
-      const exp = document.getElementById("explicacion");
+
       exp.innerHTML = esAzar
         ? `<b>Azar:</b> ${op.explicacion || ""}`
         : `<b>${op.text}:</b> ${op.explicacion || ""}`;
 
-      const evaDiv = document.getElementById("evaluacion-final");
-      evaDiv.style.display = "block";
+      // pinta evaluación
       const set = (id, val) => {
         const s = document.getElementById(id);
         if (!s) return;
         s.innerText = val;
         s.style.color = val > 0 ? "green" : val < 0 ? "red" : "#e6e9ef";
       };
-
       const eva = {
         determinacion: op.determinacion || 0,
         alegria: op.alegria || 0,
@@ -556,6 +560,7 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
         dinero: op.dinero || 0,
         tiempo: op.tiempo || 0,
       };
+      evaDiv.style.display = "block";
       set("eva-det", eva.determinacion);
       set("eva-ale", eva.alegria);
       set("eva-apo", eva.apoyo);
@@ -563,76 +568,86 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
       set("eva-din", eva.dinero);
       set("eva-tie", eva.tiempo);
 
-      [
-        "determinacion",
-        "alegria",
-        "apoyo",
-        "salud",
-        "dinero",
-        "tiempo",
-      ].forEach((k) => (player.attrs[k] += eva[k] || 0));
+      // aplica al jugador
+      ["determinacion","alegria","apoyo","salud","dinero","tiempo"]
+        .forEach((k)=> (player.attrs[k] += eva[k] || 0));
       renderPlayers();
 
-      
-      // Intercambio automático si quedaron atributos en 0
+      // Intercambio / eliminación
       const ex = checkExchangeOrLose(player);
       renderPlayers();
-      if (ex && ex.swaps && ex.swaps.length) {        
-        showEmergencyExchange({fromName: player.name, operations: ex.operations,
-          reason: "Restablecer atributos mínimos tras la pregunta"});
-        }
-      if (ex && ex.lost) {        
-        showEmergencyElimination({fromName: player.name, reason: ex.reason || "No tenía suficientes fichas para completar los intercambios necesarios"});
-        // El jugador pierde: retirarlo y cerrar modal
+      if (ex && ex.swaps && ex.swaps.length){
+        showEmergencyExchange({
+          fromName: player.name,
+          operations: ex.operations,
+          reason: "Restablecer atributos mínimos tras la pregunta"
+        });
+      }
+      if (ex && ex.lost){
+        showEmergencyElimination({
+          fromName: player.name,
+          reason: ex.reason || "No tenía suficientes fichas para completar los intercambios necesarios"
+        });
         const idxJugador = Game.players.indexOf(player);
         if (idxJugador !== -1) retirarPlayer(idxJugador);
-        try { qModal.close(); } catch(e) {}        
+        try { qModal.close(); } catch(e){}
         Game.busy = false;
         if (typeof confirmBtn !== 'undefined' && confirmBtn) confirmBtn.disabled = false;
         updateTurnLabel();
         return;
       }
-      btnResponder.disabled = true;
-      btnSiguiente.style.display = "inline-block";
-      btnSiguiente.focus();
-    });
 
-    btnSiguiente.addEventListener("click", () => {
-      qModal.close();
-      nextTurn();
+      // habilita cerrar con ✕ y avanzar turno al cerrar
+      qModal.dataset.answered = "1";
+      if (qClose) {
+        qClose.style.display = "inline-block";
+        qClose.focus();
+      }
+
+      const onClose = () => {
+        qModal.removeEventListener("close", onClose, { once:true });
+        nextTurn();
+      };
+      qModal.addEventListener("close", onClose, { once:true });
+    }
+
+    qOpts.querySelectorAll('input[type="radio"]').forEach(radio=>{
+      radio.addEventListener("change", ()=>{
+        const idx = parseInt(radio.value,10) - 1;
+        evaluateAndShow(idx);
+      });
     });
 
     qModal.showModal();
   }
 
-// ===== Intercambio automático tras evaluación =====
-function checkExchangeOrLose(player) {
-  const safe = (v) => (typeof v === "number" ? v : 0);
-  const ORDER = ["salud","alegria","apoyo","determinacion","tiempo","dinero"];
-  const swaps = [];
-  const operations = [];
-  for (let guard = 0; guard < 24; guard++) {
-    const faltantes = ORDER.filter((k) => safe(player.attrs[k]) <= 0);
-    if (!faltantes.length) break;
+  // ===== Intercambio automático tras evaluación =====
+  function checkExchangeOrLose(player) {
+    const safe = (v) => (typeof v === "number" ? v : 0);
+    const ORDER = ["salud","alegria","apoyo","determinacion","tiempo","dinero"];
+    const swaps = [];
+    const operations = [];
+    for (let guard = 0; guard < 24; guard++) {
+      const faltantes = ORDER.filter((k) => safe(player.attrs[k]) <= 0);
+      if (!faltantes.length) break;
 
-    for (const faltante of faltantes) {
-      const donantes = ORDER
-        .filter((k) => k !== faltante && safe(player.attrs[k]) >= 2)
-        .sort((a, b) => safe(player.attrs[b]) - safe(player.attrs[a]));
+      for (const faltante of faltantes) {
+        const donantes = ORDER
+          .filter((k) => k !== faltante && safe(player.attrs[k]) >= 2)
+          .sort((a, b) => safe(player.attrs[b]) - safe(player.attrs[a]));
 
-      if (!donantes.length) {
-        return { lost: true, swaps, operations };
+        if (!donantes.length) {
+          return { lost: true, swaps, operations };
+        }
+        const d = donantes[0];
+        player.attrs[d] = safe(player.attrs[d]) - 2;
+        player.attrs[faltante] = safe(player.attrs[faltante]) + 1;
+        swaps.push(`${player.name} intercambia <b>2</b> de <b>${labelAttr(d)}</b> por <b>1</b> de <b>${labelAttr(faltante)}</b>.`);
+        operations.push({ give: { attr: d, delta: -2 }, receive: { attr: faltante, delta: +1 } });
       }
-      const d = donantes[0];
-      player.attrs[d] = safe(player.attrs[d]) - 2;
-      player.attrs[faltante] = safe(player.attrs[faltante]) + 1;
-      swaps.push(`${player.name} intercambia <b>2</b> de <b>${labelAttr(d)}</b> por <b>1</b> de <b>${labelAttr(faltante)}</b>.`);
-      operations.push({ give: { attr: d, delta: -2 }, receive: { attr: faltante, delta: +1 } });
     }
-  }
-  return { lost: false, swaps, operations };
-};
-
+    return { lost: false, swaps, operations };
+  };
 
   function nextTurn() {
     Game.turnIdx = (Game.turnIdx + 1) % Game.players.length;
@@ -723,50 +738,49 @@ function checkExchangeOrLose(player) {
   }
 
   function drawConnectors(){
-  const layer = ensurePathLayer();
-  if(!layer || !Game.centers.length || !Game.spiral.length) return;
-  layer.innerHTML = "";
+    const layer = ensurePathLayer();
+    if(!layer || !Game.centers.length || !Game.spiral.length) return;
+    layer.innerHTML = "";
 
-  const thick = 10;
-  const inset = 3; // separa un poco el puente del borde de cada “isla”
+    const thick = 10;
+    const inset = 3; // separa un poco el puente del borde de cada “isla”
 
-  for (let i = 0; i < Game.spiral.length - 1; i++) {
-    const [r1, c1] = Game.spiral[i],   [r2, c2] = Game.spiral[i + 1];
-    const p1 = Game.centers[i],        p2       = Game.centers[i + 1];
-    if (!p1 || !p2) continue;
-    if (Math.abs(r1 - r2) + Math.abs(c1 - c2) !== 1) continue; // solo ortogonales
+    for (let i = 0; i < Game.spiral.length - 1; i++) {
+      const [r1, c1] = Game.spiral[i],   [r2, c2] = Game.spiral[i + 1];
+      const p1 = Game.centers[i],        p2       = Game.centers[i + 1];
+      if (!p1 || !p2) continue;
+      if (Math.abs(r1 - r2) + Math.abs(c1 - c2) !== 1) continue; // solo ortogonales
 
-    // Tipo del SEGMENTO: usa la casilla destino (i+1)
-    const segKind = (Game.types[i + 1] || "social"); // fallback cualquiera
-    const conn = document.createElement("div");
+      // Tipo del SEGMENTO: usa la casilla destino (i+1)
+      const segKind = (Game.types[i + 1] || "social"); // fallback cualquiera
+      const conn = document.createElement("div");
 
-    if (r1 === r2) {
-      // Horizontal
-      const width = Math.abs(p2.x - p1.x) - (Game.cellW + inset * 2);
-      const left  = Math.min(p1.x, p2.x) + Game.cellW / 2 + inset;
-      const top   = p1.y - thick / 2;
-      if (width <= 0) continue;
-      conn.className = "conn h";
-      conn.style.left = `${left}px`;
-      conn.style.top  = `${top}px`;
-      conn.style.width = `${width}px`;
-    } else {
-      // Vertical
-      const height = Math.abs(p2.y - p1.y) - (Game.cellH + inset * 2);
-      const left   = p1.x - thick / 2;
-      const top    = Math.min(p1.y, p2.y) + Game.cellH / 2 + inset;
-      if (height <= 0) continue;
-      conn.className = "conn v";
-      conn.style.left   = `${left}px`;
-      conn.style.top    = `${top}px`;
-      conn.style.height = `${height}px`;
+      if (r1 === r2) {
+        // Horizontal
+        const width = Math.abs(p2.x - p1.x) - (Game.cellW + inset * 2);
+        const left  = Math.min(p1.x, p2.x) + Game.cellW / 2 + inset;
+        const top   = p1.y - thick / 2;
+        if (width <= 0) continue;
+        conn.className = "conn h";
+        conn.style.left = `${left}px`;
+        conn.style.top  = `${top}px`;
+        conn.style.width = `${width}px`;
+      } else {
+        // Vertical
+        const height = Math.abs(p2.y - p1.y) - (Game.cellH + inset * 2);
+        const left   = p1.x - thick / 2;
+        const top    = Math.min(p1.y, p2.y) + Game.cellH / 2 + inset;
+        if (height <= 0) continue;
+        conn.className = "conn v";
+        conn.style.left   = `${left}px`;
+        conn.style.top    = `${top}px`;
+        conn.style.height = `${height}px`;
+      }
+
+      conn.classList.add(`k-${segKind}`); // <<— color por tipo
+      layer.appendChild(conn);
     }
-
-    conn.classList.add(`k-${segKind}`); // <<— color por tipo
-    layer.appendChild(conn);
   }
-}
-
 
   // start
   init();

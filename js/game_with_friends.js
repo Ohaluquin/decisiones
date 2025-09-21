@@ -6,8 +6,79 @@ const incorrectSound = new Audio("sounds/error_sound.mp3");
 const pageSound = new Audio("sounds/change_page.mp3");
 const diceSound = new Audio("sounds/dice.mp3");
 
+// === Botón ✕ para cerrar/avanzar (reemplaza "Siguiente") ===
+(function(){
+  function ensureFriendsCloseX(){
+    if (document.getElementById("friendsCloseX")) return;
+    const card = document.querySelector(".card") || document.body;
+    const btn = document.createElement("button");
+    btn.id = "friendsCloseX";
+    btn.textContent = "✕";
+    btn.setAttribute("aria-label", "Siguiente / cerrar explicación");
+    Object.assign(btn.style, {
+      position:"absolute", right:"10px", top:"10px",
+      border:"1px solid #2a3140", background:"transparent",
+      color:"#e6e9ef", borderRadius:"10px", padding:"4px 10px",
+      cursor:"pointer", display:"none", zIndex:"100"
+    });
+    btn.addEventListener("click", function(){
+      if (window.__friendsCloseBusy) return;
+      window.__friendsCloseBusy = true;
+      try {
+        // Si existe el botón "Siguiente", aprovechamos su lógica
+        var nb = (typeof nextButton !== "undefined") ? nextButton : document.getElementById("nextButton");
+        if (nb && typeof nb.click === "function"){
+          const wasDisabled = nb.disabled;
+          // habilita temporalmente por si estaba deshabilitado
+          nb.disabled = false;
+          nb.dispatchEvent(new MouseEvent("click", {bubbles:true}));
+          // reestablece estado visual (igual lo actualizará la UI de destino)
+          nb.disabled = wasDisabled;
+        } else {
+          // Fallback: cerrar explicación sin avanzar, dejar UI lista
+          try { document.getElementById("evaluacion-final").style.display = "none"; } catch(e){}
+          try { document.getElementById("explicacion").innerHTML = ""; } catch(e){}
+          try { document.getElementById("foto-pregunta").style.display = "block"; } catch(e){}
+          try { document.getElementById("radioptions").classList.remove("hidden"); } catch(e){}
+          try { habilitarBotones(); } catch(e){}
+        }
+      } finally {
+        // Oculta la X momentáneamente para evitar dobles clics
+        try { document.getElementById("friendsCloseX").style.display = "none"; } catch(e){}
+        setTimeout(()=>{ window.__friendsCloseBusy = false; }, 500);
+      }
+    });
+    if (card && getComputedStyle(card).position === "static"){
+      card.style.position = "relative";
+    }
+    card.appendChild(btn);
+
+    // ESC actúa como clic en ✕ si está visible
+    document.addEventListener("keydown", (ev)=>{
+      if (ev.key === "Escape"){
+        const x = document.getElementById("friendsCloseX");
+        if (x && x.style.display !== "none"){
+          ev.preventDefault();
+          x.click();
+        }
+      }
+    });
+  }
+
+  if (document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", ensureFriendsCloseX);
+  } else {
+    ensureFriendsCloseX();
+  }
+
+  // Exponer por si necesitamos re-asegurar tras reconstrucciones del DOM
+  window.ensureFriendsCloseX = ensureFriendsCloseX;
+})();
+
+
 // Función para cargar una pregunta basada en el tipo seleccionado
 function cargarPregunta(category) {
+  try { ensureFriendsCloseX(); } catch(e){}
   document.getElementById("explicacion").innerHTML = "";
   document.getElementById("foto-pregunta").style.display = "block";
   document.getElementById("evaluacion-final").style.display = "none";
@@ -78,7 +149,10 @@ function cargarPregunta(category) {
 function showExplanation() {
   deshabilitarBotones();
 
-  // Ocultar imagen de contexto
+  
+  // Mostrar ✕ en lugar de "Siguiente"
+  try { ensureFriendsCloseX(); document.getElementById("friendsCloseX").style.display = "block"; } catch(e){}
+  try { if (typeof nextButton !== "undefined" && nextButton) { nextButton.style.display = "none"; nextButton.disabled = true; } } catch(e){}// Ocultar imagen de contexto
   document.getElementById("foto-pregunta").style.display = "none";
 
   let option;
@@ -107,28 +181,32 @@ function showExplanation() {
 }
 
 // Función que deshabilita los botones de las opciones, se llama cuando el usuario ya eligió una opción
-function deshabilitarBotones() {
+function deshabilitarBotones(){
   document.getElementById("option1").disabled = true;
   document.getElementById("option2").disabled = true;
   document.getElementById("option3").disabled = true;
   document.getElementById("option4").disabled = true;
-  nextButton.disabled = false;
-  nextButton.style.display = "block";
+  // nextButton.disabled = false; (reemplazado por ✕)
+  // nextButton.style.display = "block"; (reemplazado por ✕)
   document.getElementById("instruccionDado").style.display = "none";  
+
+  try { ensureFriendsCloseX(); document.getElementById("friendsCloseX").style.display = "block"; } catch(e){}
 }
 
 // Función que vuelve a habilitar los botones de las opciones, se llama una vez que se puede hacer otra pregunta
-function habilitarBotones() {
+function habilitarBotones(){
   document.getElementById("option1").disabled = false;
   document.getElementById("option2").disabled = false;
   document.getElementById("option3").disabled = false;
   document.getElementById("option4").disabled = false;
-  nextButton.disabled = true;
-  nextButton.style.display = "none";
+  try { if (typeof nextButton !== "undefined" && nextButton) nextButton.disabled = true; } catch(e){}
+  try { if (typeof nextButton !== "undefined" && nextButton) nextButton.style.display = "none"; } catch(e){}
   document.getElementById("option1").checked = false;
   document.getElementById("option2").checked = false;
   document.getElementById("option3").checked = false;
   document.getElementById("option4").checked = false;  
+
+  try { document.getElementById("friendsCloseX").style.display = "none"; } catch(e){}
 }
 
 function godQuestion(atributo) {
