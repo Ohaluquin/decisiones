@@ -71,13 +71,16 @@
 
   // Helpers comunes
 function iconForAttr(attr){
-  const k = (attr||'').toLowerCase();
-  const map = { salud:'salud', alegria:'alegria', apoyo:'apoyo', determinacion:'determinacion', tiempo:'tiempo', dinero:'dinero' };
-  const name = map[k] || k || 'salud';
-  const alt = labelAttr(k);
-  return `<img src="img/Iconos/${name}.webp" alt="${alt}" class="atributo" />`;
+  switch((attr||'').toLowerCase()){
+    case 'determinacion': return '🧭';
+    case 'alegria': return '😊';
+    case 'apoyo': return '🤝';
+    case 'salud': return '❤️';
+    case 'dinero': return '💵';
+    case 'tiempo': return '⏳';
+    default: return '🔁';
+  }
 }
-
 function labelAttr(attr){
   const m = {salud:'Salud', alegria:'Alegría', apoyo:'Apoyo', determinacion:'Determinación', tiempo:'Tiempo', dinero:'Dinero'};
   return m[(attr||'').toLowerCase()] || attr;
@@ -577,16 +580,19 @@ window.notifyEmergencyExchangeDenied  = showEmergencyElimination;
       // Intercambio automático si quedaron atributos en 0
       const ex = checkExchangeOrLose(player);
       renderPlayers();
-      if (ex && ex.swaps && ex.swaps.length) {        
+      if (ex && ex.swaps && ex.swaps.length) {
+        //log(`${player.name} realizó un intercambio de emergencia.`);        
         showEmergencyExchange({fromName: player.name, operations: ex.operations,
           reason: "Restablecer atributos mínimos tras la pregunta"});
         }
-      if (ex && ex.lost) {        
+      if (ex && ex.lost) {
+        //log(`${player.name} no puede intercambiar: queda <b>eliminado</b>.`);
         showEmergencyElimination({fromName: player.name, reason: ex.reason || "No tenía suficientes fichas para completar los intercambios necesarios"});
         // El jugador pierde: retirarlo y cerrar modal
         const idxJugador = Game.players.indexOf(player);
         if (idxJugador !== -1) retirarPlayer(idxJugador);
-        try { qModal.close(); } catch(e) {}        
+        try { qModal.close(); } catch(e) {}
+        //nextTurn();
         Game.busy = false;
         if (typeof confirmBtn !== 'undefined' && confirmBtn) confirmBtn.disabled = false;
         updateTurnLabel();
