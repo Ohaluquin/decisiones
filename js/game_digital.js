@@ -280,8 +280,7 @@
     );
 
     // Draw connectors after centers are known
-    ensurePathLayer();
-    drawConnectors();
+    ensurePathLayer();    
 
     // Reposicionar peones instantáneo
     Game.players.forEach((p) =>
@@ -735,51 +734,6 @@
       }
     }
     return layer;
-  }
-
-  function drawConnectors(){
-    const layer = ensurePathLayer();
-    if(!layer || !Game.centers.length || !Game.spiral.length) return;
-    layer.innerHTML = "";
-
-    const thick = 10;
-    const inset = 3; // separa un poco el puente del borde de cada “isla”
-
-    for (let i = 0; i < Game.spiral.length - 1; i++) {
-      const [r1, c1] = Game.spiral[i],   [r2, c2] = Game.spiral[i + 1];
-      const p1 = Game.centers[i],        p2       = Game.centers[i + 1];
-      if (!p1 || !p2) continue;
-      if (Math.abs(r1 - r2) + Math.abs(c1 - c2) !== 1) continue; // solo ortogonales
-
-      // Tipo del SEGMENTO: usa la casilla destino (i+1)
-      const segKind = (Game.types[i + 1] || "social"); // fallback cualquiera
-      const conn = document.createElement("div");
-
-      if (r1 === r2) {
-        // Horizontal
-        const width = Math.abs(p2.x - p1.x) - (Game.cellW + inset * 2);
-        const left  = Math.min(p1.x, p2.x) + Game.cellW / 2 + inset;
-        const top   = p1.y - thick / 2;
-        if (width <= 0) continue;
-        conn.className = "conn h";
-        conn.style.left = `${left}px`;
-        conn.style.top  = `${top}px`;
-        conn.style.width = `${width}px`;
-      } else {
-        // Vertical
-        const height = Math.abs(p2.y - p1.y) - (Game.cellH + inset * 2);
-        const left   = p1.x - thick / 2;
-        const top    = Math.min(p1.y, p2.y) + Game.cellH / 2 + inset;
-        if (height <= 0) continue;
-        conn.className = "conn v";
-        conn.style.left   = `${left}px`;
-        conn.style.top    = `${top}px`;
-        conn.style.height = `${height}px`;
-      }
-
-      conn.classList.add(`k-${segKind}`); // <<— color por tipo
-      layer.appendChild(conn);
-    }
   }
 
   // start

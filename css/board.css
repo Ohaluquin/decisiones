@@ -26,8 +26,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 16px;
-  padding: 16px;
-  height: 100%;
+  padding: 2px;
+  height: 100vh;
 }
 .board-wrap {
   position: relative;
@@ -44,59 +44,63 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 1fr;
-  gap: 60px;
+  gap: 75px;
 }
 .tile {
   position: relative;
   border-radius: 20px;
-  border: 1px solid var(--tile-border);
+  border: 3px solid var(--tile-border);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   color: #e4e8ee;
   font-size: 16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4); /* sombra que da relieve */
+  transition: transform 0.2s, box-shadow 0.2s;  
+  border-color: rgba(0,0,0,.35);   /* bordes más firmes sobre foto */  
 }
+
 .tile.inicio {
   background: linear-gradient(
     180deg,
-    rgba(132, 94, 247, 0.42),
+    rgba(132, 94, 247, 0.72),
     rgba(132, 94, 247, 0.95)
   );
 }
 .tile.social {
   background: linear-gradient(
     180deg,
-    rgba(224, 49, 49, 0.42),
+    rgba(224, 49, 49, 0.72),
     rgba(224, 49, 49, 0.95)
   );
 }
 .tile.academico {
   background: linear-gradient(
     180deg,
-    rgba(255, 212, 59, 0.42),
+    rgba(255, 212, 59, 0.72),
     rgba(255, 212, 59, 0.95)
   );
 }
 .tile.personal {
   background: linear-gradient(
     180deg,
-    rgba(28, 126, 214, 0.42),
+    rgba(28, 126, 214, 0.72),
     rgba(28, 126, 214, 0.95)
   );
 }
 .tile.azar {
   background: linear-gradient(
     180deg,
-    rgba(55, 178, 77, 0.42),
+    rgba(55, 178, 77, 0.72),
     rgba(55, 178, 77, 0.95)
   );
 }
 .tile .idx {
   position: absolute;
-  bottom: 4px;
-  right: 6px;
-  font-size: 15px;
+  bottom: 1px;
+  right: 8px;
+  font-size: 10px;
   color: white;
 }
 .pawns {
@@ -247,25 +251,6 @@ button:disabled {
 .opt:hover {
   border-color: #12b886;
 }
-/* Capa de conectores que “cosen” la espiral */
-.path{
-  position:absolute;
-  inset:16px;          /* mismo inset que .pawns para alinear */
-  pointer-events:none; /* no bloquear clicks */
-  z-index:1;           /* por debajo de los peones */
-}
-.path .conn{
-  position:absolute;
-  background:#858890;  /* color del “puente” */
-  border-radius:6px;  
-  box-shadow:
-    0 0 4px currentColor,
-    0 1px 2px rgba(0,0,0,.35),
-    0 0 0 2px rgba(0,0,0,.38) inset;
-  opacity:.95;
-}
-.path .conn.h{ height:10px; }  /* grosor horizontal */
-.path .conn.v{ width:10px; }   /* grosor vertical   */
 
 /* Asegura peones por encima de los puentes */
 .pawns{ z-index:2; }
@@ -286,7 +271,7 @@ button:disabled {
   content:"";
   position:absolute;
   inset:0;
-  background: url("../img/board.png") center/cover no-repeat fixed;  
+  background: url("../img/board.webp") center/cover no-repeat fixed;  
   transform: scale(1);          /* compensa el blur en los bordes */
 }
 
@@ -304,11 +289,6 @@ button:disabled {
 /* Asegura que tablero, puentes y peones queden encima */
 .board { position:relative; z-index:1; }
 
-.tile{
-  box-shadow: 0 8px 12px rgba(0,0,0,.28);
-  border-color: rgba(0,0,0,.35);   /* bordes más firmes sobre foto */
-}
-
 .tile span{
   text-shadow: 0 1px 1px rgba(0,0,0,.45), 0 0 6px rgba(0,0,0,.25);
   letter-spacing: .2px;
@@ -318,7 +298,10 @@ button:disabled {
   border-radius: 20px;
   height: 60px;  
   width: 65%;
+  max-width: 220px;
   align-self: center;
   border: 2px solid #FFD700;
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+  background: rgba(0,0,0,0.6);
+  padding: 2px;
 }
