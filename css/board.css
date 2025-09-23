@@ -60,36 +60,36 @@ body {
 .tile.inicio {
   background: linear-gradient(
     180deg,
-    rgba(132, 94, 247, 0.22),
-    rgba(132, 94, 247, 0.98)
+    rgba(132, 94, 247, 0.42),
+    rgba(132, 94, 247, 0.95)
   );
 }
 .tile.social {
   background: linear-gradient(
     180deg,
-    rgba(224, 49, 49, 0.22),
-    rgba(224, 49, 49, 0.98)
+    rgba(224, 49, 49, 0.42),
+    rgba(224, 49, 49, 0.95)
   );
 }
 .tile.academico {
   background: linear-gradient(
     180deg,
-    rgba(255, 212, 59, 0.25),
-    rgba(255, 212, 59, 0.98)
+    rgba(255, 212, 59, 0.42),
+    rgba(255, 212, 59, 0.95)
   );
 }
 .tile.personal {
   background: linear-gradient(
     180deg,
-    rgba(28, 126, 214, 0.22),
-    rgba(28, 126, 214, 0.98)
+    rgba(28, 126, 214, 0.42),
+    rgba(28, 126, 214, 0.95)
   );
 }
 .tile.azar {
   background: linear-gradient(
     180deg,
-    rgba(55, 178, 77, 0.22),
-    rgba(55, 178, 77, 0.98)
+    rgba(55, 178, 77, 0.42),
+    rgba(55, 178, 77, 0.95)
   );
 }
 .tile .idx {
@@ -286,9 +286,8 @@ button:disabled {
   content:"";
   position:absolute;
   inset:0;
-  background: url("../img/fondos/entrada.webp") center/cover no-repeat fixed;
-  filter: blur(2px) brightness(0.68) saturate(0.9);
-  transform: scale(1.04);          /* compensa el blur en los bordes */
+  background: url("../img/board.png") center/cover no-repeat fixed;  
+  transform: scale(1);          /* compensa el blur en los bordes */
 }
 
 /* Vignette suave para que los bordes no distraigan */
@@ -315,4 +314,11 @@ button:disabled {
   letter-spacing: .2px;
 }
 
-
+#logo {
+  border-radius: 20px;
+  height: 60px;  
+  width: 65%;
+  align-self: center;
+  border: 2px solid #FFD700;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+}
