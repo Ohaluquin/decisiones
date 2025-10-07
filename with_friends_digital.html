@@ -17,7 +17,12 @@
       <div id="pawns" class="pawns" aria-hidden="true"></div>
     </main>
 
+    <button id="abrirPanel" aria-label="Mostrar panel" title="Mostrar panel"
+        style="display:none; position:fixed; top:10px; right:10px; z-index:1000;">
+  ▶ Jugadores
+    </button>
     <aside class="side">
+      <button id="ocultarPanel" aria-label="Ocultar panel" title="Ocultar panel">X</button>                    
       <img src="img/titulo.webp" alt="Nuevo logo" id="logo" />
       <section class="panel">
         <header class="title">
@@ -63,6 +68,7 @@
 
   <!-- Carga tu banco de preguntas existente -->
   <script src="database/questions.js"></script>
+  <script src="database/intercambios.js"></script>
   <!-- Motor de tablero -->
   <script src="js/game_digital.js"></script>
 </body>

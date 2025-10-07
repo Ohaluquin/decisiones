@@ -1,14 +1,7 @@
 (() => {
   const ROWS = 6,
     COLS = 6;
-  const ATTRS = [
-    "salud",
-    "alegria",
-    "apoyo",
-    "determinacion",
-    "tiempo",
-    "dinero",
-  ];
+
   const COLORS = [
     "#e03131",
     "#0863ebff",
@@ -40,10 +33,7 @@
   const diceValueEl = document.getElementById("diceValue");
   const turnLabel = document.getElementById("turnLabel");
   const roundLabel = document.getElementById("roundLabel");
-  const logEl = document.getElementById("log");
   const qModal = document.getElementById("qModal");
-  const qTitle = document.getElementById("qTitle");
-  const qKind = document.getElementById("qKind");
   const qText = document.getElementById("qText");
   const qOpts = document.getElementById("qOpts");
   const qImg = document.getElementById("qImg");
@@ -124,33 +114,72 @@
     return dlg;
   }
 
+  function storyForExchangeOp(op){
+    try {
+      const recv = op?.receive?.attr;  // atributo que gana +1
+      const give = op?.give?.attr;     // atributo que pierde -2
+      const key = `${recv}-${give}`;   // p.ej. "alegria-tiempo"
+      if (window.historiasDeIntercambio && window.historiasDeIntercambio[key]) {
+        return window.historiasDeIntercambio[key];
+      }
+    } catch(e){}
+    return null;
+  }
+
   function waitClose(dlg){
     return new Promise(res => dlg.addEventListener('close', () => res(), {once:true}));
   }
 
-  // --- API limpia a usar ---
-  async function showEmergencyExchange(payload){
-    const {fromName, operations, give, receive, reason} = payload || {};
-    const dlg = ensureExchangeModal();
-    dlg.querySelector("#exchg-title").textContent = "Intercambio de emergencia";
-    let rowsHtml = "";
-    const ops = Array.isArray(operations) && operations.length ? operations : [{give, receive}];
-    rowsHtml = ops.map(op => {
-      const g = op?.give, r = op?.receive;
+async function showEmergencyExchange(payload) {
+  const { fromName, operations, give, receive, reason } = payload || {};
+  const dlg = ensureExchangeModal();
+  dlg.querySelector("#exchg-title").textContent = "Intercambio de emergencia";
+
+  const ops =
+    Array.isArray(operations) && operations.length
+      ? operations
+      : [{ give, receive }];
+
+  const rowsHtml = ops
+    .map((op) => {
+      const g = op?.give,
+        r = op?.receive;
       return `<div class="row">
-        <span class="pill"><span>${iconForAttr(g?.attr)}</span>${labelAttr(g?.attr)} <span class="delta minus">${fmtDelta(g?.delta ?? -2)}</span></span>
-        <span class="arrow">→</span>
-        <span class="pill"><span>${iconForAttr(r?.attr)}</span>${labelAttr(r?.attr)} <span class="delta plus">${fmtDelta(r?.delta ?? +1)}</span></span>
-      </div>`;
-    }).join("");
-    dlg.querySelector("#exchg-body").innerHTML = `
-      <div class="muted">Se aplicó intercambio de emergencia para mantener al menos 1 en todos los atributos.</div>
-      ${rowsHtml}
-      ${reason ? `<div class="muted">Motivo: ${reason}</div>` : ""}`;
-    dlg.showModal();
-    try { log(`Intercambio de emergencia: ${fromName||''}`); } catch(e){}
-    await waitClose(dlg);
-  }
+      <span class="pill"><span>${iconForAttr(g?.attr)}</span>${labelAttr(
+        g?.attr
+      )} <span class="delta minus">${fmtDelta(g?.delta ?? -2)}</span></span>
+      <span class="arrow">→</span>
+      <span class="pill"><span>${iconForAttr(r?.attr)}</span>${labelAttr(
+        r?.attr
+      )} <span class="delta plus">${fmtDelta(r?.delta ?? +1)}</span></span>
+    </div>`;
+    })
+    .join("");
+
+  const storiesHtml = ops
+    .map((op) => {
+      const s = storyForExchangeOp(op);
+      return s ? `<div class="muted">• ${s}</div>` : "";
+    })
+    .join("");
+
+  dlg.querySelector("#exchg-body").innerHTML = `
+    <div class="muted">Se aplicó intercambio de emergencia para mantener al menos 1 en todos los atributos.</div>
+    ${rowsHtml}
+    ${storiesHtml ? `<div style="margin-top:8px">${storiesHtml}</div>` : ""}
+    ${
+      reason
+        ? `<div class="muted" style="margin-top:6px">Motivo: ${reason}</div>`
+        : ""
+    }
+  `;
+  dlg.showModal();
+  try {
+    log(`Intercambio de emergencia: ${fromName || ""}`);
+  } catch (e) {}
+  await waitClose(dlg);
+}
+
 
   async function showEmergencyElimination(payload){
     const {fromName, reason} = payload || {};
@@ -186,17 +215,7 @@
   function normalize(s) {
     return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   }
-  // Fuente de preguntas compatible con: let preguntas = [...]  (o window.preguntas)
-  function qsrc() {
-    try {
-      if (typeof preguntas !== "undefined" && Array.isArray(preguntas))
-        return preguntas;
-    } catch (e) {}
-    if (Array.isArray(window.preguntas)) return window.preguntas;
-    if (window.database && Array.isArray(window.database.preguntas))
-      return window.database.preguntas;
-    return [];
-  }
+
   function sleep(ms) {
     return new Promise((r) => setTimeout(r, ms));
   }    
@@ -277,10 +296,7 @@
     // Reposition pawns instantly
     Game.players.forEach((p) =>
       placePawn(p.id, Game.positions.get(p.id) || 0, true)
-    );
-
-    // Draw connectors after centers are known
-    ensurePathLayer();    
+    ); 
 
     // Reposicionar peones instantáneo
     Game.players.forEach((p) =>
@@ -451,19 +467,20 @@
   }
 
   // ===== Preguntas (clic en opción ⇒ evaluar; cerrar con ✕) =====
-  function askQuestion(kind, player, esAzar) {
-    const pool = qsrc().filter(
-      (q) => normalize(q.kind || q.tipo) === normalize(kind)
-    );    
-
-    if (!pool.length) {
+  function askQuestion(kind, player, esAzar) {    
+    const kindNorm = normalize(kind);
+    const filteredQuestions = preguntas.filter(q => normalize(q.kind) === kindNorm);
+    if (!filteredQuestions.length) {
       log(`(No hay preguntas de tipo ${kind})`);
       nextTurn();
       return;
-    }
-    const q = pool[Math.floor(Math.random() * pool.length)];
-    const kNorm = normalize(q.kind || kind);
-    qModal.setAttribute("data-kind", kNorm);
+      }
+    pregunta_actual = Math.floor(Math.random() * filteredQuestions.length);
+    q = filteredQuestions[pregunta_actual];
+    preguntas.splice(preguntas.indexOf(q), 1);
+
+    //const kNorm = normalize(q.kind || kind);
+    qModal.setAttribute("data-kind", kind);
 
     qText.innerHTML = q.text || "…";
     qImg.src = `img/Preguntas/${q.imageName || "inicio"}.webp`;
@@ -540,9 +557,7 @@
 
       if (radiosWrap) radiosWrap.classList.add("hidden");
 
-      exp.innerHTML = esAzar
-        ? `<b>Azar:</b> ${op.explicacion || ""}`
-        : `<b>${op.text}:</b> ${op.explicacion || ""}`;
+      exp.innerHTML = `<b>${op.text}:</b> ${op.explicacion || ""}`;
 
       // pinta evaluación
       const set = (id, val) => {
@@ -711,30 +726,46 @@
       el.classList.toggle("active", i === Game.turnIdx)
     );
   }
+
   function attrCell(name, icon, val) {
     return `<div class="val" title="${name}"><img class="icon" src="${icon}" alt="${name}"/><span>${val}</span></div>`;
   }
 
-  function ensurePathLayer() {
-    let layer = document.getElementById("path");
-    if (!layer) {
-      layer = document.createElement("div");
-      layer.id = "path";
-      layer.className = "path";
-      const container =
-        (pawnsLayer && pawnsLayer.parentElement) ||
-        (boardEl && boardEl.parentElement) ||
-        document.body;
-      if (pawnsLayer && pawnsLayer.parentElement) {
-        pawnsLayer.parentElement.insertBefore(layer, pawnsLayer);
-      } else if (boardEl && boardEl.parentElement) {
-        boardEl.parentElement.appendChild(layer);
-      } else {
-        document.body.appendChild(layer);
-      }
-    }
-    return layer;
-  }
+// === Toggle de barra lateral (colapsa/expande grid y recalcula tablero) ===
+const appGrid   = document.querySelector(".app-grid");
+const sidePanel = document.querySelector(".side");
+const abrirBtn  = document.getElementById("abrirPanel");
+const ocultarBtn= document.getElementById("ocultarPanel");
+
+// Asegura estados iniciales coherentes
+if (abrirBtn)  abrirBtn.style.display  = "none";
+if (sidePanel) sidePanel.style.display = "flex";
+
+function recomputeSoon(){
+  // Espera al reflow de la grid y recalcúla centros/peones
+  requestAnimationFrame(() => {
+    try { computeCentersAndReposition(); } catch(e){}
+  });
+}
+
+function showSide(){
+  if (!appGrid || !sidePanel || !abrirBtn) return;
+  appGrid.classList.remove("no-side");
+  sidePanel.style.display = "flex";
+  abrirBtn.style.display = "none";
+  recomputeSoon();
+}
+
+function hideSide(){
+  if (!appGrid || !sidePanel || !abrirBtn) return;
+  appGrid.classList.add("no-side");
+  sidePanel.style.display = "none";
+  abrirBtn.style.display = "block";
+  recomputeSoon();
+}
+
+abrirBtn?.addEventListener("click", showSide);
+ocultarBtn?.addEventListener("click", hideSide);
 
   // start
   init();

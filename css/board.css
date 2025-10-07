@@ -235,7 +235,7 @@ button:disabled {
   border-radius: 12px;
   padding: 10px;
   margin: 12px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 .opts {
   display: grid;
@@ -304,4 +304,37 @@ button:disabled {
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
   background: rgba(0,0,0,0.6);
   padding: 2px;
+}
+
+/* Permite posicionar el botón de ocultar dentro del aside */
+.side { position: relative; }
+
+/* Colapso real: al ocultar barra derecha, la grid se vuelve de 1 columna */
+.app-grid.no-side { grid-template-columns: 1fr; }
+
+/* Botón para ocultar el panel (estilo similar al abrir) */
+#ocultarPanel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: #1f2837;
+  color: #e6e9ef;
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* El abrir ya existe, pero ahora será fixed (lo pusimos con style inline).
+   Si prefieres en CSS, muévelo aquí y quita el style inline del HTML. */
+#abrirPanel {
+  background: #1f2837;
+  color: #e6e9ef;
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 700;
 }
