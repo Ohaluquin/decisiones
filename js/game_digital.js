@@ -129,7 +129,6 @@
     });
   }
 
-
   // ===== Modal único para Intercambio / Eliminación =====
   function ensureExchangeModal() {
     let css = document.getElementById("exchg-modal-css");
@@ -487,122 +486,6 @@
     }
   }
 
-  // ===== Juego =====
-  function init() {
-    // Siempre 6 jugadores; si sobran, los retiras con ⏏︎
-    const names = ["J1", "J2", "J3", "J4", "J5", "J6"];
-    Game.players = names.map((n, i) => ({
-      id: i,
-      name: n,
-      color: COLORS[i % COLORS.length],
-      attrs: {
-        salud: 5,
-        alegria: 5,
-        apoyo: 5,
-        determinacion: 5,
-        tiempo: 5,
-        dinero: 5,
-      },
-    }));
-
-    Game.cells = [
-      { u: 0.579, v: 0.681, t: "inicio" },
-      { u: 0.639, v: 0.641, t: "personal" },
-      { u: 0.687, v: 0.603, t: "academico" },
-      { u: 0.724, v: 0.555, t: "personal" },
-      { u: 0.741, v: 0.488, t: "azar" },
-      { u: 0.737, v: 0.424, t: "academico" },
-      { u: 0.72, v: 0.365, t: "personal" },
-      { u: 0.688, v: 0.316, t: "academico" },
-      { u: 0.643, v: 0.277, t: "personal" },
-      { u: 0.591, v: 0.246, t: "social" },
-      { u: 0.538, v: 0.233, t: "academico" },
-      { u: 0.487, v: 0.233, t: "personal" },
-      { u: 0.434, v: 0.243, t: "academico" },
-      { u: 0.383, v: 0.274, t: "personal" },
-      { u: 0.337, v: 0.313, t: "academico" },
-      { u: 0.303, v: 0.365, t: "personal" },
-      { u: 0.282, v: 0.424, t: "social" },
-      { u: 0.274, v: 0.493, t: "academico" },
-      { u: 0.288, v: 0.565, t: "personal" },
-      { u: 0.319, v: 0.631, t: "azar" },
-      { u: 0.364, v: 0.688, t: "personal" },
-      { u: 0.421, v: 0.73, t: "social" },
-      { u: 0.482, v: 0.76, t: "academico" },
-      { u: 0.549, v: 0.771, t: "personal" },
-      { u: 0.612, v: 0.772, t: "social" },
-      { u: 0.672, v: 0.764, t: "academico" },
-      { u: 0.73, v: 0.737, t: "personal" },
-      { u: 0.778, v: 0.696, t: "academico" },
-      { u: 0.813, v: 0.631, t: "personal" },
-      { u: 0.832, v: 0.556, t: "academico" },
-      { u: 0.84, v: 0.48, t: "social" },
-      { u: 0.829, v: 0.406, t: "academico" },
-      { u: 0.805, v: 0.335, t: "personal" },
-      { u: 0.767, v: 0.278, t: "academico" },
-      { u: 0.726, v: 0.225, t: "social" },
-      { u: 0.672, v: 0.187, t: "personal" },
-      { u: 0.615, v: 0.158, t: "academico" },
-      { u: 0.554, v: 0.145, t: "personal" },
-      { u: 0.493, v: 0.145, t: "academico" },
-      { u: 0.433, v: 0.151, t: "personal" },
-      { u: 0.373, v: 0.174, t: "academico" },
-      { u: 0.32, v: 0.205, t: "personal" },
-      { u: 0.268, v: 0.243, t: "academico" },
-      { u: 0.229, v: 0.303, t: "personal" },
-      { u: 0.2, v: 0.359, t: "social" },
-      { u: 0.182, v: 0.43, t: "academico" },
-      { u: 0.179, v: 0.506, t: "personal" },
-      { u: 0.189, v: 0.588, t: "academico" },
-      { u: 0.224, v: 0.678, t: "academico" },
-      { u: 0.264, v: 0.74, t: "social" },
-      { u: 0.314, v: 0.805, t: "academico" },
-      { u: 0.386, v: 0.853, t: "personal" },
-      { u: 0.459, v: 0.884, t: "academico" },
-      { u: 0.537, v: 0.904, t: "social" },
-      { u: 0.537, v: 0.994, t: "inicio" },
-    ];
-
-    Game.N = Game.cells.length;
-    Game.centersNorm = Game.cells.map(({ u, v }) => ({ u, v }));
-    Game.types = Game.cells.map((c) => c.t);
-    Game.gameOver = false;
-
-    // 3) Inicializa peones (ya no necesitas drawBoard)
-    rebuildCenters();
-    initPawns();
-    renderPlayers();
-    updateTurnLabel();
-
-    confirmBtn.addEventListener("click", onConfirmRoll);
-    resultsBtn?.addEventListener("click", () => {
-      showFinalResultsModal("Resultados por tiempo / consulta manual");
-    });
-
-    window.addEventListener("resize", () => {
-      rebuildCenters();
-      Game.players.forEach((p) =>
-        placePawn(p.id, Game.positions.get(p.id) || 0, true)
-      );
-    });
-  }
-
-  function onConfirmRoll() {
-    if (Game.gameOver) return;
-    if (Game.busy) return;
-    Game.busy = true;
-    try {
-      clearLog();
-    } catch (e) {}
-    if (typeof confirmBtn !== "undefined" && confirmBtn)
-      confirmBtn.disabled = true;
-
-    const steps = parseInt(diceValueEl && diceValueEl.value, 10) || 1;
-    Game.lastDice = steps;
-    const p = Game.players[Game.turnIdx];
-    movePawn(p.id, steps);
-  }
-
   async function movePawn(pid, steps) {
     //Movimiento del peon en el tablero
     let idx = Game.positions.get(pid) || 0;
@@ -646,7 +529,23 @@
     }
   }
 
-  /////////////////////////////////////////////////
+  function onConfirmRoll() {
+    if (Game.gameOver) return;
+    if (Game.busy) return;
+    Game.busy = true;
+    try {
+      clearLog();
+    } catch (e) {}
+    if (typeof confirmBtn !== "undefined" && confirmBtn)
+      confirmBtn.disabled = true;
+
+    const steps = parseInt(diceValueEl && diceValueEl.value, 10) || 1;
+    Game.lastDice = steps;
+    const p = Game.players[Game.turnIdx];
+    movePawn(p.id, steps);
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////////
   // ===== Preguntas (clic en opción ⇒ evaluar; cerrar con ✕) =====
   function askQuestion(kind, player, esAzar) {
     const kindNorm = normalize(kind);
@@ -963,9 +862,8 @@
     return `<div class="val" title="${name}"><img class="icon" src="${icon}" alt="${name}"/><span>${val}</span></div>`;
   }
 
-  /**
-   * Convierte centersNorm (u,v) -> pixeles dentro del boardEl real.
-   */
+  ///////////////////////////////////////////////////////////////
+  // Convierte centersNorm (u,v) -> pixeles dentro del boardEl real.
   function centersNormToPixels(boardEl, centersNorm) {
     const r = boardEl.getBoundingClientRect();
     return centersNorm.map((p) => ({
@@ -974,6 +872,29 @@
     }));
   }
 
+  function recomputeSoon() {
+    requestAnimationFrame(() => {
+      rebuildCenters();
+    });
+  }
+
+  function rebuildCenters() {
+    // Si hay calibración completa, usa eso. Si no, conserva lo que haya.
+    if (Game.centersNorm && Game.centersNorm.length) {
+      Game.centers = centersNormToPixels(boardEl, Game.centersNorm);
+    } else {
+      // fallback: si todavía no calibras, deja los centros existentes o vacíos
+      Game.centers = Game.centers || [];
+    }
+
+    if (Game.players && Game.players.length) {
+      Game.players.forEach((p) =>
+        placePawn(p.id, Game.positions.get(p.id) || 0, true)
+      );
+    }
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
   // === Toggle de barra lateral (colapsa/expande grid y recalcula tablero) ===
   const appGrid = document.querySelector(".app-grid");
   const sidePanel = document.querySelector(".side");
@@ -983,12 +904,6 @@
   // Asegura estados iniciales coherentes
   if (abrirBtn) abrirBtn.style.display = "none";
   if (sidePanel) sidePanel.style.display = "flex";
-
-  function recomputeSoon() {
-    requestAnimationFrame(() => {
-      rebuildCenters();
-    });
-  }
 
   function showSide() {
     if (!appGrid || !sidePanel || !abrirBtn) return;
@@ -1009,20 +924,104 @@
   abrirBtn?.addEventListener("click", showSide);
   ocultarBtn?.addEventListener("click", hideSide);
 
-  function rebuildCenters() {
-    // Si hay calibración completa, usa eso. Si no, conserva lo que haya.
-    if (Game.centersNorm && Game.centersNorm.length) {
-      Game.centers = centersNormToPixels(boardEl, Game.centersNorm);
-    } else {
-      // fallback: si todavía no calibras, deja los centros existentes o vacíos
-      Game.centers = Game.centers || [];
-    }
+  ////////////////////////////////////////////////////////////////////////
+  // ===== Juego =====
+  function init() {
+    // Siempre 6 jugadores; si sobran, los retiras con ⏏︎
+    const names = ["J1", "J2", "J3", "J4", "J5", "J6"];
+    Game.players = names.map((n, i) => ({
+      id: i,
+      name: n,
+      color: COLORS[i % COLORS.length],
+      attrs: {
+        salud: 5,
+        alegria: 5,
+        apoyo: 5,
+        determinacion: 5,
+        tiempo: 5,
+        dinero: 5,
+      },
+    }));
 
-    if (Game.players && Game.players.length) {
+    Game.cells = [
+      { u: 0.579, v: 0.681, t: "inicio" },
+      { u: 0.639, v: 0.641, t: "personal" },
+      { u: 0.687, v: 0.603, t: "academico" },
+      { u: 0.724, v: 0.555, t: "personal" },
+      { u: 0.741, v: 0.488, t: "azar" },
+      { u: 0.737, v: 0.424, t: "academico" },
+      { u: 0.72, v: 0.365, t: "personal" },
+      { u: 0.688, v: 0.316, t: "academico" },
+      { u: 0.643, v: 0.277, t: "personal" },
+      { u: 0.591, v: 0.246, t: "social" },
+      { u: 0.538, v: 0.233, t: "academico" },
+      { u: 0.487, v: 0.233, t: "personal" },
+      { u: 0.434, v: 0.243, t: "academico" },
+      { u: 0.383, v: 0.274, t: "personal" },
+      { u: 0.337, v: 0.313, t: "academico" },
+      { u: 0.303, v: 0.365, t: "personal" },
+      { u: 0.282, v: 0.424, t: "social" },
+      { u: 0.274, v: 0.493, t: "academico" },
+      { u: 0.288, v: 0.565, t: "personal" },
+      { u: 0.319, v: 0.631, t: "azar" },
+      { u: 0.364, v: 0.688, t: "personal" },
+      { u: 0.421, v: 0.73, t: "social" },
+      { u: 0.482, v: 0.76, t: "academico" },
+      { u: 0.549, v: 0.771, t: "personal" },
+      { u: 0.612, v: 0.772, t: "social" },
+      { u: 0.672, v: 0.764, t: "academico" },
+      { u: 0.73, v: 0.737, t: "personal" },
+      { u: 0.778, v: 0.696, t: "academico" },
+      { u: 0.813, v: 0.631, t: "personal" },
+      { u: 0.832, v: 0.556, t: "academico" },
+      { u: 0.84, v: 0.48, t: "social" },
+      { u: 0.829, v: 0.406, t: "academico" },
+      { u: 0.805, v: 0.335, t: "personal" },
+      { u: 0.767, v: 0.278, t: "academico" },
+      { u: 0.726, v: 0.225, t: "social" },
+      { u: 0.672, v: 0.187, t: "personal" },
+      { u: 0.615, v: 0.158, t: "academico" },
+      { u: 0.554, v: 0.145, t: "personal" },
+      { u: 0.493, v: 0.145, t: "academico" },
+      { u: 0.433, v: 0.151, t: "personal" },
+      { u: 0.373, v: 0.174, t: "academico" },
+      { u: 0.32, v: 0.205, t: "personal" },
+      { u: 0.268, v: 0.243, t: "academico" },
+      { u: 0.229, v: 0.303, t: "personal" },
+      { u: 0.2, v: 0.359, t: "social" },
+      { u: 0.182, v: 0.43, t: "academico" },
+      { u: 0.179, v: 0.506, t: "personal" },
+      { u: 0.189, v: 0.588, t: "academico" },
+      { u: 0.224, v: 0.678, t: "academico" },
+      { u: 0.264, v: 0.74, t: "social" },
+      { u: 0.314, v: 0.805, t: "academico" },
+      { u: 0.386, v: 0.853, t: "personal" },
+      { u: 0.459, v: 0.884, t: "academico" },
+      { u: 0.537, v: 0.904, t: "social" },
+      { u: 0.537, v: 0.994, t: "inicio" },
+    ];
+
+    Game.N = Game.cells.length;
+    Game.centersNorm = Game.cells.map(({ u, v }) => ({ u, v }));
+    Game.types = Game.cells.map((c) => c.t);
+    Game.gameOver = false;
+
+    rebuildCenters();
+    initPawns();
+    renderPlayers();
+    updateTurnLabel();
+
+    confirmBtn.addEventListener("click", onConfirmRoll);
+    resultsBtn?.addEventListener("click", () => {
+      showFinalResultsModal("Resultados por tiempo / consulta manual");
+    });
+
+    window.addEventListener("resize", () => {
+      rebuildCenters();
       Game.players.forEach((p) =>
         placePawn(p.id, Game.positions.get(p.id) || 0, true)
       );
-    }
+    });
   }
 
   // start
