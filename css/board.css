@@ -35,17 +35,42 @@ body {
   border-radius: 18px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
   padding: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  height: 95%;
 }
 .board {
   position: relative;
-  width: 100%;
-  height: 90vh;
-  min-height: 520px;
+  height: 95%;  
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 1fr;
-  gap: 75px;
+  gap: 90px;
+  z-index: 1;
 }
+
+/* Capa de la foto */
+.board-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../img/board.webp") center/cover no-repeat fixed;
+  transform: scale(1); /* compensa el blur en los bordes */
+}
+
+/* Vignette suave para que los bordes no distraigan */
+.board-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -40px; /* un pelín fuera para evitar bordes duros */
+  background: radial-gradient(
+    120% 85% at 50% 40%,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 65%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
 .tile {
   position: relative;
   border-radius: 20px;
@@ -56,43 +81,43 @@ body {
   font-weight: 700;
   color: #e4e8ee;
   font-size: 16px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.4); /* sombra que da relieve */
-  transition: transform 0.2s, box-shadow 0.2s;  
-  border-color: rgba(0,0,0,.35);   /* bordes más firmes sobre foto */  
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4); /* sombra que da relieve */
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-color: rgba(0, 0, 0, 0.35); /* bordes más firmes sobre foto */
 }
 
 .tile.inicio {
   background: linear-gradient(
     180deg,
-    rgba(132, 94, 247, 0.72),
+    rgba(132, 94, 247, 1),
     rgba(132, 94, 247, 0.95)
   );
 }
 .tile.social {
   background: linear-gradient(
     180deg,
-    rgba(224, 49, 49, 0.72),
+    rgba(224, 49, 49, 1),
     rgba(224, 49, 49, 0.95)
   );
 }
 .tile.academico {
   background: linear-gradient(
     180deg,
-    rgba(255, 212, 59, 0.72),
+    rgba(255, 212, 59, 1),
     rgba(255, 212, 59, 0.95)
   );
 }
 .tile.personal {
   background: linear-gradient(
     180deg,
-    rgba(28, 126, 214, 0.72),
+    rgba(28, 126, 214, 1),
     rgba(28, 126, 214, 0.95)
   );
 }
 .tile.azar {
   background: linear-gradient(
     180deg,
-    rgba(55, 178, 77, 0.72),
+    rgba(55, 178, 77, 1),
     rgba(55, 178, 77, 0.95)
   );
 }
@@ -110,11 +135,11 @@ body {
 }
 .pawn {
   position: absolute;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 2px solid rgba(0, 0, 0, 0.45);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
 }
 .side {
   display: flex;
@@ -162,6 +187,19 @@ button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+button.secondary {
+  background: #1f2837;
+  color: #e6e9ef;
+  border: 1px solid #2b3446;
+}
+button.secondary:hover {
+  filter: brightness(1.1);
+}
+button.secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .log {
   max-height: 180px;
   overflow: auto;
@@ -253,64 +291,53 @@ button:disabled {
 }
 
 /* Asegura peones por encima de los puentes */
-.pawns{ z-index:2; }
-
-#qModal{ border:6px solid var(--tile-border); border-radius:16px; }
-#qModal[data-kind="social"]    { border-color: var(--social); }
-#qModal[data-kind="academico"] { border-color: var(--academico); }
-#qModal[data-kind="personal"]  { border-color: var(--personal); }
-#qModal[data-kind="azar"]      { border-color: var(--azar); }
-
-.board-wrap{
-  position: relative;
-  overflow: hidden;
+.pawns {
+  z-index: 2;
 }
 
-/* Capa de la foto */
-.board-wrap::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: url("../img/board.webp") center/cover no-repeat fixed;  
-  transform: scale(1);          /* compensa el blur en los bordes */
+#qModal {
+  border: 6px solid var(--tile-border);
+  border-radius: 16px;
+}
+#qModal[data-kind="social"] {
+  border-color: var(--social);
+}
+#qModal[data-kind="academico"] {
+  border-color: var(--academico);
+}
+#qModal[data-kind="personal"] {
+  border-color: var(--personal);
+}
+#qModal[data-kind="azar"] {
+  border-color: var(--azar);
 }
 
-/* Vignette suave para que los bordes no distraigan */
-.board-wrap::after{
-  content:"";
-  position:absolute;
-  inset:-40px;                      /* un pelín fuera para evitar bordes duros */
-  background: radial-gradient(120% 85% at 50% 40%,
-              transparent 0%,
-              rgba(0,0,0,0.35) 65%,
-              rgba(0,0,0,0.60) 100%);
-}
-
-/* Asegura que tablero, puentes y peones queden encima */
-.board { position:relative; z-index:1; }
-
-.tile span{
-  text-shadow: 0 1px 1px rgba(0,0,0,.45), 0 0 6px rgba(0,0,0,.25);
-  letter-spacing: .2px;
+.tile span {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45), 0 0 6px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.2px;
 }
 
 #logo {
   border-radius: 20px;
-  height: 60px;  
+  height: 60px;
   width: 65%;
   max-width: 220px;
   align-self: center;
-  border: 2px solid #FFD700;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
-  background: rgba(0,0,0,0.6);
+  border: 2px solid #ffd700;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  background: rgba(0, 0, 0, 0.6);
   padding: 2px;
 }
 
 /* Permite posicionar el botón de ocultar dentro del aside */
-.side { position: relative; }
+.side {
+  position: relative;
+}
 
 /* Colapso real: al ocultar barra derecha, la grid se vuelve de 1 columna */
-.app-grid.no-side { grid-template-columns: 1fr; }
+.app-grid.no-side {
+  grid-template-columns: 1fr;
+}
 
 /* Botón para ocultar el panel (estilo similar al abrir) */
 #ocultarPanel {
@@ -320,7 +347,7 @@ button:disabled {
   z-index: 1000;
   background: #1f2837;
   color: #e6e9ef;
-  border: 2px solid #FFD700;
+  border: 2px solid #ffd700;
   border-radius: 12px;
   padding: 8px 12px;
   cursor: pointer;
@@ -332,9 +359,49 @@ button:disabled {
 #abrirPanel {
   background: #1f2837;
   color: #e6e9ef;
-  border: 2px solid #FFD700;
+  border: 2px solid #ffd700;
   border-radius: 12px;
   padding: 8px 12px;
   cursor: pointer;
   font-weight: 700;
+}
+
+#debugLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5; /* arriba de board, abajo o arriba de pawns según prefieras */
+}
+.debug-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  background: rgba(255, 0, 0, 0.6);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
+}
+
+.diceValue {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dadoOptions {
+  flex: 0 0 80px;
+  padding: 8px;
+  border-radius: 10px;
+  background: #1f2837;
+  color: #e6e9ef;
+  border: 1px solid #232733;
+}
+
+.mostrarPanel {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,52 +11,51 @@
   <link rel="stylesheet" href="css/board.css" />
   <link rel="icon" href="data:," />
 </head>
+
 <body>
   <div class="app-grid">
     <main class="board-wrap">
       <div id="board" class="board" aria-label="Tablero"></div>
       <div id="pawns" class="pawns" aria-hidden="true"></div>
+      <div id="debugLayer" aria-hidden="true"></div>
     </main>
 
-    <button id="abrirPanel" aria-label="Mostrar panel" title="Mostrar panel"
-        style="display:none; position:fixed; top:10px; right:10px; z-index:1000;">
-  ▶ Jugadores
-    </button>
+    <button id="abrirPanel" aria-label="Mostrar panel" class="mostrarPanel">▶ Jugadores</button>
     <aside class="side">
-      <button id="ocultarPanel" aria-label="Ocultar panel" title="Ocultar panel">X</button>                    
+      <button id="ocultarPanel" aria-label="Ocultar panel" title="Ocultar panel">X</button>
       <img src="img/titulo.webp" alt="Nuevo logo" id="logo" />
       <section class="panel">
         <header class="title">
           <h2>Turno</h2>
           <div class="muted" id="turnLabel">—</div>
         </header>
-        <div class="controls">  
-  <div style="display:flex; gap:8px; align-items:center;">
-    <select id="diceValue" aria-label="Valor del dado" style="flex:0 0 80px; padding:8px; border-radius:10px; background:#1f2837; color:#e6e9ef; border:1px solid #232733;">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-    </select>
-    <button id="confirmRoll" class="primary">Mover</button>
-  </div>
-</div>
+        <div class="controls">
+          <div class="diceValue">
+            <select id="diceValue" aria-label="Valor del dado" class="dadoOptions">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            <button id="confirmRoll" class="primary">Mover</button>
+            <button id="btnResults" class="secondary" title="Mostrar resultados">Resultados</button>
+          </div>
+        </div>
       </section>
-
       <section class="panel">
-        <header class="title"><h2>Jugadores</h2><span class="muted" id="roundLabel">Ronda 1</span></header>
+        <header class="title">
+          <h2>Jugadores</h2><span class="muted" id="roundLabel">Ronda 1</span>
+        </header>
         <div id="players" class="players list-compact"></div>
-      </section>      
+      </section>
     </aside>
   </div>
-  
+
   <!-- Modal de pregunta nativo para este modo digital (independiente del HTML clásico) -->
   <dialog id="qModal" class="card">
     <div class="modal contenido-pergamino">
-      <!--<h3 id="qTitle">Pregunta</h3>
-      <div id="qKind" class="kind">—</div>-->
       <div class="qflex">
         <img id="qImg" alt="Imagen de contexto" class="imagen-contexto" />
         <div class="qright">
@@ -72,4 +72,5 @@
   <!-- Motor de tablero -->
   <script src="js/game_digital.js"></script>
 </body>
+
 </html>
