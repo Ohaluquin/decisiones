@@ -333,7 +333,7 @@
 
   function waitClose(dlg) {
     return new Promise((res) =>
-      dlg.addEventListener("close", () => res(), { once: true })
+      dlg.addEventListener("close", () => res(), { once: true }),
     );
   }
 
@@ -353,12 +353,12 @@
           r = op?.receive;
         return `<div class="row">
       <span class="pill"><span>${iconForAttr(g?.attr)}</span>${labelAttr(
-          g?.attr
-        )} <span class="delta minus">${fmtDelta(g?.delta ?? -2)}</span></span>
+        g?.attr,
+      )} <span class="delta minus">${fmtDelta(g?.delta ?? -2)}</span></span>
       <span class="arrow">→</span>
       <span class="pill"><span>${iconForAttr(r?.attr)}</span>${labelAttr(
-          r?.attr
-        )} <span class="delta plus">${fmtDelta(r?.delta ?? +1)}</span></span>
+        r?.attr,
+      )} <span class="delta plus">${fmtDelta(r?.delta ?? +1)}</span></span>
     </div>`;
       })
       .join("");
@@ -530,6 +530,7 @@
   }
 
   function onConfirmRoll() {
+    console.log("[ROLL] antes busy:", Game.busy);
     if (Game.gameOver) return;
     if (Game.busy) return;
     Game.busy = true;
@@ -550,7 +551,7 @@
   function askQuestion(kind, player, esAzar) {
     const kindNorm = normalize(kind);
     const filteredQuestions = preguntas.filter(
-      (q) => normalize(q.kind) === kindNorm
+      (q) => normalize(q.kind) === kindNorm,
     );
     if (!filteredQuestions.length) {
       log(`(No hay preguntas de tipo ${kind})`);
@@ -728,7 +729,7 @@
           });
 
           const idxJugador = Game.players.indexOf(
-            pending.elimination.playerRef
+            pending.elimination.playerRef,
           );
           if (idxJugador !== -1) retirarPlayer(idxJugador);
         }
@@ -767,7 +768,7 @@
 
       for (const faltante of faltantes) {
         const donantes = ORDER.filter(
-          (k) => k !== faltante && safe(player.attrs[k]) >= 2
+          (k) => k !== faltante && safe(player.attrs[k]) >= 2,
         ).sort((a, b) => safe(player.attrs[b]) - safe(player.attrs[a]));
 
         if (!donantes.length) {
@@ -778,8 +779,8 @@
         player.attrs[faltante] = safe(player.attrs[faltante]) + 1;
         swaps.push(
           `${player.name} intercambia <b>2</b> de <b>${labelAttr(
-            d
-          )}</b> por <b>1</b> de <b>${labelAttr(faltante)}</b>.`
+            d,
+          )}</b> por <b>1</b> de <b>${labelAttr(faltante)}</b>.`,
         );
         operations.push({
           give: { attr: d, delta: -2 },
@@ -817,7 +818,7 @@
         ${attrCell(
           "determinacion",
           "img/Iconos/determinacion.webp",
-          p.attrs.determinacion
+          p.attrs.determinacion,
         )}
         ${attrCell("alegria", "img/Iconos/alegria.webp", p.attrs.alegria)}
         ${attrCell("apoyo", "img/Iconos/apoyo.webp", p.attrs.apoyo)}
@@ -836,6 +837,7 @@
   }
 
   function retirarPlayer(idx) {
+    Game.busy = false;
     if (idx < Game.turnIdx) {
       Game.turnIdx--;
     }
@@ -854,7 +856,7 @@
 
   function highlight() {
     [...playersEl.children].forEach((el, i) =>
-      el.classList.toggle("active", i === Game.turnIdx)
+      el.classList.toggle("active", i === Game.turnIdx),
     );
   }
 
@@ -889,7 +891,7 @@
 
     if (Game.players && Game.players.length) {
       Game.players.forEach((p) =>
-        placePawn(p.id, Game.positions.get(p.id) || 0, true)
+        placePawn(p.id, Game.positions.get(p.id) || 0, true),
       );
     }
   }
@@ -1019,9 +1021,25 @@
     window.addEventListener("resize", () => {
       rebuildCenters();
       Game.players.forEach((p) =>
-        placePawn(p.id, Game.positions.get(p.id) || 0, true)
+        placePawn(p.id, Game.positions.get(p.id) || 0, true),
       );
     });
+
+    const recalibrate = () => recomputeSoon();
+
+    // 1) Después del primer layout real (2 frames suele ser suficiente)
+    requestAnimationFrame(() => requestAnimationFrame(recalibrate));
+
+    // 2) Cuando todo (imágenes/CSS) terminó de cargar
+    window.addEventListener("load", recalibrate, { once: true });
+
+    // 3) Pequeño “seguro” por si hay fuentes/imagenes tardías
+    setTimeout(recalibrate, 80);
+
+    // 4) Si el board cambia de tamaño por cualquier razón (ideal)
+    if (window.ResizeObserver) {
+      new ResizeObserver(recalibrate).observe(boardEl);
+    }
   }
 
   // start

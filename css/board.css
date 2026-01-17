@@ -405,3 +405,20 @@ button.secondary:disabled {
   right: 10px;
   z-index: 1000;
 }
+
+/* 1) stacking limpio dentro de board-wrap */
+.board-wrap { isolation: isolate; }
+
+/* 2) las capas de fondo JAMAS deben capturar clicks */
+.board-wrap::before,
+.board-wrap::after {
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 3) tablero arriba del fondo */
+.board { position: relative; z-index: 1; }
+
+/* 4) peones y debug arriba del tablero (sin tocar su position original) */
+.pawns { z-index: 3; }         /* ya es position:absolute en tu CSS */
+#debugLayer { z-index: 4; }     /* ya es position:absolute en tu CSS */
